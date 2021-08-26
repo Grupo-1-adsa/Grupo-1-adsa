@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto&display=swap');
+
+:root {
+    --cor-primario-azul: #6657EB;
+    --cor-secundaria-cinza: #E7EAEF;
+    --cor-oposto-vermelho:red;
+
+    --font-roboto-titulo:'Roboto', sans-serif;
+    --font-montserrat-corpo:'Montserrat', sans-serif;
+  }
+*{
+    margin: 0;
+    padding: 0;
+}
+.header{
+    background-color: var(--cor-primario-azul);
+    color: var(--cor-secundaria-cinza);
+    font-size: 1.33em;
+}
+.container{
+    width: 80%;
+    margin: auto;
+}
+.header .container{
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: space-between;
+    align-items: center;
+    height: 5em;
+}
+.header .container .box{
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+}
+.teste{
+    font-size: 3rem;
+    margin: 1rem;
+}
+.title{
+    font-family: var(--font-roboto-titulo);
+}
+a{
+    color: var(--cor-secundaria-cinza);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: var(--font-montserrat-corpo);
+}
+ul{
+    display: flex;
+    flex-flow: wrap row;
+}
+
+li{
+    list-style: none;
+    padding: 1em .5em;
+}
+.download{
+    background-color: var(--cor-oposto-vermelho);
+    border-radius: 33px;
+    padding: .5em;
+    color: var(--cor-secundaria);
+}
