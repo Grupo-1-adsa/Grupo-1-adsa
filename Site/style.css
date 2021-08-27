@@ -2,10 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto&display=swap');
 
 :root {
-    --cor-primario-azul: #6657EB;
-    --cor-secundaria-cinza: #E7EAEF;
+    --cor-primario-azul: #5879FA;
+    --cor-secundaria-cinza: #E9EBF0;
     --cor-oposto-vermelho:red;
-
+    --cor-terciaria-roxo:#7644D4;
+    
     --font-roboto-titulo:'Roboto', sans-serif;
     --font-montserrat-corpo:'Montserrat', sans-serif;
   }
@@ -61,4 +62,45 @@ li{
     border-radius: 33px;
     padding: .5em;
     color: var(--cor-secundaria);
+}
+.login{
+    background-color: var(--cor-terciaria-roxo);
+    border-radius: 33px;
+    padding: .5em;
+    color: var(--cor-secundaria);
+}
+.home{
+    
+}
+
+
+
+
+
+
+.footer{
+    border-top: 3px solid var(--cor-primario-azul);
+}
+.footer .container{
+    display: flex;
+    justify-content: center;
+}
+.box-footer{
+    margin: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+.github{
+    font-size: 6em;
+    color: var(--cor-primario-azul);
+}
+.github:hover{
+    font-size: 6.2em;
+    color: var(--cor-terciaria-roxo);
+    cursor: pointer;
+}
+.footer .container .box-footer{
+    font-family: var(--font-roboto-titulo);
 }
