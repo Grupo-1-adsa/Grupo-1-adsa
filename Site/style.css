@@ -296,8 +296,9 @@ li{
 
 
 .sobre_bk h1 {
-    font-size: 2em;
-    font-weight: bold;
+    font-weight: 800 !important;
+    font-size: 3em;
+    margin: 2.5em 0 0 0;
     font-family: var(--font-roboto-titulo);
 }
 
@@ -398,6 +399,32 @@ li{
     font-family: var(--font-montserrat-corpo);
     font-size: 2em;
 }
+.contato-formulario h1{
+    font-size:  2em;
+}
+.contato-formulario{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 10em;
+    margin: 10em;
+    background-color: var(--cor-primario-azul);
+    opacity: 0.6;
+    border-radius: 44px;
+}
+.contato-formulario input , select{
+    margin: 1rem;
+    width: 30rem;
+    height: 3rem;
+    border-radius: 33px;
+    border-style: none;
+    font-size: 1.5em;
+}
+.contato-formulario select{
+    text-align: center;
+}
+
 @media screen and (max-width: 900px) {
     .visao_quadrados ul{
         display: flex; 
@@ -456,10 +483,9 @@ li{
       }
       .home-content p{
         width: 100%;
-    }
-    
-      
+    }     
 }
+
 /* @media screen and (max-width: 900px) {
     .visao_quadrados_txt{
         align-items: center;
