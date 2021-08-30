@@ -10,8 +10,9 @@
     
     --font-roboto-titulo:'Roboto', sans-serif;
     --font-montserrat-corpo:'Montserrat', sans-serif;
+
     overflow-x: hidden;
-  }
+}
 *{
     margin: 0;
     padding: 0;
@@ -19,11 +20,16 @@
 body{
     background-color: var(--cor-secundaria-cinza);
 }
+.teste{
+    background-image: url(img/testeroxo.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .nav-bar{
-    background-color: var(--cor-primario-azul);
+    background-color: "";
     color: var(--cor-secundaria-cinza);
     font-size: 1.33em;
-    opacity: .60;
+    opacity: 1;
     
 }
 .container{
@@ -42,7 +48,7 @@ body{
     flex-flow: row;
     align-items: center;
 }
-.teste{
+.logo{
     font-size: 3rem;
     margin: 1rem;
 }
@@ -64,6 +70,9 @@ li{
     list-style: none;
     padding: 1em .5em;
 }
+.nav-bar ul {
+    z-index: 2;
+}
 .download{
     background-color: var(--cor-oposto-vermelho);
     border-radius: 33px;
@@ -84,7 +93,7 @@ li{
 .bg-pentagon{
     position: absolute;
     box-sizing: content-box;
-    border-width: 600px 2000px 0 400px ;
+    border-width: 600px 2000px 0 450px ;
     border-style: solid;
     border-color: var(--cor-primario-azul) transparent;
     opacity: .60;
@@ -128,7 +137,7 @@ li{
     cursor: pointer;
 }
 .home-content p{
-    width: 100%;
+    width: 70%;
     margin: auto;
     font-family: var(--font-montserrat-corpo);
 }
@@ -166,8 +175,8 @@ li{
     display: flex;
     align-items: center;
     justify-content: center;
-    /* height: 700px; */
-    padding: 10em 0;
+     /* height: 700px;  */
+    /* padding: 5em 0; */
     overflow: hidden;
     background-image: url(img/quadsvg.svg);
     background-repeat: no-repeat;
@@ -273,6 +282,122 @@ li{
   #check{
     display: none;
   }
+
+
+
+  .sobre_bk {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3em 0;
+    flex-flow: column;
+
+}
+
+
+.sobre_bk h1 {
+    font-size: 2em;
+    font-weight: bold;
+    font-family: var(--font-roboto-titulo);
+}
+
+.integrantes {
+    display: flex;
+    align-items: center;
+    
+    /* position: absolute; */
+    justify-content: space-evenly;
+    width: 80%;
+    /* top: 5vh; */
+    margin: auto;
+    flex-flow:row wrap;
+    margin-top: 5%;
+}
+
+.iconEquipe{
+    margin-left: 37px;
+}
+
+.iconEquipe img{
+    width: 38px;
+    background-color: rgba(255, 255, 255, 0);
+    margin-top: 2%;
+    margin-left: 2%;
+    float: left;
+}
+
+.flip-container img {
+    width: 80%;
+    backface-visibility: hidden;
+}
+
+.flip-container {
+    position: relative;
+    perspective: 1000;
+    float: left;
+    /* margin-left: 5vh;
+    margin-bottom: 3vh; */
+    margin:2em 0 ;
+    align-items: center;
+    margin-top: 2%;
+}
+
+.flip-container:hover .flipper, .flip-container.hover .flipper {
+    transform: rotateY(180deg);
+}
+
+.flip-container, .front, .back {
+    height: 20em;
+    width: 25em;
+}
+
+.flipper {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.front, .back {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.back {
+    font-size: 1em;
+    background-color: rgb(255, 255, 255);
+    transform: rotateY(180deg);
+    z-index: 3;
+    background: transparent;
+    /* left: -5em; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+.back i {
+    font-size: 5em;
+    margin: .75rem;
+    cursor: pointer;
+    color: var(--cor-primario-azul);
+}
+.back i:hover{
+    color: var(--cor-terciaria-roxo);
+}
+.box-back{
+    display: flex;
+    justify-content: center;
+    flex-flow: row;
+    
+}
+.front {
+    z-index: 2;
+}
+.back h3{
+    font-family: var(--font-montserrat-corpo);
+    font-size: 2em;
+}
 @media screen and (max-width: 900px) {
     .visao_quadrados ul{
         display: flex; 
@@ -330,11 +455,9 @@ li{
           margin: 0;
       }
       .home-content p{
-        text-align: initial;
+        width: 100%;
     }
-    body{
-        
-    }
+    
       
 }
 /* @media screen and (max-width: 900px) {

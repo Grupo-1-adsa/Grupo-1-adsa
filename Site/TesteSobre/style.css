@@ -71,8 +71,8 @@
 }
 
 .flip-container, .front, .back {
-    height: 43vh;
-    width: 25vw;
+    height: 20em;
+    width: 25em;
 }
 
 .flipper {
