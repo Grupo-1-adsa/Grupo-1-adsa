@@ -10,8 +10,6 @@
     
     --font-roboto-titulo:'Roboto', sans-serif;
     --font-montserrat-corpo:'Montserrat', sans-serif;
-
-    overflow-x: hidden;
 }
 *{
     margin: 0;
@@ -88,6 +86,7 @@ li{
 .home{
     position: relative;
     background-color: var(--cor-secundaria-cinza);
+    padding: 0 0 10em 0;
 
 }
 .bg-pentagon{
@@ -275,7 +274,7 @@ li{
     color: white;
     float: right;
     line-height: 80px;
-    margin-right: 40px;
+    /* margin-right: 40px; */
     cursor: pointer;
     display: none;
   }
@@ -297,9 +296,10 @@ li{
 
 .sobre_bk h1 {
     font-weight: 800 !important;
-    font-size: 3em;
+    font-size: 2em;
     margin: 2.5em 0 0 0;
     font-family: var(--font-roboto-titulo);
+    text-align: center;
 }
 
 .integrantes {
@@ -392,6 +392,9 @@ li{
     flex-flow: row;
     
 }
+.linha{
+    text-align: center;
+}
 .front {
     z-index: 2;
 }
@@ -415,16 +418,39 @@ li{
 }
 .contato-formulario input , select{
     margin: 1rem;
-    width: 30rem;
+    width: 80%;
     height: 3rem;
     border-radius: 33px;
     border-style: none;
     font-size: 1.5em;
+    text-orientation: sideways-right;
 }
 .contato-formulario select{
     text-align: center;
 }
-
+.contato-formulario button{
+    width: 7em;
+    height: 2.7em;
+    margin:  2rem .5rem;
+    border-style: none;
+    background-color: var(--cor-terciaria-roxo);
+    font-size: 2rem;
+    color: var(--cor-secundaria-cinza);
+    font-weight: 500;
+    font-family: var(--font-roboto-titulo);
+    border-radius: 50px;
+    cursor: pointer;
+}
+.contato-texto{
+    height: 200px !important;
+}
+.contato-titulo{
+    font-size: 2em;
+    border-bottom: 5px solid var(--cor-terciaria-roxo);
+    margin: 1em;
+    text-transform: uppercase;
+    color: var(--cor-preto);
+}
 @media screen and (max-width: 900px) {
     .visao_quadrados ul{
         display: flex; 
@@ -484,6 +510,29 @@ li{
       .home-content p{
         width: 100%;
     }     
+    .contato-formulario{
+        margin: 5em 0;
+        padding: 3em 0;
+        width: 100%;
+    }
+    .flip-container, .front, .back{
+        width: 100%;
+    }
+    .contato-formulario button{
+        font-size: 24px;
+    }
+    .contato-formulario h1 {
+        text-align: center;
+    }
+    .flip-container img{
+        width: 100%;
+    }
+    .visao_txt p {
+        width: 65%;
+    }
+    /* .nav-bar .container{
+        width: 90%;
+    } */
 }
 
 /* @media screen and (max-width: 900px) {
