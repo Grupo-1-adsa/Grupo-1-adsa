@@ -12,6 +12,9 @@ let nav_bar = document.getElementById("nav_bar");
         // nav_fundo.style.opacity="1"
         // fundo.style.opacity="1"
         nav_bar.style.backgroundColor = "var(--cor-primario-azul)"
+        // nav_bar.style.position = "fixed"
+        // nav_bar.style.height = "100px"
+        // nav_bar.style.width = "100vh"
 
     } else if (contador === 1) {
 
@@ -20,6 +23,7 @@ let nav_bar = document.getElementById("nav_bar");
         // nav_fundo.style.opacity="0.60"
         // fundo.style.opacity="0.60"
         nav_bar.style.backgroundColor = ""
+        // nav_bar.position.position = "relative"
 
     }
    

@@ -34,6 +34,7 @@ body {
     top: 0;
     display: flex;
     justify-self: flex-start;
+    width: 100%;
 
 }
 .container-login{
@@ -65,8 +66,9 @@ a{
 }
 
 ul{
-    display: flex;
-    flex-flow: wrap row;
+    /* display: flex;
+    flex-flow: wrap row; */
+    position: relative;
 }
 
 li{
@@ -75,6 +77,9 @@ li{
 }
 
 .voltar{
+    position: absolute ;
+    right: 0.1em;
+    width: 5.6em;
     background-color: var(--cor-terciaria-roxo);
     border-radius: 33px;
     padding: .4em;
@@ -217,6 +222,9 @@ form input[type="submit"]:hover {
 
 @media screen and (max-width:900px) {
     .container-login{
-        width: 90%; 
+        width: 95%; 
+    }
+    .voltar{
+        font-size: 16px;
     }
 }
