@@ -24,6 +24,45 @@ body{
     background-size: cover;
     z-index: -9 !important;
 }
+
+.header{
+  
+    height: 90px;
+    padding: 5px 140px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.titulo{
+    color: white;
+    font-family:  var(--font-roboto-titulo);
+    display: flex;
+    align-items: center
+}
+.titulo img{
+ width: 55px;
+ height: 55px;
+ margin-right: 10px;
+}
+
+
+.navegacao ul li a{
+    font-size: 18px;
+
+    font-weight: bold;
+    font-family: var(--font-montserrat-corpo);
+    margin: 5px;
+    transition: .3s;
+}
+
+.navegacao ul li a:hover{
+    color: var(--cor-preto);
+
+}
+.tt{
+    display: flex;
+    align-items: center;
+}
 .nav-bar{
     background-color: "";
     color: var(--cor-secundaria-cinza);
@@ -76,13 +115,13 @@ li{
     background-color: var(--cor-oposto-vermelho);
     border-radius: 33px;
     padding: .5em;
-    color: var(--cor-secundaria);
+     color: white;
 }
 .login{
     background-color: var(--cor-terciaria-roxo);
     border-radius: 33px;
     padding: .5em;
-    color: var(--cor-secundaria);
+    color: white;
 }
 .home{
     position: relative;
@@ -521,6 +560,9 @@ li{
     }
 }
 
+.burguer{
+    display: none;
+}
 /* @media screen and (max-width: 900px) {
     .visao_quadrados_txt{
         align-items: center;
@@ -531,4 +573,77 @@ li{
     }
 
   } */
+
+  @media screen and (max-width: 1190px){
+     .header{
+         display: flex;
+         justify-content: center;
+        
+        padding: 0px;
+     } 
+
+     .burguer.open{
+         transform: rotate(90deg);
+     }
+    .burguer{
+        transition: .3s;
+       display: block;
+        width: 35px;
+        cursor: pointer;
+        height: 35px;
+        background-image: url("./img/menubb.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        z-index: 100000;
+    
+    }  
+    
+    .titulo{
+       
+        width: 100%;
+        justify-content: space-around;
+    }
+    
+    .titulo.fx{
+        position: fixed;
+        top: 4;
+        z-index: 1000000;
+    }
+    
+    .titulo h1, .titulo i{
+    
+        z-index: 100000; 
+    }
+    .navegacao{
+        background-color: var(--cor-primario-azul);
+       position: fixed;
+       width: 100%;
+       z-index: 9000;
+       height: 100vh;
+       top: 0;
+       left: -2000px;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       transition: .4s ;
+
+    }
+    .navegacao.ativo{
+        left: 0px;
+    }
+    .navegacao ul {
+   flex-direction: column;
+   align-items: center;
+    }
+
+    .navegacao ul li{
+        margin-bottom: 30px;
+    }
+
+    .navegacao ul li:hover{
+        background-color: var(--cor-terciaria-roxo);
+        opacity: 0.3;
+    }
+  }
   

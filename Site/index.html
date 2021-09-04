@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=S, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FastTech</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="/img/fone1.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./img/fone1.png" type="image/x-icon">
     <link rel="stylesheet" href="main.js">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,24 +18,29 @@
 
 <body id="body">
     <div class="teste">
-        <header class="nav-bar" id="nav_bar">
-            <section class="container">
-                <input type="checkbox" id="check" onclick="nav_button()">
-                <label for="check" class="checkbtn">
-                    <i class="fas fa-bars"></i>
-                </label>
-                <div class="box">
+        <header class="header">
+
+            <div class="titulo">
+
+                <div class="burguer"></div>
+
+                <div class="tt">
                     <i class="fas fa-headset logo"></i>
-                    <h1 class="title">FastTech</h1>
+                    <h1>FastTech</h1>
                 </div>
-                <ul>
-                    <li><a href="">home</a></li>
-                    <li><a href="">sobre nós</a></li>
-                    <li><a href="">Contato</a></li>
-                    <li><a href="" class="login">Entrar</a></li>
-                    <li><a href="" class="download">Download</a></li>
+            </div>
+            <nav class="navegacao">
+
+                <ul class="cont_li">
+
+                    <li><a data-links href="">home</a></li>
+                    <li><a data-links href="#visao">sobre nós</a></li>
+                    <li><a data-links href="#contato">Contato</a></li>
+                    <li><a data-links href="" class="login">Entrar</a></li>
+                    <li><a data-links href="" class="download">Download</a></li>
+
                 </ul>
-            </section>
+            </nav>
         </header>
         <section class="home">
             <!-- <section class="bg-pentagon"></section> -->
@@ -51,7 +56,7 @@
         </section>
         </section>
     </div>
-    <section class="visao_bk">
+    <section id="visao" class="visao_bk">
         <!-- <img class="vssquad" src="./img/quadsvg.svg" alt="#"> -->
         <div class="visao_quadrados_txt">
 
@@ -141,8 +146,8 @@
                         <h3 class="linha">Ellen Miranda</h3>
                         <h3> 18 anos</h3>
                         <div class="box-back">
-                        <i class="fab fa-linkedin"><a href=""></a></i>
-                        <i class="fab fa-github-square"><a href=""></a> </i>
+                            <i class="fab fa-linkedin"><a href=""></a></i>
+                            <i class="fab fa-github-square"><a href=""></a> </i>
                         </div>
                     </div>
                 </div>
@@ -200,7 +205,7 @@
             </div>
 
     </section>
-    <section class="contato">
+    <section id="contato" class="contato">
         <section class="container">
             <form action="" class="contato-formulario">
                 <h1 class="contato-titulo">Contato</h1>
@@ -228,7 +233,7 @@
         </section>
     </footer>
     <script src="https://kit.fontawesome.com/29a5925e04.js" crossorigin="anonymous"></script>
-    <script src="main.js"></script>
+    <script src="./main.js"></script>
 </body>
 
 </html>
