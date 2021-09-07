@@ -65,6 +65,10 @@ a{
     text-transform: uppercase;
 }
 
+ul li a:hover{ 
+    color: black; 
+}
+
 ul{
     /* display: flex;
     flex-flow: wrap row; */
