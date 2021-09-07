@@ -211,17 +211,27 @@
         <section class="container">
             <form action="" class="contato-formulario">
                 <h1 class="contato-titulo">Contato</h1>
-                <h1>Digite seu email</h1>
-                <input type="text">
+                <div>
+                    <div class="input-field">
+                        <input autocomplete="off" type="text" name="cnpj" id="cnpj" placeholder="Informe o CNPJ">
+                        <div class="underline"></div>
+    
+                    </div>
+
                 <h1>Escolha um tipo:</h1>
                 <select name="" id="">
                     <option value="">Dúvida</option>
                     <option value="">Reclamação</option>
                     <option value="">Feedback</option>
                 </select>
-                <h1>Mensagem</h1>
-                <input type="text" class="contato-texto">
-                <button>Enviar</button>
+               
+                <div class="input-field">
+                    <input autocomplete="off" type="text" name="msg" id="msg" placeholder="Mensagem">
+                    <div class="underline"></div>
+
+                </div>
+
+                <input type="submit" value="Enviar">
             </form>
         </section>
     </section>

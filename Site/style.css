@@ -426,6 +426,7 @@ li{
 .contato-formulario h1{
     font-size:  2em;
 }
+
 .contato-formulario{
     display: flex;
     flex-flow: column wrap;
@@ -433,9 +434,8 @@ li{
     align-items: center;
     padding: 10em;
     margin: 10em;
-    background-color: var(--cor-primario-azul);
     opacity: 0.6;
-    border-radius: 44px;
+    border-radius: 5rem;
 }
 .contato-formulario input , select{
     margin: 1rem;
@@ -446,22 +446,29 @@ li{
     font-size: 1.5em;
     text-orientation: sideways-right;
 }
+
+form input[type="submit"]:hover {
+    letter-spacing: 0.5px;
+    background: linear-gradient(to right, #4776E6, #014f86);
+}
+
 .contato-formulario select{
     text-align: center;
 }
-.contato-formulario button{
-    width: 7em;
-    height: 2.7em;
-    margin:  2rem .5rem;
-    border-style: none;
-    background-color: var(--cor-terciaria-roxo);
-    font-size: 2rem;
-    color: var(--cor-secundaria-cinza);
-    font-weight: 500;
-    font-family: var(--font-roboto-titulo);
-    border-radius: 50px;
+
+form input[type="submit"] {
+    margin-top: 2rem;
+    padding: 0.4rem;
+    width: 100%;
+    background: linear-gradient(to left, #5879FA, #8e54e9);
     cursor: pointer;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 300;
+    border-radius: 4px;
+    transition: all 0.3s ease;
 }
+
 .contato-texto{
     height: 200px !important;
 }
@@ -646,4 +653,5 @@ li{
         opacity: 0.3;
     }
   }
+
   
