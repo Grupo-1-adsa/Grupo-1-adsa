@@ -243,3 +243,39 @@ main.form-cadastro {
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
 }
+
+.vai_tremer {
+    /* apenas para dar um formato a div */
+    width: 100px;
+    /* animacao */
+    animation: tremer .2s;
+    animation-iteration-count: 4;
+    height: 1px;
+    width: 100%;
+    position: absolute;
+    bottom: -5px;
+    background: linear-gradient(45deg, #e22d2d, #e00000);
+    transition: all .3s ease-in-out;
+    transform-origin: left;
+    display: none;
+}
+
+/* keyframe para ajustar até onde treme */
+
+@keyframes tremer {
+    0% {
+        margin-left: 0;
+    }
+    25% {
+        margin-left: 7px;
+    }
+    50% {
+        margin-left: 0;
+    }
+    75% {
+        margin-left: -7px;
+    }
+    100% {
+        margin-left: 0;
+    }
+}

@@ -63,3 +63,44 @@ links.forEach((link) => {
 
 
 
+//Validações, vai melhorar prometo :3 
+
+function validar() {
+
+    if (username.value.length == 0 ) {
+        tremerUsername.style.display = "block"
+    }
+
+    else if (cnpj.value.length != 14) {
+        tremerUsername.style.display = "none"
+        tremerCnpj.style.display = "block"
+    }
+    
+    else if (cep.value.length != 8) {
+        tremerCnpj.style.display = "none"
+        tremerCep.style.display = "block"
+    }
+    else if (tel.value.length !=11){
+        tremerCep.style.display = "none"
+        tremerTel.style.display = "block"
+    }
+    else if (email.value.length !=11){
+        tremerTel.style.display = "none"
+        tremerEmail.style.display = "block"
+    }
+
+    else {
+        tremerTel.style.display = "none"
+    }
+
+}
+
+function redirecionando() {
+
+    if (username.value.length > 0 && cnpj.value.length == 14 && cep.value.length == 8 && tel.value.length == 11) {
+        window.location.href = "login.html"
+    }
+    else{
+        validar()
+    }
+}
