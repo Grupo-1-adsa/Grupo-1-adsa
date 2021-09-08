@@ -426,7 +426,6 @@ li{
 .contato-formulario h1{
     font-size:  2em;
 }
-
 .contato-formulario{
     display: flex;
     flex-flow: column wrap;
@@ -434,11 +433,10 @@ li{
     align-items: center;
     padding: 10em;
     margin: 10em;
+    background-color: var(--cor-primario-azul);
     opacity: 0.6;
-    border-radius: 5rem;
+    border-radius: 44px;
 }
-
-
 .contato-formulario input , select{
     margin: 1rem;
     width: 80%;
@@ -448,14 +446,70 @@ li{
     font-size: 1.5em;
     text-orientation: sideways-right;
 }
-
-
-
 .contato-formulario select{
     text-align: center;
 }
-
-
+.contato-formulario button{
+    width: 7em;
+    height: 2.7em;
+    margin:  2rem .5rem;
+    border-style: none;
+    background-color: var(--cor-terciaria-roxo);
+    font-size: 2rem;
+    color: var(--cor-secundaria-cinza);
+    font-weight: 500;
+    font-family: var(--font-roboto-titulo);
+    border-radius: 50px;
+    cursor: pointer;
+}
+.contato-texto{
+    height: 200px !important;
+}
+.contato-titulo{
+    font-size: 2em;
+    border-bottom: 5px solid var(--cor-terciaria-roxo);
+    margin: 1em;
+    text-transform: uppercase;
+    color: var(--cor-preto);
+}.contato-formulario h1{
+    font-size:  2em;
+}
+.contato-formulario{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 10em;
+    margin: 10em;
+    background-color: var(--cor-primario-azul);
+    opacity: 0.6;
+    border-radius: 44px;
+}
+.contato-formulario input , select{
+    margin: 1rem;
+    width: 80%;
+    height: 3rem;
+    border-radius: 33px;
+    border-style: none;
+    font-size: 1.5em;
+    text-orientation: sideways-right;
+}
+.contato-formulario select{
+    text-align: center;
+}
+.contato-formulario button{
+    width: 7em;
+    height: 2.7em;
+    margin:  2rem .5rem;
+    border-style: none;
+    background-color: var(--cor-terciaria-roxo);
+    font-size: 2rem;
+    color: var(--cor-secundaria-cinza);
+    font-weight: 500;
+    font-family: var(--font-roboto-titulo);
+    border-radius: 50px;
+    cursor: pointer;
+}
 .contato-texto{
     height: 200px !important;
 }
@@ -466,6 +520,7 @@ li{
     text-transform: uppercase;
     color: var(--cor-preto);
 }
+
 @media screen and (max-width: 900px) {
     .visao_quadrados ul{
         display: flex; 
