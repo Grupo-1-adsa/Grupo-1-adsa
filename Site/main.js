@@ -90,7 +90,7 @@ function validar() {
     }
 
     else {
-        tremerTel.style.display = "none"
+        tremerEmail.style.display = "none"
     }
 
 }
