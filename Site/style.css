@@ -201,6 +201,7 @@ li{
     background-image: url(img/quadsvg.svg);
     background-repeat: no-repeat;
     background:cover ;
+    margin:10em auto;
 }
 .visao_quadrados_txt{
     display: flex;
@@ -369,7 +370,7 @@ li{
 
 .flip-container, .front, .back {
     height: 20em;
-    width: 25em;
+    width: 20em;
 }
 
 .flipper {

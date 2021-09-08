@@ -97,7 +97,7 @@ function validar() {
 
 function redirecionando() {
 
-    if (username.value.length > 0 && cnpj.value.length == 14 && cep.value.length == 8 && tel.value.length == 11) {
+    if (username.value.length > 0 && cnpj.value.length == 14 && cep.value.length == 8 && tel.value.length == 11 && email.value.length > 0 ) {
         window.location.href = "login.html"
     }
     else{
