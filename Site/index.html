@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FastTech</title>
     <meta name="theme-color" content="#5878fac0">
-    <meta name="viewport" content="width-device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="./img/fone1.png" type="image/x-icon">
     <link rel="stylesheet" href="main.js">
@@ -38,7 +37,7 @@
                     <li><a data-links href="#home">home</a></li>
                     <li><a data-links href="#visao">sobre nós</a></li>
                     <li><a data-links href="#contato">Contato</a></li>
-                    <li><a data-links href="login.html" class="login">Entrar</a></li>
+                    <li><a data-links href="Login/login.html" class="login">Entrar</a></li>
                     <li><a data-links href="" class="download">Download</a></li>
 
                 </ul>
@@ -52,7 +51,7 @@
                     <p>Somos uma empresa
                         inovadora que busca soluções
                         tecnológicas para contact centers.</p>
-                    <button>Saiba mais</button><button>Contato</button>
+                    <button><a href="#visao">Saiba mais</a></button><button><a href="#contato">Contato</a></button>
                 </div>
             </section>
         </section>
@@ -99,7 +98,7 @@
         </div>
     </section>
     <section class="sobre_bk">
-        <h1>Nossa Equipe</h1>
+        <h1 class="sec-title">Nossa Equipe</h1>
 
         <div class="integrantes">
 
@@ -209,22 +208,35 @@
     </section>
     <section id="contato" class="contato">
         <section class="container">
-            <form action="" class="contato-formulario">
-                <h1 class="contato-titulo">Contato</h1>
-                <h1>Digite seu email</h1>
-                <input type="text">
-                <h1>Escolha um tipo:</h1>
-                <select name="" id="">
-                    <option value="">Dúvida</option>
-                    <option value="">Reclamação</option>
-                    <option value="">Feedback</option>
-                </select>
-                <h1>Mensagem</h1>
-                <input type="text" class="contato-texto">
-                <button>Enviar</button>
-            </form>
+          <h2 class="sec-title">Contato</h2>
+          <form action="" class="contato-formulario">
+            <section>
+              <div class="input-field">
+                <input class="in_form" placeholder="Insira seu email" />
+                <div class="underline"></div>
+              </div>
+            </section>
+            <section>
+              <div class="input-field">
+                  <select name="" id="" class="in_form">
+                      <option value="">Dúvida</option>
+                      <option value="">Reclamação</option>
+                      <option value="">Feedback</option>
+                  </select>
+                <div class="underline"></div>
+              </div>
+            </section>
+            <section>
+              <div class="input-field">
+                <input class="in_form" placeholder="Insira a sua mensagem" />
+                <div class="underline"></div>
+              </div>
+            </section>
+  
+            <input class="in_form" autocomplete="off" type="submit" value="Continue" />
+          </form>
         </section>
-    </section>
+      </section>
     
     <footer class="footer">
         <section class="container">
