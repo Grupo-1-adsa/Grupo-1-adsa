@@ -319,7 +319,7 @@ li{
     font-weight: 800 !important;
     font-size: 2em;
     margin: 2.5em 0 0 0;
-    font-family: var(--font-roboto-titulo);
+    font-family: var(--font-roboto-titulo) !important;
     text-align: center;
 }
 
@@ -437,12 +437,14 @@ li{
 }
 
 .sec-title {
-    font-weight: 600;
+    font-weight: 600; 
+    font-family: var(--font-roboto-titulo);
     margin-bottom: 2rem;
     position: relative;
 }
  .sec-title::before {
     content: '';
+    font-family: var(--font-roboto-titulo);
     position: absolute;
     height: 4px;
     width: 25px;
