@@ -84,20 +84,20 @@ function validar() {
         tremerCep.style.display = "none"
         tremerTel.style.display = "block"
     }
-    else if (email.value.length !=11){
+    else if (email.value.length == 0){
         tremerTel.style.display = "none"
         tremerEmail.style.display = "block"
     }
 
     else {
-        tremerTel.style.display = "none"
+        tremerEmail.style.display = "none"
     }
 
 }
 
 function redirecionando() {
 
-    if (username.value.length > 0 && cnpj.value.length == 14 && cep.value.length == 8 && tel.value.length == 11) {
+    if (username.value.length > 0 && cnpj.value.length == 14 && cep.value.length == 8 && tel.value.length == 11 && email.value.length > 0 ) {
         window.location.href = "login.html"
     }
     else{
