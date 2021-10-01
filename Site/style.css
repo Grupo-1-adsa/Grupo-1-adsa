@@ -96,7 +96,6 @@ body{
 a{
     color: var(--cor-secundaria-cinza);
     text-decoration: none;
-    text-transform: uppercase;
     font-family: var(--font-montserrat-corpo);
 }
 ul{
@@ -202,6 +201,7 @@ li{
     background-image: url(img/quadsvg.svg);
     background-repeat: no-repeat;
     background:cover ;
+    margin:10em auto;
 }
 .visao_quadrados_txt{
     display: flex;
@@ -319,7 +319,7 @@ li{
     font-weight: 800 !important;
     font-size: 2em;
     margin: 2.5em 0 0 0;
-    font-family: var(--font-roboto-titulo);
+    font-family: var(--font-roboto-titulo) !important;
     text-align: center;
 }
 
@@ -423,102 +423,102 @@ li{
     font-family: var(--font-montserrat-corpo);
     font-size: 2em;
 }
-.contato-formulario h1{
-    font-size:  2em;
-}
-.contato-formulario{
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
-    padding: 10em;
-    margin: 10em;
-    background-color: var(--cor-primario-azul);
-    opacity: 0.6;
-    border-radius: 44px;
-}
-.contato-formulario input , select{
-    margin: 1rem;
-    width: 80%;
-    height: 3rem;
-    border-radius: 33px;
-    border-style: none;
-    font-size: 1.5em;
-    text-orientation: sideways-right;
-}
-.contato-formulario select{
-    text-align: center;
-}
-.contato-formulario button{
-    width: 7em;
-    height: 2.7em;
-    margin:  2rem .5rem;
-    border-style: none;
-    background-color: var(--cor-terciaria-roxo);
-    font-size: 2rem;
-    color: var(--cor-secundaria-cinza);
-    font-weight: 500;
-    font-family: var(--font-roboto-titulo);
-    border-radius: 50px;
-    cursor: pointer;
-}
-.contato-texto{
-    height: 200px !important;
-}
-.contato-titulo{
+.contato {
+    min-width: 320px;
+    min-height: 40vh;
+    padding: 5em 0;
     font-size: 2em;
-    border-bottom: 5px solid var(--cor-terciaria-roxo);
-    margin: 1em;
-    text-transform: uppercase;
-    color: var(--cor-preto);
-}.contato-formulario h1{
-    font-size:  2em;
+    border-radius: 8px;
 }
-.contato-formulario{
+.contato .container{
     display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
+    flex-flow: column;
     align-items: center;
-    padding: 10em;
-    margin: 10em;
-    background-color: var(--cor-primario-azul);
-    opacity: 0.6;
-    border-radius: 44px;
 }
-.contato-formulario input , select{
-    margin: 1rem;
-    width: 80%;
-    height: 3rem;
-    border-radius: 33px;
-    border-style: none;
-    font-size: 1.5em;
-    text-orientation: sideways-right;
-}
-.contato-formulario select{
-    text-align: center;
-}
-.contato-formulario button{
-    width: 7em;
-    height: 2.7em;
-    margin:  2rem .5rem;
-    border-style: none;
-    background-color: var(--cor-terciaria-roxo);
-    font-size: 2rem;
-    color: var(--cor-secundaria-cinza);
-    font-weight: 500;
+
+.sec-title {
+    font-weight: 600; 
     font-family: var(--font-roboto-titulo);
-    border-radius: 50px;
+    margin-bottom: 2rem;
+    position: relative;
+}
+ .sec-title::before {
+    content: '';
+    font-family: var(--font-roboto-titulo);
+    position: absolute;
+    height: 4px;
+    width: 25px;
+    bottom: 3px;
+    left: 0;
+    border-radius: 8px;
+    background: linear-gradient(45deg, #8e2de2, #4a00e0);
+}
+.contato-formulario {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+}
+.input-field {
+    position: relative;
+}
+.contato-formulario .input-field:first-child {
+    margin-bottom: 1.5rem;
+}
+.input-field .underline::before {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    bottom: -5px;
+    left: 0;
+    background: rgba(0, 0, 0, 0.2);
+}
+.input-field .underline::after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    bottom: -5px;
+    left: 0;
+    background: linear-gradient(45deg, #8e2de2, #4a00e0);
+    transform: scaleX(0);
+    transition: all .3s ease-in-out;
+    transform-origin: left;
+}
+.input-field .in_form:focus ~ .underline::after {
+    transform: scaleX(1);
+}
+.input-field .in_form {
+    outline: none;
+    font-size: 0.9rem;
+    color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    border-style: none;
+}
+.input-field .in_form::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+}
+.contato-formulario .in_form[type="submit"] {
+    margin-top: 2rem;
+    padding: 0.4rem;
+    width: 100%;
+    background: linear-gradient(to left, #5879FA, #8e54e9);
     cursor: pointer;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 300;
+    border-radius: 4px;
+    transition: all 0.3s ease;
 }
-.contato-texto{
-    height: 200px !important;
+.contato-formulario .in_form[type="submit"]:hover {
+    letter-spacing: 0.5px;
+    background: linear-gradient(to right, #4776E6, #014f86);
 }
-.contato-titulo{
-    font-size: 2em;
-    border-bottom: 5px solid var(--cor-terciaria-roxo);
-    margin: 1em;
-    text-transform: uppercase;
-    color: var(--cor-preto);
+.in_form{
+    background-color: var(--cor-secundaria-cinza);
+    height: 4em;
+    font-size: 1em !important;
 }
 
 @media screen and (max-width: 900px) {
@@ -580,20 +580,14 @@ li{
       .home-content p{
         width: 100%;
     }     
-    .contato-formulario{
-        margin: 5em 0;
-        padding: 3em 0;
-        width: 100%;
-    }
+    
     .flip-container, .front, .back{
         width: 100%;
     }
     form input {
         font-size: 24px;
     }
-    .contato-formulario h1 {
-        text-align: center;
-    }
+   
     .flip-container img{
         width: 100%;
     }
@@ -608,6 +602,7 @@ li{
         background-size: 150em;
     }
 }
+
 
 .burguer{
     display: none;
@@ -693,6 +688,9 @@ li{
     .navegacao ul li:hover{
         background-color: var(--cor-terciaria-roxo);
         opacity: 0.3;
+    }
+    .contato{
+        font-size: 1.2em;
     }
   }
 
