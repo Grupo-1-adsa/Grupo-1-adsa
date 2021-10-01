@@ -84,7 +84,7 @@ function validar() {
         tremerCep.style.display = "none"
         tremerTel.style.display = "block"
     }
-    else if (email.value.length !=11){
+    else if (email.value.length == 0){
         tremerTel.style.display = "none"
         tremerEmail.style.display = "block"
     }
