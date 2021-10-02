@@ -4,9 +4,11 @@
   --cor-primario-azul: #5879fa;
   --cor-secundaria-cinza: #e9ebf0;
   --corcinza-escuro: #575757;
+  --corcinza-claro: #b8b8b8;
   --cor-white: #ffffff;
   --cor-oposto-vermelho: red;
   --cor-terciaria-roxo: #7644d4;
+  --cor-roxo-claro: #c5afec;
   --cor-preto: #000;
   --font-roboto-titulo: "Roboto", sans-serif;
   --font-montserrat-corpo: "Montserrat", sans-serif;
@@ -51,6 +53,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-flow: column;
+  box-shadow: 5px 7px 13px 1px var(--cor-roxo-claro)
 }
 
 .dash-content {
@@ -88,7 +91,7 @@ a {
   position: absolute;
   display: flex;
   flex-flow: row;
-  top: 60px;
+  top: 30px;
   right: 660px;
 }
 
@@ -102,6 +105,7 @@ a {
   height: 15px;
   width: 220px;
   padding: 10px;
+  box-shadow: 5px 7px 13px 1px var(--corcinza-escuro);
 }
 
 ::-webkit-input-placeholder {
@@ -126,11 +130,23 @@ a {
 
 .box-funcionarios {
   position: absolute;
-  display: flex;
+  display:block;
   top: 110px;
   right: 50px;
-  background-color: yellow;
-  float: left;
+  height: 405px;
+  width: 138vh;
+  overflow-y: scroll;
+}
+::-webkit-scrollbar-track {
+  background-color: #F4F4F4;
+}
+::-webkit-scrollbar {
+  width: 6px;
+  background: #7a0000;
+}
+::-webkit-scrollbar-thumb {
+  background:var(--corcinza-claro);
+  border-radius: 20px;
 }
 
 .conteudo-funcionario {
@@ -139,10 +155,12 @@ a {
   width: 30vh;
   border-radius: 30px;
   margin-right: 10px;
-  margin-left: 20px;
+  margin-left: 10px;
+  padding: 0;
   margin-top: 10px;
   text-align: center;
   box-shadow: 5px 7px 13px 1px var(--corcinza-escuro);
+  float: left;
 }
 
 .user-box {
