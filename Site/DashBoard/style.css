@@ -47,7 +47,8 @@ body {
 .nav-bar {
   height: 80%;
   width: 15em;
-  background: #8c4af2;
+  background: rgb(158, 97, 252);
+  background: linear-gradient(158deg, rgba(158, 97, 252, 1) 0%, rgba(44, 49, 182, 1) 100%);
   border-radius: 44px;
   display: flex;
   justify-content: center;
@@ -87,6 +88,8 @@ a {
   color: rgb(237, 237, 253);
 }
 
+/* Barra de pesquisa */
+
 .pesquisa {
   position: absolute;
   display: flex;
@@ -96,14 +99,13 @@ a {
 }
 
 .pesquisa input {
-  font-family: 'Lato', sans-serif;
+  height: 15px;
+  width: 220px;
   font-size: 15px;
   border: none;
   background-color: var(--cor-white);
   border-radius: 30px;
   margin-top: 12px;
-  height: 15px;
-  width: 220px;
   padding: 10px;
   box-shadow: 5px 7px 13px 1px var(--corcinza-escuro);
 }
@@ -113,8 +115,8 @@ a {
 }
 
 .btn-busca {
-  width: 20px!important;
   height: 22px;
+  width: 20px!important;
   cursor: pointer!important;
   border: none;
   position: absolute;
@@ -128,65 +130,102 @@ a {
   width: 20px!important;
 }
 
+/* Box de funcionários */
+
 .box-funcionarios {
+  height: 65%;
+  width: 77%;
   position: absolute;
-  display:block;
+  display: block;
   top: 110px;
   right: 50px;
-  height: 405px;
-  width: 138vh;
   overflow-y: scroll;
 }
+
 ::-webkit-scrollbar-track {
   background-color: #F4F4F4;
 }
+
 ::-webkit-scrollbar {
   width: 6px;
   background: #7a0000;
 }
+
 ::-webkit-scrollbar-thumb {
-  background:var(--corcinza-claro);
+  background: var(--corcinza-claro);
   border-radius: 20px;
 }
 
 .conteudo-funcionario {
+  height: 46%;
+  width: 22%;
   background: var(--cor-white);
-  height: 30vh;
-  width: 30vh;
   border-radius: 30px;
   margin-right: 10px;
   margin-left: 10px;
-  padding: 0;
   margin-top: 10px;
+  padding: 0;
   text-align: center;
   box-shadow: 5px 7px 13px 1px var(--corcinza-escuro);
   float: left;
+  text-decoration: none;
 }
+
+.conteudo-funcionario h2 {
+  margin-top: 15%;
+  font-family: var(--font-roboto-titulo);
+  font-size: 20px;
+}
+
+.conteudo-funcionario ul li{
+  list-style-type: none;
+  list-style: none;
+}
+
+.conteudo-funcionario a {
+  text-decoration: none;
+  color: var(--cor-terciaria-roxo);
+
+}
+
+/* Box perfil usuário */
 
 .user-box {
   position: absolute;
   display: flex;
   flex-flow: row;
   top: 30px;
-  right: 50px;
+  right: 100px;
 }
 
 .user-box div h1 {
   font-family: var(--font-roboto-titulo);
   font-weight: 600;
-  font-size: 24px;
+  font-size: 16px;
   color: #2C3F83;
+  margin-left: 10px;
 }
 
 .user-box div h3 {
   font-family: var(--font-roboto-titulo);
   font-weight: 400;
   color: #2C3F83;
-  font-size: 16px;
+  font-size: 13px;
+  margin-left: 10px;
+}
+
+.img-perfil {
+  width: 60px;
+}
+
+.seta {
+  width: 22px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.info-user {
+  margin-top: 17px;
 }
 
 /* apagar dps */
-
-img {
-  width: 100px;
-}
