@@ -1,0 +1,104 @@
+.dashinfo{
+  width: 970px;
+}
+.conteiner_grafico{
+ display: flex;
+overflow:hidden ;
+ flex-direction: column-reverse;
+
+
+}
+#myChart{
+  height: 300px !important;
+}
+.alertas_sup{
+  display: flex;
+   padding-top: 10px;
+   padding-left: 10px;
+   align-items: center;
+  overflow-x: scroll;
+
+}
+.perfilFunc h1::after{
+  content: '';
+  display: inline-block;
+  height: 4px;
+  width: 10px;
+  background-color: tomato;
+  border-radius: 2px;
+  margin: 0 auto;
+  margin-bottom: 2.5px;
+  margin-left:5px;
+}
+.alertas_sup a{
+  text-decoration: none;
+  color: #333;
+}
+
+.alertas_sup::-webkit-scrollbar {
+  width: 18px;
+}
+
+.alertas_sup::-webkit-scrollbar-thumb {
+  background: #8d4af26c;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-left: 3px solid rgb(237, 237, 253);
+  border-right: 3px solid rgb(237, 237, 253);
+}
+
+.alertas_sup::-webkit-scrollbar-track {
+  background: rgb(237, 237, 253);
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 769px){
+  .dashinfo{
+    width: 670px;
+  }
+  .graficosDesempenhoGeral div{
+     margin-top: 90px;
+  }
+  #myChart{
+    height: 720px !important;
+    width: 100%;
+  }
+}
+  @media only screen and (max-width: 768px) and (min-width: 376px){
+    .containerDash {
+      height: 96.5vh;
+      border-radius: 15px !important;
+    }
+    #myChart{
+      height: 590px !important;
+    }
+    .dashinfo{
+      width: 630px;
+    }
+    .graficosDesempenhoGeral div{
+       margin-top: 90px;
+    }
+    #myChart{
+      height: 630px !important;
+    }
+}
+
+@media only screen and (max-width: 375px){
+  .dashinfo{
+    width: 295px;
+  }
+
+  .infoBalao{
+    width: 110px;
+
+  }
+  .containerDash {
+    height: 96.5vh;
+    border-radius: 15px !important;
+  }
+ #myChart{
+   height: 320px !important;
+ }
+}

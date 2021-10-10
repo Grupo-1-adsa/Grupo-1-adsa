@@ -1,0 +1,78 @@
+.containerDash_func{
+  display: grid;
+  grid-template-columns: 280px 2fr 240px;
+  align-items: center;
+  grid-gap: 30px;
+  justify-content: center;
+
+  height: 445px;
+  padding: 0px 20px;
+}
+
+.baloom{
+  background-color: white;
+  padding: 10px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  width: 100%;
+  height: auto;
+}
+.info{
+  display: block;
+  background-color: #8d4af236;
+  margin-bottom: 5px;
+  border-radius: 2px;
+  padding: 2px;
+}
+.baloom h1{
+  font-weight: bold !important;
+  margin-top: 20px;
+}
+.baloom p {
+  color: #333;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.baloom ul li {
+  letter-spacing: 1px;
+  margin: 10px;
+}
+.comportamental{
+
+  width: 100%;
+
+}
+#myChart3{
+  height: 255px !important;
+  width:  100% !important;
+}
+.containerDash_func h1 {
+  color: #333;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 1328px) {
+
+  .containerDash_func{
+    display: grid;
+    grid-template-columns: 400px;
+    align-items: center;
+    grid-gap: 0px;
+    justify-content: center;
+    height: 445px;
+    padding: 0px 20px;
+  }
+  .containerDash {
+    background-color: rgb(237, 237, 253);
+    height: 101vh;
+    width: 90%;
+    margin: 25px auto 0px auto;
+    border-radius: 110px;
+    display: grid;
+    grid-template-columns: 1fr;
+    box-shadow: 0px 0px 10px rgb(0 0 0 / 26%);
+}
+}

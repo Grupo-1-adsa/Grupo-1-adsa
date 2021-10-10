@@ -1,0 +1,77 @@
+.suporte_graficos{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0px;
+}
+.gf1{
+  display: flex;
+  width: 100%;
+
+  height: 285px;
+}
+.gf1 h1,.gf2 h1{
+  color: #333;
+  letter-spacing: 1px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 400;
+   margin-bottom: 20px;
+}
+.gf2{
+  width: 100%;
+  margin-top: 30px;
+}
+
+.maquina_hist{
+  
+  margin-right: 15px;
+  width: 50%;
+  height: 390px;
+  display: flex;
+  flex-direction: column;
+
+}
+.temp_hist{
+  width: 50%;
+  display: flex;
+  height: 295px;
+  align-items: center;
+  flex-direction: column;
+}
+.temp_hist h1{
+  width: 100%;
+  padding-left: 90px;
+}
+
+.gestorPerfil{
+ 
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.containerDash{
+  height: 120vh !important;
+}
+
+#myChart2{
+   height: 240px !important;
+   width: 280px !important;
+
+}
+#myChart{
+  height: 240px !important;
+  width: 100% !important;
+ 
+}
+#myChart3{
+  width:  90% !important;
+  height: 235px !important;
+}
+.title_sup{
+  color: #8C4AF2;
+  margin-bottom: 45px;
+  font-size: 30px;
+  width: 100%;
+  text-align: center;
+}
+

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dash.css">
+    <link rel="stylesheet" href="dashfuncgestor.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Dash Gestor</title>
+</head>
+
+<body>
+    <section class="containerDash">
+
+        <div class="containerMenu">
+            <nav class="containerNav">
+                <button class="close">X</button>
+                <div><img src="./img/logoBranco.png" alt="#"></div>
+                <h2>Dashboard</h2>
+                <ul class="lista_menu_geral">
+                    <li><a href="#">Minha Equipe</a></li>
+                    <li><a class="dwn" href="#">Extrato</a>
+                        <ul class="lista_submenu">
+                            <li> <a href="#">Semanal</a></li>
+                            <li> <a href="#">Mensal</a></li>
+                            <li> <a href="#">Anuanal</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Ajuda</a></li>
+                    <li><a href="#">Sair</a></li>
+                </ul>
+            </nav>
+        </div>
+        <section class="containerInfo">
+            <div class="cabecalho">
+                <a class="mphone" href="#">
+                    <div></div>
+                </a>
+                <div style="opacity: 0;" class="pesquisa">
+                    <img src="./img/lupa2.png" alt="#">
+                    <input type="text" placeholder="Pesquisar...">
+                </div>
+                <div class="gestorPerfil">
+                    <img src="./img/carinha2.png" alt="#">
+                    <div>
+                        <h4>Charlie brown jr</h4>
+                        <p>Gestor</p>
+                        <div class="box_perfil">
+                            <p> <a href="#">Configurações</a> </p>
+                            <p><a href="#">Sair</a></p>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <div class="containerDash_func">
+                <div class="baloom">
+                    <h1>Pedro Jorge</h1>
+                    <p>Maquina <span>101029</span></p>
+                    <ul>
+                        <li><span class="info">Atividade:</span> Inatividade ALTA</li>
+                        <li><span class="info">Desempenho :</span> Desempenho BAIXO</li>
+                        <li><span class="info">Status:</span> Verificar</li>
+                        <li><span class="info">Cel:</span> #55-11-999888738</li>
+                        <li><span class="info">Email:</span> PedrinhoMatador@gmail.com</li>
+                    </ul>
+                </div>
+                <div class="comportamental">
+                    <h1>Extrato Comportamental</h1>
+                    <canvas id="myChart2" height="170px"></canvas>
+                </div>
+                <div class="inatividade">
+                    <h1>Tempo de Inatividade</h1>
+                    <canvas id="myChart3"></canvas>
+                </div>
+            </div>
+        </section>
+    </section>
+</body>
+<script type="module" src="gestao2.js"></script>
+<script>
+    var ctx = document.getElementById('myChart3').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Red', 'Blue', 'Yellow'],
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 19, 3],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
+
+<script>
+    var ctx = document.getElementById('myChart2').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 19, 3, 5, 2, 3],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
+
+</html>
