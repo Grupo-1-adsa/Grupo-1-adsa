@@ -43,7 +43,7 @@ ul {
 .containerDash {
   background-color: rgb(237, 237, 253);
   height: 92vh;
-  width: 90%;
+  width: 85%;
   margin: 25px auto 0px auto;
   border-radius: 15px;
   display: grid;
@@ -188,7 +188,7 @@ ul {
 .lista_menu_geral li a {
   color: white;
   font-weight: bold;
-  font-family: monospace;
+  font-family: sans-serif;
   font-size: 18px;
   text-decoration: none;
   cursor: pointer;
@@ -331,6 +331,11 @@ ul {
   max-height: 70vh;
   overflow-y: scroll;
   grid-gap: 10px !important;
+}
+
+.containerInfoBalao a {
+  text-decoration: none;
+  color: blueviolet;
 }
 
 .containerInfoBalao::-webkit-scrollbar {
