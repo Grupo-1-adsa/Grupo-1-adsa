@@ -1,0 +1,7 @@
+1.	A empresa entra em contato conosco
+2.	Verificamos se é empresa certa para fazer o cadastro
+3.	Explicamos melhor o produto
+4.	Enviamos as informações de como funciona, o passo a passo de como a empresa obterá nosso produto.
+5.	O gestor terá acesso a Dash
+6.	O funcionário baixará o procastinator
+7.	Poderão usar os produtos 
