@@ -17,7 +17,7 @@ CREATE TABLE Empresa  (
 CREATE TABLE Responsavel  (
     idResponsavel INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
     nomeReponsavel VARCHAR(45) NOT NULL,
-    CPF CHAR(11) NOT NULL,
+    CPF CHAR(14) NOT NULL,
     loginResponsavel VARCHAR(45) NOT NULL,
     senhaResponsavel VARCHAR(45) NOT NULL,
     telefone VARCHAR(11) NOT NULL,
@@ -51,3 +51,74 @@ CREATE TABLE Leitura (
 	HD VARCHAR(45) NOT NULL,
 	fkEquipamento INT FOREIGN KEY REFERENCES [dbo].[Equipamento](idEquipamento)
 )
+
+--Insert de empresa teste no banco manualmente
+
+Insert into Empresa	(
+	loginEmpresa, 
+	senhaEmpresa, 
+	nomeEmpresa, 
+	CNPJ, 
+	telefone, 
+	email, 
+	logradouro, 
+	cidade, 
+	numero, 
+	complemento, 
+	cep, 
+	bairro) 
+	values 
+ 		(
+		'Bandtec',
+		'Urubu100',
+		'Digital School',
+		'66864270000159',
+		'11994434432',
+		'digitalschool@bandtec.com.br',
+		'Rua Haddock Lobo', 
+		'São Paulo', 
+		'513', 
+		null, 
+		'02324220', 
+		'Consolação'
+	)
+	select * from [dbo].[Empresa]
+
+    INSERT INTO
+	[dbo].[Funcionario]
+	(
+	nomeFuncionario,
+	telefone,
+	email,
+	loginFuncionario,
+	senhaFuncionario,
+	fkResponsavel
+	)
+	VALUES 
+	(
+	'Pedrinho',
+	'11983873473',
+	'pedrinho@gmail.test',
+	'pedrinho',
+	'Urubu100',
+	1
+	)
+
+    select * from [dbo].[Funcionario] 
+
+    -- INSERT INTO 
+	-- [dbo].[Leitura]
+	-- (
+	-- CPU,
+	-- RAM,
+	-- HD,
+	-- fkEquipamento
+	-- )
+	-- VALUES
+	-- (
+	-- '',
+	-- '10',
+	-- '2'
+	-- ) mudar depois os campos erro de regra de negócio
+
+    jdbc:sqlserver://procrastinator.database.windows.net:1433;database=procrastinator;user=procrastinator@procrastinator;password={your_passoword_here};encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
