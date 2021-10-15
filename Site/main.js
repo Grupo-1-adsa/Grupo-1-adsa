@@ -39,14 +39,7 @@ const btn = document.querySelector(".burguer");
 const menu = document.querySelector(".navegacao");
 const cabeca = document.querySelector(".titulo");
 const burger = document.querySelector(".burguer");
-btn.addEventListener("click", () => {
 
-    menu.classList.toggle("ativo");
-    cabeca.classList.toggle("fx");
-    btn.classList.toggle("open");
-
-
-});
 
 const links = document.querySelectorAll(".cont_li li a");
 const arraylinks = Array.from(links);
@@ -95,12 +88,26 @@ function validar() {
 
 }
 
-function redirecionando() {
+
+
+
+const butt = document.querySelector("#btnjs");
+
+butt.addEventListener("click",()=>{
 
     if (username.value.length > 0 && cnpj.value.length == 14 && cep.value.length == 8 && tel.value.length == 11 && email.value.length > 0 ) {
-        window.location.href = "login.html"
+        const titulo = document.querySelector(".emp");
+        titulo.innerText = "Em breve Entraremos em contato"
+        const corpo =  document.querySelector(".formularioCadastro");
+        corpo.innerHTML = ` <div class="contef">
+        <h1>Obrigado por se cadastrar</h1>
+        <p class="check">Seu email foi recebido com sucesso</p>
+        <img class="cartinha" src="../img/carta.gif" alt="#">
+     </div>`;
+     corpo.classList.add("send");
     }
     else{
         validar()
     }
-}
+ 
+});

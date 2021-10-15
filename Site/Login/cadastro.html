@@ -27,12 +27,11 @@
     </header>
 
     <main class="form-cadastro">
-        <h2>Cadastro Empresa</h2>
-        <form name="formularioCadastro" onsubmit="return false">
+        <h2 class="emp">Cadastro Empresa</h2>
+        <form class="formularioCadastro" name="formularioCadastro" onsubmit="return false">
             <section>
                 <div class="input-field">
-                    <input autocomplete="off" type="text" name="username" id="username"
-                        placeholder="Informe o Nome da Empresa" onkeyup="validar()">
+                    <input autocomplete="off" type="text" name="username" id="username" placeholder="Informe o Nome da Empresa" onkeyup="validar()">
                     <div class="underline"></div>
 
                     <div id="tremerUsername" class="vai_tremer"></div>
@@ -41,15 +40,13 @@
             <div>
 
                 <div class="input-field">
-                    <input autocomplete="off" type="text" name="cnpj" id="cnpj" placeholder="Informe o CNPJ"
-                        onkeyup="validar()">
+                    <input autocomplete="off" type="text" name="cnpj" id="cnpj" placeholder="Informe o CNPJ" onkeyup="validar()">
                     <div class="underline"></div>
                     <div id="tremerCnpj" class="vai_tremer"></div>
                 </div>
                 <section>
                     <div class="input-field">
-                        <input autocomplete="off" type="text" name="cep" id="cep" placeholder="Informe o CEP"
-                            onkeyup="validar()">
+                        <input autocomplete="off" type="text" name="cep" id="cep" placeholder="Informe o CEP" onkeyup="validar()">
                         <div class="underline"></div>
                         <div id="tremerCep" class="vai_tremer"></div>
                     </div>
@@ -57,41 +54,26 @@
             </section>
             <section>
                 <div class="input-field">
-                    <input autocomplete="off" type="text" name="tel" id="tel" placeholder="Informe o Telefone"
-                        onkeyup="validar()">
+                    <input autocomplete="off" type="text" name="tel" id="tel" placeholder="Informe o Telefone" onkeyup="validar()">
                     <div class="underline"></div>
                     <div id="tremerTel" class="vai_tremer"></div>
                 </div>
             </section>
 
             <div class="input-field">
-                <input autocomplete="off" type="text" name="email" id="email" placeholder="Informe o Email"
-                    onkeyup="validar()">
+                <input autocomplete="off" type="text" name="email" id="email" placeholder="Informe o Email" onkeyup="validar()">
                 <div class="underline"></div>
                 <div id="tremerEmail" class="vai_tremer"></div>
             </div>
 
-            <input type="submit" value="Continue" onclick="redirecionando()">
+            <input id="btnjs" type="submit" value="Enviar">
         </form>
         <div class="footer">
-            <input type="checkbox" checked="checked" value="Lembrar"> Lembrar-me<br>
-            <div class="social-fields">
-                <div class="social-field cadastro">
-                    <a href="cadastro.html">
-                        Não tem uma conta? Cadastre-se
-                    </a>
-                </div>
-                <div class="social-field senha">
-                    <a href="#">
-                        Esqueceu senha
-                    </a>
-                </div>
-            </div>
         </div>
 
     </main>
 
-<script src="../main.js"></script>
+    <script src="../main.js"></script>
 </body>
 
 </html>

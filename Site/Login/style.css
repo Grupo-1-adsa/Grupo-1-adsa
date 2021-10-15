@@ -8,6 +8,11 @@
     font-family: "Poppins", sans-serif;
 }
 
+.cartinha{
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+}
 :root {
     --cor-primario-azul: #5879FA;
     --cor-secundaria-cinza: #E9EBF0;
@@ -313,4 +318,44 @@ main.form-cadastro {
     100% {
         margin-left: 0;
     }
+}
+.send{
+    background-color: rgb(255, 253, 253) !important;
+    padding: 10px;
+}
+
+.send h1 {
+    color:  var(--cor-terciaria-roxo);
+}
+
+.contef{
+    animation: avancar .2s;
+}
+
+
+@keyframes avancar {
+    0% {
+     transform: translate3d(-300px,0,0);
+     opacity: 0;
+    }
+   50%{
+    transform: translate3d( -10px,0,0);
+    opacity: 0.5;
+   }
+   100%{
+       opacity: 1;
+       transform: translate3d( 0px,0,0);
+   }
+}
+
+.check::after{
+ content: "";
+ background-image: url(../img/checked.png);
+ background-repeat: no-repeat;
+ background-position: center;
+ background-size: cover;
+ width: 15px;
+ height: 15px;
+ display: inline-block;
+ margin-left: 5px;
 }
