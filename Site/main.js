@@ -95,7 +95,7 @@ const butt = document.querySelector("#btnjs");
 
 butt.addEventListener("click",()=>{
 
-    if (username.value.length > 0 && cnpj.value.length == 14 && cep.value.length == 8 && tel.value.length == 11 && email.value.length > 0 ) {
+    if (true ) {
         const titulo = document.querySelector(".emp");
         titulo.innerText = "Em breve Entraremos em contato"
         const corpo =  document.querySelector(".formularioCadastro");
