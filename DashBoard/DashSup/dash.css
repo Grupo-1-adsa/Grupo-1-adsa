@@ -26,7 +26,7 @@
 /* body*/
 body {
   background: rgb(237, 237, 253);
-  background: linear-gradient( 0deg, rgba(237, 237, 253, 1) 15%, rgba(179, 179, 204, 1) 100%);
+  background: linear-gradient( 90deg, rgba(237, 237, 253, 1) 15%, rgba(179, 179, 204, 1) 100%);
   display: flex;
   justify-content: center;
   align-items: center;
