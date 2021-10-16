@@ -56,26 +56,32 @@
 
 
             </div>
-            <div class="dashinfo">
-                <div class="suporte_graficos">
-
-                    <div class="gf1">
-                        <div class="maquina_hist">
-                            <h1>Historico da máquina</h1>
-                            <canvas id="myChart"></canvas>
-                        </div>
-                        <div class="temp_hist">
-                            <h1>Tempo inatividade</h1>
-                            <canvas id="myChart2"></canvas>
-                        </div>
-
+            <div class="containerSup">
+                <div class="g1">
+                    <div>
+                        <canvas id="myChart" width="550"></canvas>
                     </div>
-
-                    <div class="gf2">
-                        <h1>Extrato Desempenho maquina</h1>
+                </div>
+                <div class="g2">
+                    <div>
+                        <canvas id="myChart2"></canvas>
+                    </div>
+                </div>
+                <div class="g3">
+                    <div>
                         <canvas id="myChart3"></canvas>
                     </div>
-
+                </div>
+                <div class="g4">
+                    <ul>
+                        <li>Informação de A: <span>1029</span></li>
+                        <li>Informação de B: <span>1029</span></li>
+                        <li>Informação de C: <span>1029</span></li>
+                        <li>Informação de D: <span>1029</span></li>
+                        <li>Informação de E: <span>1029</span></li>
+                        <li>Informação de F: <span>1029</span></li>
+                        <li>Informação de G: <span>1029</span></li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -161,7 +167,7 @@
 <script>
     var ctx = document.getElementById('myChart3').getContext('2d');
     var myChart = new Chart(ctx, {
-        type: 'bar',
+        type: 'line',
         data: {
             labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
             datasets: [{

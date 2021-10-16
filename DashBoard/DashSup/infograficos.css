@@ -50,28 +50,108 @@
   justify-content: flex-end;
 }
 .containerDash{
-  height: 120vh !important;
+  height: 90vh !important;
 }
 
-#myChart2{
-   height: 240px !important;
-   width: 280px !important;
 
-}
-#myChart{
-  height: 240px !important;
-  width: 100% !important;
- 
-}
-#myChart3{
-  width:  90% !important;
-  height: 235px !important;
-}
 .title_sup{
   color: #8C4AF2;
-  margin-bottom: 45px;
+  margin-bottom: 10x;
   font-size: 30px;
-  width: 100%;
+  width: 70%;
   text-align: center;
 }
 
+.containerSup{
+  height: 430px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+  overflow-y:scroll;
+}
+
+
+.g1,.g2,.g3,.g4{
+  height: 300px;
+   margin-top: 5px;
+   margin-bottom: 30px;
+   padding: 5px 5px;
+}
+
+
+.g1::before{
+  content: "Histórico de Memória";
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  border-bottom: 2px solid #8d4af236;
+  padding-bottom: 5px;
+  width: 35px;
+}
+.g2::before{
+  content: "CPU";
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  border-bottom: 2px solid #8d4af236;
+  padding-bottom: 5px;
+  width: 35px;
+}
+.g3::before{
+  content: "Grafico informativo";
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  border-bottom: 2px solid #8d4af236;
+  padding-bottom: 5px;
+  width: 35px;
+}
+.g4::before{
+  content: "Mais Informações";
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  border-bottom: 2px solid #8d4af236;
+  padding-bottom: 5px;
+  width: 35px;
+}
+#myChart2{
+  height: 260px !important;
+  width: 260px !important;  
+}
+
+.g4 ul{
+  margin-top: 15px;
+ 
+}
+.g2{
+  display: flex;
+  justify-content: center;
+
+  flex-direction: column;
+}
+.g4 ul li{
+  margin-bottom: 15px;
+  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  letter-spacing: 1px;
+}
+
+.g4 ul li:nth-child(odd){
+  background-color: #8d4af252;
+}
+#myChart1,#myChart2,#myChart3,#myChart4{
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+.containerSup::-webkit-scrollbar {
+  width: 18px;
+}
+
+.containerSup::-webkit-scrollbar-thumb {
+  background: #8d4af26c;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-left: 3px solid rgb(237, 237, 253);
+  border-right: 3px solid rgb(237, 237, 253);
+}
+
+.containerSup::-webkit-scrollbar-track {
+  background: rgb(237, 237, 253);
+  cursor: pointer;
+}

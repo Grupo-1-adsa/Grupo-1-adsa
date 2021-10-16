@@ -1,6 +1,6 @@
 .containerDash_func{
   display: grid;
-  grid-template-columns: 280px 2fr 240px;
+  grid-template-columns: 240px 1fr 270px;
   align-items: center;
   grid-gap: 30px;
   justify-content: center;
@@ -75,4 +75,10 @@
     grid-template-columns: 1fr;
     box-shadow: 0px 0px 10px rgb(0 0 0 / 26%);
 }
+}
+
+.comportamental h1,.inatividade h1{
+   border-bottom: 2px solid #8d4af236;
+  padding-left: 5px;
+  padding-bottom: 5px;
 }

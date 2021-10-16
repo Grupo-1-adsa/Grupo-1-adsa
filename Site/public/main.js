@@ -105,12 +105,22 @@ function sendEmail() {
 
 function redirecionando() {
 
+<<<<<<< HEAD:Site/public/main.js
     const titulo = document.querySelector(".emp");
     titulo.innerText = "Em breve falaremos com você!"
     const corpo = document.querySelector(".formularioCadastro");
     corpo.innerHTML = ` <div class="contef">
         <h1>Obrigado por entrar em contato</h1>
         <p class="check">Dados enviados com sucesso!</p>
+=======
+    if (true) {
+        const titulo = document.querySelector(".emp");
+        titulo.innerText = "Em breve Entraremos em contato"
+        const corpo =  document.querySelector(".formularioCadastro");
+        corpo.innerHTML = ` <div class="contef">
+        <h1>Obrigado por se cadastrar</h1>
+        <p class="check">Seu email foi recebido com sucesso</p>
+>>>>>>> ec7e3978f12a548671d0c3f75505ad388a511d27:Site/main.js
         <img class="cartinha" src="../img/carta.gif" alt="#">
      </div>`;
     corpo.classList.add("send");
