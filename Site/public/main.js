@@ -55,6 +55,7 @@ links.forEach((link) => {
 var contador = 0;
 function enviando() {
     contador++
+    sendEmail()
 }
 
 function validar() {
@@ -81,50 +82,37 @@ function validar() {
 
     else { tremerUsername.style.display = "block" }
 
-    if (username.value.length > 0 && cnpj.value.length == 14 &&
-        cep.value.length == 8 && tel.value.length == 11 &&
-        email.value.length > 0 && contador == 1) {
-        sendEmail()
-    }
 }
 
-
 function sendEmail() {
+    if (username.value.length > 0 && cnpj.value.length == 14 &&
+        cep.value.length == 8 && tel.value.length == 11 &&
+        email.value.length > 0 && contador >= 1 ) {
 
-    fetch(`/email/1`, {
-        method: "POST",
-        body: new URLSearchParams(new FormData(formCadastro))
-    }).then(res => {
-        console.log(res.json.success + "true")
-        console.log(res.json)
-        if (res.json.success = true) {
-            redirecionando()
-        }
-    })
+        fetch(`/email/1`, {
+            method: "POST",
+            body: new URLSearchParams(new FormData(formCadastro))
+        }).then(res => {
+            console.log(res.json.success + "true")
+            console.log(res.json)
+            if (res.json.success = true) {
+                redirecionando()
+            }
+        })
+    }
 }
 
 function redirecionando() {
 
-<<<<<<< HEAD:Site/public/main.js
     const titulo = document.querySelector(".emp");
     titulo.innerText = "Em breve falaremos com você!"
     const corpo = document.querySelector(".formularioCadastro");
     corpo.innerHTML = ` <div class="contef">
         <h1>Obrigado por entrar em contato</h1>
         <p class="check">Dados enviados com sucesso!</p>
-=======
-    if (true) {
-        const titulo = document.querySelector(".emp");
-        titulo.innerText = "Em breve Entraremos em contato"
-        const corpo =  document.querySelector(".formularioCadastro");
-        corpo.innerHTML = ` <div class="contef">
-        <h1>Obrigado por se cadastrar</h1>
-        <p class="check">Seu email foi recebido com sucesso</p>
->>>>>>> ec7e3978f12a548671d0c3f75505ad388a511d27:Site/main.js
         <img class="cartinha" src="../img/carta.gif" alt="#">
      </div>`;
     corpo.classList.add("send");
-
 };
 
 
