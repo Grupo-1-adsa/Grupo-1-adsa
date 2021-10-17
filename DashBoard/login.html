@@ -5,10 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/1ab94d0eba.js" crossorigin="anonymous"></script>
     <link rel="icon" href="phone.png">
+    <link rel="shortcut icon" href="./DashGestor/img/" type="image/x-icon">
     <title>Login</title>
+    <link rel="shortcut icon" href="./DashGestor/img/logoBranco.svg" type="image/x-icon" />
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/1ab94d0eba.js" crossorigin="anonymous"></script>
 
 </head>
 
@@ -25,13 +27,14 @@
 
     <main class="form-login">
         <h2>Login</h2>
-        <form action="">
+
+        <form action="javascript:void(0)" onsubmit="validar()">
 
             <div class="toggle">
                 <h3>Suporte</h3>
 
-                <label class="switch" >
-                    <input type="checkbox" id="selectf">
+                <label class="switch">
+                    <input type="checkbox" id="selectf" value="off" onclick="ativar()">
                     <span class="slider round"></span>
                 </label>
 
@@ -48,24 +51,34 @@
                     placeholder="Entre com a sua Senha">
                 <div class="underline"></div>
             </div>
-
-            <input autocomplete="off" type="submit" value="Continue" onclick="validar()">
+            <a href="">Esqueceu senha, clique aqui</a>
+            <input autocomplete="off" type="submit" value="Continue">
         </form>
     </main>
-
-    <script src="../main.js"></script>
 </body>
 
 </html>
 
 <script>
+    var valueToggle = 0
 
-    function validar(event) {
-        
-        event.preventDefault();
+    function ativar() {
+        valueToggle++
+        if (valueToggle == 2) {
+            valueToggle = 0
+        }
+    }
 
-        console.log(selectf.value + "oi")
-    
+    function validar() {
+
+        console.log(selectf.value)
+        if (valueToggle == 1) {
+            window.location.href = './DashGestor/gestorDash.html';
+        } else {
+            window.location.href = './DashSup/supDash.html';
+
+        }
+
     }
 
 </script>

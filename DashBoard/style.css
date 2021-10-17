@@ -22,6 +22,7 @@
 
 body {
     background: linear-gradient(45deg, #4776E6, #E9EBF0);
+    background:  url(./DashGestor/img/fundoLogin.jpg);
     background-repeat: no-repeat;
     min-height: 100vh;
     min-width: 100vw;
@@ -33,7 +34,9 @@ body {
 }
 
 .header-login {
-    color: var(--cor-secundaria-cinza);
+    color: white;
+    text-shadow: #919191 0.1em 0.1em 0.3em;
+
     font-size: 1.33em;
     position: fixed;
     top: 0;
@@ -68,9 +71,9 @@ body {
 }
 
 a {
-    color: var(--cor-secundaria-cinza);
+    color: var(--cor-terciaria-roxo);
     text-decoration: none;
-    text-transform: uppercase;
+    margin-top: 20px;
 }
 
 ul li a:hover {
@@ -177,7 +180,7 @@ form .input-field:first-child {
 }
 
 form input[type="submit"] {
-    margin-top: 4rem;
+    margin-top: 3rem;
     padding: 0.4rem;
     width: 100%;
     background: linear-gradient(to left, #5879FA, #8e54e9);
