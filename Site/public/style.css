@@ -36,7 +36,7 @@ body {
 
 .titulo h1, .titulo i {
     z-index: 100000;
-    text-shadow: #333333 0.1em 0.1em 0.3em;
+    text-shadow: #6d6d6d 0.1em 0.1em 0.3em;
 }
 
 .titulo {
@@ -155,7 +155,7 @@ li {
     text-align: center;
     margin: 2em;
     color: white;
-    text-shadow: #333333 0.1em 0.2em 0.2em
+    text-shadow: #525252 0.1em 0.2em 0.2em
 }
 
 .home-content h1 {
@@ -165,7 +165,7 @@ li {
 
 .home-content button {
     width: 7em;
-    height: 2.7em;
+    height: 2.0em;
     margin: 2rem .5rem;
     border-style: none;
     background-color: var(--cor-terciaria-roxo);
@@ -175,6 +175,8 @@ li {
     font-family: var(--font-roboto-titulo);
     border-radius: 50px;
     cursor: pointer;
+    font-weight: bold;
+    box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.363);
 }
 
 .home-content p {
@@ -337,7 +339,6 @@ li {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 3em 0;
     flex-flow: column;
 }
 
@@ -425,7 +426,7 @@ li {
 }
 
 .back i {
-    font-size: 5em;
+    font-size: 3em;
     margin: .75rem;
     cursor: pointer;
     color: var(--cor-primario-azul);

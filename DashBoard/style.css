@@ -65,6 +65,13 @@ body {
     justify-content: space-between;
 }
 
+.box-login img{
+    width: 100px;
+    position: relative;
+    top: -3px;
+    left: -3px;
+}
+
 .teste {
     font-size: 3rem;
     margin: 1rem;

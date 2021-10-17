@@ -5,10 +5,10 @@ var nodemailer = require("nodemailer");
 router.post('/:email', function (req, res, next) {
 
     var Nome = req.body.username;
-    var Email = req.body.cnpj;
-    var Assunto = req.body.cep;
+    var Cnpj = req.body.cnpj;
+    var Cep = req.body.cep;
     var Telefone = req.body.telefone;
-    var Mensagem = req.body.email;
+    var Email = req.body.email;
 
     let transporter = nodemailer.createTransport({
         host: 'smtp.gmail.com',
@@ -18,16 +18,21 @@ router.post('/:email', function (req, res, next) {
         auth: {
             user: `tfast5234@gmail.com`,
             pass: `#Gfgrupo1`
-        }
+        },
+       
     });
 
     let info = {
         //to: "support@newaccount1623165703042.freshdesk.com",
+        to: "beatrizdonascimento255@gmail.com",
         to: "tfast5234@gmail.com",
-        subject: `Mensagem do(a) cliente ${Nome}. \n
-         Assunto: ${Assunto}. `,
-        text: `Mensagem: ${Mensagem}, \n
-        telefone do cliente: ${Telefone} e email: ${Email}.`
+        subject: `Mensagem do(a) cliente ${Nome}.`,
+        text: `Informações da empresa:\n
+         CNPJ: ${Cnpj}, \n
+         Cep: ${Cep}\n
+         Telefone ${Telefone}\n
+         Email: ${Email}.`,
+
     };
 
     transporter.sendMail(info, function (error) {
