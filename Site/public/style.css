@@ -34,6 +34,11 @@ body {
     justify-content: space-between;
 }
 
+.titulo h1, .titulo i {
+    z-index: 100000;
+    text-shadow: #333333 0.1em 0.1em 0.3em;
+}
+
 .titulo {
     color: white;
     font-family: var(--font-roboto-titulo);
@@ -150,7 +155,7 @@ li {
     text-align: center;
     margin: 2em;
     color: white;
-    text-shadow: var(--cor-preto) 0.1em 0.2em 0.2em
+    text-shadow: #333333 0.1em 0.2em 0.2em
 }
 
 .home-content h1 {
@@ -683,10 +688,6 @@ li {
         position: fixed;
         top: 4;
         z-index: 1000000;
-    }
-    .titulo h1, .titulo i {
-        z-index: 100000;
-        text-shadow: var(--cor-preto) 0.1em 0.1em 0.3em;
     }
     .navegacao {
         background-color: var(--cor-primario-azul);
