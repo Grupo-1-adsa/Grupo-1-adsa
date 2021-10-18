@@ -9,9 +9,11 @@
   padding: 0px 20px;
 }
 .cabecalho .voltar{
-  width: 7%;
-  height:7%;
-  margin-top: 20px;
+  height:35px;
+  width: 35px;
+  position: absolute;
+  top: 5rem;
+  padding: 0px;
 }
 
 .baloom{

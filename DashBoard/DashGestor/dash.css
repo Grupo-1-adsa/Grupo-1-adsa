@@ -336,6 +336,7 @@ ul {
 .containerInfoBalao a {
   text-decoration: none;
   color: blueviolet;
+  margin-top: 15px;
 }
 
 .containerInfoBalao::-webkit-scrollbar {

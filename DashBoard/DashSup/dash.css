@@ -50,6 +50,14 @@ ul {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.26);
 
 }
+.cabecalho .voltar{
+  height:35px;
+  width: 35px;
+  position: absolute;
+  top: 4rem;
+  padding: 0px;
+}
+
 
 /* menu */
 
@@ -188,7 +196,7 @@ ul {
 .lista_menu_geral li a {
   color: white;
   font-weight: bold;
-  font-family: monospace;
+  font-family: sans-serif;
   font-size: 18px;
   text-decoration: none;
   cursor: pointer;
