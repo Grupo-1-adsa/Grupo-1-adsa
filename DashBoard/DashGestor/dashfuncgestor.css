@@ -8,6 +8,11 @@
   height: 445px;
   padding: 0px 20px;
 }
+.cabecalho .voltar{
+  width: 7%;
+  height:7%;
+  margin-top: 20px;
+}
 
 .baloom{
   background-color: white;

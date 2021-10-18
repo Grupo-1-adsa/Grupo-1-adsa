@@ -18,7 +18,7 @@
     <header class="header-login">
         <section class="container-login">
             <div class="box-login">
-                <img src="./DashGestor/img/logobrancoSombra.svg" alt="">
+                <img src="./DashGestor/img/logobranco.svg" alt="">
                 <h1 class="title">Acesso a Dashboard</h1>
             </div>
 
@@ -29,14 +29,14 @@
         <h2>Login</h2>
 
         <form action="javascript:void(0)" onsubmit="validar()">
-
+            <p class="escolha">Escolha usuário:</p>
             <div class="toggle">
-                <h3>Suporte</h3>
+                <p>Suporte</p>
                 <label class="switch">
                     <input type="checkbox" id="selectf" value="off" onclick="ativar()">
                     <span class="slider round"></span>
                 </label>
-                <h3>Gestor</h3>
+                <p>Gestor</p>
 
             </div>
             <div class="input-field">
@@ -70,7 +70,6 @@
     }
 
     function validar() {
-
         console.log(selectf.value)
         if (valueToggle == 1) {
             window.location.href = './DashGestor/gestorDash.html';
@@ -78,7 +77,6 @@
             window.location.href = './DashSup/supDash.html';
 
         }
-
     }
 
 </script>

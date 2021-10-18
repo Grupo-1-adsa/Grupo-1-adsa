@@ -35,8 +35,7 @@ body {
 
 .header-login {
     color: white;
-    text-shadow: #919191 0.1em 0.1em 0.3em;
-
+    text-shadow: #161616 0.1em 0.1em 0.3em;
     font-size: 1.33em;
     position: fixed;
     top: 0;
@@ -70,6 +69,8 @@ body {
     position: relative;
     top: -3px;
     left: -3px;
+    filter: drop-shadow(0px 3px 3px rgba(39, 39, 39, 0.4));
+    filter: drop-shadow(0px 3px 3px rgb(70, 70, 70));
 }
 
 .teste {
@@ -115,6 +116,12 @@ main.form-login {
     padding: 2rem;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
+}
+
+.form-login .escolha{
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #bdbdbd;
+    
 }
 
 main h2 {
@@ -187,7 +194,7 @@ form .input-field:first-child {
 }
 
 form input[type="submit"] {
-    margin-top: 3rem;
+    margin-top: 2rem;
     padding: 0.4rem;
     width: 100%;
     background: linear-gradient(to left, #5879FA, #8e54e9);
@@ -394,7 +401,7 @@ main.form-cadastro {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #d2bcfc;
+    background-color: #8d56ea;
     -webkit-transition: .4s;
     transition: .4s;
 }
@@ -412,7 +419,7 @@ main.form-cadastro {
 }
 
 input:checked+.slider {
-    background-color: #7644D4;
+    background-color:#5a78fa ;
 }
 
 input:focus+.slider {
@@ -443,7 +450,11 @@ input:checked+.slider:before {
     align-items: center;
 }
 
-.toggle h3 {
-    color: rgba(114, 114, 114, 0.76);
-    font-size: 15px;
+.toggle p {
+    color: rgba(190, 190, 190, 0.76);
+    font-size: 1rem;
+    color: rgba(0, 0, 0, 0.7);
 }
+
+
+
