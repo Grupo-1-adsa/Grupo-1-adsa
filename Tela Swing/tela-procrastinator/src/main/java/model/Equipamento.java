@@ -2,17 +2,25 @@
 package model;
 
 /**
- *
  * @author ellen.m.almeida
  */
 public class Equipamento {
-      private Integer idEquipamento;
+    private Integer idEquipamento;
     private String numeroSerie;
     private String CPU;
     private Integer RAM;
     private Integer HD;
     private String fkFuncionario;
     private String SO;
+    private String data;
+
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
+    }
 
     public Integer getIdEquipamento() {
         return idEquipamento;

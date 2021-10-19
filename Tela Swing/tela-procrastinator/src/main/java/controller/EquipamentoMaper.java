@@ -27,6 +27,7 @@ public class EquipamentoMaper implements RowMapper<Equipamento> {
         equipamento.setHD(rs.getInt("HD"));
         equipamento.setFkFuncionario(rs.getString("fkFuncionario"));
         equipamento.setSO(rs.getString("SO"));
+        equipamento.setData(rs.getString("data"));
 
         return equipamento;
     }
