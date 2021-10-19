@@ -170,7 +170,7 @@ ul {
   width: 10px;
   height: 10px;
   display: inline-block;
-  background: url('./img/setinha.png');
+  background: url('./img/seta.png');
   background-position: center;
   background-size: cover;
   margin-left: 5px;
@@ -396,7 +396,7 @@ ul {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 95px;
+  padding-top: 125px;
   margin-bottom: 10px;
 }
 
