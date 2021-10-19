@@ -51,14 +51,16 @@
 }
 .containerDash{
   height: 90vh !important;
+  width: 93% !important;
 }
 
 
 .title_sup{
   color: #8C4AF2;
   margin-bottom: 10x;
-  font-size: 30px;
-  width: 70%;
+  font-size: 26px;
+  width: 90%;
+
   text-align: center;
 }
 
@@ -168,5 +170,5 @@
   width: 30px;
   height: 30px;
   position: relative;
-  top: 20px;
+  top: 50px;
 }
