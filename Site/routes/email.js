@@ -27,11 +27,14 @@ router.post('/:email', function (req, res, next) {
         to: "beatrizdonascimento255@gmail.com",
         to: "tfast5234@gmail.com",
         subject: `Mensagem do(a) cliente ${Nome}.`,
+        text: `Informações da empresa:`,
+        
+        /* subject: `Mensagem do(a) cliente ${Nome}.`,
         text: `Informações da empresa:\n
          CNPJ: ${Cnpj}, \n
          Cep: ${Cep}\n
          Telefone ${Telefone}\n
-         Email: ${Email}.`,
+         Email: ${Email}.`, */
 
     };
 

@@ -43,7 +43,7 @@
             <div>
 
                 <div class="input-field">
-                    <input autocomplete="off" type="text" name="cnpj" id="cnpj" placeholder="Informe o CNPJ"
+                    <input autocomplete="off" type="text" name="cnpj" id="cnpj" placeholder="XX. XXX. XXX/0001-XX"
                         onkeyup="validar()">
                     <div class="underline"></div>
                     <div id="tremerCnpj" class="vai_tremer"></div>
@@ -67,8 +67,7 @@
             </section>
 
             <div class="input-field">
-                <input autocomplete="off" name="email" id="email" placeholder="Informe o Email"
-                    onkeyup="validar()" >
+                <input autocomplete="off" name="email" id="email" placeholder="Informe o Email" onkeyup="validar()">
                 <div class="underline"></div>
                 <div id="tremerEmail" class="vai_tremer"></div>
             </div>
@@ -84,3 +83,7 @@
 </body>
 
 </html>
+
+<script type="text/javascript">
+    $("#telefone, #celular").mask("(00) 0000-0000");
+</script>
