@@ -19,7 +19,7 @@ public class LeituraMaper implements RowMapper<Leitura> {
     public Leitura mapRow(ResultSet rs, int rowNum) throws SQLException {
         Leitura leitura = new Leitura();
 
-       leitura.setIdLeitura(rs.getInt("Leitura"));
+       leitura.setIdLeitura(rs.getInt("idLeitura"));
        leitura.setDataHora(rs.getString("dataHora"));
        leitura.setRAM(rs.getInt("RAM"));
        leitura.setFkEquipamento(rs.getInt("fkEquipamento"));

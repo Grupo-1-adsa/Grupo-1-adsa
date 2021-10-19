@@ -33,7 +33,7 @@ public class EquipamentoDAO {
             discTamanho = Math.toIntExact(disco.getTamanho() / 1000000000);
         }
 
-        String sql = "insert into Equipamento(numeroSerie,CPU,RAM,HD,fkFuncionario,SO) values (?,?,?,?,?,?);";
+        String sql = "insert into [dbo].[Equipamento] (numeroSerie,CPU,RAM,HD,fkFuncionario,SO,data) values (?,?,?,?,?,?,getDate());";
 
         conn.update(sql, discSerial, procInfo, memInfo, discTamanho, fkFuncionario, sisInfo);
 

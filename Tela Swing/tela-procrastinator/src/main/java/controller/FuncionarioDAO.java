@@ -17,7 +17,7 @@ public class FuncionarioDAO {
 
     public Funcionario query(String inLogin, String inSenha){
 
-        String sql = "select * from [dbo].[Funcionario] where loginFuncionario = ? and senhaFuncionario = ?;";
+        String sql = "select * from [dbo].[Funcionario] where loginFuncionario = ? and  senhaFuncionario = ? COLLATE SQL_Latin1_General_CP1_CS_AS;";
         try {
             return  con.queryForObject(sql,new Object[]{inLogin, inSenha},new FuncionarioMaper());
         }catch (EmptyResultDataAccessException e){
