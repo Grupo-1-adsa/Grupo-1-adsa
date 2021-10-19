@@ -5,11 +5,13 @@ export default class More{
      this.container = document.querySelector(container);
      this.more = document.querySelector(more);
      this.m = document.querySelector(".btnspan div");
+     this.containerDash = document.querySelector(".containerDash")
      this.contador=0;
     }
   
     openMenu(event){
         this.contador++;
+        this.containerDash.classList.toggle('ativo');
         if(this.contador == 1){
             this.m.innerHTML="-";
             console.log(this.contador)

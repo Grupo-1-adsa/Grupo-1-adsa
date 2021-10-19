@@ -63,7 +63,7 @@
 }
 
 .containerSup{
-  height: 720px;
+  height: 430px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px;
@@ -74,7 +74,7 @@
 
 .g1,.g2,.g3,.g4{
   height: 300px;
-   margin-bottom: 100px;
+   margin-bottom: 80px;
    margin-top: 40px;
    padding: 5px 5px;
 }
