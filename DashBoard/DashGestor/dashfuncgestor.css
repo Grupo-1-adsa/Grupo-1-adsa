@@ -106,8 +106,8 @@
   justify-content: space-between;
 }
 #myChart3{
-  height: 300px !important;
-  width: 300px !important;
+  height: 348px !important;
+    width: 364px !important;
 }
 .grafico1 span,.grafico2 span{
   background-color: rgba(128, 0, 128, 0.082);
