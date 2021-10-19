@@ -1,91 +1,162 @@
-.containerDash_func{
+.gestor_cont{
+  transition: .3s;
+  min-width: 1250px;
+  height: 750px;
   display: grid;
-  grid-template-columns: 240px 1fr 270px;
+  grid-gap: 20px;
+  grid-template-columns: 100px 2fr 1fr;
   align-items: center;
-  grid-gap: 30px;
-  justify-content: center;
-
-  height: 445px;
-  padding: 0px 20px;
 }
-.cabecalho .voltar{
-  height:35px;
-  width: 35px;
-  position: absolute;
-  top: 5rem;
-  padding: 0px;
+.gestor_cont.ativo{
+  transition: .3s;
+  min-width: 1250px;
+  height: 750px;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 400px 2fr 1fr;
+  align-items: center;
 }
-
-.baloom{
+.ballom{
+  transition: .3s;
   background-color: white;
-  padding: 10px 0px;
+  height: 175px;
+  width: 1230px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px rgba(51, 51, 51, 0.246);
+  margin: 0 auto;
+  padding-top: 20px;
+  display: flex;
+ align-items: center;
+ justify-content: center;
+ flex-direction: column;
+ position: absolute;
+ left: -1600px;
+ opacity: 0;
+ top: 780px;
+
+}
+.ballom.ativo{
+  display: flex;
+  opacity: 1;
+  transform: translate3d(0px,0px,0px);
+  top: 780px;
+  left: 470px;
+}
+.ballom h1,.ballom span{
+  margin-bottom: 15px;
+  text-align: center;
+}
+.ballom ul{
+  display: flex;
+  
+}
+.ballom ul{
+  margin-top: 35px;
+}
+.ballom ul li span{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  display: block;
+}
+.ballom ul li{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 600;
+  color: #333;
+  padding: 5px;
+  border-radius: 2px;
+  margin-left:10px ;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.ballom ul li{
+ background-color: rgba(128, 0, 128, 0.082);
+ width: 230px;
+ padding-left: 30px;
+}
+
+.grafico1{
+  height: 700px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  border-radius: 10px;
-  width: 100%;
-  height: auto;
+  justify-content: center;
+ margin-right: 20px;
 }
-.info{
-  display: block;
-  background-color: #8d4af236;
-  margin-bottom: 5px;
-  border-radius: 2px;
-  padding: 2px;
+
+.grafico2{
+  height: 465px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-between;
 }
-.baloom h1{
-  font-weight: bold !important;
-  margin-top: 20px;
-}
-.baloom p {
+.grafico1 span,.grafico2 span{
+  background-color: rgba(128, 0, 128, 0.082);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: bold;
   color: #333;
-  font-size: 14px;
-  margin-bottom: 10px;
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 5px;
+  width: 400px;
 }
-.baloom ul li {
-  letter-spacing: 1px;
-  margin: 10px;
-}
-.comportamental{
 
-  width: 100%;
-
+#myChart2{
+  width: 95%;
+ height: 450px !important;
 }
 #myChart3{
-  height: 255px !important;
-  width:  100% !important;
+  width: 95%;
+  height: 370px !important;
+  
 }
-.containerDash_func h1 {
-  color: #333;
-  font-weight: 400;
-  margin-bottom: 10px;
+.more{
+  height: 480px;
+  display: flex;
+  justify-content: center;
 }
-
-@media only screen and (max-width: 1328px) {
-
-  .containerDash_func{
-    display: grid;
-    grid-template-columns: 400px;
-    align-items: center;
-    grid-gap: 0px;
-    justify-content: center;
-    height: 445px;
-    padding: 0px 20px;
-  }
-  .containerDash {
-    background-color: rgb(237, 237, 253);
-    height: 101vh;
-    width: 90%;
-    margin: 25px auto 0px auto;
-    border-radius: 110px;
-    display: grid;
-    grid-template-columns: 1fr;
-    box-shadow: 0px 0px 10px rgb(0 0 0 / 26%);
+.btnspan{
+  cursor: pointer;
+  background-color: purple;
+  border-radius: 50%;
+  width: 40px;
+  padding-top: 4px;
+  height: 40px;
+  display: block;
 }
+.btnspan.off{
+  display: none;
 }
 
-.comportamental h1,.inatividade h1{
-   border-bottom: 2px solid #8d4af236;
-  padding-left: 5px;
-  padding-bottom: 5px;
+.more span div{
+  display: flex;
+  font-size: 19px;
+  font-weight: bold;
+  color: white;
+  align-items: center;
+  justify-content: center;
+}
+
+.cabecalho{
+   display: flex;
+   
+}
+.back{
+  transform: rotate(90deg);
+  width: 30px;
+  height: 30px;
+}
+.cabecalho h1{
+  width: 80%;
+  font-size: 28px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: bold;
+  color: purple;
+  letter-spacing: 1px;
+  text-align: end;
+  margin: 0 auto;
+   
 }
