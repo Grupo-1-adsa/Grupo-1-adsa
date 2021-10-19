@@ -63,9 +63,10 @@
 }
 
 .containerSup{
-  height: 430px;
+  height: 720px;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
   overflow: hidden;
   overflow-y:scroll;
 }
@@ -73,8 +74,8 @@
 
 .g1,.g2,.g3,.g4{
   height: 300px;
-   margin-top: 5px;
-   margin-bottom: 30px;
+   margin-bottom: 100px;
+   margin-top: 40px;
    padding: 5px 5px;
 }
 
@@ -92,6 +93,7 @@
   border-bottom: 2px solid #8d4af236;
   padding-bottom: 5px;
   width: 35px;
+  
 }
 .g3::before{
   content: "Grafico informativo";
@@ -107,9 +109,15 @@
   padding-bottom: 5px;
   width: 35px;
 }
+.dn{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 #myChart2{
-  height: 260px !important;
-  width: 260px !important;  
+  height: 300px !important;
+  width:300px !important;  
+  justify-self: center !important;
 }
 
 .g4 ul{
@@ -118,8 +126,8 @@
 }
 .g2{
   display: flex;
-  justify-content: center;
-
+  
+  
   flex-direction: column;
 }
 .g4 ul li{
@@ -154,4 +162,11 @@
 .containerSup::-webkit-scrollbar-track {
   background: rgb(237, 237, 253);
   cursor: pointer;
+}
+.back{
+  transform: rotate(90deg);
+  width: 30px;
+  height: 30px;
+  position: relative;
+  top: 20px;
 }

@@ -1,45 +1,34 @@
-.dashinfo{
-  width: 970px;
+.contsup{
+  display: grid;
+  grid-template-columns: 1fr 275px;
+  max-width: 1400px;
+  height: 750px;
 }
-.conteiner_grafico{
- display: flex;
-overflow:hidden ;
- flex-direction: column-reverse;
-
-
-}
-#myChart{
-  height: 300px !important;
-}
-.alertas_sup{
+.graficoGeral{
   display: flex;
-   padding-top: 10px;
-   padding-left: 10px;
-   align-items: center;
-  overflow-x: scroll;
-
+  align-items: center;
 }
-.perfilFunc h1::after{
-  content: '';
-  display: inline-block;
-  height: 4px;
-  width: 10px;
-  background-color: tomato;
-  border-radius: 2px;
-  margin: 0 auto;
-  margin-bottom: 2.5px;
-  margin-left:5px;
+.alertas{
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+  padding-top: 15px;
+  overflow-y: scroll;
+  height: 700px;
 }
-.alertas_sup a{
+.alertas a {
   text-decoration: none;
-  color: #333;
 }
-
-.alertas_sup::-webkit-scrollbar {
+.alertas::-webkit-scrollbar {
   width: 18px;
 }
-
-.alertas_sup::-webkit-scrollbar-thumb {
+.perfilFunc{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.alertas::-webkit-scrollbar-thumb {
   background: #8d4af26c;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
@@ -49,56 +38,47 @@ overflow:hidden ;
   border-right: 3px solid rgb(237, 237, 253);
 }
 
-.alertas_sup::-webkit-scrollbar-track {
+.alertas::-webkit-scrollbar-track {
   background: rgb(237, 237, 253);
   cursor: pointer;
 }
 
-@media only screen and (max-width: 1024px) and (min-width: 769px){
-  .dashinfo{
-    width: 670px;
-  }
-  .graficosDesempenhoGeral div{
-     margin-top: 90px;
-  }
-  #myChart{
-    height: 720px !important;
-    width: 100%;
-  }
-}
-  @media only screen and (max-width: 768px) and (min-width: 376px){
-    .containerDash {
-      height: 96.5vh;
-      border-radius: 15px !important;
-    }
-    #myChart{
-      height: 590px !important;
-    }
-    .dashinfo{
-      width: 630px;
-    }
-    .graficosDesempenhoGeral div{
-       margin-top: 90px;
-    }
-    #myChart{
-      height: 630px !important;
-    }
+
+.infoBalao{
+  background-color: white;
+    width: 220px;
+  height: 120px;
+  display: flex;
+  margin-bottom: 10px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.164);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-@media only screen and (max-width: 375px){
-  .dashinfo{
-    width: 295px;
-  }
+.infoBalao h1{
+  color: #333;
+   font-size: 18px;
+   display: flex;
+   align-items: center;
+}
+.infoBalao h1::after{
+  content: '';
+  width: 10px;
+  height: 10px;
+  margin-left: 10px;
+  background-color: tomato;
+  display: inline-block;
+  border-radius: 50%;
+}
+.infoBalao h2{
+  color: #333;
+   font-size: 14px;
+}
 
-  .infoBalao{
-    width: 110px;
 
-  }
-  .containerDash {
-    height: 96.5vh;
-    border-radius: 15px !important;
-  }
- #myChart{
-   height: 320px !important;
- }
+.containerDash{
+  height: 94vh !important;
 }

@@ -1,11 +1,12 @@
 .gestor_cont{
   transition: .3s;
-  min-width: 1250px;
+  max-width: 1250px;
   height: 750px;
   display: grid;
   grid-gap: 20px;
   grid-template-columns: 100px 2fr 1fr;
   align-items: center;
+  
 }
 .gestor_cont.ativo{
   transition: .3s;
@@ -13,7 +14,6 @@
   height: 750px;
   display: grid;
   grid-gap: 20px;
-  grid-template-columns: 400px 2fr 1fr;
   align-items: center;
 }
 .ballom{
@@ -146,8 +146,8 @@
 }
 .back{
   transform: rotate(90deg);
-  width: 30px;
-  height: 30px;
+  width: 30px !important;
+  height: 30px !important;
 }
 .cabecalho h1{
   width: 80%;
@@ -159,4 +159,7 @@
   text-align: end;
   margin: 0 auto;
    
+}
+.containerDash{
+  height: 85vh;
 }
