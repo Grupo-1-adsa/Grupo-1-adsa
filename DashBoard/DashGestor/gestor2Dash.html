@@ -94,7 +94,7 @@
                 </div>
                 <div class="grafico1">
                     <span>Gráfico Comportamental</span>
-                    <canvas height="360px" id="myChart2"></canvas>
+                    <canvas height="250px" id="myChart2"></canvas>
                 </div>
                 <div class="grafico2">
                     <span>Inatividade do Funcionario</span>
@@ -112,9 +112,9 @@
     var myChart = new Chart(ctx, {
         type: 'doughnut',
         data: {
-            labels: ['Red', 'Blue', 'Yellow'],
+            labels: ['Suporte', 'Inativo', 'Ativo'],
             datasets: [{
-                label: '# of Votes',
+                label: 'Atividade',
                 data: [12, 19, 3],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
@@ -150,9 +150,9 @@
     var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            labels: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'],
             datasets: [{
-                label: '# of Votes',
+                label: '',
                 data: [12, 19, 3, 5, 2, 3],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',

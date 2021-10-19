@@ -36,56 +36,55 @@
         </div>
         <section class="containerInfo">
             <div><a href="./supDash.html"> <img class="back" src="./img/seta.svg" alt=""></a>
-            <div class="cabecalho">
-                <a class="mphone" href="#">
-                    <div></div>
-                </a>
-
-                <div class="gestorPerfil">
+                <div class="cabecalho">
+                    <a class="mphone" href="#">
+                        <div></div>
+                    </a>
                     <h1 class="title_sup">Atividade Semanal Funcionario</h1>
-                    <img src="./img/carinha2.png" alt="#">
+                    <div class="gestorPerfil">
 
-                    <div>
-                        <h4>Lorenzo Parra</h4>
-                        <p>Suporter</p>
-                        <div class="box_perfil">
-                            <p> <a href="#">Configurações</a> </p>
-                            <p><a href="/login.html">Sair</a></p>
+                        <img src="./img/carinha2.png" alt="#">
+                        <div>
+                            <h4>Lorenzo Parra</h4>
+                            <p>Suporter</p>
+                            <div class="box_perfil">
+                                <p> <a href="#">Configurações</a> </p>
+                                <p><a href="/login.html">Sair</a></p>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <div class="containerSup">
+                    <div class="g1">
+                        <div>
+                            <canvas id="myChart" width="550"></canvas>
                         </div>
                     </div>
-
-                </div>
-
-
-            </div>
-            <div class="containerSup">
-                <div class="g1">
-                    <div>
-                        <canvas id="myChart" width="550"></canvas>
+                    <div class="g2">
+                        <div class="dn">
+                            <canvas id="myChart2"></canvas>
+                        </div>
+                    </div>
+                    <div class="g3">
+                        <div>
+                            <canvas id="myChart3"></canvas>
+                        </div>
+                    </div>
+                    <div class="g4">
+                        <ul>
+                            <li>Informação de A: <span>1029</span></li>
+                            <li>Informação de B: <span>1029</span></li>
+                            <li>Informação de C: <span>1029</span></li>
+                            <li>Informação de D: <span>1029</span></li>
+                            <li>Informação de E: <span>1029</span></li>
+                            <li>Informação de F: <span>1029</span></li>
+                            <li>Informação de G: <span>1029</span></li>
+                        </ul>
                     </div>
                 </div>
-                <div class="g2">
-                    <div class="dn">
-                        <canvas id="myChart2"></canvas>
-                    </div>
-                </div>
-                <div class="g3">
-                    <div>
-                        <canvas id="myChart3"></canvas>
-                    </div>
-                </div>
-                <div class="g4">
-                    <ul>
-                        <li>Informação de A: <span>1029</span></li>
-                        <li>Informação de B: <span>1029</span></li>
-                        <li>Informação de C: <span>1029</span></li>
-                        <li>Informação de D: <span>1029</span></li>
-                        <li>Informação de E: <span>1029</span></li>
-                        <li>Informação de F: <span>1029</span></li>
-                        <li>Informação de G: <span>1029</span></li>
-                    </ul>
-                </div>
-            </div>
         </section>
     </section>
 </body>
@@ -95,7 +94,7 @@
     var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            labels: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'],
             datasets: [{
                 label: 'Maquinas Hist',
                 data: [12, 19, 3, 10, 2, 3],
@@ -133,7 +132,7 @@
     var myChart = new Chart(ctx, {
         type: 'doughnut',
         data: {
-            labels: ['Red', 'Blue', 'Yellow'],
+            labels: ['Inativa', 'Pentente', 'Operante'],
             datasets: [{
                 label: '# of Votes',
                 data: [12, 19, 3],
