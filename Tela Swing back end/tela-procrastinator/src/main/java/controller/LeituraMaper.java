@@ -23,7 +23,6 @@ public class LeituraMaper implements RowMapper<Leitura> {
        leitura.setDataHora(rs.getString("dataHora"));
        leitura.setRAM(rs.getInt("RAM"));
        leitura.setFkEquipamento(rs.getInt("fkEquipamento"));
-       leitura.setTemperatura(rs.getInt("Temperatura"));
        leitura.setCpuPorcentagem(rs.getInt("cpuUso"));
        leitura.setCpuFrequencia(rs.getInt("cpuFrequencia"));
        leitura.setTempoAtividade(rs.getString("tempoAtividade"));
