@@ -112,9 +112,7 @@ public class TelaLogin extends javax.swing.JFrame {
         fieldSenha.setBorder(null);
 
         lblEntrar.setFont(new java.awt.Font("Arial Black", 1, 21)); // NOI18N
-        lblEntrar.setForeground(new java.awt.Color(0, 0, 0));
         lblEntrar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblEntrar.setIcon(new javax.swing.ImageIcon("C:\\Users\\ellen.m.almeida\\OneDrive - Accenture\\Documents\\LP\\POO\\tela-procrastinator\\src\\main\\java\\Imagem\\entrar 2.png")); // NOI18N
         lblEntrar.setText("Entrar");
         lblEntrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblEntrar.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
@@ -125,7 +123,6 @@ public class TelaLogin extends javax.swing.JFrame {
         });
 
         lblFechar.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
-        lblFechar.setForeground(new java.awt.Color(0, 0, 0));
         lblFechar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblFechar.setText("x");
         lblFechar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -136,7 +133,6 @@ public class TelaLogin extends javax.swing.JFrame {
         });
 
         lblMinimizar.setFont(new java.awt.Font("Arial Black", 1, 36)); // NOI18N
-        lblMinimizar.setForeground(new java.awt.Color(0, 0, 0));
         lblMinimizar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblMinimizar.setText("-");
         lblMinimizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -146,7 +142,6 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
 
-        lblEsqueceuSenha.setForeground(new java.awt.Color(0, 0, 0));
         lblEsqueceuSenha.setText("Esqueceu Senha");
         lblEsqueceuSenha.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblEsqueceuSenha.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -155,7 +150,7 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\ellen.m.almeida\\OneDrive - Accenture\\Documents\\LP\\POO\\tela-procrastinator\\src\\main\\java\\Imagem\\tela-login-2.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tela-login-2.png"))); // NOI18N
         jLabel1.setText("jLabel1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

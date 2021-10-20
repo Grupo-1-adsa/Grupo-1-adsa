@@ -29,7 +29,6 @@ public class TelaOpcao extends javax.swing.JFrame {
         });
 
         lblMinimizar.setFont(new java.awt.Font("Arial Black", 1, 36)); // NOI18N
-        lblMinimizar.setForeground(new java.awt.Color(0, 0, 0));
         lblMinimizar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblMinimizar.setText("-");
         lblMinimizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -40,7 +39,6 @@ public class TelaOpcao extends javax.swing.JFrame {
         });
 
         lblFechar.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
-        lblFechar.setForeground(new java.awt.Color(0, 0, 0));
         lblFechar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblFechar.setText("x");
         lblFechar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -50,7 +48,7 @@ public class TelaOpcao extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\ellen.m.almeida\\OneDrive - Accenture\\Documents\\LP\\POO\\tela-procrastinator\\src\\main\\java\\Imagem\\tela-opcao-1.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tela-opcao-1.png"))); // NOI18N
         jLabel1.setText("jLabel1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

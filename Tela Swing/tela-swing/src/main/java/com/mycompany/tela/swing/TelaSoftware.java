@@ -55,7 +55,6 @@ public class TelaSoftware extends javax.swing.JFrame {
         });
 
         lblMinimizar.setFont(new java.awt.Font("Arial Black", 1, 48)); // NOI18N
-        lblMinimizar.setForeground(new java.awt.Color(0, 0, 0));
         lblMinimizar.setText("-");
         lblMinimizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblMinimizar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -65,28 +64,24 @@ public class TelaSoftware extends javax.swing.JFrame {
         });
 
         lblProcessador.setFont(new java.awt.Font("Fira Code SemiBold", 1, 10)); // NOI18N
-        lblProcessador.setForeground(new java.awt.Color(0, 0, 0));
         lblProcessador.setText("aguardando inicialização...");
         lblProcessador.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         lblRam.setFont(new java.awt.Font("Fira Code SemiBold", 1, 12)); // NOI18N
-        lblRam.setForeground(new java.awt.Color(0, 0, 0));
         lblRam.setText("aguardando inicialização...");
         lblRam.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         lblHD.setFont(new java.awt.Font("Fira Code SemiBold", 1, 10)); // NOI18N
-        lblHD.setForeground(new java.awt.Color(0, 0, 0));
         lblHD.setText("aguardando inicialização...");
         lblHD.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         lblSistema.setFont(new java.awt.Font("Fira Code SemiBold", 1, 12)); // NOI18N
-        lblSistema.setForeground(new java.awt.Color(0, 0, 0));
         lblSistema.setText("aguardando inicialização...");
         lblSistema.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         lblLoading.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        lblAtivar.setIcon(new javax.swing.ImageIcon("C:\\Users\\ellen.m.almeida\\OneDrive - Accenture\\Documents\\LP\\POO\\tela-procrastinator\\src\\main\\java\\Imagem\\button3.png")); // NOI18N
+        lblAtivar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button2.png"))); // NOI18N
         lblAtivar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         lblAtivar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -106,7 +101,7 @@ public class TelaSoftware extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\ellen.m.almeida\\OneDrive - Accenture\\Documents\\LP\\POO\\tela-procrastinator\\src\\main\\java\\Imagem\\tela-Software.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tela-Software.png"))); // NOI18N
         jLabel2.setText("jLabel2");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -194,8 +189,8 @@ public class TelaSoftware extends javax.swing.JFrame {
     }//GEN-LAST:event_lblAjudaMouseClicked
 
     private void lblAtivarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAtivarMouseClicked
-        ImageIcon parteUm = new ImageIcon("C:\\Users\\ellen.m.almeida\\OneDrive - Accenture\\Documents\\LP\\POO\\tela-procrastinator\\src\\main\\java\\Imagem\\loading-1.gif");
-        ImageIcon parteDois = new ImageIcon("C:\\Users\\ellen.m.almeida\\OneDrive - Accenture\\Documents\\LP\\POO\\tela-procrastinator\\src\\main\\java\\Imagem\\check-1.png");
+        ImageIcon parteUm = new ImageIcon(getClass().getResource("/loading-1.gif"));
+        ImageIcon parteDois = new ImageIcon(getClass().getResource("/check-1.png"));
         lblLoading.setIcon(parteUm);
         Timer timer = new Timer();
         TimerTask tarefa = new TimerTask() {
@@ -228,23 +223,23 @@ public class TelaSoftware extends javax.swing.JFrame {
     }//GEN-LAST:event_lblAtivarMouseClicked
 
     private void lblAtivarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAtivarMouseEntered
-        ImageIcon botao = new ImageIcon("C:\\Users\\ellen.m.almeida\\OneDrive - Accenture\\Documents\\LP\\POO\\tela-procrastinator\\src\\main\\java\\Imagem\\button2.png"); 
+        ImageIcon botao = new ImageIcon(getClass().getResource("/button2.png")); 
         lblAtivar.setIcon(botao); 
         
     }//GEN-LAST:event_lblAtivarMouseEntered
 
     private void lblAtivarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAtivarMouseExited
-        ImageIcon botao = new ImageIcon("C:\\Users\\ellen.m.almeida\\OneDrive - Accenture\\Documents\\LP\\POO\\tela-procrastinator\\src\\main\\java\\Imagem\\button3.png"); 
+        ImageIcon botao = new ImageIcon(getClass().getResource("/button3.png")); 
         lblAtivar.setIcon(botao); 
     }//GEN-LAST:event_lblAtivarMouseExited
 
     private void lblAtivarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAtivarMousePressed
-        ImageIcon botao = new ImageIcon("C:\\Users\\ellen.m.almeida\\OneDrive - Accenture\\Documents\\LP\\POO\\tela-procrastinator\\src\\main\\java\\Imagem\\button1.png"); 
+        ImageIcon botao = new ImageIcon(getClass().getResource("/button1.png")); 
         lblAtivar.setIcon(botao); 
     }//GEN-LAST:event_lblAtivarMousePressed
 
     private void lblAtivarMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAtivarMouseReleased
-        ImageIcon botao = new ImageIcon("C:\\Users\\ellen.m.almeida\\OneDrive - Accenture\\Documents\\LP\\POO\\tela-procrastinator\\src\\main\\java\\Imagem\\button3.png"); 
+        ImageIcon botao = new ImageIcon(getClass().getResource("/button3.png")); 
         lblAtivar.setIcon(botao); 
     }//GEN-LAST:event_lblAtivarMouseReleased
 
