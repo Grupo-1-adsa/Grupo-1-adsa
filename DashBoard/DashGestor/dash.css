@@ -646,3 +646,118 @@ ul {
     height: 60vh;
   }
 }
+.btnStatus{
+
+  height: 30px;
+  display: flex;
+  align-items: center;
+}
+.btnStatus ul{
+  display: flex;
+}
+.btnStatus ul li{
+  display: flex;
+  transition: .1s;
+  width: 130px;
+  border-radius: 5px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px;
+  padding-left: 15px ;
+  background: #8d4af26c;
+  color: white;
+  height: 30px;
+  margin: 0px 10px;
+}
+.btnStatus ul li div{
+  transition: .3s;
+}
+.btnStatus ul li.ATIVOS{
+  background-color: #8c4af2;
+  color: white;
+  font-weight: bold;
+}
+.btnStatus ul li.ATIVOS div{
+  border-radius: 10px 0px 0px 10px;
+  background-color: rgb(94, 207, 79); height: 30px; display: flex; align-items: center;width:50px; justify-content: center;
+}
+.btnStatus ul li.ALERTAS{
+  background-color: #8c4af2;
+  color: white;
+}
+.btnStatus ul li.ALERTAS div{
+  border-radius: 10px 0px 0px 10px;
+  background-color: rgb(250, 75, 44); height: 30px; display: flex; align-items: center;width:50px; justify-content: center;
+}
+
+.btnStatus ul li.PENDENTES{
+  background-color: #8c4af2;
+  color: white;
+}
+
+.btnStatus ul li.PENDENTES div{
+  border-radius: 10px 0px 0px 10px;
+  background-color: rgb(214, 247, 96); height: 30px; display: flex; align-items: center;width:50px; justify-content: center;
+}
+
+
+
+.hid{
+  display: none !important;
+}
+
+.name{
+  background-color: #8c4af2;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+}
+
+.grafico2 span{
+   display: flex;
+   flex-direction: column;
+}
+
+.spancont{
+  display: block;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center;
+  width: auto !important;
+  
+}
+.spancont div.inativo{
+  background-color: rgb(255, 99, 71);
+}
+.spancont div.pendente{
+  background-color: rgb(255, 204, 95);
+}
+.spancont div.ativo{
+  background-color: rgb(95, 141, 255);
+}
+.spancont div{
+ width: 80%;
+  font-size: 12px;
+  text-align: center;
+  border-radius: 5px;
+  margin: 2px;
+}
+.lispan span{
+  width: 165px;
+  margin-top: 5px;
+  border-radius: 5px;
+  padding: 5px;
+  color: black;
+}
+.lispan span.check{
+  background-color:#5878fa7a;
+}
+
+.lispan span.ncheck{
+  background-color:rgba(255, 99, 71, 0.479);
+}
+
+.lispan span.mcheck{
+  background-color:rgba(255, 255, 92, 0.548)
+}

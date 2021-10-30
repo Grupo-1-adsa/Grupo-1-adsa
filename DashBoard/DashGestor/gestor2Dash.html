@@ -39,7 +39,7 @@
             <div class="cabecalho">
                 <div><a href="./gestorDash.html"> <img class="back" src="./img/seta.svg" alt=""></a>
                 </div>
-                <h1>Atividade Semanal do Funcionário</h1>
+                <h1>Atividade Semanal - <span class="name"></span> </h1>
                 <a class="mphone" href="#">
                     <div></div>
                 </a>
@@ -70,35 +70,40 @@
                 </div>
                 <div class="ballom">
                     <div>
-                        <h1>ANA</h1>
+                        <h1 class="name"></h1>
                         <span>Maquina:21233</span>
                     </div>
 
                     <ul>
-                        <li>
-                            <div>Atividade:</div> <span>Ativo</span>
+                        <li class="lispan">
+                            <div>Atividade:</div> <span class="check">Ativo</span>
                         </li>
-                        <li>
-                            <div>Cpu:</div> <span>Boa</span>
+                        <li class="lispan">
+                            <div>Cpu:</div> <span class="check">Boa</span>
                         </li>
-                        <li>
-                            <div>Desempenho:</div> <span>Mediano</span>
+                        <li class="lispan">
+                            <div>Desempenho:</div> <span class="mcheck">Mediano</span>
                         </li>
-                        <li>
-                            <div>Status:</div> <span>Ativo</span>
+                        <li class="lispan">
+                            <div>Status:</div> <span class="ncheck">Inativo</span>
                         </li>
-                        <li>
-                            <div>Email:</div> <span>AnaDoria@gmail.com</span>
+                        <li class="lispan">
+                            <div>Email:</div> <span class="check">AnaDoria@gmail.com</span>
                         </li>
 
                     </ul>
                 </div>
                 <div class="grafico1">
                     <span>Gráfico Comportamental</span>
-                    <canvas height="250px" id="myChart2"></canvas>
+                    <canvas height="280px" id="myChart2"></canvas>
                 </div>
                 <div class="grafico2">
-                    <span>Inatividade do Funcionário</span>
+                    <span>Inatividade do Funcionário <span class="spancont">
+                            <div class="ativo">Ativo</div>
+                            <div class="pendente">Pendente</div>
+                            <div class="inativo">Inativo</div>
+                        </span></span>
+
                     <div class="gf3">
                         <canvas id="myChart3"></canvas>
                     </div>
@@ -113,17 +118,14 @@
     var myChart = new Chart(ctx, {
         type: 'doughnut',
         data: {
-            labels: ['Suporte', 'Inativo', 'Ativo'],
+            labels: '',
             datasets: [{
                 label: 'Atividade',
                 data: [12, 19, 3],
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
+                    'rgb(255, 99, 71)',
+                    'rgb(95, 141, 255)',
+                    'rgb(255, 204, 95)',
                 ],
                 borderColor: [
                     'rgba(255, 99, 132, 1)',
@@ -153,23 +155,13 @@
         data: {
             labels: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'],
             datasets: [{
-                label: '',
+                label: "Advertências Aplicadas",
                 data: [12, 19, 3, 5, 2, 3],
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
+                    'rgba(155, 89, 182, 1)'
                 ],
                 borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
+                    'rgba(155, 89, 182, 1)'
                 ],
                 borderWidth: 1
             }]
@@ -182,6 +174,15 @@
             }
         }
     });
+</script>
+<script>
+    function pegaNome() {
+        const name = document.querySelectorAll(".name");
+        name.forEach((n) => {
+            n.innerText = window.localStorage.getItem('name');
+        })
+    };
+    pegaNome();
 </script>
 
 </html>
