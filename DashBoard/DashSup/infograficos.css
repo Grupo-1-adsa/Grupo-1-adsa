@@ -116,8 +116,13 @@
   display: flex;
   justify-content: center;
 }
+#myChart{
+ height: 350px !important;
+ width: 550px !important;
+}
 #myChart2{
   height: 300px !important;
+ 
   width:300px !important;  
   justify-self: center !important;
 }
@@ -171,4 +176,36 @@
   height: 30px;
   position: relative;
   top: 50px;
+}
+
+.spancont{
+  display: block;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center;
+  width: auto !important;
+  
+}
+.spancont div.inativo{
+  background-color: rgb(255, 99, 71);
+}
+.spancont div.pendente{
+  background-color: rgb(255, 204, 95);
+}
+.spancont div.ativo{
+  background-color: rgb(95, 141, 255);
+}
+.spancont div{
+ width: 80%;
+  font-size: 12px;
+  text-align: center;
+  border-radius: 5px;
+  margin: 2px;
+}
+
+.name{
+  background-color: #8c4af2;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
 }

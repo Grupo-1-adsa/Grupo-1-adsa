@@ -40,7 +40,7 @@
                     <a class="mphone" href="#">
                         <div></div>
                     </a>
-                    <h1 class="title_sup">Atividade Semanal Funcionário</h1>
+                    <h1 class="title_sup">Atividade Semanal <span class="name"></span></h1>
                     <div class="gestorPerfil">
 
                         <img src="./img/perfilSup.png" alt="#">
@@ -64,6 +64,13 @@
                         </div>
                     </div>
                     <div class="g2">
+                        <span class="">
+                            <span class="spancont">
+                                <div class="ativo">Ativo</div>
+                                <div class="pendente">Pendente</div>
+                                <div class="inativo">Inativo</div>
+                            </span></span>
+                        </span>
                         <div class="dn">
                             <canvas id="myChart2"></canvas>
                         </div>
@@ -99,20 +106,10 @@
                 label: 'Maquinas Hist',
                 data: [12, 19, 3, 10, 2, 3],
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
+                    'rgba(155, 89, 182, 1)'
                 ],
                 borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
+                    'rgba(155, 89, 182, 1)'
                 ],
                 borderWidth: 1
             }]
@@ -132,17 +129,13 @@
     var myChart = new Chart(ctx, {
         type: 'doughnut',
         data: {
-            labels: ['Inativa', 'Pentente', 'Operante'],
             datasets: [{
                 label: '# of Votes',
                 data: [12, 19, 3],
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
+                    'rgb(255, 99, 71)',
+                    'rgb(95, 141, 255)',
+                    'rgb(255, 204, 95)',
                 ],
                 borderColor: [
                     'rgba(255, 99, 132, 1)',
@@ -201,6 +194,13 @@
             }
         }
     });
+</script>
+<script>
+    function pegaNome() {
+        const nome = document.querySelector(".name");
+        nome.innerText = window.localStorage.getItem('name');
+    }
+    pegaNome();
 </script>
 
 </html>
