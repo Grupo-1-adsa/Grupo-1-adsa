@@ -8,6 +8,15 @@ public class Leitura {
     private Integer Temperatura;
     private Integer cpuPorcentagem;
     private Integer cpuFrequencia;
+    private String tempoAtividade;
+
+    public String getTempoAtividade() {
+        return tempoAtividade;
+    }
+
+    public void setTempoAtividade(String tempoAtividade) {
+        this.tempoAtividade = tempoAtividade;
+    }
 
     public Integer getIdLeitura() {
         return idLeitura;

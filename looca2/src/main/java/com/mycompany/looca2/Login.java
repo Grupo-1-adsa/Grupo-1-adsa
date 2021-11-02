@@ -89,11 +89,11 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_inLoginActionPerformed
 
     private void btnButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnButtonActionPerformed
-        FuncionarioDAO funcionarioDTO = new FuncionarioDAO();
+        FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
         String login = String.valueOf(inLogin.getText());
         String senha = String.valueOf(inSenha.getText());
 
-        funcionarioDTO.loginBanco(login, senha);
+        funcionarioDAO.loginBanco(login, senha);
 
     }//GEN-LAST:event_btnButtonActionPerformed
 
