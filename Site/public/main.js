@@ -116,3 +116,41 @@ function redirecionando() {
 };
 
 
+    // Função whatsApp
+    function isMobile() {
+        if (sessionStorage.desktop)
+            return false;
+        else if (localStorage.mobile)
+            return true;
+        var mobile = ['iphone', 'ipad', 'android', 'blackberry', 'nokia', 'opera mini', 'windows mobile', 'windows phone', 'iemobile'];
+        for (var i in mobile)
+            if (navigator.userAgent.toLowerCase().indexOf(mobile[i].toLowerCase()) > 0) return true;
+        return false;
+    }
+    
+    const formulario = document.querySelector('#formulario');
+    const buttonSubmit = document.querySelector('#submit');
+    const urlDesktop = 'https://web.whatsapp.com/';
+    const urlMobile = 'whatsapp://';
+    const whatsapp = '5511945999956';
+    formulario.addEventListener('submit', (event) => {
+        event.preventDefault()
+        buttonSubmit.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i>'
+        buttonSubmit.disabled = true
+        setTimeout(() => {
+            let nome = document.querySelector('#id_nome').value
+            let email = document.querySelector('#id_email').value
+            let texto = document.querySelector('#id_mensagem').value
+            let form = document.querySelector('#formularioEscolha').value
+            let mensagem = 'send?phone=' + whatsapp + '&text=Olá, meu nome é ' + nome + '%0AMeu email é: ' 
+            + email  + '%0AMinha ' + form + ' é: ' + texto
+            
+            if (isMobile()) {
+                window.open(urlMobile + mensagem, '_blank')
+            } else {
+                window.open(urlDesktop + mensagem, '_blank')
+            }
+            buttonSubmit.innerHTML = '<i class="fab fa-whatsapp"></i> Enviar WhatsApp'
+            buttonSubmit.disabled = false
+        }, 3000);
+    });

@@ -1,6 +1,7 @@
 import Submenu from "./jsEfeitos/submenu.js";
 import Menu from "./jsEfeitos/menu.js";
 import Balao from "./jsEfeitos/balao.js";
+import More from "./jsEfeitos/more.js";
 
 
 const submenu = new Submenu(".dwn",".lista_submenu");
@@ -17,3 +18,6 @@ btnmenu.init();
 
 const balaoInfo = new Balao(".infoBalao");
 balaoInfo.init();
+
+const more = new More(".more",".btnspan",".ballom",".gestor_cont");
+more.init();

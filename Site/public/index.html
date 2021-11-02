@@ -8,7 +8,7 @@
     <title>FastTech</title>
     <meta name="theme-color" content="#5878fac0">
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="./img/fone1.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./img/phone.svg" type="image/x-icon">
     <link rel="stylesheet" href="main.js">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -211,33 +211,39 @@
 
     </section>
     <section id="contato" class="contato">
-        <section class="container">
+        <section class="containerContato">
             <h2 class="sec-title">Contato</h2>
-            <form action="" class="contato-formulario">
+            <form action="" class="contato-formulario" id="formulario">
                 <section>
                     <div class="input-field">
-                        <input class="in_form" placeholder="Insira seu email" />
+                        <input id="id_nome" class="in_form" placeholder="Insira nome" />
                         <div class="underline"></div>
                     </div>
                 </section>
                 <section>
                     <div class="input-field">
-                        <select name="" id="" class="in_form">
-                            <option value="">Dúvida</option>
-                            <option value="">Reclamação</option>
-                            <option value="">Feedback</option>
+                        <input id="id_email" class="in_form" placeholder="Insira seu email" />
+                        <div class="underline"></div>
+                    </div>
+                </section>
+                <section>
+                    <div class="input-field">
+                        <select name="" class="in_form" id="formularioEscolha">
+                            <option value="dúvida">Dúvida</option>
+                            <option value="reclamação">Reclamação</option>
+                            <option value="feedback">Feedback</option>
                         </select>
                         <div class="underline"></div>
                     </div>
                 </section>
                 <section>
                     <div class="input-field">
-                        <input class="in_form" placeholder="Insira a sua mensagem" />
+                        <input id="id_mensagem" class="in_form" placeholder="Insira a sua mensagem" type="label">
                         <div class="underline"></div>
                     </div>
                 </section>
 
-                <input class="in_form" autocomplete="off" type="submit" value="Continue" />
+                <input id="submit" class="in_form" autocomplete="off" type="submit" value="Continue" />
             </form>
         </section>
     </section>

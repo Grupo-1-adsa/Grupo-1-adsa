@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="dash.css">
     <link rel="stylesheet" href="infograficos.css">
+    <link rel="shortcut icon" href="./img/logoBranco.svg" type="image/x-icon" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <title> Suporte Funcionario</title>
+    <title>Painel Suporte</title>
 </head>
 
 <body>
@@ -34,57 +35,63 @@
             </nav>
         </div>
         <section class="containerInfo">
-            <div class="cabecalho">
-                <a href="./supDash.html"> <img class="voltar" src="./img/voltar.png" alt=""></a>
-                <a class="mphone" href="#">
-                    <div></div>
-                </a>
+            <div><a href="./supDash.html"> <img class="back" src="./img/seta.svg" alt=""></a>
+                <div class="cabecalho">
+                    <a class="mphone" href="#">
+                        <div></div>
+                    </a>
+                    <h1 class="title_sup">Atividade Semanal <span class="name"></span></h1>
+                    <div class="gestorPerfil">
 
-                <div class="gestorPerfil">
-                    <h1 class="title_sup">Atividade Semanal Funcionario</h1>
-                    <img src="./img/carinha2.png" alt="#">
+                        <img src="./img/perfilSup.png" alt="#">
+                        <div>
+                            <h4>Vera Antonia</h4>
+                            <p>Suporter</p>
+                            <div class="box_perfil">
+                                <p> <a href="#">Configurações</a> </p>
+                                <p><a href="/login.html">Sair</a></p>
+                            </div>
+                        </div>
 
-                    <div>
-                        <h4>Charlie brown</h4>
-                        <p>Gestor</p>
-                        <div class="box_perfil">
-                            <p> <a href="#">Configurações</a> </p>
-                            <p><a href="/login.html">Sair</a></p>
+                    </div>
+
+
+                </div>
+                <div class="containerSup">
+                    <div class="g1">
+                        <div>
+                            <canvas id="myChart" width="550"></canvas>
                         </div>
                     </div>
-
-                </div>
-
-
-            </div>
-            <div class="containerSup">
-                <div class="g1">
-                    <div>
-                        <canvas id="myChart" width="550"></canvas>
+                    <div class="g2">
+                        <span class="">
+                            <span class="spancont">
+                                <div class="ativo">Ativo</div>
+                                <div class="pendente">Pendente</div>
+                                <div class="inativo">Inativo</div>
+                            </span></span>
+                        </span>
+                        <div class="dn">
+                            <canvas id="myChart2"></canvas>
+                        </div>
+                    </div>
+                    <div class="g3">
+                        <div>
+                            <canvas id="myChart3"></canvas>
+                        </div>
+                    </div>
+                    <div class="g4">
+                        <ul>
+                            <li>Informação de A: <span>1029</span></li>
+                            <li>Informação de B: <span>1029</span></li>
+                            <li>Informação de C: <span>1029</span></li>
+                            <li>Informação de D: <span>1029</span></li>
+                            <li>Informação de E: <span>1029</span></li>
+                            <li>Informação de F: <span>1029</span></li>
+                            <li>Informação de G: <span>1029</span></li>
+                        </ul>
                     </div>
                 </div>
-                <div class="g2">
-                    <div>
-                        <canvas id="myChart2"></canvas>
-                    </div>
-                </div>
-                <div class="g3">
-                    <div>
-                        <canvas id="myChart3"></canvas>
-                    </div>
-                </div>
-                <div class="g4">
-                    <ul>
-                        <li>Informação de A: <span>1029</span></li>
-                        <li>Informação de B: <span>1029</span></li>
-                        <li>Informação de C: <span>1029</span></li>
-                        <li>Informação de D: <span>1029</span></li>
-                        <li>Informação de E: <span>1029</span></li>
-                        <li>Informação de F: <span>1029</span></li>
-                        <li>Informação de G: <span>1029</span></li>
-                    </ul>
-                </div>
-            </div>
         </section>
     </section>
 </body>
@@ -94,25 +101,15 @@
     var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            labels: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'],
             datasets: [{
                 label: 'Maquinas Hist',
                 data: [12, 19, 3, 10, 2, 3],
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
+                    'rgba(155, 89, 182, 1)'
                 ],
                 borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
+                    'rgba(155, 89, 182, 1)'
                 ],
                 borderWidth: 1
             }]
@@ -132,17 +129,13 @@
     var myChart = new Chart(ctx, {
         type: 'doughnut',
         data: {
-            labels: ['Red', 'Blue', 'Yellow'],
             datasets: [{
                 label: '# of Votes',
                 data: [12, 19, 3],
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
+                    'rgb(255, 99, 71)',
+                    'rgb(95, 141, 255)',
+                    'rgb(255, 204, 95)',
                 ],
                 borderColor: [
                     'rgba(255, 99, 132, 1)',
@@ -201,6 +194,13 @@
             }
         }
     });
+</script>
+<script>
+    function pegaNome() {
+        const nome = document.querySelector(".name");
+        nome.innerText = window.localStorage.getItem('name');
+    }
+    pegaNome();
 </script>
 
 </html>

@@ -51,14 +51,16 @@
 }
 .containerDash{
   height: 90vh !important;
+  width: 93% !important;
 }
 
 
 .title_sup{
   color: #8C4AF2;
   margin-bottom: 10x;
-  font-size: 30px;
-  width: 70%;
+  font-size: 26px;
+  width: 90%;
+
   text-align: center;
 }
 
@@ -66,6 +68,7 @@
   height: 430px;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
   overflow: hidden;
   overflow-y:scroll;
 }
@@ -73,8 +76,8 @@
 
 .g1,.g2,.g3,.g4{
   height: 300px;
-   margin-top: 5px;
-   margin-bottom: 30px;
+   margin-bottom: 80px;
+   margin-top: 40px;
    padding: 5px 5px;
 }
 
@@ -92,6 +95,7 @@
   border-bottom: 2px solid #8d4af236;
   padding-bottom: 5px;
   width: 35px;
+  
 }
 .g3::before{
   content: "Grafico informativo";
@@ -107,9 +111,20 @@
   padding-bottom: 5px;
   width: 35px;
 }
+.dn{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+#myChart{
+ height: 350px !important;
+ width: 550px !important;
+}
 #myChart2{
-  height: 260px !important;
-  width: 260px !important;  
+  height: 300px !important;
+ 
+  width:300px !important;  
+  justify-self: center !important;
 }
 
 .g4 ul{
@@ -118,8 +133,8 @@
 }
 .g2{
   display: flex;
-  justify-content: center;
-
+  
+  
   flex-direction: column;
 }
 .g4 ul li{
@@ -154,4 +169,43 @@
 .containerSup::-webkit-scrollbar-track {
   background: rgb(237, 237, 253);
   cursor: pointer;
+}
+.back{
+  transform: rotate(90deg);
+  width: 30px;
+  height: 30px;
+  position: relative;
+  top: 50px;
+}
+
+.spancont{
+  display: block;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center;
+  width: auto !important;
+  
+}
+.spancont div.inativo{
+  background-color: rgb(255, 99, 71);
+}
+.spancont div.pendente{
+  background-color: rgb(255, 204, 95);
+}
+.spancont div.ativo{
+  background-color: rgb(95, 141, 255);
+}
+.spancont div{
+ width: 80%;
+  font-size: 12px;
+  text-align: center;
+  border-radius: 5px;
+  margin: 2px;
+}
+
+.name{
+  background-color: #8c4af2;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
 }
