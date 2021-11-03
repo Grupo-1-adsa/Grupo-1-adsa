@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="tela-procrastinator" />
+        <module name="tela-swing" />
       </profile>
     </annotationProcessing>
   </component>

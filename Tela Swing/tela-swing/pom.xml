@@ -71,15 +71,12 @@
             <artifactId>azure-identity</artifactId>
             <version>1.3.3</version>
         </dependency>
-<<<<<<< HEAD:looca2/pom.xml
+
         <dependency>
             <groupId>com.slack.api</groupId>
             <artifactId>slack-api-client</artifactId>
             <version>1.13.0</version>
         </dependency>
-=======
-
->>>>>>> 6201e24905b174e112dafbf99753f0754a248e43:Tela Swing/tela-swing/pom.xml
     </dependencies>
 </project>
 
