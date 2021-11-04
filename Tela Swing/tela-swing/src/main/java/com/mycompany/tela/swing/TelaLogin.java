@@ -4,7 +4,11 @@ package com.mycompany.tela.swing;
 import controller.EquipamentoDAO;
 import controller.FuncionarioDAO;
 import controller.LeituraDAO;
+import model.Funcionario;
+import model.Slack;
+
 import java.awt.Desktop;
+import java.io.IOException;
 import java.net.URI;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -118,7 +122,13 @@ public class TelaLogin extends javax.swing.JFrame {
         lblEntrar.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         lblEntrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblEntrarMouseClicked(evt);
+                try {
+                    lblEntrarMouseClicked(evt);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -204,14 +214,16 @@ public class TelaLogin extends javax.swing.JFrame {
     public boolean checkLogin(String login, String senha) {
         return login.equals("admin@admin.com") && senha.equals("admin123");
     }
-    private void lblEntrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEntrarMouseClicked
+    private void lblEntrarMouseClicked(java.awt.event.MouseEvent evt) throws IOException, InterruptedException {//GEN-FIRST:event_lblEntrarMouseClicked
         FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
         EquipamentoDAO equipamentoDAO = new EquipamentoDAO();
         LeituraDAO leituraDAO = new LeituraDAO();
+        Slack slack = new Slack();
 
         String login = String.valueOf(txtEmail.getText());
         String senha = String.valueOf(fieldSenha.getPassword());
         funcionarioDAO.loginBanco(login, senha);
+        slack.enviaMensagem(funcionarioDAO.getNomeFunc());
 
         if (funcionarioDAO.verificaLogin() == true) {
             this.dispose();
