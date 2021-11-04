@@ -248,7 +248,7 @@
         </section>
     </section>
 
-    <footer class="footer">
+   <!-- <footer class="footer">
         <section class="container">
             <div class="box-footer">
                 <a href="https://github.com/Grupo-1-adsa/Grupo-1-adsa"><i class="fab fa-github github"></i></a>
@@ -256,9 +256,111 @@
                 <h2>2021 - 2021</h2>
             </div>
         </section>
-    </footer>
-    <script src="https://kit.fontawesome.com/29a5925e04.js" crossorigin="anonymous"></script>
-    <script src="./main.js"></script>
+    </footer> -->
+
+    <div id="mapa" class="mapa">
+        <div class="contato-card">
+            <h1>Entrem em contato conosco </h1>
+            <ul>
+                <li><i data-feather="info"></i> Av. Campanella, 386 - São Paulo - SP, 08220-830</li>
+                <li><i data-feather="info"></i> pizzariafabulosa.com.br</li>
+                <li><i data-feather="info"></i> (11) 20482622</li>
+            </ul>
+        </div>
+        <div id="map"></div>
+    </div>
+
+
+
+    <div class="footer">
+        <div class="container">
+            <div class="linha"></div>
+            <div class="horizontal">
+                <div class="esquerda">
+                    <img class="logo" src="" alt="Logo da FastTech">
+                    <p>&copy; 2021  FastTech</p>
+                </div>
+                <div class="meio">
+                    <p>Design por</p>
+                    <p>Ellen Miranda</p>
+                </div>
+                <div class="direita">
+                    <p>Desenvolvido por</p>
+                    <p>Equipe Miranda Almeida</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        feather.replace();
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        function initMap() {
+            // The location of Uluru
+            var uluru = {
+                lat: -19.924108,
+                lng: -43.943470
+            };
+            // The map, centered at Uluru
+            var map = new google.maps.Map(
+                document.getElementById('map'), {
+                zoom: 15,
+                center: uluru
+            });
+            // The marker, positioned at Uluru
+            var marker = new google.maps.Marker({
+                position: uluru,
+                map: map
+            });
+        }
+    </script>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?callback=initMap">
+    </script>
+
+
 </body>
 
 </html>
+
+
+<script>
+    window.onscroll = function () {
+        fixarHeader();
+    }; //arrumar a barra fixa
+    var header = document.getElementById("header");
+    var bemVindo = document.getElementById("bemVindo");
+    var sticky = 100;
+
+    function fixarHeader() {
+        if (window.pageYOffset >= sticky) {
+            header.classList.add("sticky")
+            bemVindo.style.marginTop = "250px";
+        } else {
+            header.classList.remove("sticky");
+            bemVindo.style.marginTop = "128px";
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+</script>
