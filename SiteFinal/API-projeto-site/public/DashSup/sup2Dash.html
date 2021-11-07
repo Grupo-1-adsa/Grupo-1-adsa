@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dash.css">
+    <link rel="stylesheet" href="infograficos.css">
+    <link rel="shortcut icon" href="./img/logoBranco.svg" type="image/x-icon" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Painel Suporte</title>
+</head>
+
+<body>
+    <section class="containerDash">
+
+        <div class="containerMenu">
+            <nav class="containerNav">
+                <button class="close">X</button>
+                <div><img src="./img/logoBranco.svg" alt="#"></div>
+                <h2>Dashboard</h2>
+                <ul class="lista_menu_geral">
+                    <li><a href="#">Minha Equipe</a></li>
+                    <li><a class="dwn" href="#">Extrato</a>
+                        <ul class="lista_submenu">
+                            <li> <a href="#">Semanal</a></li>
+                            <li> <a href="#">Mensal</a></li>
+                            <li> <a href="#">Anuanal</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Ajuda</a></li>
+                    <li><a href="../login.html">Sair</a></li>
+                </ul>
+            </nav>
+        </div>
+        <section class="containerInfo">
+            <div><a href="./supDash.html"> <img class="back" src="./img/seta.svg" alt=""></a>
+                <div class="cabecalho">
+                    <a class="mphone" href="#">
+                        <div></div>
+                    </a>
+                    <h1 class="title_sup">Atividade Semanal <span class="name"></span></h1>
+                    <div class="gestorPerfil">
+
+                        <img src="./img/perfilSup.png" alt="#">
+                        <div>
+                            <h4 id="nome_gest"></h4>
+                            <p>Suporter</p>
+                            <div class="box_perfil">
+                                <p> <a href="#">Configurações</a> </p>
+                                <p><a href="/login.html">Sair</a></p>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <div class="containerSup">
+                    <div class="g1">
+                        <div>
+                            <canvas id="myChart" width="550"></canvas>
+                        </div>
+                    </div>
+                    <div class="g2">
+                        <span class="">
+                            <span class="spancont">
+                                <div class="ativo">Ativo</div>
+                                <div class="pendente">Pendente</div>
+                                <div class="inativo">Inativo</div>
+                            </span></span>
+                        </span>
+                        <div class="dn">
+                            <canvas id="myChart2"></canvas>
+                        </div>
+                    </div>
+                    <div class="g3">
+                        <div>
+                            <canvas id="myChart3"></canvas>
+                        </div>
+                    </div>
+                    <div class="g4">
+                        <ul>
+                            <li>Informação de A: <span>1029</span></li>
+                            <li>Informação de B: <span>1029</span></li>
+                            <li>Informação de C: <span>1029</span></li>
+                            <li>Informação de D: <span>1029</span></li>
+                            <li>Informação de E: <span>1029</span></li>
+                            <li>Informação de F: <span>1029</span></li>
+                            <li>Informação de G: <span>1029</span></li>
+                        </ul>
+                    </div>
+                </div>
+        </section>
+    </section>
+</body>
+<script type="module" src="gestao2.js"></script>
+<script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'],
+            datasets: [{
+                label: 'Maquinas Hist',
+                data: [12, 19, 3, 10, 2, 3],
+                backgroundColor: [
+                    'rgba(155, 89, 182, 1)'
+                ],
+                borderColor: [
+                    'rgba(155, 89, 182, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
+
+<script>
+    var ctx = document.getElementById('myChart2').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 19, 3],
+                backgroundColor: [
+                    'rgb(255, 99, 71)',
+                    'rgb(95, 141, 255)',
+                    'rgb(255, 204, 95)',
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
+
+<script>
+    var ctx = document.getElementById('myChart3').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 19, 3, 5, 2, 3],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
+<script>
+    function pegaNome() {
+        const nome = document.querySelector(".name");
+        nome.innerText = window.localStorage.getItem('name');
+    }
+    pegaNome();
+    function pegaNomeSup() {
+        nome_gest.innerText = sessionStorage.nome;
+    }
+    pegaNomeSup();
+</script>
+
+</html>

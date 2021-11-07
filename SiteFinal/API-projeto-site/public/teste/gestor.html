@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Bem vindo de volta <span id="id_gest"></span></h1>
+</body>
+<script>
+  function pegaNome() {
+    id_gest.innerText = sessionStorage.getItem('nome');
+  }
+  pegaNome();
+  function pegarDados(dados) {
+    console.log(dados.length);
+    Array.from(dados).forEach((d) => {
+      console.log(d.nome);
+    })
+  }
+  function obterPublicacoesPorUsuario(idUsuario) {
+    fetch(`/publicacoes/${idUsuario}`)
+      .then(resposta => {
+        if (resposta.ok) {
+          resposta.json().then(function (resposta) {
+
+            pegarDados(resposta);
+            // alert(JSON.stringify(resposta))
+          });
+        } else {
+          console.error('Nenhum dado encontrado ou erro na API');
+        }
+      })
+      .catch(function (error) {
+        console.error(`Erro na obtenção das publicações do usuário: ${error.message}`);
+      });
+  }
+  obterPublicacoesPorUsuario(1);
+
+</script>
+
+
+
+
+
+</html>

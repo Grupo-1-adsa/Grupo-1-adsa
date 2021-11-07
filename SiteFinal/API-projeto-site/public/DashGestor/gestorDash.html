@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dash.css">
+    <title>Painel Gestor</title>
+    <link rel="shortcut icon" href="img/logoBranco.svg" type="image/x-icon" />
+
+
+</head>
+
+<body>
+    <section class="containerDash">
+
+        <div class="containerMenu">
+            <nav class="containerNav">
+                <button class="close">X</button>
+                <div><img src="./img/logoBranco.svg" alt="#"></div>
+                <h2>Dashboard</h2>
+                <ul class="lista_menu_geral">
+                    <li><a href="#">Minha Equipe</a></li>
+                    <li style="display: none !important;"><a class="dwn" href="#">Extrato</a>
+                        <ul class="lista_submenu">
+                            <li> <a href="#">Semanal</a></li>
+                            <li> <a href="#">Mensal</a></li>
+                            <li> <a href="#">Anual</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Ajuda</a></li>
+                    <li><a href="/login.html">Sair</a></li>
+                </ul>
+            </nav>
+        </div>
+        <section class="containerInfo">
+            <div class="cabecalho">
+                <a class="mphone" href="#">
+                    <div></div>
+                </a>
+                <div class="pesquisa">
+                    <img src="./img/lupa2.png" alt="#">
+                    <input class="ipt" type="text" placeholder="Pesquisar...">
+                    <a class="btnback" href="#">Voltar</a>
+                </div>
+
+                <div class="gestorPerfil">
+                    <img src="./img/perfilGestor.png" alt="#">
+                    <div>
+                        <h4 id="nome_gest"></h4>
+                        <p>Gestor</p>
+                        <div class="box_perfil">
+                            <p> <a href="#">Configurações</a> </p>
+                            <p><a href="../login.html">Sair</a></p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="dashinfo">
+                <div class="btnStatus">
+                    <ul>
+                        <li>
+                            <p>Alertas</p>
+                            <div><img src="./img/cross.svg" alt="">
+                            </div>
+                        </li>
+                        <li>
+                            <p>Ativos</p>
+                            <div><img src="./img/check.svg" alt="#">
+                            </div>
+                        </li>
+
+                        <li>
+                            <p>Pendentes</p>
+                            <div><img src="./img/crooshair.svg" alt="">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <section class="containerInfoBalao">
+
+                </section>
+            </div>
+        </section>
+    </section>
+</body>
+
+</html>
+<script>
+    function criarContainers(dados) {
+        const container = document.querySelector(".containerInfoBalao")
+        const conteudo = document.createElement("div");
+        dados.map((dado) => {
+            container.innerHTML += `
+      <div class="infoBalao">
+                  <div class="perfilFunc">
+                      <h1>${dado.nomeFuncionario}</h1>
+                      <img src="./img/warn.png" alt="">
+                  </div>
+                  <div class="perfilM">
+                      <h2>Máquina</h2>
+                      <h2>012190</h2>
+                  </div>
+                  <h2 class="status">Status: <span class="ruim">Alerta</span></h2>
+
+                  <div class="perfilS">
+                      <p>Email: ${dado.email}</p>
+                      <p>Telefone: ${dado.telefone}</p>
+                      <p>Id: ${dado.idFuncionario}</p>
+                  </div>
+                  <a href="./gestor2Dash.html">Mais informações</a>
+              </div>
+      `;
+
+        });
+    };
+
+
+    function dadosFunc(data) {
+        const dados = Array.from(data);
+        criarContainers(dados);
+    }
+
+    function obterPublicacoesPorUsuario(idUsuario) {
+        fetch(`/publicacoes/${idUsuario}`)
+            .then(resposta => {
+                if (resposta.ok) {
+                    resposta.json().then(function (resposta) {
+                        dadosFunc(resposta);
+                        console.log(resposta);
+                        // alert(JSON.stringify(resposta))
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção das publicações do usuário: ${error.message}`);
+            });
+    }
+
+    const idGest = +sessionStorage.id;
+    obterPublicacoesPorUsuario(idGest);
+
+    function pegaNome() {
+        nome_gest.innerText = sessionStorage.nome;
+    }
+    pegaNome();
+</script>
+<script type="module" src="gestao3.js"></script>
+
+<script type="module" src="gestao.js"></script>
