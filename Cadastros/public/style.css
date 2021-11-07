@@ -10,7 +10,6 @@
     --font-roboto-titulo: 'Roboto', sans-serif;
     --font-montserrat-corpo: 'Montserrat', sans-serif;
     --font-lato-corpo: 'Lato', sans-serif;
-    
 }
 
 * {
@@ -59,29 +58,34 @@ body {
 /*estilizando form  */
 
 .main-container {
-    margin-top: 12vh;
+    margin-top: 13vh;
     margin-left: 10vh;
     display: flex;
     justify-content: center;
     position: absolute;
-    min-width: 145vh;
-    min-height: 81vh;
+    min-width: 146vh;
+    min-height: 82vh;
+    border: 2px solid  #c0c6cc;
 }
 
 .container {
-    background-color: #c0c6cc;
-    height: 71vh;
-    padding: 1rem;
-    margin-left: 10px;
     margin-top: 10px;
+    min-width: 450px;
+    max-height: 71vh;
+    padding: 1rem;
+    background-color: #ced0d1;
 }
 
 .forms-container {
-    background-color: #c0c6cc;
-    max-width: 450px;
+    min-width: 450px;
     max-height: 45.5vh;
     padding: 1rem;
     margin-left: 5px;
+    background-color: #ced0d1;
+}
+
+form .forms-container:first-child{
+    margin-bottom: 0.5rem;
     margin-top: 10px;
 }
 
@@ -106,42 +110,43 @@ main h3::before {
 .input-fild {
     position: relative;
 }
-
-.forms-container input {
+.input-fild input{
+    width: 100%;
+    min-height: 4.5vh;
+    background:none;
     outline: none;
-    font-size: 0.9em;
-    color: var(--cor-preto);
-    width: 400px;
-    height: 28px;
 }
 
 form {
     display: flex;
 }
 
-.container input {
-    outline: none;
-    font-size: 0.9em;
-    color: var(--cor-preto);
-    width: 400px;
-    height: 30px;
-}
-
 .input-fild input::placeholder {
     color: rgba(0, 0, 0, 0.733);
 }
 
-.input-fild .underliner::after{
-   
-}
-.input-fild .underliner::before{
+.input-fild .underline::before {
     content: '';
     position: absolute;
     height: 1px;
     width: 100%;
-    bottom: -5px;
     left: 0;
     background-color: rgb(92, 91, 91);
+}
+
+.input-fild .underline::after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    left: 0;
+    background: linear-gradient(rgb(243, 232, 232), rgb(90, 90, 90));
+    transform: scaleX(0);
+    transition: all .3s ease-in-out;
+}
+
+.input-fild input:focus ~ .underline::after{
+    transform: scaleX(1);
 }
 
 .main-container h4 {
@@ -169,4 +174,3 @@ form input[type="submit"]:hover {
     line-height: 0.5px;
     background: linear-gradient(to right, rgb(36, 36, 36), rgb(90, 90, 90));
 }
-
