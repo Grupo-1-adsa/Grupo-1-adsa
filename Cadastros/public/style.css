@@ -1,176 +1,186 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
 :root {
-    --cor-primario-azul: #5879FA;
-    --cor-secundaria-cinza: #E9EBF0;
-    --cor-oposto-vermelho: red;
-    --cor-terciaria-roxo: #7644D4;
-    --cor-preto: #000;
-    --font-roboto-titulo: 'Roboto', sans-serif;
-    --font-montserrat-corpo: 'Montserrat', sans-serif;
-    --font-lato-corpo: 'Lato', sans-serif;
+  --primary-azul: #2c82b9;
+  --cor-preto: #000;
+  --font-lato-corpo: "Lato", sans-serif;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    box-sizing: border-box;
-    font-family: var(--font-lato-corpo);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-family: var(--font-lato-corpo);
 }
 
 body {
-    background-color: var(--cor-secundaria-cinza);
+  color: rgb(32, 19, 19);
+  font-weight: 500;
+  display: flex;
+  min-height: 100vh;
+  min-width: 100vw;
 }
 
-.box-um {
-    align-items: center;
+main {
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.titulo {
-    font-family: var(--font-roboto-titulo);
-    display: flex;
-    align-items: center;
+.container h1 {
+  color: var(--primary-azul);
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
-.box-um img {
-    height: 60px;
-    margin-right: 10px;
+.tituloFast {
+  font-size: 2rem;
+  font-weight: bold;
 }
 
-.tituloImg {
-    display: flex;
-    float: left;
-    align-items: center;
-    margin-left: 100px;
-    margin-top: 15px;
+.container img {
+  width: 30px;
 }
 
-.box-info {
-    margin-top: 30px;
-    margin-left: 350px;
-    display: flex;
-    float: left;
-    align-items: center;
+main form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/*estilizando form  */
-
-.main-container {
-    margin-top: 13vh;
-    margin-left: 10vh;
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    min-width: 146vh;
-    min-height: 82vh;
-    border: 2px solid  #c0c6cc;
-}
-
-.container {
+main form label {
     margin-top: 10px;
-    min-width: 450px;
-    max-height: 71vh;
-    padding: 1rem;
-    background-color: #ced0d1;
+  display: flex;
+  flex-direction: column;
 }
 
-.forms-container {
-    min-width: 450px;
-    max-height: 45.5vh;
-    padding: 1rem;
-    margin-left: 5px;
-    background-color: #ced0d1;
-}
-
-form .forms-container:first-child{
-    margin-bottom: 0.5rem;
-    margin-top: 10px;
-}
-
-main h3 {
-    font-weight: 600;
-    margin-bottom: 1rem;
-    position: relative;
-    text-align: center;
-}
-
-main h3::before {
-    content: '';
-    position: absolute;
-    height: 2px;
-    width: 70px;
-    bottom: 0;
-    left: 3;
-    border-radius: 8px;
-    background-color: rgb(85, 85, 85);
+main form label span {
+  font-size: 1rem;
 }
 
 .input-fild {
-    position: relative;
-}
-.input-fild input{
-    width: 100%;
-    min-height: 4.5vh;
-    background:none;
-    outline: none;
+  position: relative;
 }
 
-form {
-    display: flex;
+.input-fild input {
+  width: 400px;
+  height: 30px;
+  outline: none;
+  background: none;
+  outline: none;
 }
 
 .input-fild input::placeholder {
-    color: rgba(0, 0, 0, 0.733);
+  color: rgba(138, 138, 138, 0.733);
 }
 
 .input-fild .underline::before {
-    content: '';
-    position: absolute;
-    height: 1px;
-    width: 100%;
-    left: 0;
-    background-color: rgb(92, 91, 91);
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  left: 0;
+  background-color: rgb(92, 91, 91);
+  border-radius: 10px;
 }
 
 .input-fild .underline::after {
-    content: '';
-    position: absolute;
-    height: 1px;
-    width: 100%;
-    left: 0;
-    background: linear-gradient(rgb(243, 232, 232), rgb(90, 90, 90));
-    transform: scaleX(0);
-    transition: all .3s ease-in-out;
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  left: 0;
+  background:  linear-gradient(90deg, rgba(44,130,185,1) 0%, rgba(143,192,224,1) 40%, rgba(143,192,224,1) 60%, rgba(44,130,185,1) 100%);
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out;
 }
 
-.input-fild input:focus ~ .underline::after{
-    transform: scaleX(1);
+.input-fild input:focus ~ .underline::after {
+  transform: scaleX(1);
 }
 
-.main-container h4 {
-    margin-top: 0.3rem;
-    font-size: 0.9rem;
+::-webkit-input-placeholder {
+  color: rgba(83, 83, 83, 0.822);
+  font-weight: bold;
 }
 
-form input[type="submit"] {
-    margin-top: 29rem;
-    padding: 0.4rem;
-    cursor: pointer;
-    color: white;
-    font-size: 0.9rem;
-    font-weight: 300;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-    height: 7%;
-    width: 20%;
-    position: absolute;
-    background: linear-gradient(rgb(36, 36, 36), rgb(90, 90, 90));
+main form input[type="submit"] {
+  cursor: pointer;
+  width: 50%;
+  height: 40px;
+  margin-top: 2rem;
+  border: none;
+  border-radius: 12px;
+  background: #2c88d9;
+  color: white;
+  font-size: 1.1rem;
+  transition: all 0.3s ease-in-out;
 }
 
-form input[type="submit"]:hover {
-    letter-spacing: 0.5px;
-    line-height: 0.5px;
-    background: linear-gradient(to right, rgb(36, 36, 36), rgb(90, 90, 90));
+main form input[type="submit"]:hover {
+  background: #5952d4;
+}
+
+section.images {
+  width: 50vw;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 4rem;
+}
+
+section.images img {
+  width: 100%;
+}
+
+section.images .circle {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(45deg, #e8cbc0, #444444);
+  clip-path: circle(40% at right 80%);
+  z-index: -1;
+}
+
+@media only screen and (min-width: 900px) and (max-width: 1200px) {
+  section.images img {
+    width: 110%;
+  }
+
+  section.images .circle {
+    clip-path: circle(35% at right 80%);
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  section.images {
+    display: none;
+    visibility: hidden;
+  }
+
+  main {
+    width: 100vw;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  main h1 {
+    font-size: 2rem;
+  }
+
+  main .alternative span {
+    font-size: 0.8rem;
+  }
+
+  main form label span,
+  main form input[type="submit"] {
+    font-size: 1rem;
+  }
 }
