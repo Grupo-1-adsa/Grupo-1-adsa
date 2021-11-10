@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
-* {
-    /*resetando */
+
+* { /*resetando */
     margin: 0;
     border: 0;
     padding: 0;
@@ -8,21 +8,20 @@
     font-family: "Poppins", sans-serif;
 }
 
-.cartinha {
+.cartinha{
     width: 200px;
     height: 200px;
     margin: 0 auto;
 }
-
 :root {
     --cor-primario-azul: #5879FA;
     --cor-secundaria-cinza: #E9EBF0;
-    --cor-terciaria-roxo: #7644D4;
-}
+    --cor-terciaria-roxo:#7644D4;
+  }
+
 
 body {
     background: linear-gradient(45deg, #4776E6, #E9EBF0);
-    background:  url(./DashGestor/img/fundoLogin.jpg);
     background-repeat: no-repeat;
     min-height: 100vh;
     min-width: 100vw;
@@ -33,74 +32,61 @@ body {
     z-index: 5;
 }
 
-.header-login {
-    color: white;
-    text-shadow: #161616 0.1em 0.1em 0.3em;
+.header-login{
+    color: var(--cor-secundaria-cinza);
     font-size: 1.33em;
     position: fixed;
     top: 0;
     display: flex;
     justify-self: flex-start;
     width: 100%;
-}
 
-.container-login {
+}
+.container-login{
     width: 80%;
     margin: auto;
 }
-
-.header-login .container-login {
+.header-login .container-login{
     display: flex;
     flex-flow: wrap row;
     justify-content: space-between;
     align-items: center;
     height: 5em;
 }
-
-.header-login .container-login .box-login {
+.header-login .container-login .box-login{
     display: flex;
     flex-flow: row;
     align-items: center;
     justify-content: space-between;
 }
-
-.box-login img{
-    width: 100px;
-    position: relative;
-    top: -3px;
-    left: -3px;
-    filter: drop-shadow(0px 3px 3px rgba(39, 39, 39, 0.4));
-    filter: drop-shadow(0px 3px 3px rgb(70, 70, 70));
-}
-
-.teste {
+.teste{
     font-size: 3rem;
     margin: 1rem;
 }
 
-a {
-    color: var(--cor-terciaria-roxo);
+a{
+    color: var(--cor-secundaria-cinza);
     text-decoration: none;
-    margin-top: 20px;
+    text-transform: uppercase;
 }
 
-ul li a:hover {
-    color: black;
+ul li a:hover{ 
+    color: black; 
 }
 
-ul {
+ul{
     /* display: flex;
     flex-flow: wrap row; */
     position: relative;
 }
 
-li {
+li{
     list-style: none;
     padding: 1em .5em;
 }
 
-.voltar {
-    position: absolute;
+.voltar{
+    position: absolute ;
     right: 0.1em;
     width: 5.7em;
     background-color: var(--cor-terciaria-roxo);
@@ -112,16 +98,10 @@ li {
 main.form-login {
     background: white;
     min-width: 320px;
-    min-height: 60vh;
+    min-height: 40vh;
     padding: 2rem;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
-}
-
-.form-login .escolha{
-    margin-bottom: 1rem;
-    border-bottom: 1px solid #bdbdbd;
-    
 }
 
 main h2 {
@@ -177,7 +157,7 @@ form .input-field:first-child {
     transform-origin: left;
 }
 
-.input-field input:focus~.underline::after {
+.input-field input:focus ~ .underline::after {
     transform: scaleX(1);
 }
 
@@ -186,7 +166,6 @@ form .input-field:first-child {
     font-size: 0.9rem;
     color: rgba(0, 0, 0, 0.7);
     width: 100%;
-    margin: 15px 0px;
 }
 
 .input-field input::placeholder {
@@ -251,13 +230,14 @@ form input[type="submit"]:hover {
 }
 
 @media screen and (max-width:900px) {
-    .container-login {
-        width: 95%;
+    .container-login{
+        width: 95%; 
     }
-    .voltar {
+    .voltar{
         font-size: 16px;
     }
 }
+
 
 main.form-cadastro {
     background: white;
@@ -340,121 +320,43 @@ main.form-cadastro {
         margin-left: 0;
     }
 }
-
-.send {
+.send{
     background-color: rgb(255, 253, 253) !important;
     padding: 10px;
 }
 
 .send h1 {
-    color: var(--cor-terciaria-roxo);
+    color:  var(--cor-terciaria-roxo);
 }
 
-.contef {
+.contef{
     animation: avancar .2s;
 }
 
+
 @keyframes avancar {
     0% {
-        transform: translate3d(-300px, 0, 0);
-        opacity: 0;
+     transform: translate3d(-300px,0,0);
+     opacity: 0;
     }
-    50% {
-        transform: translate3d( -10px, 0, 0);
-        opacity: 0.5;
-    }
-    100% {
-        opacity: 1;
-        transform: translate3d( 0px, 0, 0);
-    }
+   50%{
+    transform: translate3d( -10px,0,0);
+    opacity: 0.5;
+   }
+   100%{
+       opacity: 1;
+       transform: translate3d( 0px,0,0);
+   }
 }
 
-.check::after {
-    content: "";
-    background-image: url(../img/checked.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    width: 15px;
-    height: 15px;
-    display: inline-block;
-    margin-left: 5px;
+.check::after{
+ content: "";
+ background-image: url(../img/checked.png);
+ background-repeat: no-repeat;
+ background-position: center;
+ background-size: cover;
+ width: 15px;
+ height: 15px;
+ display: inline-block;
+ margin-left: 5px;
 }
-
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-}
-
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #8d56ea;
-    -webkit-transition: .4s;
-    transition: .4s;
-}
-
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
-}
-
-input:checked+.slider {
-    background-color:#5a78fa ;
-}
-
-input:focus+.slider {
-    box-shadow: 0 0 1px #000000;
-}
-
-input:checked+.slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
-}
-
-/* Rounded sliders */
-
-.slider.round {
-    border-radius: 34px;
-}
-
-.slider.round:before {
-    border-radius: 50%;
-}
-
-.toggle {
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid #bdbdbd;
-    padding-bottom:4px;
-    align-items: center;
-}
-
-.toggle p {
-    color: rgba(190, 190, 190, 0.76);
-    font-size: 1rem;
-    color: rgba(0, 0, 0, 0.7);
-}
-
-
-

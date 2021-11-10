@@ -192,7 +192,7 @@ li {
     font-family: var(--font-montserrat-corpo);
 }
 
-.footer {
+/* .footer {
     border-top: 3px solid var(--cor-primario-azul);
 }
 
@@ -222,7 +222,7 @@ li {
 
 .footer .container .box-footer {
     font-family: var(--font-roboto-titulo);
-}
+} */
 
 /* VISAO E VALORES */
 
@@ -573,6 +573,145 @@ li {
     height: 2.5em;
     font-size: 1em !important;
 }
+
+/*-------------------------------MAPS-----------------------------------*/
+#map {
+    height: 300px;
+    width: 100%;
+    
+}
+
+.mapa {
+    padding: 60px;
+    background: #e2eafc;
+    position: relative;
+}
+
+/*fundo da parte de contato*/
+
+.mapa .contato-card {
+    width: 390px;
+    height: 250px;
+    background: white;
+    position: absolute;
+    z-index: 99;
+
+    border-radius: 8px;
+
+    top: calc(50% - 140px);
+    left: calc(20% - 175px);
+
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28);
+}
+
+.mapa .contato-card h1 {
+    padding-left: 50px;
+    text-align: left;
+    color: #BF8654;
+}
+
+.mapa  .contato-card li {
+    font-size: .8rem;
+    font-weight: bold;
+    color: grey;
+
+    display: flex;
+    align-items: center;
+}
+
+.mapa .contato-card li svg {
+    width: 16px;
+    margin: 10px;
+}
+
+
+/*----------------------FOOTER-------------------------------------- */
+.footer {
+    display: flex;
+    justify-content: center;
+    padding-top: 109px;
+}
+
+.linha {
+    height: 3px;
+    width: 100%;
+    background: radial-gradient(50% 11013689.76% at 50% 0%, #0D0D0D 0%, #EFC0C0 100%);
+    opacity: 0.1;
+    border-radius: 49px;
+    margin-bottom: 36px;
+}
+
+.footer .horizontal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.footer .horizontal div {
+    min-width: 241px;
+}
+
+.esquerda {
+    display: flex;
+    float: left;
+}
+
+.esquerda p {
+    font-size: 15px;
+    line-height: 22.5px;
+    color: #0D0D0D;
+    opacity: 0.8;
+    margin: 31px 0 0 16px;
+}
+
+.meio {
+    text-align: center;
+}
+
+.meio p:nth-child(1) {
+    font-size: 15px;
+    line-height: 22px;
+    text-align: center;
+    margin: 0;
+    color: #8C8A97;
+}
+
+.meio p:nth-child(2) {
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: 600;
+    color: #0D0D0D;
+    margin: 6px 0 0 0;
+    opacity: 0.8;
+}
+
+.direita {
+    float: right;
+    text-align: center;
+}
+
+.direita p:nth-child(1) {
+    font-size: 15px;
+    line-height: 22px;
+    text-align: center;
+    margin: 0;
+    color: #8C8A97;
+}
+
+.direita p:nth-child(2) {
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: 600;
+    color: #0D0D0D;
+    margin: 6px 0 0 0;
+    opacity: 0.8;
+}
+
 
 @media screen and (max-width: 900px) {
     .visao_quadrados ul {

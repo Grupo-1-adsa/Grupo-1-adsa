@@ -35,6 +35,7 @@
                     <li><a data-links href="#home">HOME</a></li>
                     <li><a data-links href="#visao">SOBRE NÓS</a></li>
                     <li><a data-links href="#contato">TIRAR DÚVIDAS</a></li>
+                    <li><a data-links href="./login/login.html">Login</a></li>
                     <li><a data-links href="./saibaMais/cadastro.html" class="login">Saber mais</a></li>
                 </ul>
             </nav>
@@ -251,41 +252,47 @@
     </footer> -->
 
     <div id="mapa" class="mapa">
-        <script>
-            feather.replace();
 
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
+        <div id="map"></div>
+    </div>
 
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
+
+
+    <script>
+        feather.replace();
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
                 });
             });
+        });
 
-            function initMap() {
-                // The location of Uluru
-                var uluru = {
-                    lat: -19.924108,
-                    lng: -43.943470
-                };
-                // The map, centered at Uluru
-                var map = new google.maps.Map(
-                    document.getElementById('map'), {
-                    zoom: 15,
-                    center: uluru
-                });
-                // The marker, positioned at Uluru
-                var marker = new google.maps.Marker({
-                    position: uluru,
-                    map: map
-                });
-            }
-        </script>
+        function initMap() {
+            // The location of Uluru
+            var uluru = {
+                lat: -19.924108,
+                lng: -43.943470
+            };
+            // The map, centered at Uluru
+            var map = new google.maps.Map(
+                document.getElementById('map'), {
+                zoom: 15,
+                center: uluru
+            });
+            // The marker, positioned at Uluru
+            var marker = new google.maps.Marker({
+                position: uluru,
+                map: map
+            });
+        }
+    </script>
 
-        <script async defer src="https://maps.googleapis.com/maps/api/js?callback=initMap">
-        </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?callback=initMap">
+    </script>
 
 
 </body>

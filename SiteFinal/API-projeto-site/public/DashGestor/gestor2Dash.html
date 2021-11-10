@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dash.css">
+    <link rel="stylesheet" href="dashfuncgestor.css">
+    <link rel="shortcut icon" href="img/logoBranco.svg" type="image/x-icon" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Painel Gestor</title>
+</head>
+
+<body>
+    <section class="containerDash">
+
+        <div class="containerMenu">
+            <nav class="containerNav">
+                <button class="close">X</button>
+                <div><img src="./img/logoBranco.svg" alt="#"></div>
+                <h2>Dashboard</h2>
+                <ul class="lista_menu_geral">
+                    <li><a href="#">Minha Equipe</a></li>
+                    <li><a class="dwn" href="#">Extrato</a>
+                        <ul class="lista_submenu">
+                            <li> <a href="#">Semanal</a></li>
+                            <li> <a href="#">Mensal</a></li>
+                            <li> <a href="#">Anual</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Ajuda</a></li>
+                    <li><a href="../login.html">Sair</a></li>
+                </ul>
+            </nav>
+        </div>
+        <section class="containerInfo">
+
+            <div class="cabecalho">
+                <div><a href="./gestorDash.html"> <img class="back" src="./img/seta.svg" alt=""></a>
+                </div>
+                <h1>Atividade Semanal - <span class="name"></span> </h1>
+                <a class="mphone" href="#">
+                    <div></div>
+                </a>
+                <div style="opacity: 0;" class="pesquisa">
+                    <img src="./img/lupa2.png" alt="#">
+                    <input type="text" placeholder="Pesquisar...">
+                </div>
+                <div class="gestorPerfil">
+                    <img src="./img/perfilGestor.png" alt="#">
+                    <div>
+                        <h4 id="nome_gest"></h4>
+                        <p>Gestor</p>
+                        <div class="box_perfil">
+                            <p> <a href="#">Configurações</a> </p>
+                            <p><a href="../login.html">Sair</a></p>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <div class="gestor_cont">
+                <div class="more">
+                    <span class="btnspan">
+                        <div>+</div>
+                    </span>
+                </div>
+                <div class="ballom">
+                    <div>
+                        <h1 class="name"></h1>
+                        <span>Maquina:21233</span>
+                    </div>
+
+                    <ul>
+                        <li class="lispan">
+                            <div>Atividade:</div> <span class="check">Ativo</span>
+                        </li>
+                        <li class="lispan">
+                            <div>Cpu:</div> <span class="check">Boa</span>
+                        </li>
+                        <li class="lispan">
+                            <div>Desempenho:</div> <span class="mcheck">Mediano</span>
+                        </li>
+                        <li class="lispan">
+                            <div>Status:</div> <span class="ncheck">Inativo</span>
+                        </li>
+                        <li class="lispan">
+                            <div>Email:</div> <span class="check">AnaDoria@gmail.com</span>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="grafico1">
+                    <span>Gráfico Comportamental</span>
+                    <canvas height="280px" id="myChart2"></canvas>
+                </div>
+                <div class="grafico2">
+                    <span>Inatividade do Funcionário <span class="spancont">
+                            <div class="ativo">Ativo</div>
+                            <div class="pendente">Pendente</div>
+                            <div class="inativo">Inativo</div>
+                        </span></span>
+
+                    <div class="gf3">
+                        <canvas id="myChart3"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+</body>
+<script type="module" src="gestao2.js"></script>
+<script>
+    var ctx = document.getElementById('myChart3').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: '',
+            datasets: [{
+                label: 'Atividade',
+                data: [12, 19, 3],
+                backgroundColor: [
+                    'rgb(255, 99, 71)',
+                    'rgb(95, 141, 255)',
+                    'rgb(255, 204, 95)',
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
+
+<script>
+    var ctx = document.getElementById('myChart2').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'],
+            datasets: [{
+                label: "Advertências Aplicadas",
+                data: [12, 19, 3, 5, 2, 3],
+                backgroundColor: [
+                    'rgba(155, 89, 182, 1)'
+                ],
+                borderColor: [
+                    'rgba(155, 89, 182, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
+<script>
+    function pegaNome() {
+        const name = document.querySelectorAll(".name");
+        name.forEach((n) => {
+            n.innerText = window.localStorage.getItem('name');
+        })
+    };
+    pegaNome();
+    function pegaNomeGest() {
+        nome_gest.innerText = sessionStorage.nome;
+    }
+    pegaNomeGest();
+</script>
+
+</html>
