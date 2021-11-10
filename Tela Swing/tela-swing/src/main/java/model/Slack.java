@@ -10,6 +10,8 @@ import java.net.http.HttpClient;
 import java.net.http.HttpResponse;
 import java.net.URI;
 import java.net.http.HttpRequest;
+import java.util.Timer;
+import java.util.TimerTask;
 
 
 public class Slack {
@@ -34,13 +36,32 @@ public class Slack {
             System.out.println("Não enviou a mensagem do Slack");
         }
     }
+
     public void enviaMensagem(String nomeFunc) throws IOException, InterruptedException {
         Processador processador = new Processador();
         Memoria memoria = new Memoria();
         JSONObject json = new JSONObject();
+        Timer timer = new Timer();
+        final long segundos = 600000;
+        TimerTask tarefa = new TimerTask() {
+            @Override
+            public void run() {
 
-        json.put("text", "inativo? :shrug: :Smile: @"+nomeFunc);
+                if (memoria.getEmUso() / memoria.getTotal() <= 0.4 && processador.getUso() <= 30.0) {
+                    json.put("text", "O @" + nomeFunc + " pode estar inativo pode estar inativo é melhor verificar :male-detective:");
+                    try {
+                        sendMessage(json);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
 
-        sendMessage(json);
+            }
+        };
+        timer.scheduleAtFixedRate(tarefa, 10, segundos);
+
+
     }
 }
