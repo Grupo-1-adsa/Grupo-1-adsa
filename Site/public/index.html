@@ -262,9 +262,10 @@
         <div class="contato-card">
             <h1>Entrem em contato conosco </h1>
             <ul>
-                <li><i data-feather="info"></i> Av. Campanella, 386 - São Paulo - SP, 08220-830</li>
-                <li><i data-feather="info"></i> pizzariafabulosa.com.br</li>
-                <li><i data-feather="info"></i> (11) 20482622</li>
+                <li><i data-feather="info"></i> <br> Rua Haddock Lobo, 595 - São Paulo - SP, 01414-001</li>
+                <li><i data-feather="info"></i> tfast5234@gmail.com </li>
+                <li><i data-feather="info"></i> (11) 96666-6969</li> 
+                
             </ul>
         </div>
         <div id="map"></div>
@@ -274,10 +275,10 @@
 
     <div class="footer">
         <div class="container">
-            <div class="linha"></div>
+            <div class="line"></div>
             <div class="horizontal">
                 <div class="esquerda">
-                    <img class="logo" src="" alt="Logo da FastTech">
+                    <img class="icon" src="img/iconEmpresa.png" alt="Logo da FastTech">
                     <p>&copy; 2021  FastTech</p>
                 </div>
                 <div class="meio">
@@ -335,32 +336,3 @@
 </html>
 
 
-<script>
-    window.onscroll = function () {
-        fixarHeader();
-    }; //arrumar a barra fixa
-    var header = document.getElementById("header");
-    var bemVindo = document.getElementById("bemVindo");
-    var sticky = 100;
-
-    function fixarHeader() {
-        if (window.pageYOffset >= sticky) {
-            header.classList.add("sticky")
-            bemVindo.style.marginTop = "250px";
-        } else {
-            header.classList.remove("sticky");
-            bemVindo.style.marginTop = "128px";
-        }
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
-
-</script>
