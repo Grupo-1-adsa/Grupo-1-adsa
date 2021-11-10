@@ -1,0 +1,211 @@
+.suporte_graficos{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0px;
+}
+.gf1{
+  display: flex;
+  width: 100%;
+
+  height: 285px;
+}
+.gf1 h1,.gf2 h1{
+  color: #333;
+  letter-spacing: 1px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 400;
+   margin-bottom: 20px;
+}
+.gf2{
+  width: 100%;
+  margin-top: 30px;
+}
+
+.maquina_hist{
+  
+  margin-right: 15px;
+  width: 50%;
+  height: 390px;
+  display: flex;
+  flex-direction: column;
+
+}
+.temp_hist{
+  width: 50%;
+  display: flex;
+  height: 295px;
+  align-items: center;
+  flex-direction: column;
+}
+.temp_hist h1{
+  width: 100%;
+  padding-left: 90px;
+}
+
+.gestorPerfil{
+ 
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.containerDash{
+  height: 90vh !important;
+  width: 93% !important;
+}
+
+
+.title_sup{
+  color: #8C4AF2;
+  margin-bottom: 10x;
+  font-size: 26px;
+  width: 90%;
+
+  text-align: center;
+}
+
+.containerSup{
+  height: 430px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  overflow: hidden;
+  overflow-y:scroll;
+}
+
+
+.g1,.g2,.g3,.g4{
+  height: 300px;
+   margin-bottom: 80px;
+   margin-top: 40px;
+   padding: 5px 5px;
+}
+
+
+.g1::before{
+  content: "Histórico de Memória";
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  border-bottom: 2px solid #8d4af236;
+  padding-bottom: 5px;
+  width: 35px;
+}
+.g2::before{
+  content: "CPU";
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  border-bottom: 2px solid #8d4af236;
+  padding-bottom: 5px;
+  width: 35px;
+  
+}
+.g3::before{
+  content: "Grafico informativo";
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  border-bottom: 2px solid #8d4af236;
+  padding-bottom: 5px;
+  width: 35px;
+}
+.g4::before{
+  content: "Mais Informações";
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  border-bottom: 2px solid #8d4af236;
+  padding-bottom: 5px;
+  width: 35px;
+}
+.dn{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+#myChart{
+ height: 350px !important;
+ width: 550px !important;
+}
+#myChart2{
+  height: 300px !important;
+ 
+  width:300px !important;  
+  justify-self: center !important;
+}
+
+.g4 ul{
+  margin-top: 15px;
+ 
+}
+.g2{
+  display: flex;
+  
+  
+  flex-direction: column;
+}
+.g4 ul li{
+  margin-bottom: 15px;
+  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  letter-spacing: 1px;
+}
+
+.g4 ul li:nth-child(odd){
+  background-color: #8d4af252;
+}
+#myChart1,#myChart2,#myChart3,#myChart4{
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+.containerSup::-webkit-scrollbar {
+  width: 18px;
+}
+
+.containerSup::-webkit-scrollbar-thumb {
+  background: #8d4af26c;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-left: 3px solid rgb(237, 237, 253);
+  border-right: 3px solid rgb(237, 237, 253);
+}
+
+.containerSup::-webkit-scrollbar-track {
+  background: rgb(237, 237, 253);
+  cursor: pointer;
+}
+.back{
+  transform: rotate(90deg);
+  width: 30px;
+  height: 30px;
+  position: relative;
+  top: 50px;
+}
+
+.spancont{
+  display: block;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center;
+  width: auto !important;
+  
+}
+.spancont div.inativo{
+  background-color: rgb(255, 99, 71);
+}
+.spancont div.pendente{
+  background-color: rgb(255, 204, 95);
+}
+.spancont div.ativo{
+  background-color: rgb(95, 141, 255);
+}
+.spancont div{
+ width: 80%;
+  font-size: 12px;
+  text-align: center;
+  border-radius: 5px;
+  margin: 2px;
+}
+
+.name{
+  background-color: #8c4af2;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+}

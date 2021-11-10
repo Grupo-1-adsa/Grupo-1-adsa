@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="./img/fone1.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/1ab94d0eba.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="phone.png">
+    <link rel="shortcut icon" href="../img/phone.svg" type="image/x-icon">
+    <title>Saber mais</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <header class="header-login">
+        <section class="container-login">
+            <div class="box-login">
+                <i class="fas fa-headset teste"></i>
+                <h1 class="title">FastTech</h1>
+            </div>
+
+            <ul>
+                <li><a href="../index.html" class="voltar">Voltar &olarr;</a></li>
+            </ul>
+        </section>
+    </header>
+
+    <main class="form-cadastro">
+        <h2 class="emp">Contato para mais informações</h2>
+        <form class="formularioCadastro" id="formCadastro" onsubmit="validar()" action="javascript:void(0)">
+            <section>
+                <div class="input-field">
+                    <input autocomplete="off" type="text" name="username" id="username"
+                        placeholder="Informe o Nome da Empresa" onkeyup="validar()">
+                    <div class="underline"></div>
+
+                    <div id="tremerUsername" class="vai_tremer"></div>
+                </div>
+            </section>
+            <div>
+
+                <div class="input-field">
+                    <input autocomplete="off" type="text" name="cnpj" id="cnpj" placeholder="XX. XXX. XXX/0001-XX"
+                        onkeyup="validar()">
+                    <div class="underline"></div>
+                    <div id="tremerCnpj" class="vai_tremer"></div>
+                </div>
+                <section>
+                    <div class="input-field">
+                        <input autocomplete="off" type="text" name="cep" id="cep" placeholder="Informe o CEP"
+                            onkeyup="validar()">
+                        <div class="underline"></div>
+                        <div id="tremerCep" class="vai_tremer"></div>
+                    </div>
+            </div>
+            </section>
+            <section>
+                <div class="input-field">
+                    <input autocomplete="off" type="text" name="telefone" id="tel" placeholder="Informe o Telefone"
+                        onkeyup="validar()">
+                    <div class="underline"></div>
+                    <div id="tremerTel" class="vai_tremer"></div>
+                </div>
+            </section>
+
+            <div class="input-field">
+                <input autocomplete="off" name="email" id="email" placeholder="Informe o Email" onkeyup="validar()">
+                <div class="underline"></div>
+                <div id="tremerEmail" class="vai_tremer"></div>
+            </div>
+
+            <input type="submit" value="enviar" onclick="enviando()">
+        </form>
+        <div class="footer">
+        </div>
+
+    </main>
+
+    <script src="../main.js"></script>
+</body>
+
+</html>
+
+<script type="text/javascript">
+    $("#telefone, #celular").mask("(00) 0000-0000");
+</script>
