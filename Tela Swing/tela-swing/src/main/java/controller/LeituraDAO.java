@@ -23,14 +23,7 @@ public class LeituraDAO {
             Double cpuUso = looca.getProcessador().getUso()/100000;
             Integer cpuFrequencia = Math.toIntExact(looca.getProcessador().getFrequencia()/1000000);
             Long tempAtividade = looca.getSistema().getTempoDeAtividade();
-/*
-            ProcessosGroup grupoDeProcessos = looca.getGrupoDeProcessos();
-            List<Processo> processos = grupoDeProcessos.getProcessos();
 
-            for (Processo processo : processos) {
-               locca dsa
-            }
-*/
 
             String sql = "insert into [dbo].[Leitura](dataHora,RAM,fkEquipamento,cpuFrequencia,tempoAtividade,cpuUso) values (getDate(),?,?,?,?,?)";
 

@@ -3,7 +3,7 @@ package model;
 
 /**
  *
- * @author ellen.m.almeida
+ *
  */
 public class Funcionario {
     private Integer idFuncionario;
