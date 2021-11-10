@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
-
 :root {
   --primary-azul: #2c82b9;
   --cor-preto: #000;
@@ -34,7 +33,7 @@ main {
 .container h1 {
   color: var(--primary-azul);
   font-size: 3rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   text-align: center;
 }
 
@@ -44,7 +43,7 @@ main {
 }
 
 .container img {
-  width: 30px;
+  width: 32px;
 }
 
 main form {
@@ -54,13 +53,19 @@ main form {
 }
 
 main form label {
-    margin-top: 10px;
+  margin-top: 10px;
   display: flex;
   flex-direction: column;
 }
 
 main form label span {
   font-size: 1rem;
+}
+
+button img {
+  width: 20px;
+  position: absolute;
+  margin-left: 5px;
 }
 
 .input-fild {
@@ -95,12 +100,12 @@ main form label span {
   height: 2px;
   width: 100%;
   left: 0;
-  background:  linear-gradient(90deg, rgba(44,130,185,1) 0%, rgba(143,192,224,1) 40%, rgba(143,192,224,1) 60%, rgba(44,130,185,1) 100%);
+  background: linear-gradient(90deg, rgba(44, 130, 185, 1) 0%, rgb(103, 162, 202) 40%, rgb(97, 149, 184) 60%, rgba(44, 130, 185, 1) 100%);
   transform: scaleX(0);
   transition: all 0.3s ease-in-out;
 }
 
-.input-fild input:focus ~ .underline::after {
+.input-fild input:focus~.underline::after {
   transform: scaleX(1);
 }
 
@@ -109,21 +114,26 @@ main form label span {
   font-weight: bold;
 }
 
-main form input[type="submit"] {
+main form button {
   cursor: pointer;
-  width: 50%;
+  width: 25%;
   height: 40px;
-  margin-top: 2rem;
+  margin-top: 1rem;
   border: none;
   border-radius: 12px;
-  background: #2c88d9;
+  background: linear-gradient(to right, #5c86e7, #014f86);
   color: white;
   font-size: 1.1rem;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  margin-left: 45vh;
+  border: none;
 }
 
-main form input[type="submit"]:hover {
-  background: #5952d4;
+main form button:hover {
+  width: 26%;
+  height: 41px;
+  letter-spacing: 0.2px;
+  background: linear-gradient( #5e89ee, #023b64);
 }
 
 section.images {
@@ -153,7 +163,6 @@ section.images .circle {
   section.images img {
     width: 110%;
   }
-
   section.images .circle {
     clip-path: circle(35% at right 80%);
   }
@@ -164,7 +173,6 @@ section.images .circle {
     display: none;
     visibility: hidden;
   }
-
   main {
     width: 100vw;
   }
@@ -174,13 +182,10 @@ section.images .circle {
   main h1 {
     font-size: 2rem;
   }
-
   main .alternative span {
     font-size: 0.8rem;
   }
-
-  main form label span,
-  main form input[type="submit"] {
+  main form label span, main form input[type="submit"] {
     font-size: 1rem;
   }
 }
