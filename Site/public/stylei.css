@@ -610,18 +610,28 @@ li {
 
 .mapa .contato-card h1 {
     padding-left: 50px;
+    font-size: 20px;
+    font-family: var(--font-montserrat-corpo);
     text-align: left;
     color: #BF8654;
 }
+.contato-card ul{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
 
+}
 .mapa  .contato-card li {
-    font-size: .8rem;
+    font-size: .7rem;
     font-weight: bold;
     color: grey;
 
     display: flex;
     align-items: center;
+    justify-content: center;
+    font-family: var(--font-montserrat-corpo);
 }
+
 
 .mapa .contato-card li svg {
     width: 16px;
@@ -636,14 +646,14 @@ li {
     padding-top: 109px;
 }
 
-.linha {
+ .line {
     height: 3px;
     width: 100%;
     background: radial-gradient(50% 11013689.76% at 50% 0%, #0D0D0D 0%, #EFC0C0 100%);
     opacity: 0.1;
     border-radius: 49px;
     margin-bottom: 36px;
-}
+} 
 
 .footer .horizontal {
     display: flex;
@@ -661,6 +671,13 @@ li {
     float: left;
 }
 
+.icon {
+    height: 60px;
+    width: 60px;
+    display: flex;
+    padding: 10px;
+}
+
 .esquerda p {
     font-size: 15px;
     line-height: 22.5px;
@@ -671,17 +688,6 @@ li {
 
 .meio {
     text-align: center;
-}
-
-.meio p:nth-child(1) {
-    font-size: 15px;
-    line-height: 22px;
-    text-align: center;
-    margin: 0;
-    color: #8C8A97;
-}
-
-.meio p:nth-child(2) {
     font-size: 18px;
     line-height: 27px;
     font-weight: 600;
@@ -689,21 +695,27 @@ li {
     margin: 6px 0 0 0;
     opacity: 0.8;
 }
+
+/* .meio p:nth-child(1) {
+    font-size: 15px;
+    line-height: 22px;
+    text-align: center;
+    margin: 0;
+    color: #8C8A97;
+} */
+
+/* .meio p:nth-child(2) {
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: 600;
+    color: #0D0D0D;
+    margin: 6px 0 0 0;
+    opacity: 0.8;
+} */
 
 .direita {
     float: right;
     text-align: center;
-}
-
-.direita p:nth-child(1) {
-    font-size: 15px;
-    line-height: 22px;
-    text-align: center;
-    margin: 0;
-    color: #8C8A97;
-}
-
-.direita p:nth-child(2) {
     font-size: 18px;
     line-height: 27px;
     font-weight: 600;
@@ -711,6 +723,23 @@ li {
     margin: 6px 0 0 0;
     opacity: 0.8;
 }
+
+/* .direita p:nth-child(1) {
+    font-size: 15px;
+    line-height: 22px;
+    text-align: center;
+    margin: 0;
+    color: #8C8A97;
+} */
+
+/* .direita p:nth-child(2) {
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: 600;
+    color: #0D0D0D;
+    margin: 6px 0 0 0;
+    opacity: 0.8;
+} */
 
 
 @media screen and (max-width: 900px) {
