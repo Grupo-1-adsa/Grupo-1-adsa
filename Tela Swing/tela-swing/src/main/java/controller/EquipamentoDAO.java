@@ -53,7 +53,7 @@ public class EquipamentoDAO {
 
     public void selectEquipamento(Integer fkFuncionario) {
         Equipamento selectStatement = query(fkFuncionario);
-        if (selectStatement != null) {
+ ''       if (selectStatement != null) {
             System.out.println("deu certo");
             fkLeitura = selectStatement.getIdEquipamento();
         } else {
