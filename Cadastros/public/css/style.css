@@ -15,7 +15,6 @@
 }
 
 body {
-  color: rgb(32, 19, 19);
   font-weight: 500;
   display: flex;
   min-height: 100vh;
@@ -30,11 +29,32 @@ main {
   justify-content: center;
 }
 
+.estiloForm{
+  padding-top: 60px;
+}
+
+.container {
+  width: 100% !important;
+  height: 90px;
+  position: absolute;
+  display: flex ;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 120px;
+  padding-top: 30px;
+  padding-right: 240px;
+}
+
 .container h1 {
   color: var(--primary-azul);
   font-size: 3rem;
   margin-bottom: 1rem;
   text-align: center;
+}
+
+.titulo{
+  align-self:flex-end !important;
+
 }
 
 .tituloFast {
@@ -43,7 +63,7 @@ main {
 }
 
 .container img {
-  width: 32px;
+  height: 32px;
 }
 
 main form {
@@ -158,6 +178,7 @@ section.images .circle {
   clip-path: circle(40% at right 80%);
   z-index: -1;
 }
+
 
 @media only screen and (min-width: 900px) and (max-width: 1200px) {
   section.images img {
