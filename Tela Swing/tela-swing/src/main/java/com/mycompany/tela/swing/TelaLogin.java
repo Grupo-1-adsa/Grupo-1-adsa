@@ -6,6 +6,7 @@ import controller.FuncionarioDAO;
 import controller.LeituraDAO;
 import model.Funcionario;
 import model.Slack;
+import logging.Log;
 
 import java.awt.Desktop;
 import java.io.IOException;
@@ -220,6 +221,7 @@ public class TelaLogin extends javax.swing.JFrame {
         EquipamentoDAO equipamentoDAO = new EquipamentoDAO();
         LeituraDAO leituraDAO = new LeituraDAO();
         Slack slack = new Slack();
+        Log log = new Log();
 
         String login = String.valueOf(txtEmail.getText());
         String senha = String.valueOf(fieldSenha.getPassword());
@@ -246,6 +248,7 @@ public class TelaLogin extends javax.swing.JFrame {
 
         } else {
             JOptionPane.showInternalMessageDialog(null, "Login ou senha incorretos.");
+            log.loginLog();
         }
 
 

@@ -3,6 +3,7 @@ package controller;
 import com.github.britooo.looca.api.core.Looca;
 import com.github.britooo.looca.api.group.discos.Disco;
 import java.util.List;
+import logging.Log;
 import model.Equipamento;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -53,6 +54,7 @@ public class EquipamentoDAO {
 
     public void selectEquipamento(Integer fkFuncionario) {
         Equipamento selectStatement = query(fkFuncionario);
+        Log log = new Log();
         if (selectStatement != null) {
             System.out.println("deu certo");
             fkLeitura = selectStatement.getIdEquipamento();
