@@ -34,7 +34,7 @@ public class EquipamentoDAO {
             discTamanho = Math.toIntExact(disco.getTamanho() / 1000000000);
         }
 
-        String sql = "insert into Equipamento(numeroSerie,CPU,RAM,HD,fkFuncionario,SO) values (?,?,?,?,?,?);";
+        String sql = "insert into Equipamento(numeroSerie,CPU,RAM,HD,fkFuncionario,SO,statusEquip) values (?,?,?,?,?,?,'ativo');";
 
         conn.update(sql, discSerial, procInfo, memInfo, discTamanho, fkFuncionario, sisInfo);
 
@@ -63,7 +63,13 @@ public class EquipamentoDAO {
         }
 
     }
+    public void atualizaStatus(Integer idEquipamento){
+        JdbcTemplate connn = new JdbcTemplate(config.getDataSource());
 
+        String sql = "update [dbo].[Equipamento] set statusEquip = 'desativado' where idEquipamento = ?";
+
+        connn.update(sql,idEquipamento);
+    }
     public Integer getFkLeitura() {
         return this.fkLeitura;
     }

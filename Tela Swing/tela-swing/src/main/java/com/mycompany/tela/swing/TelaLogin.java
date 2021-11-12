@@ -18,6 +18,8 @@ import javax.swing.JOptionPane;
 
 public class TelaLogin extends javax.swing.JFrame {
 
+    private Integer idEquipamento;
+
     public TelaLogin() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -216,6 +218,10 @@ public class TelaLogin extends javax.swing.JFrame {
         return login.equals("admin@admin.com") && senha.equals("admin123");
     }
 
+    public Integer getIdEquipamento() {
+        return idEquipamento;
+    }
+
     private void lblEntrarMouseClicked(java.awt.event.MouseEvent evt) throws IOException, InterruptedException {//GEN-FIRST:event_lblEntrarMouseClicked
         FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
         EquipamentoDAO equipamentoDAO = new EquipamentoDAO();
@@ -234,6 +240,7 @@ public class TelaLogin extends javax.swing.JFrame {
 
             equipamentoDAO.enviarEquipamento(funcionarioDAO.getFkFuncionario());
             equipamentoDAO.selectEquipamento(funcionarioDAO.getFkFuncionario());
+            idEquipamento = equipamentoDAO.getFkLeitura();
             Timer timer = new Timer();
             final long segundos = 10000;
             TimerTask tarefa = new TimerTask() {

@@ -8,6 +8,9 @@ import com.github.britooo.looca.api.group.processador.Processador;
 import com.github.britooo.looca.api.group.processos.ProcessosGroup;
 import com.github.britooo.looca.api.group.servicos.ServicosGroup;
 import com.github.britooo.looca.api.group.temperatura.Temperatura;
+import controller.EquipamentoDAO;
+import controller.FuncionarioDAO;
+
 import java.awt.Desktop;
 import java.net.URI;
 import java.util.Timer;
@@ -222,25 +225,31 @@ public class TelaSoftware extends javax.swing.JFrame {
                 + sistema.getPermissao() + "<br>" + sistema.getTempoDeAtividade() + "</html>"));
     }//GEN-LAST:event_lblAtivarMouseClicked
 
+    TelaLogin telaLogin = new TelaLogin();
+
     private void lblAtivarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAtivarMouseEntered
         ImageIcon botao = new ImageIcon(getClass().getResource("/button2.png")); 
-        lblAtivar.setIcon(botao); 
+        lblAtivar.setIcon(botao);
+        System.out.println(telaLogin.getIdEquipamento());
         
     }//GEN-LAST:event_lblAtivarMouseEntered
 
     private void lblAtivarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAtivarMouseExited
         ImageIcon botao = new ImageIcon(getClass().getResource("/button3.png")); 
-        lblAtivar.setIcon(botao); 
+        lblAtivar.setIcon(botao);
+        System.out.println(telaLogin.getIdEquipamento());
     }//GEN-LAST:event_lblAtivarMouseExited
 
     private void lblAtivarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAtivarMousePressed
         ImageIcon botao = new ImageIcon(getClass().getResource("/button1.png")); 
-        lblAtivar.setIcon(botao); 
+        lblAtivar.setIcon(botao);
+        System.out.println(telaLogin.getIdEquipamento());
     }//GEN-LAST:event_lblAtivarMousePressed
 
     private void lblAtivarMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAtivarMouseReleased
         ImageIcon botao = new ImageIcon(getClass().getResource("/button3.png")); 
-        lblAtivar.setIcon(botao); 
+        lblAtivar.setIcon(botao);
+        System.out.println(telaLogin.getIdEquipamento());
     }//GEN-LAST:event_lblAtivarMouseReleased
 
     public static void main(String args[]) {
