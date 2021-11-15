@@ -16,16 +16,15 @@ router.post('/:email', function (req, res, next) {
         port: 587,
         secure: true,
         auth: {
-            user: `tfast5234@gmail.com`,
-            pass: `#Gfgrupo1`
+            user: `hemolinesGrupo05@gmail.com`,
+            pass: `admhemolines`
         },
        
     });
 
     let info = {
         //to: "support@newaccount1623165703042.freshdesk.com",
-        to: "beatrizdonascimento255@gmail.com",
-        to: "tfast5234@gmail.com",
+        to: "hemolinesGrupo05@gmail.com",
         subject: `Mensagem do(a) cliente ${Nome}.`,
         text: `O nosso próximo passo é marcar uma reunião para começar outros processos.
         Falaremos mais a fundo sobre como funcionará nossa prestação de serviço!`,

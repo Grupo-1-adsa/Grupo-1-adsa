@@ -1,0 +1,15 @@
+{
+  "name": "sitefinal",
+  "version": "1.0.0",
+  "description": "Descrição: código de **API-projeto-site** para a Disciplina de **Pesquisa e Inovação** - 1º Semestre @ Bandtec - 2021/01",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodemailer": "^6.7.0"
+  },
+  "devDependencies": {}
+}
