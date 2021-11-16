@@ -82,13 +82,13 @@
                     </div>
                     <div class="g4">
                         <ul>
-                            <li>Informação de A: <span>1029</span></li>
-                            <li>Informação de B: <span>1029</span></li>
-                            <li>Informação de C: <span>1029</span></li>
-                            <li>Informação de D: <span>1029</span></li>
-                            <li>Informação de E: <span>1029</span></li>
-                            <li>Informação de F: <span>1029</span></li>
-                            <li>Informação de G: <span>1029</span></li>
+                            <li>Informação de <b>Sistema</b>: <span id="so">1029</span></li>
+                            <li>Informação de <b>NºSérie</b>: <span id="ns">1029</span></li>
+                            <li>Informação de <b>Ram</b>: <span id="ram">1029</span></li>
+                            <li>Informação de <b>Hd</b>: <span id="hd">1029</span></li>
+                            <li>Informação de <b>Email</b>: <span id="email">1029</span></li>
+                            <li>Informação de <b>Cpu</b>: <span id="cpu">1029</span></li>
+                            <li>Informação de <b>Id</b>: <span id="id">1029</span></li>
                         </ul>
                     </div>
                 </div>
@@ -107,6 +107,24 @@
     let quinta = [];
     let sexta = [];
     let geral = [];
+    function carregaInfo(data) {
+        const sistemaSo = document.querySelector('#so');
+        const sistemaNs = document.querySelector('#ns');
+        const ramfunc = document.querySelector('#ram');
+        const idfunc = document.querySelector('#id');
+        const hdfunc = document.querySelector('#hd');
+        const emailfunc = document.querySelector('#email');
+        const cpufunc = document.querySelector('#cpu');
+
+        sistemaSo.innerText = data[0].SO;
+        sistemaNs.innerText = data[0].numeroSerie;
+        ramfunc.innerText = data[0].RAM;
+        idfunc.innerText = data[0].idFuncionario;
+        hdfunc.innerText = data[0].HD;
+        emailfunc.innerText = data[0].email;
+        cpufunc.innerText = data[0].CPU;
+        console.log('INFO ---', data[0]);
+    }
     function calcData(data) {
         const dados = Array.from(data);
         dados.forEach((d) => {
@@ -154,7 +172,7 @@
                 if (resposta.ok) {
                     resposta.json().then(function (resposta) {
                         calcData(resposta);
-
+                        carregaInfo(resposta);
                         // alert(JSON.stringify(resposta))
                     });
                 } else {
@@ -177,9 +195,9 @@
             let ram;
             let total = 0;
             let max = 0;
+            const armazenador = [];
             registros.map((s) => {
                 total += +s.RAM;
-                const armazenador = [];
                 armazenador.push(s.RAM);
                 media = Math.floor(total / registros.length).toFixed(0);
                 max = Math.ceil(Math.max(...armazenador));
@@ -190,9 +208,9 @@
             };
         },
         maximo(data) {
+            const armazenador = [];
             let registros = Array.from(data);
             registros.map((s) => {
-                const armazenador = [];
                 armazenador.push(s.RAM);
                 max = Math.ceil(Math.max(...armazenador));
             });
@@ -207,7 +225,7 @@
         qua = calculadora.dia(quarta);
         qui = calculadora.dia(quinta);
         sex = calculadora.dia(sexta);
-        ma = calculadora.maximo(geral) + 2;
+        ma = calculadora.maximo(geral);
         console.log(ma)
         function updateChart() {
             myChartp.data.datasets[0].data[0] = +seg.media;
