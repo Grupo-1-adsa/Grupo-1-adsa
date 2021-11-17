@@ -60,7 +60,7 @@ public class Log {
         String dataHora = data.format(formatarData);
         DateTimeFormatter formatarData1 = DateTimeFormatter.ofPattern("dd-MM-yyyy_HH-mm-ss");
         String dataHora1 = data.format(formatarData1);
-        FileWriter log = new FileWriter("C:\\Users\\loginEntrada" + String.valueOf(dataHora1) + ".txt");
+        FileWriter log = new FileWriter("C:\\Users\\HorarioLoginEntrada" + String.valueOf(dataHora1) + ".txt");
         PrintWriter gravarLog = new PrintWriter(log);
         
         gravarLog.printf("Horario de Entrada na Aplicação: %s\n", dataHora);
@@ -74,7 +74,7 @@ public class Log {
         String dataHora = data.format(formatarData);
         DateTimeFormatter formatarData1 = DateTimeFormatter.ofPattern("dd-MM-yyyy_HH-mm-ss");
         String dataHora1 = data.format(formatarData1);
-        FileWriter log = new FileWriter("C:\\Users\\loginSaida" + String.valueOf(dataHora1) + ".txt");
+        FileWriter log = new FileWriter("C:\\Users\\HorarioLoginSaida" + String.valueOf(dataHora1) + ".txt");
         PrintWriter gravarLog = new PrintWriter(log);
         
         gravarLog.printf("Horario Saída da Aplicação: %s\n", dataHora);
