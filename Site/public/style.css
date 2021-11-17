@@ -622,7 +622,7 @@ li {
 
 }
 .mapa  .contato-card li {
-    font-size: .7rem;
+    font-size: .8rem;
     font-weight: bold;
     color: grey;
 
@@ -684,11 +684,12 @@ li {
     color: #0D0D0D;
     opacity: 0.8;
     margin: 31px 0 0 16px;
+    font-family: var(--font-montserrat-corpo);
 }
 
 .meio {
     text-align: center;
-    font-size: 18px;
+    font-size: 15px;
     line-height: 27px;
     font-weight: 600;
     color: #0D0D0D;
@@ -696,6 +697,9 @@ li {
     opacity: 0.8;
 }
 
+.meio a{
+    color: var(--cor-preto);
+}
 /* .meio p:nth-child(1) {
     font-size: 15px;
     line-height: 22px;
@@ -716,12 +720,16 @@ li {
 .direita {
     float: right;
     text-align: center;
-    font-size: 18px;
+    font-size: 15px;
     line-height: 27px;
     font-weight: 600;
     color: #0D0D0D;
     margin: 6px 0 0 0;
     opacity: 0.8;
+}
+
+.direita a {
+    color: var(--cor-preto);
 }
 
 /* .direita p:nth-child(1) {
