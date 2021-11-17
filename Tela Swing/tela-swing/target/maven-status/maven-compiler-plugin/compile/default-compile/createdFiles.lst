@@ -15,6 +15,7 @@ controller\EquipamentoMaper.class
 com\mycompany\tela\swing\TelaOpcao.class
 com\mycompany\tela\swing\TelaSoftware$1.class
 controller\LeituraDAO.class
+.netbeans_automatic_build
 controller\EquipamentoDAO.class
 com\mycompany\tela\swing\TelaLogin$6.class
 com\mycompany\tela\swing\TelaSoftware$2.class

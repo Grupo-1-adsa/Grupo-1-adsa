@@ -252,7 +252,7 @@ public class TelaLogin extends javax.swing.JFrame {
                 }
             };
             timer.scheduleAtFixedRate(tarefa, 10, segundos);
-
+            log.entrarLogin();
         } else {
             JOptionPane.showInternalMessageDialog(null, "Login ou senha incorretos.");
             log.loginLog();
