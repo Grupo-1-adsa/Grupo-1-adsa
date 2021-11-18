@@ -171,12 +171,12 @@ li {
 }
 
 .home-content button {
-    width: 7em;
-    height: 2.0em;
+    width: 5.4em;
+    height: 1.8em;
     margin: 2rem .5rem;
     border-style: none;
     background-color: var(--cor-terciaria-roxo);
-    font-size: 2rem;
+    font-size: 1.4rem;
     color: var(--cor-secundaria-cinza);
     font-weight: 500;
     font-family: var(--font-roboto-titulo);
