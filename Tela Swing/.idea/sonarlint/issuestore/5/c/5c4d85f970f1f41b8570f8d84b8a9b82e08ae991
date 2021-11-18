@@ -1,0 +1,60 @@
+
+r
+java:S1450”"VRemove the "jLabel1" field and declare it as a local variable in the relevant methods.(°ãÉ¸ÿÿÿÿÿ
+r
+java:S1450•"VRemove the "jPanel1" field and declare it as a local variable in the relevant methods.(´œ½ÿÿÿÿÿ
+r
+java:S1450–"VRemove the "jPanel2" field and declare it as a local variable in the relevant methods.(õ òçüÿÿÿÿ
+m
+java:S1450—"VRemove the "jPanel3" field and declare it as a local variable in the relevant methods.(Œ³èÈ
+r
+java:S1450˜"VRemove the "jPanel4" field and declare it as a local variable in the relevant methods.(§É†¬şÿÿÿÿ
+m
+java:S1450™"VRemove the "jPanel5" field and declare it as a local variable in the relevant methods.(³¡©ú
+l
+java:S1450š"VRemove the "jPanel6" field and declare it as a local variable in the relevant methods.(í›åv
+t
+java:S1450›"XRemove the "lblEntrar" field and declare it as a local variable in the relevant methods.(³«…Œÿÿÿÿÿ
+{
+java:S1450œ"_Remove the "lblEsqueceuSenha" field and declare it as a local variable in the relevant methods.(¥ÓÆøÿÿÿÿ
+t
+java:S1450"XRemove the "lblFechar" field and declare it as a local variable in the relevant methods.(¡ì¨˜ıÿÿÿÿ
+r
+java:S1450"[Remove the "lblMinimizar" field and declare it as a local variable in the relevant methods.(Á¥—‡
+P
+java:S1161u":Add the "@Override" annotation above this method signature(†ŒË³
+Q
+java:S1161€":Add the "@Override" annotation above this method signature(†ŒË³
+Q
+java:S1161‹":Add the "@Override" annotation above this method signature(†ŒË³
+Q
+java:S1161”":Add the "@Override" annotation above this method signature(†ŒË³
+A
+java:S1172Ï"*Remove this unused method parameter "evt".(½ü™™
+>
+java:S1125×"'Remove the unnecessary boolean literal.(Â¯å¼
+F
+java:S1172ä"*Remove this unused method parameter "evt".(ÿÆŸÓüÿÿÿÿ
+F
+java:S1172è"*Remove this unused method parameter "evt".(æ º¢ıÿÿÿÿ
+T
+java:S3252é"8Use static access with "java.awt.Frame" for "ICONIFIED".(ˆÙÈşÿÿÿÿ
+A
+java:S1172ì"*Remove this unused method parameter "evt".(İ¯€ 
+@
+java:S1481î")Remove this unused "args" local variable.(û­†¶
+]
+java:S1075ğ"ARefactor your code to get this URI from a customizable parameter.(ë‹Ôƒúÿÿÿÿ
+T	java:S106ó"9Replace this use of System.out or System.err by a logger.(Âø âûÿÿÿÿ
+F
+java:S1197ø"*Move the array designators [] to the type.(¡şÏÖøÿÿÿÿ
+\
+java:S2147ƒ"ECombine this catch with the one at line 257, which has the same body.(¨¦Š½
+\
+java:S2147…"ECombine this catch with the one at line 257, which has the same body.(ã€ 
+[
+java:S2147‡"ECombine this catch with the one at line 257, which has the same body.(ñÎ¯%
+g
+java:S1192m"LDefine a constant instead of duplicating this literal "Arial Black" 3 times.(¶ğõÉşÿÿÿÿ
+D
+java:S1604‹"(Make this anonymous inner class a lambda(¨í¡§úÿÿÿÿ
