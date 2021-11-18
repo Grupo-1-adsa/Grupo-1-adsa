@@ -82,29 +82,170 @@
                     </div>
                     <div class="g4">
                         <ul>
-                            <li>Informação de A: <span>1029</span></li>
-                            <li>Informação de B: <span>1029</span></li>
-                            <li>Informação de C: <span>1029</span></li>
-                            <li>Informação de D: <span>1029</span></li>
-                            <li>Informação de E: <span>1029</span></li>
-                            <li>Informação de F: <span>1029</span></li>
-                            <li>Informação de G: <span>1029</span></li>
+                            <li>Informação de <b>Sistema</b>: <span id="so">1029</span></li>
+                            <li>Informação de <b>NºSérie</b>: <span id="ns">1029</span></li>
+                            <li>Informação de <b>Ram</b>: <span id="ram">1029</span></li>
+                            <li>Informação de <b>Hd</b>: <span id="hd">1029</span></li>
+                            <li>Informação de <b>Email</b>: <span id="email">1029</span></li>
+                            <li>Informação de <b>Cpu</b>: <span id="cpu">1029</span></li>
+                            <li>Informação de <b>Id</b>: <span id="id">1029</span></li>
                         </ul>
                     </div>
                 </div>
         </section>
     </section>
 </body>
+
+<script src="tempo.js"></script>
+<script>
+    console.log(moment().format('lll'));
+</script>
+<script>
+    let segunda = [];
+    let terca = [];
+    let quarta = [];
+    let quinta = [];
+    let sexta = [];
+    let geral = [];
+    function carregaInfo(data) {
+        const sistemaSo = document.querySelector('#so');
+        const sistemaNs = document.querySelector('#ns');
+        const ramfunc = document.querySelector('#ram');
+        const idfunc = document.querySelector('#id');
+        const hdfunc = document.querySelector('#hd');
+        const emailfunc = document.querySelector('#email');
+        const cpufunc = document.querySelector('#cpu');
+
+        sistemaSo.innerText = data[0].SO;
+        sistemaNs.innerText = data[0].numeroSerie;
+        ramfunc.innerText = data[0].RAM;
+        idfunc.innerText = data[0].idFuncionario;
+        hdfunc.innerText = data[0].HD;
+        emailfunc.innerText = data[0].email;
+        cpufunc.innerText = data[0].CPU;
+        console.log('INFO ---', data[0]);
+    }
+    function calcData(data) {
+        const dados = Array.from(data);
+        dados.forEach((d) => {
+            geral.push(d);
+            let dadosd = moment(d.dataHora).format('LLLL');
+            let diaSemana = dadosd.split(',')[0];
+            /* let data1 = moment(d.dataHora);
+            let data2 = moment(moment().day(1));
+            let data3 = moment(moment().day(5));
+            console.log(data1.format('DD/MM/YYYY'), "-", data3.format('DD/MM/YYYY'))
+            console.log(data1.diff(data3, 'days'))
+            if (data2.diff(data1, 'days') >= 0 && data1.diff(data3, 'days') > -4 && data1.diff(data3, 'days') <= 0) {
+                console.log('entrou')
+            } else {
+                console.log("data ja passou")
+            } */
+
+            switch (diaSemana) {
+                case 'Monday':
+                    segunda.push(d);
+                    break;
+                case 'Tuesday':
+                    terca.push(d)
+                    break;
+                case 'Wednesday':
+                    quarta.push(d);
+                    break;
+
+                case 'Thursday':
+                    quinta.push(d);
+                    break;
+                case 'Friday':
+                    sexta.push(d);
+                    break;
+                default:
+                    console.log(`Sorry, essa data não é permitida. ${diaSemana}`);
+
+            }
+        });
+
+    }
+    function obterPublicacoesPorUsuario(idUsuario) {
+        fetch(`/publicacoesSupLeitura/${idUsuario}`)
+            .then(resposta => {
+                if (resposta.ok) {
+                    resposta.json().then(function (resposta) {
+                        calcData(resposta);
+                        carregaInfo(resposta);
+                        // alert(JSON.stringify(resposta))
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção das publicações do usuário: ${error.message}`);
+            });
+    }
+    const idGest = +sessionStorage.idFunc;
+    obterPublicacoesPorUsuario(2);
+</script>
 <script type="module" src="gestao2.js"></script>
 <script>
+    const calculadora = {
+        dia(data) {
+            let registros = Array.from(data);
+            let media = 0;
+            let ram;
+            let total = 0;
+            let max = 0;
+            const armazenador = [];
+            registros.map((s) => {
+                total += +s.RAM;
+                armazenador.push(s.RAM);
+                media = Math.floor(total / registros.length).toFixed(0);
+                max = Math.ceil(Math.max(...armazenador));
+            });
+            return {
+                max,
+                media
+            };
+        },
+        maximo(data) {
+            const armazenador = [];
+            let registros = Array.from(data);
+            registros.map((s) => {
+                armazenador.push(s.RAM);
+                max = Math.ceil(Math.max(...armazenador));
+            });
+            return max;
+        }
+    }
+    let seg, ter, qua, qui, sex;
+    setTimeout(() => {
+        /* const segunda = calculadora.segunda(segunda); */
+        seg = calculadora.dia(segunda);
+        ter = calculadora.dia(terca);
+        qua = calculadora.dia(quarta);
+        qui = calculadora.dia(quinta);
+        sex = calculadora.dia(sexta);
+        ma = calculadora.maximo(geral);
+        console.log(ma)
+        function updateChart() {
+            myChartp.data.datasets[0].data[0] = +seg.media;
+            myChartp.data.datasets[0].data[1] = +ter.media;
+            myChartp.data.datasets[0].data[2] = +qua.media;
+            myChartp.data.datasets[0].data[3] = +qui.media;
+            myChartp.data.datasets[0].data[4] = +sex.media;
+            myChartp.data.datasets[0].data[5] = ma;
+            myChartp.update();
+        }
+        updateChart();
+    }, 1000);
     var ctx = document.getElementById('myChart').getContext('2d');
-    var myChart = new Chart(ctx, {
+    var myChartp = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'],
+            labels: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex'],
             datasets: [{
                 label: 'Maquinas Hist',
-                data: [12, 19, 3, 10, 2, 3],
+                data: [],
                 backgroundColor: [
                     'rgba(155, 89, 182, 1)'
                 ],
@@ -122,6 +263,9 @@
             }
         }
     });
+
+
+
 </script>
 
 <script>
@@ -198,7 +342,8 @@
 <script>
     function pegaNome() {
         const nome = document.querySelector(".name");
-        nome.innerText = window.localStorage.getItem('name');
+        nome.innerText = window.sessionStorage.getItem('nomeFunc');
+
     }
     pegaNome();
     function pegaNomeSup() {

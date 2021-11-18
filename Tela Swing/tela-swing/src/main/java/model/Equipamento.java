@@ -2,7 +2,6 @@
 package model;
 
 /**
- *
  * @author ellen.m.almeida
  */
 public class Equipamento {
@@ -13,6 +12,15 @@ public class Equipamento {
     private Integer HD;
     private String fkFuncionario;
     private String SO;
+    private String statusEquip;
+
+    public String getStatusEquip() {
+        return statusEquip;
+    }
+
+    public void setStatusEquip(String statusEquip) {
+        this.statusEquip = statusEquip;
+    }
 
     public Integer getIdEquipamento() {
         return idEquipamento;

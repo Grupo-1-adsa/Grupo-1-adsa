@@ -4,6 +4,7 @@ com\mycompany\tela\swing\TelaLogin.class
 com\mycompany\tela\swing\TelaSoftware$3.class
 controller\FuncionarioMaper.class
 com\mycompany\tela\swing\TelaOpcao$2.class
+logging\Log.class
 com\mycompany\tela\swing\TelaLogin$2.class
 controller\ConnectionBD.class
 com\mycompany\tela\swing\TelaOpcao$3.class
@@ -21,9 +22,11 @@ model\Equipamento.class
 com\mycompany\tela\swing\TelaOpcao$1.class
 com\mycompany\tela\swing\TelaLogin$4.class
 com\mycompany\tela\swing\TelaSoftware.class
+model\Slack.class
 com\mycompany\tela\swing\TelaOpcao$4.class
 com\mycompany\tela\swing\TelaLogin$3.class
 controller\FuncionarioDAO.class
 controller\LeituraMaper.class
+model\Slack$1.class
 com\mycompany\tela\swing\TelaSoftware$5.class
 com\mycompany\tela\swing\TelaLogin$1.class

@@ -3,6 +3,7 @@ package controller;
 import com.github.britooo.looca.api.core.Looca;
 import com.github.britooo.looca.api.group.discos.Disco;
 import java.util.List;
+import logging.Log;
 import model.Equipamento;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -33,7 +34,7 @@ public class EquipamentoDAO {
             discTamanho = Math.toIntExact(disco.getTamanho() / 1000000000);
         }
 
-        String sql = "insert into Equipamento(numeroSerie,CPU,RAM,HD,fkFuncionario,SO) values (?,?,?,?,?,?);";
+        String sql = "insert into Equipamento(numeroSerie,CPU,RAM,HD,fkFuncionario,SO,statusEquip) values (?,?,?,?,?,?,'ativo');";
 
         conn.update(sql, discSerial, procInfo, memInfo, discTamanho, fkFuncionario, sisInfo);
 
@@ -53,7 +54,12 @@ public class EquipamentoDAO {
 
     public void selectEquipamento(Integer fkFuncionario) {
         Equipamento selectStatement = query(fkFuncionario);
+<<<<<<< HEAD
        if (selectStatement != null) {
+=======
+        Log log = new Log();
+        if (selectStatement != null) {
+>>>>>>> 7d0d6117eded5226190821b385209be949567bf7
             System.out.println("deu certo");
             fkLeitura = selectStatement.getIdEquipamento();
         } else {
@@ -61,7 +67,13 @@ public class EquipamentoDAO {
         }
 
     }
+    public void atualizaStatus(Integer idEquipamento){
+        JdbcTemplate connn = new JdbcTemplate(config.getDataSource());
 
+        String sql = "update [dbo].[Equipamento] set statusEquip = 'desativado' where idEquipamento = ?";
+
+        connn.update(sql,idEquipamento);
+    }
     public Integer getFkLeitura() {
         return this.fkLeitura;
     }

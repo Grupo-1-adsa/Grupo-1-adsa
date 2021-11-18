@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+:root {
+    --primary-azul: #2c82b9;
+    --cor-preto: #000;
+    --font-lato-corpo: "Lato", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: var(--font-lato-corpo);
+}
+
+body {
+    font-weight: 500;
+    display: flex;
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+main {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 100% !important;
+    height: 90px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 120px;
+    padding-top: 30px;
+    padding-right: 240px;
+    position: absolute;
+}
+
+.listaEmpresas {
+    position: absolute;
+    background-color: crimson;
+    width: 100px;
+    height: 100px;
+}
+
+.container h1 {
+    color: var(--primary-azul);
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.titulo {
+    align-self: flex-end !important;
+}
+
+.tituloFast {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.container img {
+    height: 32px;
+}
+
+section.images {
+    width: 50vw;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 4rem;
+}
+
+section.images img {
+    width: 100%;
+}
+
+section.images .circle {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(45deg, #e8cbc0, #444444);
+    clip-path: circle(40% at right 80%);
+    z-index: -1;
+}

@@ -4,6 +4,7 @@ import com.github.britooo.looca.api.group.memoria.Memoria;
 import com.github.britooo.looca.api.group.processador.Processador;
 import com.nimbusds.jose.shaded.json.JSONObject;
 import org.springframework.dao.EmptyResultDataAccessException;
+import logging.Log;
 
 import java.io.IOException;
 import java.net.http.HttpClient;
@@ -20,7 +21,7 @@ public class Slack {
     private static final String URL = "https://hooks.slack.com/services/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";
 
     public static void sendMessage(JSONObject content) throws IOException, InterruptedException {
-
+        Log log = new Log();
         try {
             HttpRequest request = HttpRequest.newBuilder(
                             URI.create(URL))
@@ -34,10 +35,12 @@ public class Slack {
             System.out.println(String.format("Response: %s", response.body()));
         } catch (EmptyResultDataAccessException e) {
             System.out.println("Não enviou a mensagem do Slack");
+            log.slackLog();
         }
     }
 
     public void enviaMensagem(String nomeFunc) throws IOException, InterruptedException {
+        Log log = new Log();
         Processador processador = new Processador();
 
         Memoria memoria = new Memoria();
@@ -69,7 +72,7 @@ public class Slack {
                         e.printStackTrace();
                     } catch (InterruptedException e) {
                         e.printStackTrace();
-                    }
+                    } 
                 }
 
             }

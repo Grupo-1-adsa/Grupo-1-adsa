@@ -65,86 +65,7 @@
                     <canvas id="myChart"></canvas>
                 </div>
                 <div class="alertas">
-                    <a href="./sup2Dash.html">
-                        <div class="infoBalao">
-                            <div class="perfilFunc">
-                                <h1>Jorge</h1>
-                                <h2>Maquina</h2>
-                                <span>12321</span>
-                            </div>
 
-                        </div>
-                    </a>
-                    <a href="./sup2Dash.html">
-                        <div class="infoBalao">
-                            <div class="perfilFunc">
-                                <h1>João Pedro</h1>
-                                <h2>Maquina</h2>
-                                <span>12321</span>
-                            </div>
-
-                        </div>
-                    </a>
-                    <a href="./sup2Dash.html">
-                        <div class="infoBalao">
-                            <div class="perfilFunc">
-                                <h1>João Pedro</h1>
-                                <h2>Maquina</h2>
-                                <span>12321</span>
-                            </div>
-
-                        </div>
-                    </a>
-                    <a href="./sup2Dash.html">
-                        <div class="infoBalao">
-                            <div class="perfilFunc">
-                                <h1>João Pedro</h1>
-                                <h2>Maquina</h2>
-                                <span>12321</span>
-                            </div>
-
-                        </div>
-                    </a>
-                    <a href="./sup2Dash.html">
-                        <div class="infoBalao">
-                            <div class="perfilFunc">
-                                <h1>João Pedro</h1>
-                                <h2>Maquina</h2>
-                                <span>12321</span>
-                            </div>
-
-                        </div>
-                    </a>
-                    <a href="./sup2Dash.html">
-                        <div class="infoBalao">
-                            <div class="perfilFunc">
-                                <h1>João Pedro</h1>
-                                <h2>Maquina</h2>
-                                <span>12321</span>
-                            </div>
-
-                        </div>
-                    </a>
-                    <a href="./sup2Dash.html">
-                        <div class="infoBalao">
-                            <div class="perfilFunc">
-                                <h1>João Pedro</h1>
-                                <h2>Maquina</h2>
-                                <span>12321</span>
-                            </div>
-
-                        </div>
-                    </a>
-                    <a href="./sup2Dash.html">
-                        <div class="infoBalao">
-                            <div class="perfilFunc">
-                                <h1>João Pedro</h1>
-                                <h2>Maquina</h2>
-                                <span>12321</span>
-                            </div>
-
-                        </div>
-                    </a>
                 </div>
 
         </section>
@@ -178,8 +99,56 @@
         }
     });
 </script>
-<script type="module" src="gestao.js"></script>
+
 <script>
+    function criarContainers(dados) {
+        const container = document.querySelector(".alertas")
+        const conteudo = document.createElement("div");
+        dados.map((dado) => {
+            container.innerHTML += `
+               <a class="linksup" href="./sup2Dash.html">
+                        <div class="infoBalao">
+                            <div class="perfilFunc">
+                                <h1 class="nomeFunc">${dado.nomeFuncionario}</h1>
+                                <h2>Situação: Suporte</h2>
+                                <span class="idFunc">ID: ${dado.idFuncionario}</span>
+                            </div>
+
+                        </div>
+                    </a>
+      `;
+
+        });
+    };
+
+    function dadosFunc(data) {
+        const dados = Array.from(data);
+        criarContainers(dados);
+    }
+    function obterPublicacoesPorUsuario(idUsuario) {
+        fetch(`/publicacoesSup/${idUsuario}`)
+            .then(resposta => {
+                if (resposta.ok) {
+                    resposta.json().then(function (resposta) {
+                        dadosFunc(resposta);
+                        console.log(resposta);
+                        // alert(JSON.stringify(resposta))
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção das publicações do usuário: ${error.message}`);
+            });
+    }
+    const idGest = +sessionStorage.id;
+    console.log(idGest);
+    obterPublicacoesPorUsuario(idGest);
+
+
+
+
     const linsk = document.querySelectorAll(".alertas a");
     const nomes = document.querySelectorAll(".perfilFunc h1");
 
@@ -196,6 +165,27 @@
         nome_gest.innerText = sessionStorage.nome;
     }
     pegaNomeSup();
+</script>
+<script>
+    setTimeout(() => {
+        const links = document.querySelectorAll(".linksup");
+        links.forEach((link, index) => {
+            link.addEventListener("click", (event) => {
+
+                const nome = document.querySelectorAll(".nomeFunc");
+                const idFunc = document.querySelectorAll(".idFunc");
+
+                sessionStorage.nomeFunc = nome[index].innerText;
+                var idF = +idFunc[index].innerText.replace('ID:', '').trim();
+                sessionStorage.idFunc = idF;
+                console.log(nome[index].innerText, +idFunc[index].innerText.replace('ID:', '').trim())
+
+            });
+        });
+        console.log("oi")
+    }, 900)
+
+
 </script>
 
 </html>

@@ -6,6 +6,7 @@ import controller.FuncionarioDAO;
 import controller.LeituraDAO;
 import model.Funcionario;
 import model.Slack;
+import logging.Log;
 
 import java.awt.Desktop;
 import java.io.IOException;
@@ -18,6 +19,8 @@ import javax.swing.JOptionPane;
 public class TelaLogin extends javax.swing.JFrame {
     private Integer idMaquina;
 
+
+    private Integer idEquipamento;
 
     public TelaLogin() {
         initComponents();
@@ -217,11 +220,16 @@ public class TelaLogin extends javax.swing.JFrame {
         return login.equals("admin@admin.com") && senha.equals("admin123");
     }
 
+    public Integer getIdEquipamento() {
+        return idEquipamento;
+    }
+
     private void lblEntrarMouseClicked(java.awt.event.MouseEvent evt) throws IOException, InterruptedException {//GEN-FIRST:event_lblEntrarMouseClicked
         FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
         EquipamentoDAO equipamentoDAO = new EquipamentoDAO();
         LeituraDAO leituraDAO = new LeituraDAO();
         Slack slack = new Slack();
+        Log log = new Log();
 
         String login = String.valueOf(txtEmail.getText());
         String senha = String.valueOf(fieldSenha.getPassword());
@@ -234,6 +242,7 @@ public class TelaLogin extends javax.swing.JFrame {
 
             equipamentoDAO.enviarEquipamento(funcionarioDAO.getFkFuncionario());
             equipamentoDAO.selectEquipamento(funcionarioDAO.getFkFuncionario());
+            idEquipamento = equipamentoDAO.getFkLeitura();
             Timer timer = new Timer();
             final long segundos = 10000;
             TimerTask tarefa = new TimerTask() {
@@ -245,9 +254,10 @@ public class TelaLogin extends javax.swing.JFrame {
                 }
             };
             timer.scheduleAtFixedRate(tarefa, 10, segundos);
-
+            log.entrarLogin();
         } else {
             JOptionPane.showInternalMessageDialog(null, "Login ou senha incorretos.");
+            log.loginLog();
         }
 
 
