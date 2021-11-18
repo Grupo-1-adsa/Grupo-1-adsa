@@ -54,18 +54,18 @@ public class EquipamentoDAO {
 
     public void selectEquipamento(Integer fkFuncionario) {
         Equipamento selectStatement = query(fkFuncionario);
-<<<<<<< HEAD
-       if (selectStatement != null) {
-=======
-        Log log = new Log();
-        if (selectStatement != null) {
->>>>>>> 7d0d6117eded5226190821b385209be949567bf7
-            System.out.println("deu certo");
-            fkLeitura = selectStatement.getIdEquipamento();
-        } else {
-            System.out.println("deu errado");
-        }
 
+       if (selectStatement != null) {
+
+           Log log = new Log();
+           if (selectStatement != null) {
+
+               System.out.println("deu certo");
+               fkLeitura = selectStatement.getIdEquipamento();
+           } else {
+               System.out.println("deu errado");
+           }
+       }
     }
     public void atualizaStatus(Integer idEquipamento){
         JdbcTemplate connn = new JdbcTemplate(config.getDataSource());
@@ -75,6 +75,7 @@ public class EquipamentoDAO {
         connn.update(sql,idEquipamento);
     }
     public Integer getFkLeitura() {
-        return this.fkLeitura;
+        return fkLeitura;
     }
 }
+
