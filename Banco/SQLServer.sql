@@ -52,6 +52,15 @@ CREATE TABLE Leitura (
 	fkEquipamento INT FOREIGN KEY REFERENCES [dbo].[Equipamento](idEquipamento)
 )
 
+create table Advertencia (
+	idAdvertencia int identity(1,1) primary key not null,
+	Advertencia varchar(45),
+	StatusAdv varchar(45),
+	AtividadeAdv Varchar(45) ,
+	dataAdv datetime
+	fkFuncionario INT FOREIGN KEY REFERENCES [dbo].[Funcionario](idFuncionario)
+)
+
 --Insert de empresa teste no banco manualmente
 
 Insert into Empresa	(

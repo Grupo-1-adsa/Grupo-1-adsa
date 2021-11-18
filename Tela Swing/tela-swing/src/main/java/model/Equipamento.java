@@ -6,7 +6,7 @@ package model;
  * @author ellen.m.almeida
  */
 public class Equipamento {
-      private Integer idEquipamento;
+    private Integer idEquipamento;
     private String numeroSerie;
     private String CPU;
     private Integer RAM;

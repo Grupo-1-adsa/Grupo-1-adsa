@@ -21,7 +21,7 @@ public class EquipamentoDAO {
 
     public void enviarEquipamento(Integer fkFuncionario) {
         String sisInfo = looca.getSistema().getSistemaOperacional();
-        Integer memInfo = Math.toIntExact(looca.getMemoria().getTotal() / 1000000000);
+        Integer memInfo = Math.toIntExact(looca.getMemoria().getTotal() / 1_000_000_000);
         List<Disco> discInfo = looca.getGrupoDeDiscos().getDiscos();
         String procInfo = looca.getProcessador().getNome();
         String discSerial = "";
@@ -53,7 +53,7 @@ public class EquipamentoDAO {
 
     public void selectEquipamento(Integer fkFuncionario) {
         Equipamento selectStatement = query(fkFuncionario);
- ''       if (selectStatement != null) {
+       if (selectStatement != null) {
             System.out.println("deu certo");
             fkLeitura = selectStatement.getIdEquipamento();
         } else {

@@ -16,6 +16,8 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 public class TelaLogin extends javax.swing.JFrame {
+    private Integer idMaquina;
+
 
     public TelaLogin() {
         initComponents();
