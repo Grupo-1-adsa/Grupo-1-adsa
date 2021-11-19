@@ -17,6 +17,8 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 public class TelaLogin extends javax.swing.JFrame {
+    private Integer idMaquina;
+
 
     private Integer idEquipamento;
 
@@ -252,7 +254,7 @@ public class TelaLogin extends javax.swing.JFrame {
                 }
             };
             timer.scheduleAtFixedRate(tarefa, 10, segundos);
-
+            log.entrarLogin();
         } else {
             JOptionPane.showInternalMessageDialog(null, "Login ou senha incorretos.");
             log.loginLog();

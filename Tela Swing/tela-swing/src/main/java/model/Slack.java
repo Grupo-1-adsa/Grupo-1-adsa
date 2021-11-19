@@ -42,6 +42,7 @@ public class Slack {
     public void enviaMensagem(String nomeFunc) throws IOException, InterruptedException {
         Log log = new Log();
         Processador processador = new Processador();
+
         Memoria memoria = new Memoria();
         JSONObject json = new JSONObject();
         Timer timer = new Timer();
@@ -50,9 +51,22 @@ public class Slack {
             @Override
             public void run() {
 
-                if (memoria.getEmUso() / memoria.getTotal() <= 0.4 && processador.getUso() <= 30.0) {
-                    json.put("text", "O @" + nomeFunc + " pode estar inativo pode estar inativo é melhor verificar :male-detective:");
+                Integer contador = 0;
+
+                if (memoria.getEmUso() / memoria.getTotal() <= 0.6 && processador.getUso() <= 50.0) {
+                    json.put("text", "O @" + nomeFunc + " pode estar inativo é melhor verificar :male-detective:");
+                    contador++;
                     try {
+                        sendMessage(json);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }else if (memoria.getEmUso() / memoria.getTotal() <= 0.4 && processador.getUso() <= 30.0){
+                    try {
+                        json.put("text", "O @" + nomeFunc + " está inativo é melhor verificar :angry:");
+                        contador++;
                         sendMessage(json);
                     } catch (IOException e) {
                         e.printStackTrace();

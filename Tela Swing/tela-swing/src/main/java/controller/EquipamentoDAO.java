@@ -22,7 +22,7 @@ public class EquipamentoDAO {
 
     public void enviarEquipamento(Integer fkFuncionario) {
         String sisInfo = looca.getSistema().getSistemaOperacional();
-        Integer memInfo = Math.toIntExact(looca.getMemoria().getTotal() / 1000000000);
+        Integer memInfo = Math.toIntExact(looca.getMemoria().getTotal() / 1_000_000_000);
         List<Disco> discInfo = looca.getGrupoDeDiscos().getDiscos();
         String procInfo = looca.getProcessador().getNome();
         String discSerial = "";
@@ -54,14 +54,18 @@ public class EquipamentoDAO {
 
     public void selectEquipamento(Integer fkFuncionario) {
         Equipamento selectStatement = query(fkFuncionario);
-        Log log = new Log();
-        if (selectStatement != null) {
-            System.out.println("deu certo");
-            fkLeitura = selectStatement.getIdEquipamento();
-        } else {
-            System.out.println("deu errado");
-        }
 
+       if (selectStatement != null) {
+
+           Log log = new Log();
+           if (selectStatement != null) {
+
+               System.out.println("deu certo");
+               fkLeitura = selectStatement.getIdEquipamento();
+           } else {
+               System.out.println("deu errado");
+           }
+       }
     }
     public void atualizaStatus(Integer idEquipamento){
         JdbcTemplate connn = new JdbcTemplate(config.getDataSource());
@@ -71,6 +75,7 @@ public class EquipamentoDAO {
         connn.update(sql,idEquipamento);
     }
     public Integer getFkLeitura() {
-        return this.fkLeitura;
+        return fkLeitura;
     }
 }
+

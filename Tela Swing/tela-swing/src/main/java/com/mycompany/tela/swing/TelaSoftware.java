@@ -10,11 +10,15 @@ import com.github.britooo.looca.api.group.servicos.ServicosGroup;
 import com.github.britooo.looca.api.group.temperatura.Temperatura;
 import controller.EquipamentoDAO;
 import controller.FuncionarioDAO;
+import logging.Log;
 
+import java.io.IOException;
 import java.awt.Desktop;
 import java.net.URI;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
@@ -178,6 +182,12 @@ public class TelaSoftware extends javax.swing.JFrame {
     }//GEN-LAST:event_lblMinimizarMouseClicked
 
     private void lblSairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSairMouseClicked
+        Log log = new Log();
+        try {
+            log.sairLogin();
+        } catch (IOException ex) {
+            Logger.getLogger(TelaSoftware.class.getName()).log(Level.SEVERE, null, ex);
+        }
         System.exit(0);
     }//GEN-LAST:event_lblSairMouseClicked
 
