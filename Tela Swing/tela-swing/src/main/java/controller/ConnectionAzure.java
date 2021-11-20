@@ -4,11 +4,11 @@ package controller;
 import org.apache.commons.dbcp2.BasicDataSource;
 
 
-public class ConnectionBD {
+public class ConnectionAzure {
     private BasicDataSource dataSource;
     
 
-    public ConnectionBD(){
+    public ConnectionAzure(){
         dataSource = new BasicDataSource();
 
         dataSource.setDriverClassName("com.microsoft.sqlserver.jdbc.SQLServerDriver");

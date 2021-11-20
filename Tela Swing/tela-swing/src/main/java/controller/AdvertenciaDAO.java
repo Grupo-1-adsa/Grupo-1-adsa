@@ -1,10 +1,9 @@
 package controller;
 
-import com.github.britooo.looca.api.core.Looca;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 public class AdvertenciaDAO {
-    ConnectionBD config = new ConnectionBD();
+    ConnectionAzure config = new ConnectionAzure();
     JdbcTemplate con = new JdbcTemplate(config.getDataSource());
 
     public void enviarLeitura(Integer fkFuncionario, String Advertencia) {

@@ -14,7 +14,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
  */
 public class EquipamentoDAO {
 
-    ConnectionBD config = new ConnectionBD();
+    ConnectionAzure config = new ConnectionAzure();
     JdbcTemplate con = new JdbcTemplate(config.getDataSource());
     Looca looca = new Looca();
 

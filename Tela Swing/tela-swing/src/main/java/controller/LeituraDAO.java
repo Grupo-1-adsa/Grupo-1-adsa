@@ -1,8 +1,7 @@
 package controller;
 
 import com.github.britooo.looca.api.core.Looca;
-import com.github.britooo.looca.api.group.processos.Processo;
-import com.github.britooo.looca.api.group.processos.ProcessosGroup;
+import com.github.britooo.looca.api.group.discos.Disco;
 import model.Leitura;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -11,7 +10,7 @@ import java.util.List;
 
 public class LeituraDAO {
 
-        ConnectionBD config = new ConnectionBD();
+        ConnectionAzure config = new ConnectionAzure();
         JdbcTemplate con = new JdbcTemplate(config.getDataSource());
 
 
@@ -23,6 +22,13 @@ public class LeituraDAO {
             Double cpuUso = looca.getProcessador().getUso()/100000;
             Integer cpuFrequencia = Math.toIntExact(looca.getProcessador().getFrequencia()/1000000);
             Long tempAtividade = looca.getSistema().getTempoDeAtividade();
+
+            Integer usoHd = 0;
+            List<Disco> discInfo = looca.getGrupoDeDiscos().getDiscos();
+
+            for (Disco disco : discInfo) {
+                //usoHd = Math.toIntExact(disco. / 1000000000);
+            }
 
 
             String sql = "insert into [dbo].[Leitura](dataHora,RAM,fkEquipamento,cpuFrequencia,tempoAtividade,cpuUso) values (getDate(),?,?,?,?,?)";
