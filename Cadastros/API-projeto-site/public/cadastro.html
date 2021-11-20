@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="css/styleCadastro.css">
+</head>
+
+<body>
+    <div class="header">
+        <img src="img/seta.svg" alt="" class="voltar" onclick="voltar()">
+        <div class="container">
+
+            <h1 class="titulo">Cadastro de empresas</h1>
+
+            <div>
+                <img src="img/iconPreto.png" alt="">
+                <span class="tituloFast">FastTech</span>
+            </div>
+        </div>
+    </div>
+
+    <main class="estiloForm">
+
+        <form id="form_cadastro" method="post" onsubmit="return cadastrar()" class="formEmpresa">
+            
+            <div id="dadosEmpresa" class="formAcess">
+                <h3>Dados da empresa:</h3>
+                <label for="name" class="input-fild">
+                    <span>Name:</span>
+                    <input type="text" id="nomeEmpresa" name="nomeEmpresa" class="input-padrao" placeholder="Nome e sobrenome" required minlength="4" autofocus="autofocus">
+                    <div class="underline"></div>
+                </label>
+                <label for="name" class="input-fild">
+                    <span>CNPJ:</span>
+                    <input type="text" id="cnpj" name="cnpj" placeholder="Digite o cnpj">
+                    <div class="underline"></div>
+                </label>
+                <label for="name" class="input-fild">
+                    <span>CEP:</span>
+                    <input type="text" id="cep" name="cep" placeholder="Digite o cep">
+                    <div class="underline"></div>
+                </label>
+                <label for="name" class="input-fild">
+                    <span>Bairro:</span>
+                    <input type="text" id="bairro" name="bairro" placeholder="Digite o bairro">
+                    <div class="underline"></div>
+                </label>
+                <label for="name" class="input-fild">
+                    <span>Logradouro:</span>
+                    <input type="text" id="logradouro" name="logradouro" placeholder="Digite o logradouro">
+                    <div class="underline"></div>
+                </label>
+                <label for="name" class="input-fild">
+                    <span>Cidade:</span>
+                    <input type="text" id="cidade" name="cidade" placeholder="Digite o cidade">
+                    <div class="underline"></div>
+                </label>
+                <label for="name" class="input-fild">
+                    <span>Número:</span>
+                    <input type="text" id="numero" name="numero" placeholder="Digite o número">
+                    <div class="underline"></div>
+                </label>
+                <label for="name" class="input-fild" >
+                    <span>Complemento:</span>
+                    <input type="text" id="complemento" name="complemento" placeholder="Digite complemento">
+                    <div class="underline"></div>
+                </label>
+            </div>
+
+            <div id="dadosAcesso" style="display: none;" class="formAcess" >
+                <h3>Dados da de acesso:</h3>
+                <label for="name" class="input-fild">
+                    <span>Login:</span>
+                    <input type="text" id="loginEmpresa" name="loginEmpresa" placeholder="Digite o bairro">
+                    <div class="underline"></div>
+                </label>
+                <label for="name" class="input-fild">
+                    <span>Senha:</span>
+                    <input type="text" id="senhaEmpresa" name="senhaEmpresa" placeholder="Digite o logradouro">
+                    <div class="underline"></div>
+                </label>
+                <label for="name" class="input-fild">
+                    <span>Confirmar senha:</span>
+                    <input type="text" id="confiSenha" name="confiSenha" placeholder="Digite o cidade">
+                    <div class="underline"></div>
+                </label>
+
+                <h3>Dados para contato:</h3>
+                <label for="name" class="input-fild">
+                    <span>Telefone:</span>
+                    <input type="text" id="telefone" name="telefone" placeholder="Digite o número">
+                    <div class="underline"></div>
+                </label>
+                <label for="name" class="input-fild">
+                    <span>Email:</span>
+                    <input type="text" id="email" name="email" placeholder="Digite o número">
+                    <div class="underline"></div>
+                </label>
+                
+            </div>
+
+            <button id="btn_next" placeholder="Digite o nome" onclick="continuar()" >
+                Next
+                <img src="img/next-button.png" alt="">
+            </button>
+
+            <button type="submit" id="btn_entrar" value="Cadastrar" class="cadastrar" style="display: none;">
+                Cadastrar
+                <img src="img/save-svgrepo-com.svg" alt="">
+            </button>
+
+        </form>
+       
+    </main>
+
+    <section class="images">
+        <img src="img/fundoLista.png" alt="Mobile">
+        <div class="circle"></div>
+    </section>
+
+    <section id="listaEmpresa" style="display: none;">
+        <div class="header">
+            <div class="container">
+
+                <h1 class="titulo">Cadastro de empresas</h1>
+
+                <div>
+                    <img src="img/iconPreto.png" alt="">
+                    <span class="tituloFast">FastTech</span>
+                </div>
+            </div>
+        </div>
+     
+        <section class="images">
+            <img src="img/fundoLista.png" alt="Mobile">
+            <div class="circle"></div>
+        </section>
+</body>
+
+</html>
+
+<script>
+
+    function continuar(){
+        document.getElementById("dadosEmpresa").style.display = "none";
+        document.getElementById("dadosAcesso").style.display = "block";
+        document.getElementById("btn_entrar").style.display = "block";
+        document.getElementById("btn_next").style.display = "none";
+    }
+
+    function voltar(){
+        document.getElementById("dadosEmpresa").style.display = "block";
+        document.getElementById("dadosAcesso").style.display = "none";
+        document.getElementById("btn_entrar").style.display = "none";
+        document.getElementById("btn_next").style.display = "block";
+    }
+
+    function cadastrar() {
+        aguardar();
+        var formulario = new URLSearchParams(new FormData(form_cadastro));
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            body: formulario
+        }).then(function (response) {
+            
+            if (response.ok) {
+
+                window.location.href='login.html';
+
+            } else {
+
+                console.log('Erro de cadastro!');
+                response.text().then(function (resposta) {
+                    div_erro.innerHTML = resposta;
+                });
+                finalizar_aguardar();
+            }
+        });
+
+        return false;
+    }
+
+    function aguardar() {
+        btn_entrar.disabled = true;
+        img_aguarde.style.display='block';
+        div_erro.style.display='none';
+    }
+
+    function finalizar_aguardar() {
+        btn_entrar.disabled = false;
+        img_aguarde.style.display='none';
+        div_erro.style.display='block';
+    }
+
+</script>

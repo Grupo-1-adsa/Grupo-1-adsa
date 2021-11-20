@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+:root {
+  --primary-azul: #2c82b9;
+  --cor-preto: #000;
+  --font-lato-corpo: "Lato", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-family: var(--font-lato-corpo);
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+.header {
+  background-color: #232323;
+  height: 100px;
+}
+
+.header .container {
+  height: 80px;
+}
+
+.header .container .highlight {
+  color: rgb(255, 255, 255);
+}
+
+.header h1 {
+  margin: 0;
+  padding: 0;
+  float: left;
+  margin-top: 30px;
+  margin-left: 30px;
+  color: white;
+}
+
+.banner {
+  height: 400px;
+  width: 60%;
+  margin-top: 50px;
+  background-size: cover;
+  background-image: url(../img/tela-localizar-dcomercio.jpg);
+  background-repeat: no-repeat;
+  position: absolute;
+}
+
+.containerList {
+  background-color: rgba(133, 23, 23, 0.288);
+  text-align: center;
+  height: 80%;
+  width: 100%;
+  z-index: 9;
+  position: absolute; 
+}
+
+.banner .texto {
+  color: gray;
+  text-align: center;
+  padding-top: 150px;
+}
+
+.banner .titulo {
+  font-size: 48px;
+  color: rgb(255, 255, 255);
+}
