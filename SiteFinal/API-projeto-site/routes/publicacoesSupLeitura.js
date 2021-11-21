@@ -43,4 +43,20 @@ router.get('/:idUsuario', function (req, res, next) {
         });
 });
 
+router.get('/equipe/:idUsuario', function (req, res, next) {
+    console.log('Recuperando todas as publicações DA EQUIPE');
+    var idUsuario = req.params.idUsuario;
+    let instrucaoSql = `select * from  [dbo].[Leitura] inner join [dbo].[Equipamento] on fkEquipamento = idEquipamento inner join [dbo].[Funcionario] on fkFuncionario = idFuncionario where idFuncionario=${idUsuario}`;
+    sequelize.query(instrucaoSql, {
+        model: Publicacao,
+        mapToModel: true
+    })
+        .then(resultado => {
+            console.log(`Encontrados: ${resultado.length}`);
+            res.json(resultado);
+        }).catch(erro => {
+            console.error(erro);
+            res.status(500).send(erro.message);
+        });
+});
 module.exports = router;

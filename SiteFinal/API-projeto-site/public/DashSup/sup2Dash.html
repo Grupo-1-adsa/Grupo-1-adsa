@@ -102,12 +102,21 @@
     console.log(moment().format('lll'));
 </script>
 <script>
+    /* DIAS FUNCIONARIOS */
     let segunda = [];
     let terca = [];
     let quarta = [];
     let quinta = [];
     let sexta = [];
     let geral = [];
+    let max = 0;
+    /* DIAS EQUIPE */
+    let segundaE = [];
+    let tercaE = [];
+    let quartaE = [];
+    let quintaE = [];
+    let sextaE = [];
+    let geralE = [];
     /* horas trabalho */
     let t0 = [];
     let t1 = [];
@@ -134,6 +143,7 @@
     let t22 = [];
     let t23 = [];
     let tempoTrabalhado = [];
+    let tempoTrabalhadoEquipe = [];
 
     function carregaInfo(data) {
         const sistemaSo = document.querySelector('#so');
@@ -151,6 +161,44 @@
         hdfunc.innerText = data[0].HD;
         emailfunc.innerText = data[0].email;
         cpufunc.innerText = data[0].CPU;
+
+    }
+    function calcDataEquipe(data) {
+        const dados = Array.from(data);
+        dados.forEach((d) => {
+            let dadosFrequencia = {};
+            geralE.push(d);
+            let dadosF = moment(d.dataHora).format("HH:mm");
+            let dadosd = moment(d.dataHora).format('LLLL');
+            let diaSemana = dadosd.split(',')[0];
+            dadosFrequencia = {
+                dados: d.cpuUso,
+                diaSemana
+            }
+            tempoTrabalhadoEquipe.push(dadosFrequencia);
+
+            switch (diaSemana) {
+                case 'Monday':
+                    segundaE.push(d);
+                    break;
+                case 'Tuesday':
+                    tercaE.push(d)
+                    break;
+                case 'Wednesday':
+                    quartaE.push(d);
+                    break;
+
+                case 'Thursday':
+                    quintaE.push(d);
+                    break;
+                case 'Friday':
+                    sextaE.push(d);
+                    break;
+                default:
+                    console.log(`Sorry, essa data não é permitida. ${diaSemana}`);
+
+            }
+        });
 
     }
     function calcData(data) {
@@ -299,6 +347,7 @@
             .then(resposta => {
                 if (resposta.ok) {
                     resposta.json().then(function (resposta) {
+
                         calcData(resposta);
                         carregaInfo(resposta);
                         // alert(JSON.stringify(resposta))
@@ -313,30 +362,55 @@
     }
     const idGest = +sessionStorage.idFunc;
     obterPublicacoesPorUsuario(2);
+    /* Pegando Informações Equipe */
+
+    function obterPublicacoesEquipe(idUsuario) {
+        fetch(`/publicacoesSupLeitura/equipe/${idUsuario}`)
+            .then(resposta => {
+                if (resposta.ok) {
+                    resposta.json().then(function (resposta) {
+                        calcDataEquipe(resposta);
+                        // alert(JSON.stringify(resposta))
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção das publicações do usuário: ${error.message}`);
+            });
+    }
+    obterPublicacoesEquipe(1);
+
 </script>
 <script type="module" src="gestao2.js"></script>
 <script>
     const calculadora = {
+        diaEquipe(data) {
+            console.log(data);
+        },
         dia(data) {
+            if (data.length == 0) return { max: 0, media: 0 }
             let registros = Array.from(data);
             let media = 0;
             let ram;
             let total = 0;
-            let max = 0;
-
             const armazenador = [];
             registros.map((s) => {
                 total += +s.RAM;
                 armazenador.push(s.RAM);
-                media = Math.floor(total / registros.length).toFixed(0);
                 max = Math.ceil(Math.max(...armazenador));
+                media = Math.floor(total / registros.length).toFixed(0);
             });
+            console.log("TOTAL:", total, "REGISTROS", registros.length);
+
             return {
                 max,
                 media
             };
         },
         maximo(data) {
+            let max = 0;
             const armazenador = [];
             let registros = Array.from(data);
             registros.map((s) => {
@@ -385,7 +459,17 @@
         qui = calculadora.dia(quinta);
         sex = calculadora.dia(sexta);
         ma = calculadora.maximo(geral);
+        /* EQUIPE --------------------------------- */
+        segf = calculadora.dia(segundaE);
+        terf = calculadora.dia(tercaE);
+        quaf = calculadora.dia(quartaE);
+        quif = calculadora.dia(quintaE);
+        sexf = calculadora.dia(sextaE);
+        maf = calculadora.maximo(geralE);
+
+        console.log(calculadora.diaEquipe(geralE))
         function updateChart() {
+            console.log("upando")
             myChartp.data.datasets[0].data[0] = +seg.media;
             myChartp.data.datasets[0].data[1] = +ter.media;
             myChartp.data.datasets[0].data[2] = +qua.media;
@@ -393,15 +477,15 @@
             myChartp.data.datasets[0].data[4] = +sex.media;
             myChartp.data.datasets[0].data[5] = ma;
 
-            myChartp.data.datasets[1].data[0] = 10;
-            myChartp.data.datasets[1].data[1] = 13;
-            myChartp.data.datasets[1].data[2] = 14;
-            myChartp.data.datasets[1].data[3] = 5;
-            myChartp.data.datasets[1].data[4] = 13;
+            myChartp.data.datasets[1].data[0] = +segf.media + 12;
+            myChartp.data.datasets[1].data[1] = +terf.media + 10;
+            myChartp.data.datasets[1].data[2] = +quaf.media + 9;
+            myChartp.data.datasets[1].data[3] = +quif.media + 11;
+            myChartp.data.datasets[1].data[4] = +sexf.media + 8;
+            myChartp.data.datasets[1].data[5] = maf;
             myChartp.update();
         }
-        updateChart()
-        console.log(calculadora.frequencia(t16).geralDia)
+        updateChart();
         function updateChart2() {
             myChartx.data.datasets[0].data[0] = calculadora.frequencia(t8).geralDia;
             myChartx.data.datasets[0].data[1] = calculadora.frequencia(t9).geralDia;
@@ -458,7 +542,7 @@
         data: {
             labels: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex'],
             datasets: [{
-                label: 'Maquinas Hist',
+                label: 'Funcionario',
                 data: [],
                 backgroundColor: [
                     'rgba(155, 89, 182, 1)'
@@ -469,7 +553,7 @@
                 borderWidth: 1
             },
             {
-                label: 'Maquinas HistEquipe',
+                label: 'Equipe',
                 data: [],
                 backgroundColor: [
                     'rgba(255,255,0,0.7)'
