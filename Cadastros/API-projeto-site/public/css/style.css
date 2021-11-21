@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
 :root {
   --primary-azul: #2c82b9;
   --cor-preto: #000;
@@ -14,32 +15,24 @@
   font-family: var(--font-lato-corpo);
 }
 
-.container {
-  width: 80%;
-  margin: auto;
+body {
+  background-image: url(../img/lista.png);
+  background-repeat: no-repeat;
 }
 
-h1 {
-  margin: 0;
-  padding: 0;
-}
 
 a {
   text-decoration: none;
 }
 
-
 .header {
-  background-color: #232323;
   height: 100px;
 }
 
 .header .container {
   height: 80px;
-}
-
-.header .container .highlight {
-  color: rgb(255, 255, 255);
+  width: 80%;
+  margin: auto;
 }
 
 .header h1 {
@@ -47,36 +40,93 @@ a {
   padding: 0;
   float: left;
   margin-top: 30px;
-  margin-left: 30px;
-  color: white;
+  margin-left: 2px;
+  float: left;
+  width: 80%;
 }
 
-.banner {
-  height: 400px;
-  width: 60%;
-  margin-top: 50px;
-  background-size: cover;
-  background-image: url(../img/tela-localizar-dcomercio.jpg);
-  background-repeat: no-repeat;
-  position: absolute;
+.header img {
+  margin: 0;
+  padding: 0;
+  float: left;
+  margin-top: 30px;
+  height: 40px;
+  float: left;
 }
+
+.header span {
+  padding-left: 25%;
+  color: var(--primary-azul);
+  font-size: 2.5rem;
+  text-align: center;
+}
+
 
 .containerList {
-  background-color: rgba(133, 23, 23, 0.288);
-  text-align: center;
-  height: 80%;
-  width: 100%;
+  margin-top: 3vh;
+  margin-left: 40vh;
+  display: flex;
+  justify-content: center;
+  min-width: 146vh;
+  min-height: 52vh;
+  position: absolute;
   z-index: 9;
-  position: absolute; 
 }
 
-.banner .texto {
-  color: gray;
-  text-align: center;
-  padding-top: 150px;
+.containerList ul {
+  min-width: 80vh;
+  height: 65vh;
+  padding: 0 1rem 1rem 0;
+  overflow: hidden;
+  overflow-y: scroll;
 }
 
-.banner .titulo {
-  font-size: 48px;
-  color: rgb(255, 255, 255);
+.containerList ul::-webkit-scrollbar {
+  width: 8px;
+}
+
+.containerList ul::-webkit-scrollbar-thumb {
+  background: #e8effb;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.containerList ul::-webkit-scrollbar-track {
+  cursor: pointer;
+}
+
+.containerList li {
+  list-style-type: none;
+  background-color: #e8effb;
+  height: 12vh;
+  margin-bottom: 10px;
+}
+
+.menu {
+    margin-top: 5px;
+    margin-left: 85px;
+  float: left;
+}
+
+.containerList img {
+  margin-left: 10px;
+  padding: 0;
+  height: 35px;
+  float: left;
+  cursor: pointer;
+}
+
+.lado{ 
+  float: left;
+}
+h4 {
+  padding-top: 10px;
+}
+
+h4 span {
+  padding-left: 20px;
+  padding-right: 40px;
+  margin-bottom: 20px;
 }

@@ -11,7 +11,9 @@
 
 <body>
     <div class="header">
-        <img src="img/seta.svg" alt="" class="voltar" onclick="voltar()">
+        <a href="index.html"><img src="img/voltar.png" alt="" class="voltar" onclick="voltarLista()"
+                id="voltarLista"></a>
+        <img src="img/voltar.png" alt="" class="voltar" onclick="voltar()" id="voltar" style="display: none;">
         <div class="container">
 
             <h1 class="titulo">Cadastro de empresas</h1>
@@ -26,12 +28,13 @@
     <main class="estiloForm">
 
         <form id="form_cadastro" method="post" onsubmit="return cadastrar()" class="formEmpresa">
-            
+
             <div id="dadosEmpresa" class="formAcess">
                 <h3>Dados da empresa:</h3>
                 <label for="name" class="input-fild">
                     <span>Name:</span>
-                    <input type="text" id="nomeEmpresa" name="nomeEmpresa" class="input-padrao" placeholder="Nome e sobrenome" required minlength="4" autofocus="autofocus">
+                    <input type="text" id="nomeEmpresa" name="nomeEmpresa" class="input-padrao"
+                        placeholder="Nome e sobrenome" required minlength="4" autofocus="autofocus">
                     <div class="underline"></div>
                 </label>
                 <label for="name" class="input-fild">
@@ -64,14 +67,14 @@
                     <input type="text" id="numero" name="numero" placeholder="Digite o número">
                     <div class="underline"></div>
                 </label>
-                <label for="name" class="input-fild" >
+                <label for="name" class="input-fild">
                     <span>Complemento:</span>
                     <input type="text" id="complemento" name="complemento" placeholder="Digite complemento">
                     <div class="underline"></div>
                 </label>
             </div>
 
-            <div id="dadosAcesso" style="display: none;" class="formAcess" >
+            <div id="dadosAcesso" style="display: none;" class="formAcess">
                 <h3>Dados da de acesso:</h3>
                 <label for="name" class="input-fild">
                     <span>Login:</span>
@@ -100,10 +103,10 @@
                     <input type="text" id="email" name="email" placeholder="Digite o número">
                     <div class="underline"></div>
                 </label>
-                
+
             </div>
 
-            <button id="btn_next" placeholder="Digite o nome" onclick="continuar()" >
+            <button id="btn_next" placeholder="Digite o nome" onclick="continuar()">
                 Next
                 <img src="img/next-button.png" alt="">
             </button>
@@ -114,7 +117,7 @@
             </button>
 
         </form>
-       
+
     </main>
 
     <section class="images">
@@ -122,41 +125,33 @@
         <div class="circle"></div>
     </section>
 
-    <section id="listaEmpresa" style="display: none;">
-        <div class="header">
-            <div class="container">
-
-                <h1 class="titulo">Cadastro de empresas</h1>
-
-                <div>
-                    <img src="img/iconPreto.png" alt="">
-                    <span class="tituloFast">FastTech</span>
-                </div>
-            </div>
-        </div>
-     
-        <section class="images">
-            <img src="img/fundoLista.png" alt="Mobile">
-            <div class="circle"></div>
-        </section>
 </body>
 
 </html>
 
 <script>
 
-    function continuar(){
+    function continuar() {
         document.getElementById("dadosEmpresa").style.display = "none";
         document.getElementById("dadosAcesso").style.display = "block";
         document.getElementById("btn_entrar").style.display = "block";
         document.getElementById("btn_next").style.display = "none";
+        document.getElementById("voltarLista").style.display = "none";
+        document.getElementById("voltar").style.display = "block";
+
     }
 
-    function voltar(){
+    function voltar() {
         document.getElementById("dadosEmpresa").style.display = "block";
         document.getElementById("dadosAcesso").style.display = "none";
         document.getElementById("btn_entrar").style.display = "none";
         document.getElementById("btn_next").style.display = "block";
+        document.getElementById("voltar").style.display = "none";
+        document.getElementById("voltarLista").style.display = "block";
+    }
+
+    function voltarLista() {
+        document.getElementById("voltarLista").style.display = "block";
     }
 
     function cadastrar() {
@@ -166,10 +161,10 @@
             method: "POST",
             body: formulario
         }).then(function (response) {
-            
+
             if (response.ok) {
 
-                window.location.href='login.html';
+                window.location.href = 'login.html';
 
             } else {
 
@@ -186,14 +181,14 @@
 
     function aguardar() {
         btn_entrar.disabled = true;
-        img_aguarde.style.display='block';
-        div_erro.style.display='none';
+        img_aguarde.style.display = 'block';
+        div_erro.style.display = 'none';
     }
 
     function finalizar_aguardar() {
         btn_entrar.disabled = false;
-        img_aguarde.style.display='none';
-        div_erro.style.display='block';
+        img_aguarde.style.display = 'none';
+        div_erro.style.display = 'block';
     }
 
 </script>
