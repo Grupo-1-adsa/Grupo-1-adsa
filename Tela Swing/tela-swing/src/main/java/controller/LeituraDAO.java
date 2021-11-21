@@ -10,14 +10,18 @@ import java.util.List;
 
 public class LeituraDAO {
 
-        ConnectionAzure config = new ConnectionAzure();
-        JdbcTemplate con = new JdbcTemplate(config.getDataSource());
+        ConnectionAzure configAzure = new ConnectionAzure();
+        ConnectionDocker configDocker = new ConnectionDocker();
+
+        JdbcTemplate con = new JdbcTemplate(configAzure.getDataSource());
+
 
 
         public void enviarLeitura(Integer fkEquipamento) {
             Looca looca = new Looca();
 
-            JdbcTemplate conn = new JdbcTemplate(config.getDataSource());
+            JdbcTemplate conn = new JdbcTemplate(configAzure.getDataSource());
+            JdbcTemplate connn = new JdbcTemplate(configDocker.getDataSource());
             Integer ramUso = Math.toIntExact(looca.getMemoria().getEmUso() /  1000000000);
             Double cpuUso = looca.getProcessador().getUso()/100000;
             Integer cpuFrequencia = Math.toIntExact(looca.getProcessador().getFrequencia()/1000000);
@@ -31,10 +35,11 @@ public class LeituraDAO {
             }
 
 
-            String sql = "insert into [dbo].[Leitura](dataHora,RAM,fkEquipamento,cpuFrequencia,tempoAtividade,cpuUso) values (getDate(),?,?,?,?,?)";
+            String sqlServer = "insert into Leitura (RAM,fkEquipamento,cpuFrequencia,tempoAtividade,cpuUso) values (?,?,?,?,?);";
+            String mySql = "insert into [dbo].[Leitura](dataHora,RAM,fkEquipamento,cpuFrequencia,tempoAtividade,cpuUso) values (getDate(),?,?,?,?,?);";
 
-            conn.update(sql, ramUso, fkEquipamento, cpuFrequencia, tempAtividade, cpuUso);
-
+            conn.update(sqlServer, ramUso, fkEquipamento, cpuFrequencia, tempAtividade, cpuUso);
+            connn.update(mySql,ramUso, fkEquipamento, cpuFrequencia, tempAtividade, cpuUso);
         }
 
         public Leitura query(Integer fkEquipamento) {
