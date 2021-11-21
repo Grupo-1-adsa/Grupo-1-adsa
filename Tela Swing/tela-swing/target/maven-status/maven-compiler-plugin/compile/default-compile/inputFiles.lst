@@ -1,15 +1,19 @@
-C:\Users\bcsouza3\Documents\Faculdade\Grupo PI\Grupo-1-adsa\Tela Swing\tela-swing\src\main\java\model\Leitura.java
-C:\Users\bcsouza3\Documents\Faculdade\Grupo PI\Grupo-1-adsa\Tela Swing\tela-swing\src\main\java\com\mycompany\tela\swing\TelaLogin.java
-C:\Users\bcsouza3\Documents\Faculdade\Grupo PI\Grupo-1-adsa\Tela Swing\tela-swing\src\main\java\controller\LeituraMaper.java
-C:\Users\bcsouza3\Documents\Faculdade\Grupo PI\Grupo-1-adsa\Tela Swing\tela-swing\src\main\java\model\Equipamento.java
-C:\Users\bcsouza3\Documents\Faculdade\Grupo PI\Grupo-1-adsa\Tela Swing\tela-swing\src\main\java\controller\EquipamentoMaper.java
-C:\Users\bcsouza3\Documents\Faculdade\Grupo PI\Grupo-1-adsa\Tela Swing\tela-swing\src\main\java\logging\Log.java
-C:\Users\bcsouza3\Documents\Faculdade\Grupo PI\Grupo-1-adsa\Tela Swing\tela-swing\src\main\java\controller\LeituraDAO.java
-C:\Users\bcsouza3\Documents\Faculdade\Grupo PI\Grupo-1-adsa\Tela Swing\tela-swing\src\main\java\com\mycompany\tela\swing\TelaOpcao.java
-C:\Users\bcsouza3\Documents\Faculdade\Grupo PI\Grupo-1-adsa\Tela Swing\tela-swing\src\main\java\controller\EquipamentoDAO.java
-C:\Users\bcsouza3\Documents\Faculdade\Grupo PI\Grupo-1-adsa\Tela Swing\tela-swing\src\main\java\controller\FuncionarioMaper.java
-C:\Users\bcsouza3\Documents\Faculdade\Grupo PI\Grupo-1-adsa\Tela Swing\tela-swing\src\main\java\com\mycompany\tela\swing\TelaSoftware.java
-C:\Users\bcsouza3\Documents\Faculdade\Grupo PI\Grupo-1-adsa\Tela Swing\tela-swing\src\main\java\controller\FuncionarioDAO.java
-C:\Users\bcsouza3\Documents\Faculdade\Grupo PI\Grupo-1-adsa\Tela Swing\tela-swing\src\main\java\model\Funcionario.java
-C:\Users\bcsouza3\Documents\Faculdade\Grupo PI\Grupo-1-adsa\Tela Swing\tela-swing\src\main\java\model\Slack.java
-C:\Users\bcsouza3\Documents\Faculdade\Grupo PI\Grupo-1-adsa\Tela Swing\tela-swing\src\main\java\controller\ConnectionBD.java
+C:\Users\betis\Documents\FACULDADEADS\Semestre2\Procastinator\Grupo-1-adsa\Tela Swing\tela-swing\src\main\java\controller\ConnectionAzure.java
+C:\Users\betis\Documents\FACULDADEADS\Semestre2\Procastinator\Grupo-1-adsa\Tela Swing\tela-swing\src\main\java\com\mycompany\tela\swing\TelaLogin.java
+C:\Users\betis\Documents\FACULDADEADS\Semestre2\Procastinator\Grupo-1-adsa\Tela Swing\tela-swing\src\main\java\model\Advertencia.java
+C:\Users\betis\Documents\FACULDADEADS\Semestre2\Procastinator\Grupo-1-adsa\Tela Swing\tela-swing\src\main\java\controller\LeituraMaper.java
+C:\Users\betis\Documents\FACULDADEADS\Semestre2\Procastinator\Grupo-1-adsa\Tela Swing\tela-swing\src\main\java\controller\FuncionarioMaper.java
+C:\Users\betis\Documents\FACULDADEADS\Semestre2\Procastinator\Grupo-1-adsa\Tela Swing\tela-swing\src\main\java\controller\AdvertenciaMaper.java
+C:\Users\betis\Documents\FACULDADEADS\Semestre2\Procastinator\Grupo-1-adsa\Tela Swing\tela-swing\src\main\java\controller\ConnectionDocker.java
+C:\Users\betis\Documents\FACULDADEADS\Semestre2\Procastinator\Grupo-1-adsa\Tela Swing\tela-swing\src\main\java\model\Leitura.java
+C:\Users\betis\Documents\FACULDADEADS\Semestre2\Procastinator\Grupo-1-adsa\Tela Swing\tela-swing\src\main\java\com\mycompany\tela\swing\TelaSoftware.java
+C:\Users\betis\Documents\FACULDADEADS\Semestre2\Procastinator\Grupo-1-adsa\Tela Swing\tela-swing\src\main\java\com\mycompany\tela\swing\TelaOpcao.java
+C:\Users\betis\Documents\FACULDADEADS\Semestre2\Procastinator\Grupo-1-adsa\Tela Swing\tela-swing\src\main\java\controller\EquipamentoMaper.java
+C:\Users\betis\Documents\FACULDADEADS\Semestre2\Procastinator\Grupo-1-adsa\Tela Swing\tela-swing\src\main\java\logging\Log.java
+C:\Users\betis\Documents\FACULDADEADS\Semestre2\Procastinator\Grupo-1-adsa\Tela Swing\tela-swing\src\main\java\model\Funcionario.java
+C:\Users\betis\Documents\FACULDADEADS\Semestre2\Procastinator\Grupo-1-adsa\Tela Swing\tela-swing\src\main\java\model\Slack.java
+C:\Users\betis\Documents\FACULDADEADS\Semestre2\Procastinator\Grupo-1-adsa\Tela Swing\tela-swing\src\main\java\controller\AdvertenciaDAO.java
+C:\Users\betis\Documents\FACULDADEADS\Semestre2\Procastinator\Grupo-1-adsa\Tela Swing\tela-swing\src\main\java\controller\FuncionarioDAO.java
+C:\Users\betis\Documents\FACULDADEADS\Semestre2\Procastinator\Grupo-1-adsa\Tela Swing\tela-swing\src\main\java\model\Equipamento.java
+C:\Users\betis\Documents\FACULDADEADS\Semestre2\Procastinator\Grupo-1-adsa\Tela Swing\tela-swing\src\main\java\controller\EquipamentoDAO.java
+C:\Users\betis\Documents\FACULDADEADS\Semestre2\Procastinator\Grupo-1-adsa\Tela Swing\tela-swing\src\main\java\controller\LeituraDAO.java
