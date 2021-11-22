@@ -285,8 +285,9 @@
             </div>
         </section>
     </footer> -->
-
+    
     <div id="mapa" class="mapa">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1828.6392060275589!2d-46.66261446585646!3d-23.558442249671092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59d2b063f663%3A0xc567c0d16d0bc582!2sBandtec%20Digital%20School!5e0!3m2!1spt-BR!2sbr!4v1637596502926!5m2!1spt-BR!2sbr" width="1200" height="750" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         <div class="contato-card">
             <h1>Entrem em contato conosco </h1>
             <ul>
@@ -321,42 +322,7 @@
     </div>
 
 
-    <script>
-        feather.replace();
-
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        function initMap() {
-            // The location of Uluru
-            var uluru = {
-                lat: -19.924108,
-                lng: -43.943470
-            };
-            // The map, centered at Uluru
-            var map = new google.maps.Map(
-                document.getElementById('map'), {
-                zoom: 15,
-                center: uluru
-            });
-            // The marker, positioned at Uluru
-            var marker = new google.maps.Marker({
-                position: uluru,
-                map: map
-            });
-        }
-    </script>
-
-    <script async defer src="https://maps.googleapis.com/maps/api/js?callback=initMap">
-    </script>
-
+  
 
 </body>
 
