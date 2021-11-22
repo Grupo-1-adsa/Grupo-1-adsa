@@ -29,7 +29,26 @@ router.get('/:idUsuario', function (req, res, next) {
 
     var idUsuario = req.params.idUsuario;
 
-    let instrucaoSql = `select idFuncionario, nomeFuncionario,idResponsavel,nomeResponsavel from  Responsavel inner join Funcionario on fkResponsavel = idResponsavel where idResponsavel = ${idUsuario};`;
+    let instrucaoSql = `select * from [dbo].[Equipamento] inner join [dbo].[Funcionario] on fkFuncionario = idFuncionario inner join Responsavel on Funcionario.fkResponsavel = Responsavel.idResponsavel where statusEquip = 'Grave'`;
+    sequelize.query(instrucaoSql, {
+        model: Publicacao,
+        mapToModel: true
+    })
+        .then(resultado => {
+            console.log(`Encontrados: ${resultado.length}`);
+            res.json(resultado);
+        }).catch(erro => {
+            console.error(erro);
+            res.status(500).send(erro.message);
+        });
+});
+
+router.get('/idv/:idUsuario', function (req, res, next) {
+    console.log('Recuperando todas as publicações');
+
+    var idUsuario = req.params.idUsuario;
+
+    let instrucaoSql = `select * from [dbo].[Equipamento] inner join [dbo].[Funcionario] on fkFuncionario = idFuncionario inner join Responsavel on Funcionario.fkResponsavel = Responsavel.idResponsavel where statusEquip = 'Grave'`;
     sequelize.query(instrucaoSql, {
         model: Publicacao,
         mapToModel: true
