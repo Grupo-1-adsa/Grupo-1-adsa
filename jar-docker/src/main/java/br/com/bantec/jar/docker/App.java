@@ -78,6 +78,7 @@ public class App {
 
             } else {
                 System.out.println("Login ou senha incorretos.");
+                log.insercaoLog();
             }
         } while (!funcionarioDAO.verificaLogin() == true);
 

@@ -19,7 +19,7 @@ public class Log {
         PrintWriter gravarLog = new PrintWriter(log);
             
         gravarLog.printf("%s\n", dataHora);
-        gravarLog.printf("Não foi possível fazer a inserção no SQLserver");
+        gravarLog.printf("Login ou senha incorretos!");
         log.close();
         System.out.println("Arquivo gravado com sucesso");
     }
