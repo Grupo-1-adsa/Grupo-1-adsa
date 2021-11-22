@@ -18,7 +18,7 @@ import java.util.TimerTask;
 public class Slack {
 
     private static final HttpClient client = HttpClient.newHttpClient();
-    private static final String URL = "https://hooks.slack.com/services/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";
+    private static final String URL = "https://hooks.slack.com/services/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";
 
     public static void sendMessage(JSONObject content) throws IOException, InterruptedException {
         Log log = new Log();
