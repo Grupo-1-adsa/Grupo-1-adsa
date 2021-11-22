@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="phone.png">
+    <link rel="shortcut icon" href="./DashGestor/img/" type="image/x-icon">
+    <title>Login</title>
+    <link rel="stylesheet" href="./css/login.css">
+    <script src="https://kit.fontawesome.com/1ab94d0eba.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <header class="header-login">
+        <section class="container-login">
+            <div class="box-login">
+                <!-- <img src="./DashGestor/img/logobranco.svg" alt=""> -->
+                <h1 class="title">Acesso a Dashboard</h1>
+            </div>
+
+        </section>
+    </header>
+
+    <main class="form-login">
+        <h2>Login</h2>
+
+        <form action="javascript:void(0)" id="formulario_login" method="post" onsubmit="return entrar()">
+            <p class="escolha">Escolha usuário:</p>
+            <div class="toggle">
+                
+                <select name="" id="">
+                    <option value="1">Empresa</option>
+                    <option value="1">FastTech</option>
+                    <option value="1">Gestor</option>
+                    <option value="1">Suporte</option>
+                </select>
+            </div>
+            <div class="input-field">
+                <input autocomplete="off" type="text" name="username" id="username" placeholder="Entre com seu Nome de Usuário">
+                <div class="underline"></div>
+            </div>
+            <select style="display: none;" name="tipo" id="tipo">
+                <option value="gestor">gestor</option>
+                <option value="suporte">suporte</option>
+            </select>
+            <div class="input-field">
+                <input autocomplete="off" type="password" name="password" id="password" placeholder="Entre com a sua Senha">
+                <div class="underline"></div>
+            </div>
+            <a href="">Esqueceu senha, clique aqui</a>
+            <input autocomplete="off" type="submit" value="Continue">
+        </form>
+    </main>
+
+</body>
+
+</html>
+
+<script>
+    const tipo = document.getElementById('tipo');
+    tipo.value = 'suporte';
+    function entrar() {
+        var formulario = new URLSearchParams(new FormData(formulario_login));
+        console.log(formulario);
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            body: formulario
+        }).then(resposta => {
+            if (resposta.ok) {
+                resposta.json().then(json => {
+                    sessionStorage.tipo = json.tipo;
+                    sessionStorage.id = json.idResponsavel;
+                    sessionStorage.nome = json.nomeResponsavel;
+                    if (tipo.value == "gestor") {
+                        window.location.href = "../DashGestor/gestorDash.html";
+                    } else {
+                        window.location.href = "../DashSup/supDash.html";
+                    }
+                });
+            } else {
+                alert("[Error] : Verifique Seus dados no formulário !")
+                console.log('Erro de login!');
+                resposta.text().then(texto => {
+                    console.error(texto);
+                });
+            }
+        });
+        return false;
+    }
+
+    let contator = -1;
+    function ativar() {
+        contator++;
+        if (contator == 0) {
+            tipo.value = "gestor";
+        } else {
+            tipo.value = "suporte";
+            contator = -1;
+        }
+        console.log(tipo.value);
+    }
+
+
+
+</script>

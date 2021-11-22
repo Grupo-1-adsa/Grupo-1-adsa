@@ -3,6 +3,24 @@ var router = express.Router();
 var sequelize = require('../models').sequelize;
 var Publicacao = require('../models').Publicacao;
 
+router.get('/', function (req, res, next) {
+    console.log('Recuperando todas as publicações');
+
+    let instrucaoSql = `select * from [dbo].[Advertencia] inner join [dbo].[Funcionario] on fkFuncionario = idFuncionario inner join Responsavel on Funcionario.fkResponsavel = Responsavel.idResponsavel `;
+
+    sequelize.query(instrucaoSql, {
+        model: Publicacao,
+        mapToModel: true
+    })
+        .then(resultado => {
+            console.log(`Encontrados: ${resultado.length}`);
+            res.json(resultado);
+        }).catch(erro => {
+            console.error(erro);
+            res.status(500).send(erro.message);
+        });
+});
+
 /* ROTA QUE RECUPERA CRIA UMA PUBLICAÇÃO */
 router.post('/publicar/:idUsuario', function (req, res, next) {
     console.log("Iniciando Publicação...")
@@ -29,7 +47,47 @@ router.get('/:idUsuario', function (req, res, next) {
 
     var idUsuario = req.params.idUsuario;
 
-    let instrucaoSql = `select * from Equipamento  inner join Funcionario on Funcionario.idFuncionario = Equipamento.fkFuncionario inner join Responsavel on Responsavel.idResponsavel = ${idUsuario}  ORDER BY Funcionario.idFuncionario DESC`;
+    let instrucaoSql = `select  * from Equipamento  inner join Funcionario on Equipamento.fkFuncionario = Funcionario.idFuncionario inner join Responsavel on Funcionario.fkResponsavel = Responsavel.idResponsavel  where  Responsavel.idResponsavel= ${idUsuario} ORDER BY Funcionario.idFuncionario DESC `;
+
+    sequelize.query(instrucaoSql, {
+        model: Publicacao,
+        mapToModel: true
+    })
+        .then(resultado => {
+            console.log(`Encontrados: ${resultado.length}`);
+            res.json(resultado);
+        }).catch(erro => {
+            console.error(erro);
+            res.status(500).send(erro.message);
+        });
+});
+
+router.get('/adv/:idUsuario', function (req, res, next) {
+    console.log('Recuperando todas as publicações');
+
+    var idUsuario = req.params.idUsuario;
+
+    let instrucaoSql = `select * from [dbo].[Advertencia] inner join [dbo].[Funcionario] on fkFuncionario = idFuncionario inner join Responsavel on Funcionario.fkResponsavel = Responsavel.idResponsavel  where  idFuncionario=${idUsuario} `;
+
+    sequelize.query(instrucaoSql, {
+        model: Publicacao,
+        mapToModel: true
+    })
+        .then(resultado => {
+            console.log(`Encontrados: ${resultado.length}`);
+            res.json(resultado);
+        }).catch(erro => {
+            console.error(erro);
+            res.status(500).send(erro.message);
+        });
+});
+
+router.get('/advertencia/:idUsuario', function (req, res, next) {
+    console.log('Recuperando todas as publicações');
+
+    var idUsuario = req.params.idUsuario;
+
+    let instrucaoSql = `select * from [dbo].[Advertencia] inner join [dbo].[Funcionario] on fkFuncionario = idFuncionario inner join Responsavel on Funcionario.fkResponsavel = Responsavel.idResponsavel`;
 
     sequelize.query(instrucaoSql, {
         model: Publicacao,

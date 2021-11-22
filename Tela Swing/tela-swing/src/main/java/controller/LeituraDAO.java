@@ -1,8 +1,7 @@
 package controller;
 
 import com.github.britooo.looca.api.core.Looca;
-import com.github.britooo.looca.api.group.processos.Processo;
-import com.github.britooo.looca.api.group.processos.ProcessosGroup;
+import com.github.britooo.looca.api.group.discos.Disco;
 import model.Leitura;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -11,24 +10,36 @@ import java.util.List;
 
 public class LeituraDAO {
 
-        ConnectionBD config = new ConnectionBD();
-        JdbcTemplate con = new JdbcTemplate(config.getDataSource());
+        ConnectionAzure configAzure = new ConnectionAzure();
+        ConnectionDocker configDocker = new ConnectionDocker();
+
+        JdbcTemplate con = new JdbcTemplate(configAzure.getDataSource());
+
 
 
         public void enviarLeitura(Integer fkEquipamento) {
             Looca looca = new Looca();
 
-            JdbcTemplate conn = new JdbcTemplate(config.getDataSource());
+            JdbcTemplate conn = new JdbcTemplate(configAzure.getDataSource());
+            JdbcTemplate connn = new JdbcTemplate(configDocker.getDataSource());
             Integer ramUso = Math.toIntExact(looca.getMemoria().getEmUso() /  1000000000);
             Double cpuUso = looca.getProcessador().getUso()/100000;
             Integer cpuFrequencia = Math.toIntExact(looca.getProcessador().getFrequencia()/1000000);
             Long tempAtividade = looca.getSistema().getTempoDeAtividade();
 
+            Integer usoHd = 0;
+            List<Disco> discInfo = looca.getGrupoDeDiscos().getDiscos();
 
-            String sql = "insert into [dbo].[Leitura](dataHora,RAM,fkEquipamento,cpuFrequencia,tempoAtividade,cpuUso) values (getDate(),?,?,?,?,?)";
+            for (Disco disco : discInfo) {
+                //usoHd = Math.toIntExact(disco. / 1000000000);
+            }
 
-            conn.update(sql, ramUso, fkEquipamento, cpuFrequencia, tempAtividade, cpuUso);
 
+            String sqlServer = "insert into Leitura values (null,null,?,?,?,?,?);";
+            String mySql = "insert into [dbo].[Leitura](dataHora,RAM,fkEquipamento,cpuFrequencia,tempoAtividade,cpuUso) values (getDate(),?,?,?,?,?);";
+
+            conn.update(sqlServer, ramUso, fkEquipamento, cpuFrequencia, tempAtividade, cpuUso);
+            connn.update(mySql,ramUso,cpuFrequencia, tempAtividade, fkEquipamento,  cpuUso);
         }
 
         public Leitura query(Integer fkEquipamento) {

@@ -6,7 +6,7 @@ package model;
  * @author ellen.m.almeida
  */
 public class Leitura {
-     private Integer idLeitura;
+    private Integer idLeitura;
     private String dataHora;
     private Integer RAM;
     private Integer fkEquipamento;

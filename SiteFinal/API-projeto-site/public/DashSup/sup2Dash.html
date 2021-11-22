@@ -13,6 +13,7 @@
 </head>
 
 <body>
+
     <section class="containerDash">
 
         <div class="containerMenu">
@@ -27,6 +28,7 @@
                             <li> <a href="#">Semanal</a></li>
                             <li> <a href="#">Mensal</a></li>
                             <li> <a href="#">Anuanal</a></li>
+                            <button id="testando">btn</button>
                         </ul>
                     </li>
                     <li><a href="#">Ajuda</a></li>
@@ -66,9 +68,8 @@
                     <div class="g2">
                         <span class="">
                             <span class="spancont">
-                                <div class="ativo">Ativo</div>
-                                <div class="pendente">Pendente</div>
-                                <div class="inativo">Inativo</div>
+                                <div class="ativo">Livre</div>
+                                <div class="inativo">Em uso</div>
                             </span></span>
                         </span>
                         <div class="dn">
@@ -101,12 +102,49 @@
     console.log(moment().format('lll'));
 </script>
 <script>
+    /* DIAS FUNCIONARIOS */
     let segunda = [];
     let terca = [];
     let quarta = [];
     let quinta = [];
     let sexta = [];
     let geral = [];
+    let max = 0;
+    /* DIAS EQUIPE */
+    let segundaE = [];
+    let tercaE = [];
+    let quartaE = [];
+    let quintaE = [];
+    let sextaE = [];
+    let geralE = [];
+    /* horas trabalho */
+    let t0 = [];
+    let t1 = [];
+    let t2 = [];
+    let t3 = [];
+    let t4 = [];
+    let t5 = [];
+    let t6 = [];
+    let t7 = [];
+    let t8 = [];
+    let t9 = [];
+    let t10 = [];
+    let t11 = [];
+    let t12 = [];
+    let t13 = [];
+    let t14 = [];
+    let t15 = [];
+    let t16 = [];
+    let t17 = [];
+    let t18 = [];
+    let t19 = [];
+    let t20 = [];
+    let t21 = [];
+    let t22 = [];
+    let t23 = [];
+    let tempoTrabalhado = [];
+    let tempoTrabalhadoEquipe = [];
+
     function carregaInfo(data) {
         const sistemaSo = document.querySelector('#so');
         const sistemaNs = document.querySelector('#ns');
@@ -118,29 +156,78 @@
 
         sistemaSo.innerText = data[0].SO;
         sistemaNs.innerText = data[0].numeroSerie;
-        ramfunc.innerText = data[0].RAM;
+        ramfunc.innerText = calculadora.maximo(data);
         idfunc.innerText = data[0].idFuncionario;
         hdfunc.innerText = data[0].HD;
         emailfunc.innerText = data[0].email;
         cpufunc.innerText = data[0].CPU;
-        console.log('INFO ---', data[0]);
+
+    }
+    function calcDataEquipe(data) {
+        const dados = Array.from(data);
+        dados.forEach((d) => {
+            let dadosFrequencia = {};
+            geralE.push(d);
+            let dadosF = moment(d.dataHora).format("HH:mm");
+            let dadosd = moment(d.dataHora).format('LLLL');
+            let diaSemana = dadosd.split(',')[0];
+            dadosFrequencia = {
+                dados: d.cpuUso,
+                diaSemana
+            }
+            tempoTrabalhadoEquipe.push(dadosFrequencia);
+
+            switch (diaSemana) {
+                case 'Monday':
+                    segundaE.push(d);
+                    break;
+                case 'Tuesday':
+                    tercaE.push(d)
+                    break;
+                case 'Wednesday':
+                    quartaE.push(d);
+                    break;
+
+                case 'Thursday':
+                    quintaE.push(d);
+                    break;
+                case 'Friday':
+                    sextaE.push(d);
+                    break;
+                default:
+                    console.log(`Sorry, essa data não é permitida. ${diaSemana}`);
+
+            }
+        });
+
     }
     function calcData(data) {
         const dados = Array.from(data);
         dados.forEach((d) => {
             geral.push(d);
+            let dadosF = moment(d.dataHora).format("HH:mm");
             let dadosd = moment(d.dataHora).format('LLLL');
             let diaSemana = dadosd.split(',')[0];
-            /* let data1 = moment(d.dataHora);
-            let data2 = moment(moment().day(1));
-            let data3 = moment(moment().day(5));
-            console.log(data1.format('DD/MM/YYYY'), "-", data3.format('DD/MM/YYYY'))
-            console.log(data1.diff(data3, 'days'))
-            if (data2.diff(data1, 'days') >= 0 && data1.diff(data3, 'days') > -4 && data1.diff(data3, 'days') <= 0) {
-                console.log('entrou')
-            } else {
-                console.log("data ja passou")
-            } */
+            let horasFrequencia = +dadosF.slice(0, 2);
+            let dadosFrequencia = {
+                dados: d.cpuUso,
+                horasFrequencia
+            }
+            /* const dataAtual = moment().format("DD/MM/YYYY");
+            const dataRegistro = moment(d.dataHora).format("DD/MM/YYYY");
+            console.log(dataAtual, dataRegistro); */
+            tempoTrabalhado.push(dadosFrequencia);
+
+            /*  let data1 = moment(d.dataHora);
+             let data2 = moment(moment().day(1));
+             let data3 = moment(moment().day(5));
+             console.log(data1.format('DD/MM/YYYY'), "-", data3.format('DD/MM/YYYY'))
+             console.log(data1.diff(data3, 'days'))
+              if (data2.diff(data1, 'days') >= 0 && data1.diff(data3, 'days') > -4 && data1.diff(data3, 'days') <= 0) {
+                  console.log('entrou')
+              } else {
+                  console.log("data ja passou")
+              } */
 
             switch (diaSemana) {
                 case 'Monday':
@@ -163,6 +250,95 @@
                     console.log(`Sorry, essa data não é permitida. ${diaSemana}`);
 
             }
+
+
+            /* --------------------------------------------- */
+
+            switch (dadosFrequencia.horasFrequencia) {
+                case 00:
+                    t0.push(dadosFrequencia);
+                    break;
+                case 01:
+                    t1.push(dadosFrequencia);
+                    break;
+                case 02:
+                    t2.push(dadosFrequencia);
+                    break;
+
+                case 03:
+                    t3.push(dadosFrequencia);
+                    break;
+                case 04:
+                    t4.push(dadosFrequencia);
+                    break;
+                case 05:
+                    t5.push(dadosFrequencia);
+                    break;
+                case 06:
+                    t6.push(dadosFrequencia);
+                    break;
+
+                case 07:
+                    t7.push(dadosFrequencia);
+                    break;
+                case 08:
+                    t8.push(dadosFrequencia);
+                    break;
+                case 09:
+                    t9.push(dadosFrequencia);
+                    break;
+                case 10:
+                    t10.push(dadosFrequencia);
+                    break;
+
+                case 11:
+                    t11.push(dadosFrequencia);
+                    break;
+                case 12:
+                    t12.push(dadosFrequencia);
+                    break;
+
+                case 13:
+                    t13.push(dadosFrequencia);
+                    break;
+                case 14:
+                    t14.push(dadosFrequencia);
+                    break;
+                case 15:
+                    t15.push(dadosFrequencia);
+                    break;
+
+                case 16:
+                    t16.push(dadosFrequencia);
+                    break;
+                case 17:
+                    t17.push(dadosFrequencia);
+                    break;
+                case 18:
+                    t18.push(dadosFrequencia);
+                    break;
+                case 19:
+                    t19.push(dadosFrequencia);
+                    break;
+                case 20:
+                    t20.push(dadosFrequencia);
+                    break;
+
+                case 21:
+                    t21.push(dadosFrequencia);
+                    break;
+                case 22:
+                    t22.push(dadosFrequencia);
+                    break;
+                case 23:
+                    t23.push(dadosFrequencia);
+                    break;
+                default:
+                    console.log(`data ${tempoTrabalhado.horasFrequencia}`);
+
+            }
+
+
         });
 
     }
@@ -171,6 +347,7 @@
             .then(resposta => {
                 if (resposta.ok) {
                     resposta.json().then(function (resposta) {
+
                         calcData(resposta);
                         carregaInfo(resposta);
                         // alert(JSON.stringify(resposta))
@@ -185,39 +362,95 @@
     }
     const idGest = +sessionStorage.idFunc;
     obterPublicacoesPorUsuario(2);
+    /* Pegando Informações Equipe */
+
+    function obterPublicacoesEquipe(idUsuario) {
+        fetch(`/publicacoesSupLeitura/equipe/${idUsuario}`)
+            .then(resposta => {
+                if (resposta.ok) {
+                    resposta.json().then(function (resposta) {
+                        calcDataEquipe(resposta);
+                        // alert(JSON.stringify(resposta))
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção das publicações do usuário: ${error.message}`);
+            });
+    }
+    obterPublicacoesEquipe(1);
+
 </script>
 <script type="module" src="gestao2.js"></script>
 <script>
     const calculadora = {
+        diaEquipe(data) {
+            console.log(data);
+        },
         dia(data) {
+            if (data.length == 0) return { max: 0, media: 0 }
             let registros = Array.from(data);
             let media = 0;
             let ram;
             let total = 0;
-            let max = 0;
             const armazenador = [];
             registros.map((s) => {
                 total += +s.RAM;
                 armazenador.push(s.RAM);
-                media = Math.floor(total / registros.length).toFixed(0);
                 max = Math.ceil(Math.max(...armazenador));
+                media = Math.floor(total / registros.length).toFixed(0);
             });
+            console.log("TOTAL:", total, "REGISTROS", registros.length);
+
             return {
                 max,
                 media
             };
         },
         maximo(data) {
+            let max = 0;
             const armazenador = [];
             let registros = Array.from(data);
             registros.map((s) => {
                 armazenador.push(s.RAM);
-                max = Math.ceil(Math.max(...armazenador));
+                max = Math.max(...armazenador);
             });
             return max;
+        },
+        frequencia(data) {
+            if (data.length == 0) return { geralDia: 0 }
+            let calculo = 0;
+            let geralDia = 0;
+            let registros = Array.from(data);
+            registros.forEach((r) => {
+                calculo += r.dados * 1000000;
+            });
+            geralDia = +(calculo / registros.length).toFixed(0);
+
+            return {
+                geralDia,
+                numerodeRegistros: registros.length
+            }
+        },
+        frequenciaGeral(data) {
+            let registros = Array.from(data);
+            let calculo = 0;
+            let diasSemTrampa = 0;
+            registros.forEach((r) => {
+                if (r.cpuUso == 0) {
+                    diasSemTrampa++;
+                }
+            });
+
+            return {
+                diasSemTrampa
+            }
         }
     }
     let seg, ter, qua, qui, sex;
+    let segf, terf, quaf, quif, sexf;
     setTimeout(() => {
         /* const segunda = calculadora.segunda(segunda); */
         seg = calculadora.dia(segunda);
@@ -226,91 +459,55 @@
         qui = calculadora.dia(quinta);
         sex = calculadora.dia(sexta);
         ma = calculadora.maximo(geral);
-        console.log(ma)
+        /* EQUIPE --------------------------------- */
+        segf = calculadora.dia(segundaE);
+        terf = calculadora.dia(tercaE);
+        quaf = calculadora.dia(quartaE);
+        quif = calculadora.dia(quintaE);
+        sexf = calculadora.dia(sextaE);
+        maf = calculadora.maximo(geralE);
+
+        console.log(calculadora.diaEquipe(geralE))
         function updateChart() {
+            console.log("upando")
             myChartp.data.datasets[0].data[0] = +seg.media;
             myChartp.data.datasets[0].data[1] = +ter.media;
             myChartp.data.datasets[0].data[2] = +qua.media;
             myChartp.data.datasets[0].data[3] = +qui.media;
             myChartp.data.datasets[0].data[4] = +sex.media;
             myChartp.data.datasets[0].data[5] = ma;
+
+            myChartp.data.datasets[1].data[0] = +segf.media + 12;
+            myChartp.data.datasets[1].data[1] = +terf.media + 10;
+            myChartp.data.datasets[1].data[2] = +quaf.media + 9;
+            myChartp.data.datasets[1].data[3] = +quif.media + 11;
+            myChartp.data.datasets[1].data[4] = +sexf.media + 8;
+            myChartp.data.datasets[1].data[5] = maf;
             myChartp.update();
         }
         updateChart();
+        function updateChart2() {
+            myChartx.data.datasets[0].data[0] = calculadora.frequencia(t8).geralDia;
+            myChartx.data.datasets[0].data[1] = calculadora.frequencia(t9).geralDia;
+            myChartx.data.datasets[0].data[2] = calculadora.frequencia(t10).geralDia;
+            myChartx.data.datasets[0].data[3] = calculadora.frequencia(t11).geralDia;
+            myChartx.data.datasets[0].data[4] = calculadora.frequencia(t12).geralDia;
+            myChartx.data.datasets[0].data[5] = calculadora.frequencia(t16).geralDia;
+            myChartx.data.datasets[0].data[6] = calculadora.frequencia(t17).geralDia;
+            myChartx.data.datasets[0].data[7] = calculadora.frequencia(t15).geralDia;
+            myChartx.update();
+        };
+
+        updateChart2();
     }, 1000);
-    var ctx = document.getElementById('myChart').getContext('2d');
-    var myChartp = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex'],
-            datasets: [{
-                label: 'Maquinas Hist',
-                data: [],
-                backgroundColor: [
-                    'rgba(155, 89, 182, 1)'
-                ],
-                borderColor: [
-                    'rgba(155, 89, 182, 1)'
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-
-
-
-</script>
-
-<script>
-    var ctx = document.getElementById('myChart2').getContext('2d');
-    var myChart = new Chart(ctx, {
-        type: 'doughnut',
-        data: {
-            datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3],
-                backgroundColor: [
-                    'rgb(255, 99, 71)',
-                    'rgb(95, 141, 255)',
-                    'rgb(255, 204, 95)',
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-</script>
-
-<script>
-    var ctx = document.getElementById('myChart3').getContext('2d');
-    var myChart = new Chart(ctx, {
+    var ctx2 = document.getElementById('myChart3').getContext('2d');
+    var myChartx = new Chart(ctx2, {
         type: 'line',
         data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            labels: ['08', '09', '10', '11', '12', '13', '14', '15'],
             datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
+                label: 'Frequência Cpu',
+                data: [],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
@@ -338,6 +535,88 @@
             }
         }
     });
+
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChartp = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex'],
+            datasets: [{
+                label: 'Funcionario',
+                data: [],
+                backgroundColor: [
+                    'rgba(155, 89, 182, 1)'
+                ],
+                borderColor: [
+                    'rgba(155, 89, 182, 1)'
+                ],
+                borderWidth: 1
+            },
+            {
+                label: 'Equipe',
+                data: [],
+                backgroundColor: [
+                    'rgba(255,255,0,0.7)'
+                ],
+                borderColor: [
+                    'rgba(255,255,0,0.7)'
+                ],
+                borderWidth: 1
+            },
+
+            ],
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+
+
+</script>
+
+<script>
+    var ctx = document.getElementById('myChart2').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            datasets: [{
+                label: '# of Votes',
+                data: [19, 3],
+                backgroundColor: [
+                    'rgb(95, 141, 255)',
+                    'rgb(255, 99, 71)',
+
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
+
+<script>
+
+
+
 </script>
 <script>
     function pegaNome() {

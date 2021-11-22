@@ -1,0 +1,11 @@
+fasttech@gmail.com
+
+fasttech155#@
+
+#Gfgrupo1
+
+EmpresaFastTech
+
+WEBSITE_NODE_DEFAULT_VERSION 
+
+

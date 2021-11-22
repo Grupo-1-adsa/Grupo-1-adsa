@@ -88,11 +88,29 @@
 </body>
 
 </html>
+<script src="../DashSup/tempo.js"></script>
+<script>
+    console.log(moment().format('lll'));
+</script>
 <script>
     function criarContainers(dados) {
         const container = document.querySelector(".containerInfoBalao")
         const conteudo = document.createElement("div");
+        let maiorValor = 0;
+        let contadorFunc = 0;
+        let registro = Array.from(dados);
+        let advAtual = [];
         dados.map((dado) => {
+            let adv, dataDado, dataAno;
+            if (dado.statusEquip) {
+                if (dado.statusEquip == "Grave") adv = "Alerta"
+                else if (dado.statusEquip == "Pendente") adv = "Pendente"
+                else adv = "Ativo";
+            }
+
+            console.log("dados", dado)
+
+
             container.innerHTML += `
       <div class="infoBalao">
                   <div class="perfilFunc">
@@ -100,19 +118,23 @@
                       <img src="./img/warn.png" alt="">
                   </div>
                   <div class="perfilM">
-                      <h2>Máquina</h2>
-                      <h2>012190</h2>
+                      
                   </div>
-                  <h2 class="status">Status: <span class="ruim">Alerta</span></h2>
+                  <h2 class="status">StatusEquip: <span class="ruim">${adv}</span></h2>
 
                   <div class="perfilS">
-                      <p>Email: ${dado.email}</p>
+                   
+                      <p>Email:</p>
+                      ${dado.email}
                       <p>Telefone: ${dado.telefone}</p>
-                      <p>Id: ${dado.idFuncionario}</p>
+                      <p> </p>
+                      <p class='identificador'>Id: ${dado.idFuncionario}</p>
                   </div>
                   <a href="./gestor2Dash.html">Mais informações</a>
               </div>
       `;
+
+
 
         });
     };
@@ -129,7 +151,7 @@
                 if (resposta.ok) {
                     resposta.json().then(function (resposta) {
                         dadosFunc(resposta);
-                        console.log(resposta);
+                        console.log("res", resposta)
                         // alert(JSON.stringify(resposta))
                     });
                 } else {

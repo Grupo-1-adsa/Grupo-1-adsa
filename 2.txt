@@ -1,0 +1,9 @@
+institucional-fasttech.azurewebsites.net
+
+FastTech: Institucional
+
+--> Empresa
+
+--> Empresa cadastra o Gestor e o Suporte 
+
+--> Gestor Cadastra o funcionario e a máquina 

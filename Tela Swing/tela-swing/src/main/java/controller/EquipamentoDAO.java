@@ -14,7 +14,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
  */
 public class EquipamentoDAO {
 
-    ConnectionBD config = new ConnectionBD();
+    ConnectionAzure config = new ConnectionAzure();
     JdbcTemplate con = new JdbcTemplate(config.getDataSource());
     Looca looca = new Looca();
 
@@ -34,7 +34,7 @@ public class EquipamentoDAO {
             discTamanho = Math.toIntExact(disco.getTamanho() / 1000000000);
         }
 
-        String sql = "insert into Equipamento(numeroSerie,CPU,RAM,HD,fkFuncionario,SO,statusEquip) values (?,?,?,?,?,?,'ativo');";
+        String sql = "insert into Equipamento(numeroSerie,CPU,RAM,HD,fkFuncionario,SO,statusEquip,data) values (?,?,?,?,?,?,'ativo',getdate());";
 
         conn.update(sql, discSerial, procInfo, memInfo, discTamanho, fkFuncionario, sisInfo);
 

@@ -1,0 +1,15 @@
+model\Leitura.class
+controller\EquipamentoDAO.class
+model\Funcionario.class
+model\Equipamento.class
+controller\FuncionarioMaper.class
+model\Slack.class
+logging\Log.class
+controller\ConnectionBD.class
+controller\FuncionarioDAO.class
+controller\LeituraMaper.class
+model\Slack$1.class
+controller\EquipamentoMaper.class
+br\com\bantec\jar\docker\App$1.class
+br\com\bantec\jar\docker\App.class
+controller\LeituraDAO.class

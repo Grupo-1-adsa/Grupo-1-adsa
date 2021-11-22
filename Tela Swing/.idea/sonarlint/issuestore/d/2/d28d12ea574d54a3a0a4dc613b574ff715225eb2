@@ -1,0 +1,10 @@
+
+c	java:S116
+"NRename this field "CPU" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘ÚÔ¦
+h	java:S116"NRename this field "RAM" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’™ÁÆüÿÿÿÿ
+b	java:S116"MRename this field "HD" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(œ˜‡à
+b	java:S116"MRename this field "SO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÁÆ¯ï
+f	java:S117-"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(š”Ã÷
+k	java:S1175"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¦¢ö±þÿÿÿÿ
+f	java:S117="QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(éªíÖ
+e	java:S117M"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ô™Ö?

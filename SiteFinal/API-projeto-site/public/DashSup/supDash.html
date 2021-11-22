@@ -71,15 +71,16 @@
         </section>
     </section>
 </body>
+<script src="../DashSup/tempo.js"></script>
 <script>
     var ctx = document.getElementById('myChart').getContext('2d');
     var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'],
+            labels: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex'],
             datasets: [{
                 label: 'Maquinas enviadas para suporte',
-                data: [12, 19, 3, 5, 2, 3],
+                data: [],
                 backgroundColor: [
                     'rgba(155, 89, 182, 1)',
 
@@ -131,7 +132,7 @@
                 if (resposta.ok) {
                     resposta.json().then(function (resposta) {
                         dadosFunc(resposta);
-                        console.log(resposta);
+                        console.log("testeSupLeitura", resposta);
                         // alert(JSON.stringify(resposta))
                     });
                 } else {
@@ -146,9 +147,92 @@
     console.log(idGest);
     obterPublicacoesPorUsuario(idGest);
 
+    let segundaE = [];
+    let tercaE = [];
+    let quartaE = [];
+    let quintaE = [];
+    let sextaE = [];
+    let geralE = [];
+    function calcData(data) {
+        const dados = Array.from(data);
+        dados.forEach((d) => {
+            let dadosFrequencia = {};
+            geralE.push(d);
+            let dadosF = moment(d.dataAdv).format("HH:mm");
+            let dadosd = moment(d.dataAdv).format('LLLL');
+            let diaSemana = dadosd.split(',')[0];
 
+            switch (diaSemana) {
+                case 'Monday':
+                    segundaE.push(d);
+                    break;
+                case 'Tuesday':
+                    tercaE.push(d)
+                    break;
+                case 'Wednesday':
+                    quartaE.push(d);
+                    break;
 
+                case 'Thursday':
+                    quintaE.push(d);
+                    break;
+                case 'Friday':
+                    sextaE.push(d);
+                    break;
+                default:
+                    console.log(`Sorry, essa data não é permitida. ${diaSemana}`);
 
+            }
+
+        });
+
+    }
+
+    function obterAdvertenciaPorUsuario(idUsuario) {
+        fetch(`/publicacoes/advertencia/${idUsuario}`)
+            .then(resposta => {
+                if (resposta.ok) {
+                    resposta.json().then(function (resposta) {
+                        calcData(resposta);
+                        console.log("Resposta Grafico", resposta)
+                        // alert(JSON.stringify(resposta))
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção das publicações do usuário: ${error.message}`);
+            });
+    }
+    let idFunci = +localStorage.getItem('idFunc');
+    obterAdvertenciaPorUsuario(8);
+    function calculadorADV(dados) {
+        let contator = 0;
+        let status
+        dados.forEach((d) => {
+            status = d.Advertencia;
+            if (status == 'Grave' || status == 'Pendente') {
+                contator++;
+            };
+        })
+
+        return contator;
+    }
+    setTimeout(() => {
+        console.log("Segunda", calculadorADV(segundaE))
+        function updateChart() {
+
+            myChart.data.datasets[0].data[0] = calculadorADV(segundaE);
+            myChart.data.datasets[0].data[1] = calculadorADV(tercaE);
+            myChart.data.datasets[0].data[2] = calculadorADV(quartaE);
+            myChart.data.datasets[0].data[3] = calculadorADV(quintaE);
+            myChart.data.datasets[0].data[4] = calculadorADV(sextaE);
+            myChart.update();
+        }
+        updateChart()
+
+    }, 1000)
     const linsk = document.querySelectorAll(".alertas a");
     const nomes = document.querySelectorAll(".perfilFunc h1");
 
@@ -182,7 +266,7 @@
 
             });
         });
-        console.log("oi")
+
     }, 900)
 
 

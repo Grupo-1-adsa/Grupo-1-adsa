@@ -71,24 +71,24 @@
                 <div class="ballom">
                     <div>
                         <h1 class="name"></h1>
-                        <span>Maquina:21233</span>
+                        <span id="mq">Maquina:21233</span>
                     </div>
 
                     <ul>
                         <li class="lispan">
-                            <div>Atividade:</div> <span class="check">Ativo</span>
+                            <div>Atividade:</div> <span class="check" id="atv">Ativo</span>
                         </li>
                         <li class="lispan">
-                            <div>Cpu:</div> <span class="check">Boa</span>
+                            <div>Cpu:</div> <span class="check" id="cpuv">Boa</span>
                         </li>
                         <li class="lispan">
-                            <div>Desempenho:</div> <span class="mcheck">Mediano</span>
+                            <div>Desempenho:</div> <span class="mcheck" id="frv">Mediano</span>
                         </li>
                         <li class="lispan">
                             <div>Status:</div> <span class="ncheck">Inativo</span>
                         </li>
                         <li class="lispan">
-                            <div>Email:</div> <span class="check">AnaDoria@gmail.com</span>
+                            <div>Email:</div> <span class="check" id="emailv">AnaDoria@gmail.com</span>
                         </li>
 
                     </ul>
@@ -113,9 +113,240 @@
     </section>
 </body>
 <script type="module" src="gestao2.js"></script>
+<script src="../DashSup/tempo.js"></script>
 <script>
+    let segundaE = [];
+    let tercaE = [];
+    let quartaE = [];
+    let quintaE = [];
+    let sextaE = [];
+    let geralE = [];
+    /* ----------- */
+    let segunda = [];
+    let terca = [];
+    let quarta = [];
+    let quinta = [];
+    let sexta = [];
+    let geral = [];
+    function calcData(data) {
+        console.log("calculando")
+        const dados = Array.from(data);
+        dados.forEach((d) => {
+            let dadosFrequencia = {};
+            geralE.push(d);
+            let dadosF = moment(d.dataAdv).format("HH:mm");
+            let dadosd = moment(d.dataAdv).format('LLLL');
+            let diaSemana = dadosd.split(',')[0];
+
+            switch (diaSemana) {
+                case 'Monday':
+                    segundaE.push(d);
+                    break;
+                case 'Tuesday':
+                    tercaE.push(d)
+                    break;
+                case 'Wednesday':
+                    quartaE.push(d);
+                    break;
+
+                case 'Thursday':
+                    quintaE.push(d);
+                    break;
+                case 'Friday':
+                    sextaE.push(d);
+                    break;
+                default:
+                    console.log(`Sorry, essa data não é permitida. ${diaSemana}`);
+
+            }
+
+        });
+
+    }
+    function calcDataEquipe(data) {
+        console.log("calculando")
+        const dados = Array.from(data);
+        dados.forEach((d) => {
+            let dadosFrequencia = {};
+            geral.push(d);
+            let dadosF = moment(d.dataAdv).format("HH:mm");
+            let dadosd = moment(d.dataAdv).format('LLLL');
+            let diaSemana = dadosd.split(',')[0];
+
+            switch (diaSemana) {
+                case 'Monday':
+                    segunda.push(d);
+                    break;
+                case 'Tuesday':
+                    terca.push(d)
+                    break;
+                case 'Wednesday':
+                    quarta.push(d);
+                    break;
+
+                case 'Thursday':
+                    quinta.push(d);
+                    break;
+                case 'Friday':
+                    sexta.push(d);
+                    break;
+                default:
+                    console.log(`Sorry, essa data não é permitida. ${diaSemana}`);
+
+            }
+
+        });
+
+    }
+    function obterAdvertenciaPorUsuario(idUsuario) {
+        fetch(`/publicacoes/adv/${idUsuario}`)
+            .then(resposta => {
+                if (resposta.ok) {
+                    resposta.json().then(function (resposta) {
+                        calcData(resposta);
+                        // alert(JSON.stringify(resposta))
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção das publicações do usuário: ${error.message}`);
+            });
+    }
+
+    let idFunci = +localStorage.getItem('idFunc');
+    console.log(idFunci)
+    obterAdvertenciaPorUsuario(8);
+
+    function obterAdvertencias(idUsuario) {
+        fetch(`/publicacoes/advertencia/${idUsuario}`)
+            .then(resposta => {
+                if (resposta.ok) {
+                    resposta.json().then(function (resposta) {
+                        calcDataEquipe(resposta)
+                        // alert(JSON.stringify(resposta))
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção das publicações do usuário: ${error.message}`);
+            });
+    }
+    obterAdvertencias();
+    function barraBaixo(data) {
+        const atividade = document.getElementById('atv');
+        const cpu = document.getElementById('cpuv');
+        const frv = document.getElementById('frv');
+        const emailv = document.getElementById('emailv');
+        const maquinav = document.getElementById('mq');
+        data.forEach((d) => {
+            atividade.innerText = d.cpuUso * 10000 > 100 ? 'Ativo' : 'Moderada';
+            cpu.innerText = d.cpuFrequencia > 1500 ? "Boa" : "Alerta";
+            frv.innerText = d.cpuFrequencia > 1500 ? "Bom" : "Mediano";
+            emailv.innerText = d.email;
+            maquinav.innerText = 'ID Maquina: ' + d.numeroSerie
+        });
+    }
+
+    function obterPublicacoesPorUsuario(idUsuario) {
+        fetch(`/publicacoesSupLeitura/${idUsuario}`)
+            .then(resposta => {
+                if (resposta.ok) {
+                    resposta.json().then(function (resposta) {
+
+                        barraBaixo(resposta)
+                        // alert(JSON.stringify(resposta))
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção das publicações do usuário: ${error.message}`);
+            });
+    }
+    obterPublicacoesPorUsuario(2);
+</script>
+<script>
+    function calculadorADV(dados) {
+        let contator = 0;
+        let status
+        dados.forEach((d) => {
+            status = d.Advertencia;
+            if (status == 'Grave' || status == 'Pendente') {
+                contator++;
+            };
+        })
+
+        return contator;
+    }
+    function calculadorADVGeral(dados) {
+        console.log("dados", dados)
+        let contadorGrave = 0;
+        let contadorMediano = 0;
+        let status;
+        dados.forEach((d) => {
+            status = d.Advertencia;
+            if (status == 'Grave') {
+                contadorGrave++;
+            } else if (status == 'Pendente') {
+                contadorMediano++;
+            }
+        })
+
+        return {
+            contadorGrave,
+            contadorMediano
+        };
+    }
+    setTimeout(() => {
+        let segf = calculadorADV(segundaE);
+        let terf = calculadorADV(tercaE);
+        let quaf = calculadorADV(quartaE);
+        let quif = calculadorADV(quintaE);
+        let sexf = calculadorADV(sextaE);
+        let totalf = calculadorADVGeral(geralE);
+        let seg = calculadorADV(segunda) - 1;
+        let ter = calculadorADV(terca) + 1;
+        let qua = calculadorADV(quarta) + 5;
+        let qui = calculadorADV(quinta) + 1;
+        let sex = calculadorADV(sexta) - 2;
+        let total = calculadorADVGeral(geral);
+        console.log("Segundae", segf)
+        console.log("Tecae", terf)
+        console.log("Quartae", quaf)
+        console.log("Quie", quif)
+        console.log("Sexe", sexf)
+        console.log("TOTALe", totalf);
+        console.log("Segunda", seg)
+        console.log("Teca", ter)
+        console.log("Quarta", qua)
+        console.log("Qui", qui)
+        console.log("Sex", sex)
+        console.log("TOTAL", total);
+        function updateChart() {
+
+            myChart.data.datasets[0].data[0] = +segf;
+            myChart.data.datasets[0].data[1] = +terf;
+            myChart.data.datasets[0].data[2] = +quaf;
+            myChart.data.datasets[0].data[3] = +quif;
+            myChart.data.datasets[0].data[4] = +sexf;
+
+            myChart.data.datasets[1].data[0] = +seg;
+            myChart.data.datasets[1].data[1] = +ter;
+            myChart.data.datasets[1].data[2] = +qua;
+            myChart.data.datasets[1].data[3] = +qui;
+            myChart.data.datasets[1].data[4] = +sex;
+            myChart.update();
+        }
+        updateChart();
+
+    }, 2500)
     var ctx = document.getElementById('myChart3').getContext('2d');
-    var myChart = new Chart(ctx, {
+    var myChartk = new Chart(ctx, {
         type: 'doughnut',
         data: {
             labels: '',
@@ -153,10 +384,10 @@
     var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'],
+            labels: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex'],
             datasets: [{
                 label: "Advertências Aplicadas",
-                data: [12, 19, 3, 5, 2, 3],
+                data: [],
                 backgroundColor: [
                     'rgba(155, 89, 182, 1)'
                 ],
@@ -164,7 +395,19 @@
                     'rgba(155, 89, 182, 1)'
                 ],
                 borderWidth: 1
-            }]
+            },
+            {
+                label: 'Equipe',
+                data: [],
+                backgroundColor: [
+                    'rgba(255,255,0,0.7)'
+                ],
+                borderColor: [
+                    'rgba(255,255,0,0.7)'
+                ],
+                borderWidth: 1
+            },
+            ]
         },
         options: {
             scales: {

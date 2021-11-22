@@ -170,7 +170,7 @@ ul {
   width: 10px;
   height: 10px;
   display: inline-block;
-  background: url('./img/seta.png');
+
   background-position: center;
   background-size: cover;
   margin-left: 5px;
@@ -331,6 +331,7 @@ ul {
   max-height: 70vh;
   overflow-y: scroll;
   grid-gap: 10px !important;
+  opacity: 0;
 }
 
 .containerInfoBalao a {
@@ -396,8 +397,9 @@ ul {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 125px;
+  padding-top: 184px;
   margin-bottom: 10px;
+  padding-left: 5px;
 }
 
 .infoBalao.off {
@@ -409,13 +411,20 @@ ul {
 }
 
 .infoBalao.ativo {
-  height: 300px;
+  height: 340px;
   padding-top: 10px !important;
 }
 
 .perfilS {
+
   font-family: Georgia, 'Times New Roman', Times, serif;
   color: #333;
+  margin-bottom: 0px;
+  margin-top: 88px !important;
+}
+
+.perfilS p {
+  margin-bottom: 5px;
 }
 
 .status {
