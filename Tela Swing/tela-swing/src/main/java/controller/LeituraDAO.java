@@ -35,11 +35,11 @@ public class LeituraDAO {
             }
 
 
-            String sqlServer = "insert into Leitura (dataHora,RAM,fkEquipamento,cpuFrequencia,tempoAtividade,cpuUso) values (getDate(),g?,?,?,?,?);";
+            String sqlServer = "insert into Leitura values (null,now(),?,?,?,?,?);";
             String mySql = "insert into [dbo].[Leitura](dataHora,RAM,fkEquipamento,cpuFrequencia,tempoAtividade,cpuUso) values (getDate(),?,?,?,?,?);";
 
             conn.update(sqlServer, ramUso, fkEquipamento, cpuFrequencia, tempAtividade, cpuUso);
-            connn.update(mySql,ramUso, fkEquipamento, cpuFrequencia, tempAtividade, cpuUso);
+            connn.update(mySql,ramUso,cpuFrequencia, tempAtividade, fkEquipamento,  cpuUso);
         }
 
         public Leitura query(Integer fkEquipamento) {
