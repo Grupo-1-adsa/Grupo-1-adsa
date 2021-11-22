@@ -43,7 +43,7 @@ body {
     margin: 0;
     padding: 0;
     float: left;
-    margin-top: 30px;
+    margin-top: 35px;
     height: 40px;
     float: left;
 }
@@ -197,8 +197,7 @@ form input[type="submit"]:hover {
     cursor: pointer;
 }
 
-.botnsFuncoes span {
-   margin-bottom: 20px;
-   position: relative;
+.botnsFuncoes span{
+    font-weight: bold
 }
 
