@@ -87,7 +87,7 @@ router.get('/advertencia/:idUsuario', function (req, res, next) {
 
     var idUsuario = req.params.idUsuario;
 
-    let instrucaoSql = `select * from [dbo].[Advertencia] inner join [dbo].[Funcionario] on fkFuncionario = idFuncionario inner join Responsavel on Funcionario.fkResponsavel = Responsavel.idResponsavel  where  idFuncionario=${idUsuario} `;
+    let instrucaoSql = `select * from [dbo].[Advertencia] inner join [dbo].[Funcionario] on fkFuncionario = idFuncionario inner join Responsavel on Funcionario.fkResponsavel = Responsavel.idResponsavel`;
 
     sequelize.query(instrucaoSql, {
         model: Publicacao,

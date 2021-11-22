@@ -53,6 +53,7 @@
             <input autocomplete="off" type="submit" value="Continue">
         </form>
     </main>
+
 </body>
 
 </html>
@@ -73,9 +74,9 @@
                     sessionStorage.id = json.idResponsavel;
                     sessionStorage.nome = json.nomeResponsavel;
                     if (tipo.value == "gestor") {
-                        window.location.href = "/DashGestor/gestorDash.html";
+                        window.location.href = "../DashGestor/gestorDash.html";
                     } else {
-                        window.location.href = "/DashSup/supDash.html";
+                        window.location.href = "../DashSup/supDash.html";
                     }
                 });
             } else {

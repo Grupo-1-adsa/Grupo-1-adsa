@@ -132,7 +132,7 @@
                 if (resposta.ok) {
                     resposta.json().then(function (resposta) {
                         dadosFunc(resposta);
-                        console.log(resposta);
+                        console.log("testeSupLeitura", resposta);
                         // alert(JSON.stringify(resposta))
                     });
                 } else {
@@ -193,7 +193,8 @@
             .then(resposta => {
                 if (resposta.ok) {
                     resposta.json().then(function (resposta) {
-                        calcData(resposta)
+                        calcData(resposta);
+                        console.log("Resposta Grafico", resposta)
                         // alert(JSON.stringify(resposta))
                     });
                 } else {
@@ -219,7 +220,7 @@
         return contator;
     }
     setTimeout(() => {
-
+        console.log("Segunda", calculadorADV(segundaE))
         function updateChart() {
 
             myChart.data.datasets[0].data[0] = calculadorADV(segundaE);
