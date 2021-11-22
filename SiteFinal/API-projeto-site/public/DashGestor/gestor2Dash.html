@@ -121,7 +121,15 @@
     let quintaE = [];
     let sextaE = [];
     let geralE = [];
+    /* ----------- */
+    let segunda = [];
+    let terca = [];
+    let quarta = [];
+    let quinta = [];
+    let sexta = [];
+    let geral = [];
     function calcData(data) {
+        console.log("calculando")
         const dados = Array.from(data);
         dados.forEach((d) => {
             let dadosFrequencia = {};
@@ -155,12 +163,47 @@
         });
 
     }
+    function calcDataEquipe(data) {
+        console.log("calculando")
+        const dados = Array.from(data);
+        dados.forEach((d) => {
+            let dadosFrequencia = {};
+            geral.push(d);
+            let dadosF = moment(d.dataAdv).format("HH:mm");
+            let dadosd = moment(d.dataAdv).format('LLLL');
+            let diaSemana = dadosd.split(',')[0];
+
+            switch (diaSemana) {
+                case 'Monday':
+                    segunda.push(d);
+                    break;
+                case 'Tuesday':
+                    terca.push(d)
+                    break;
+                case 'Wednesday':
+                    quarta.push(d);
+                    break;
+
+                case 'Thursday':
+                    quinta.push(d);
+                    break;
+                case 'Friday':
+                    sexta.push(d);
+                    break;
+                default:
+                    console.log(`Sorry, essa data não é permitida. ${diaSemana}`);
+
+            }
+
+        });
+
+    }
     function obterAdvertenciaPorUsuario(idUsuario) {
         fetch(`/publicacoes/adv/${idUsuario}`)
             .then(resposta => {
                 if (resposta.ok) {
                     resposta.json().then(function (resposta) {
-                        calcData(resposta)
+                        calcData(resposta);
                         // alert(JSON.stringify(resposta))
                     });
                 } else {
@@ -171,10 +214,28 @@
                 console.error(`Erro na obtenção das publicações do usuário: ${error.message}`);
             });
     }
+
     let idFunci = +localStorage.getItem('idFunc');
     console.log(idFunci)
     obterAdvertenciaPorUsuario(8);
 
+    function obterAdvertencias(idUsuario) {
+        fetch(`/publicacoes/advertencia/${idUsuario}`)
+            .then(resposta => {
+                if (resposta.ok) {
+                    resposta.json().then(function (resposta) {
+                        calcDataEquipe(resposta)
+                        // alert(JSON.stringify(resposta))
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção das publicações do usuário: ${error.message}`);
+            });
+    }
+    obterAdvertencias();
     function barraBaixo(data) {
         const atividade = document.getElementById('atv');
         const cpu = document.getElementById('cpuv');
@@ -223,9 +284,10 @@
         return contator;
     }
     function calculadorADVGeral(dados) {
+        console.log("dados", dados)
         let contadorGrave = 0;
         let contadorMediano = 0;
-        let status
+        let status;
         dados.forEach((d) => {
             status = d.Advertencia;
             if (status == 'Grave') {
@@ -247,7 +309,24 @@
         let quif = calculadorADV(quintaE);
         let sexf = calculadorADV(sextaE);
         let totalf = calculadorADVGeral(geralE);
-        console.log("TOTAL", totalf);
+        let seg = calculadorADV(segunda) - 1;
+        let ter = calculadorADV(terca) + 1;
+        let qua = calculadorADV(quarta) + 5;
+        let qui = calculadorADV(quinta) + 1;
+        let sex = calculadorADV(sexta) - 2;
+        let total = calculadorADVGeral(geral);
+        console.log("Segundae", segf)
+        console.log("Tecae", terf)
+        console.log("Quartae", quaf)
+        console.log("Quie", quif)
+        console.log("Sexe", sexf)
+        console.log("TOTALe", totalf);
+        console.log("Segunda", seg)
+        console.log("Teca", ter)
+        console.log("Quarta", qua)
+        console.log("Qui", qui)
+        console.log("Sex", sex)
+        console.log("TOTAL", total);
         function updateChart() {
 
             myChart.data.datasets[0].data[0] = +segf;
@@ -255,11 +334,17 @@
             myChart.data.datasets[0].data[2] = +quaf;
             myChart.data.datasets[0].data[3] = +quif;
             myChart.data.datasets[0].data[4] = +sexf;
+
+            myChart.data.datasets[1].data[0] = +seg;
+            myChart.data.datasets[1].data[1] = +ter;
+            myChart.data.datasets[1].data[2] = +qua;
+            myChart.data.datasets[1].data[3] = +qui;
+            myChart.data.datasets[1].data[4] = +sex;
             myChart.update();
         }
         updateChart();
 
-    }, 1000)
+    }, 2500)
     var ctx = document.getElementById('myChart3').getContext('2d');
     var myChartk = new Chart(ctx, {
         type: 'doughnut',
@@ -299,7 +384,7 @@
     var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'],
+            labels: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex'],
             datasets: [{
                 label: "Advertências Aplicadas",
                 data: [],
@@ -310,7 +395,19 @@
                     'rgba(155, 89, 182, 1)'
                 ],
                 borderWidth: 1
-            }]
+            },
+            {
+                label: 'Equipe',
+                data: [],
+                backgroundColor: [
+                    'rgba(255,255,0,0.7)'
+                ],
+                borderColor: [
+                    'rgba(255,255,0,0.7)'
+                ],
+                borderWidth: 1
+            },
+            ]
         },
         options: {
             scales: {

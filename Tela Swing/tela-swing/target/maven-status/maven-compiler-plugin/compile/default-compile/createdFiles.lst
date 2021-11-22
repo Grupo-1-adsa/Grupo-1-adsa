@@ -1,12 +1,15 @@
 model\Leitura.class
+model\Advertencia.class
 model\Funcionario.class
 com\mycompany\tela\swing\TelaLogin.class
+controller\AdvertenciaMaper.class
 com\mycompany\tela\swing\TelaSoftware$3.class
+controller\ConnectionAzure.class
+controller\ConnectionDocker.class
 controller\FuncionarioMaper.class
 com\mycompany\tela\swing\TelaOpcao$2.class
 logging\Log.class
 com\mycompany\tela\swing\TelaLogin$2.class
-controller\ConnectionBD.class
 com\mycompany\tela\swing\TelaOpcao$3.class
 com\mycompany\tela\swing\TelaSoftware$4.class
 com\mycompany\tela\swing\TelaSoftware$6.class
@@ -20,6 +23,7 @@ com\mycompany\tela\swing\TelaLogin$6.class
 com\mycompany\tela\swing\TelaSoftware$2.class
 model\Equipamento.class
 com\mycompany\tela\swing\TelaOpcao$1.class
+controller\AdvertenciaDAO.class
 com\mycompany\tela\swing\TelaLogin$4.class
 com\mycompany\tela\swing\TelaSoftware.class
 model\Slack.class
