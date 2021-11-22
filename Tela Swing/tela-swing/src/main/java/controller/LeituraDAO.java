@@ -35,7 +35,7 @@ public class LeituraDAO {
             }
 
 
-            String sqlServer = "insert into Leitura values (null,now(),?,?,?,?,?);";
+            String sqlServer = "insert into Leitura values (null,null,?,?,?,?,?);";
             String mySql = "insert into [dbo].[Leitura](dataHora,RAM,fkEquipamento,cpuFrequencia,tempoAtividade,cpuUso) values (getDate(),?,?,?,?,?);";
 
             conn.update(sqlServer, ramUso, fkEquipamento, cpuFrequencia, tempAtividade, cpuUso);

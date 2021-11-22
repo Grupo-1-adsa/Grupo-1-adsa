@@ -8,6 +8,7 @@ public class ConnectionDocker {
 
     public ConnectionDocker() {
         dataSource = new BasicDataSource();
+
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
         dataSource.setUrl("jdbc:mysql://0.0.0.0:3306/proc?autoReconnect=true&useSSL=false");
         dataSource.setUsername("root");
