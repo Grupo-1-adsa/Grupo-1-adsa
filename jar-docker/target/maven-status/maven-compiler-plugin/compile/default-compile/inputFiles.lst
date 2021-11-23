@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\betis\Documents\FACULDADEADS\Semestre2\Procastinator\Grupo-1-adsa\jar-docker\src\main\java\model\Leitura.java
 C:\Users\betis\Documents\FACULDADEADS\Semestre2\Procastinator\Grupo-1-adsa\jar-docker\src\main\java\br\com\bantec\jar\docker\App.java
 C:\Users\betis\Documents\FACULDADEADS\Semestre2\Procastinator\Grupo-1-adsa\jar-docker\src\main\java\controller\EquipamentoDAO.java
@@ -11,3 +12,18 @@ C:\Users\betis\Documents\FACULDADEADS\Semestre2\Procastinator\Grupo-1-adsa\jar-d
 C:\Users\betis\Documents\FACULDADEADS\Semestre2\Procastinator\Grupo-1-adsa\jar-docker\src\main\java\model\Equipamento.java
 C:\Users\betis\Documents\FACULDADEADS\Semestre2\Procastinator\Grupo-1-adsa\jar-docker\src\main\java\controller\LeituraMaper.java
 C:\Users\betis\Documents\FACULDADEADS\Semestre2\Procastinator\Grupo-1-adsa\jar-docker\src\main\java\model\Slack.java
+=======
+C:\Users\leoia\Desktop\bandtec\Grupo-1-adsa\jar-docker\src\main\java\model\Leitura.java
+C:\Users\leoia\Desktop\bandtec\Grupo-1-adsa\jar-docker\src\main\java\br\com\bantec\jar\docker\App.java
+C:\Users\leoia\Desktop\bandtec\Grupo-1-adsa\jar-docker\src\main\java\controller\EquipamentoDAO.java
+C:\Users\leoia\Desktop\bandtec\Grupo-1-adsa\jar-docker\src\main\java\controller\LeituraDAO.java
+C:\Users\leoia\Desktop\bandtec\Grupo-1-adsa\jar-docker\src\main\java\model\Slack.java
+C:\Users\leoia\Desktop\bandtec\Grupo-1-adsa\jar-docker\src\main\java\controller\EquipamentoMaper.java
+C:\Users\leoia\Desktop\bandtec\Grupo-1-adsa\jar-docker\src\main\java\controller\FuncionarioDAO.java
+C:\Users\leoia\Desktop\bandtec\Grupo-1-adsa\jar-docker\src\main\java\controller\FuncionarioMaper.java
+C:\Users\leoia\Desktop\bandtec\Grupo-1-adsa\jar-docker\src\main\java\controller\ConnectionBD.java
+C:\Users\leoia\Desktop\bandtec\Grupo-1-adsa\jar-docker\src\main\java\model\Funcionario.java
+C:\Users\leoia\Desktop\bandtec\Grupo-1-adsa\jar-docker\src\main\java\model\Equipamento.java
+C:\Users\leoia\Desktop\bandtec\Grupo-1-adsa\jar-docker\src\main\java\controller\LeituraMaper.java
+C:\Users\leoia\Desktop\bandtec\Grupo-1-adsa\jar-docker\src\main\java\logging\Log.java
+>>>>>>> ee92a5c8f5ef533334c2a40ecdea49f84e04d7e1
