@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor cadastrados</title>
+    <link rel="stylesheet" href="../css/cadastroFunc.css">
+    <script src="https://kit.fontawesome.com/48b24e7021.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="container">
+            <img src="../img/iconPreto.png" alt="">
+            <h1 class="titulo"> FastTec<span class="highlight">Cadastrar gestor</span></h1>
+            <a>Logout</a>
+        </div>
+    </div>
+
+    <main class="estiloForm">
+        <form id="form_cadastro" method="post" onsubmit="return cadastrar()" class="formEmpresa">
+
+            <div id="dadosEmpresa" class="formAcess">
+                <h3>Dados da empresa:</h3>
+                <label for="name" class="input-fild">
+                    <span>Name:</span>
+                    <input type="text" id="nomeEmpresa" name="nomeEmpresa" class="input-padrao"
+                        placeholder="Nome e sobrenome" required minlength="4" autofocus="autofocus">
+                    <div class="underline"></div>
+                </label>
+                <label for="name" class="input-fild">
+                    <span>CNPJ:</span>
+                    <input type="text" id="cnpj" name="cnpj" placeholder="Digite o cnpj">
+                    <div class="underline"></div>
+                </label>
+                <label for="name" class="input-fild">
+                    <span>CEP:</span>
+                    <input type="text" id="cep" name="cep" placeholder="Digite o cep">
+                    <div class="underline"></div>
+                </label>
+                <label for="name" class="input-fild">
+                    <span>Bairro:</span>
+                    <input type="text" id="bairro" name="bairro" placeholder="Digite o bairro">
+                    <div class="underline"></div>
+                </label>
+                <label for="name" class="input-fild">
+                    <span>Logradouro:</span>
+                    <input type="text" id="logradouro" name="logradouro" placeholder="Digite o logradouro">
+                    <div class="underline"></div>
+                </label>
+
+
+                <button type="submit" id="btn_entrar" value="Cadastrar" class="cadastrar" style="display: none;">
+                    Cadastrar
+                    <img src="../img/salvar.png" alt="">
+                </button>
+
+        </form>
+    </main>
+
+</body>
+
+</html>

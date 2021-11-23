@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
 * {
     /*resetando */
     margin: 0;
@@ -22,7 +23,7 @@
 
 body {
     background: linear-gradient(45deg, #4776E6, #E9EBF0) !important;
-    background:  url(./DashGestor/img/fundoLogin.jpg);
+    background: url(./DashGestor/img/fundoLogin.jpg);
     background-repeat: no-repeat;
     min-height: 100vh;
     min-width: 100vw;
@@ -64,7 +65,7 @@ body {
     justify-content: space-between;
 }
 
-.box-login img{
+.box-login img {
     width: 100px;
     position: relative;
     top: -3px;
@@ -118,11 +119,6 @@ main.form-login {
     border-radius: 8px;
 }
 
-.form-login .escolha{
-    margin-bottom: 1rem;
-    border-bottom: 1px solid #bdbdbd;
-    
-}
 
 main h2 {
     font-weight: 600;
@@ -254,6 +250,7 @@ form input[type="submit"]:hover {
     .container-login {
         width: 95%;
     }
+
     .voltar {
         font-size: 16px;
     }
@@ -291,15 +288,19 @@ main.form-cadastro {
     0% {
         margin-left: 0;
     }
+
     25% {
         margin-left: 7px;
     }
+
     50% {
         margin-left: 0;
     }
+
     75% {
         margin-left: -7px;
     }
+
     100% {
         margin-left: 0;
     }
@@ -327,15 +328,19 @@ main.form-cadastro {
     0% {
         margin-left: 0;
     }
+
     25% {
         margin-left: 7px;
     }
+
     50% {
         margin-left: 0;
     }
+
     75% {
         margin-left: -7px;
     }
+
     100% {
         margin-left: 0;
     }
@@ -359,13 +364,15 @@ main.form-cadastro {
         transform: translate3d(-300px, 0, 0);
         opacity: 0;
     }
+
     50% {
-        transform: translate3d( -10px, 0, 0);
+        transform: translate3d(-10px, 0, 0);
         opacity: 0.5;
     }
+
     100% {
         opacity: 1;
-        transform: translate3d( 0px, 0, 0);
+        transform: translate3d(0px, 0, 0);
     }
 }
 
@@ -419,7 +426,7 @@ main.form-cadastro {
 }
 
 input:checked+.slider {
-    background-color:#5a78fa ;
+    background-color: #5a78fa;
 }
 
 input:focus+.slider {
@@ -442,19 +449,16 @@ input:checked+.slider:before {
     border-radius: 50%;
 }
 
-.toggle {
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid #bdbdbd;
-    padding-bottom:4px;
-    align-items: center;
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 100%;
+    margin-bottom: 1rem;
+    width: 100%;
+    font-size: 16px;
+    height: 34px;
+    outline: none;
+    border: 1px solid rgb(226, 226, 226);
+    appearance: none;
+    background: url(../img/seta-para-baixo.png) 96% / 5% no-repeat ;
 }
-
-.toggle p {
-    color: rgba(190, 190, 190, 0.76);
-    font-size: 1rem;
-    color: rgba(0, 0, 0, 0.7);
-}
-
-
-

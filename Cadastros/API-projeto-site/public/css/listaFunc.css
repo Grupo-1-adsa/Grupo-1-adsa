@@ -1,0 +1,199 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+:root {
+  --primary-azul: #6b3cc9;
+  --cor-preto: #000;
+  --font-lato-corpo: "Lato", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-family: var(--font-lato-corpo);
+}
+
+body {
+  background-image: url(../img/fundoListaFunc.png);
+  background-repeat: no-repeat;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header {
+  height: 100px;
+}
+
+.header .container {
+  height: 80px;
+  width: 80%;
+  margin: auto;
+}
+
+.header h1 {
+  margin: 0;
+  padding: 0;
+  float: left;
+  margin-top: 30px;
+  margin-left: 2px;
+  float: left;
+  width: 80%;
+  font-size: 25px;
+}
+
+.header img {
+  margin: 0;
+  padding: 0;
+  float: left;
+  margin-top: 35px;
+  height: 60%;
+  float: left;
+}
+
+.header a {
+  margin: 0;
+  padding: 0;
+  margin-top: 30px;
+  margin-left: 2px;
+  width: 20px;
+}
+
+.header span {
+  padding-left: 20%;
+  color: var(--primary-azul);
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.banner {
+  width: 100%;
+  justify-content: center;
+  margin-left: 25vh;
+}
+
+main h3 {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  position: relative;
+  margin-left: 7px;
+  margin-top: 7px;
+}
+
+main h3::before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 70px;
+  bottom: 0;
+  left: 5;
+  border-radius: 8px;
+  background: rgb(44, 130, 185);
+  background: linear-gradient(45deg, #8e2de2, #4a00e0);
+}
+
+.containerList {
+  margin-top: 3vh;
+  margin-left: 4vh;
+  display: flex;
+  width: 80vh;
+  height: 52vh;
+  z-index: 9;
+  float: left;
+}
+
+.containerList ul {
+  min-width: 78vh;
+  height: 65vh;
+  padding: 0 1rem 1rem 0;
+  overflow: hidden;
+  overflow-y: scroll;
+  border: solid 1px rgb(192, 192, 192);
+}
+  
+.containerList ul::-webkit-scrollbar {
+  width: 8px;
+  
+}
+
+.containerList ul::-webkit-scrollbar-thumb {
+  border: solid 1px rgb(226, 226, 226);
+  background: #e6e6e6de;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.containerList ul::-webkit-scrollbar-track {
+  cursor: pointer;
+}
+
+.containerList li {
+  list-style-type: none;
+  background-color: #fdfdfdde;
+  height: 12vh;
+  margin-bottom: 10px;
+  margin-left: 5px;
+  border: solid 1px rgb(189, 189, 189);
+}
+
+.menu {
+  margin-top: 5px;
+  margin-left: 60px;
+  float: left;
+}
+
+.containerList img {
+  margin-left: 70px;
+  padding: 0;
+  height: 35px;
+  float: left;
+  cursor: pointer;
+}
+
+.containerList button {
+  margin-top: 67vh;
+  margin-left: 55vh;
+  position: fixed;
+  cursor: pointer;
+  width: 10%;
+  height: 35px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(45deg, #9c47e7, #6527e0);
+  color: white;
+  font-size: 1.1rem;
+  transition: all 0.2s ease-in-out;
+  margin-left: 41 vh;
+  border: none;
+}
+
+.containerList button:hover {
+  height: 36px;
+  letter-spacing: 0.2px;
+  background: linear-gradient(45deg, #6527e0, #9c47e7 );
+}
+
+.containerList button img {
+  height:65%;
+  position: absolute;
+  margin-left: 5px;
+}
+
+.lado {
+  float: left;
+}
+
+h4 {
+  padding-top: 10px;
+}
+
+h4 span {
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-bottom: 20px;
+}
