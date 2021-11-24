@@ -62,14 +62,23 @@
                 <div class="containerSup">
                     <div class="g1">
                         <div>
+                            <h1>Média de Memória:</h1>
+                            <p>Ultimo Registro: <span>17/11/2021</span></p>
+                            <p>Memoria: 18 RAM</p>
+                        </div>
+                        <div>
                             <canvas id="myChart" width="550"></canvas>
                         </div>
                     </div>
                     <div class="g2">
+                        <div>
+                            <h1>Espaço de Memória:</h1>
+
+                        </div>
                         <span class="">
                             <span class="spancont">
-                                <div class="ativo">Livre</div>
-                                <div class="inativo">Em uso</div>
+                                <div class="ativo">Livre: 85%</div>
+                                <div class="inativo">Em uso: 15%</div>
                             </span></span>
                         </span>
                         <div class="dn">
@@ -77,6 +86,13 @@
                         </div>
                     </div>
                     <div class="g3">
+                        <div>
+                            <h1>Frequência Hora</h1>
+                            <p>Ultima Registro: <span>25/11/2021 14:30</span></p>
+                            <p>
+                            <p>Frequencia: 100000 <span>Unidade</span></p>
+                            </p>
+                        </div>
                         <div>
                             <canvas id="myChart3"></canvas>
                         </div>
@@ -159,7 +175,7 @@
         ramfunc.innerText = calculadora.maximo(data);
         idfunc.innerText = data[0].idFuncionario;
         hdfunc.innerText = data[0].HD;
-        emailfunc.innerText = data[0].email;
+        emailfunc.innerText = /* data[0].email */ "Funcionario@Fasttech.com";
         cpufunc.innerText = data[0].CPU;
 
     }
@@ -542,7 +558,7 @@
         data: {
             labels: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex'],
             datasets: [{
-                label: 'Funcionario',
+                label: 'FuncionarioMedia',
                 data: [],
                 backgroundColor: [
                     'rgba(155, 89, 182, 1)'
@@ -553,7 +569,7 @@
                 borderWidth: 1
             },
             {
-                label: 'Equipe',
+                label: 'EquipeMedia',
                 data: [],
                 backgroundColor: [
                     'rgba(255,255,0,0.7)'
