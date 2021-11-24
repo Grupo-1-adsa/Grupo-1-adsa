@@ -77,9 +77,24 @@ public class Log {
         FileWriter log = new FileWriter("C:\\Users\\HorarioLoginSaida" + String.valueOf(dataHora1) + ".txt");
         PrintWriter gravarLog = new PrintWriter(log);
         
-        gravarLog.printf("Horario Saída da Aplicação: %s\n", dataHora);
+        gravarLog.printf("Horario de Saída da Aplicação: %s\n", dataHora);
         log.close();
         System.out.println("Arquivo de Saída da Aplicação gravado com sucesso!");
+    
+    }
+    
+    public void ativarAplicacao() throws IOException{
+        LocalDateTime data = LocalDateTime.now();
+        DateTimeFormatter formatarData = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+        String dataHora = data.format(formatarData);
+        DateTimeFormatter formatarData1 = DateTimeFormatter.ofPattern("dd-MM-yyyy_HH-mm-ss");
+        String dataHora1 = data.format(formatarData1);
+        FileWriter log = new FileWriter("C:\\Users\\HorarioAtivacãoAplicacão" + String.valueOf(dataHora1) + ".txt");
+        PrintWriter gravarLog = new PrintWriter(log);
+        
+        gravarLog.printf("Usuário ativou a Aplicação às: %s\n", dataHora);
+        log.close();
+        System.out.println("Arquivo de Ativação da Aplicação gravado com sucesso!");
     
     }
 }
