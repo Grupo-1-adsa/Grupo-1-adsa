@@ -202,6 +202,12 @@ public class TelaSoftware extends javax.swing.JFrame {
     }//GEN-LAST:event_lblAjudaMouseClicked
 
     private void lblAtivarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAtivarMouseClicked
+        Log log = new Log();
+        try {
+            log.ativarAplicacao();
+        } catch (IOException ex) {
+            Logger.getLogger(TelaSoftware.class.getName()).log(Level.SEVERE, null, ex);
+        }
         ImageIcon parteUm = new ImageIcon(getClass().getResource("/loading-1.gif"));
         ImageIcon parteDois = new ImageIcon(getClass().getResource("/check-1.png"));
         lblLoading.setIcon(parteUm);
