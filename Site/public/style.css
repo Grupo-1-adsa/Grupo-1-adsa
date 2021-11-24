@@ -80,6 +80,7 @@ body {
 .container {
     width: 60%;
     margin: auto;
+   
 }
 
 .containerContato{
@@ -191,6 +192,31 @@ li {
     margin: auto;
     font-family: var(--font-montserrat-corpo);
 }
+
+.horizontal2{
+    width: 100%;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+    height: 130px;
+    padding-bottom: 10px;
+}
+.horizontal2 div{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+.horizontal2 p {
+    margin: 0px 10px;
+
+}
+.horizontal2 p a{
+    color:  #333 !important;
+    font-weight: bold;
+}
+
+
 
 /* .footer {
     border-top: 3px solid var(--cor-primario-azul);
@@ -582,8 +608,9 @@ li {
 }
 
 .mapa {
-    padding: 60px;
-    background: #e2eafc;
+    padding: 0px;
+    /* background: #e2eafc; */
+    background-color: tomato;
     position: relative;
 }
 
@@ -643,7 +670,8 @@ li {
 .footer {
     display: flex;
     justify-content: center;
-    padding-top: 109px;
+    padding-top: 29px;
+   
 }
 
  .line {
@@ -751,6 +779,18 @@ li {
 
 
 @media screen and (max-width: 900px) {
+    .container{
+
+        height: 240px;
+        width: 100%;
+        align-items: center;
+    }
+    .horizontal2 {
+        
+        flex-direction: column;
+        height: auto;
+        
+    }
     .visao_quadrados ul {
         display: flex;
         flex-flow: column;
@@ -827,6 +867,13 @@ li {
     .teste {
         background-size: 150em;
     }
+
+    .footer {
+        display: flex;
+        justify-content: center;
+        padding-top: 29px;
+    }
+
 }
 
 .burguer {
