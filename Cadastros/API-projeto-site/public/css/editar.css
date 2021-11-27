@@ -57,9 +57,13 @@ body {
 
 
 /*estilizando form  */
+main{
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+}
 
 .main-container {
-    margin-left: 40vh;
     display: flex;
     justify-content: center;
     position: absolute;

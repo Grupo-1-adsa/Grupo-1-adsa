@@ -13,6 +13,11 @@
   border: 0;
   box-sizing: border-box;
   font-family: var(--font-lato-corpo);
+
+}
+
+html {
+  overflow-x: hidden;
 }
 
 body {
