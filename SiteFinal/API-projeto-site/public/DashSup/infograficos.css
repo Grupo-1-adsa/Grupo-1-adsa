@@ -84,13 +84,7 @@
 
 
 
-.g4::before{
-  content: "Informações de Sistema:";
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  border-bottom: 2px solid #8d4af236;
-  padding-bottom: 5px;
-  width: 35px;
-}
+
 .dn{
   width: 100%;
   display: flex;
@@ -108,7 +102,7 @@
 }
 
 .g4 ul{
-  margin-top: 15px;
+  margin-top: 35px;
  
 }
 .g2{
@@ -118,7 +112,7 @@
   flex-direction: column;
 }
 .g4 ul li{
-  margin-bottom: 15px;
+  margin-bottom: 18px;
   font-size: 16px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   letter-spacing: 1px;

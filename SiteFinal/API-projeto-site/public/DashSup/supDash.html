@@ -206,7 +206,7 @@
             });
     }
     let idFunci = +localStorage.getItem('idFunc');
-    obterAdvertenciaPorUsuario(8);
+    obterAdvertenciaPorUsuario();
     function calculadorADV(dados) {
         let contator = 0;
         let status
@@ -219,8 +219,9 @@
 
         return contator;
     }
+    console.log("Segunda", calculadorADV(segundaE))
     setTimeout(() => {
-        console.log("Segunda", calculadorADV(segundaE))
+
         function updateChart() {
 
             myChart.data.datasets[0].data[0] = calculadorADV(segundaE);
@@ -232,7 +233,7 @@
         }
         updateChart()
 
-    }, 1000)
+    }, 2000)
     const linsk = document.querySelectorAll(".alertas a");
     const nomes = document.querySelectorAll(".perfilFunc h1");
 
