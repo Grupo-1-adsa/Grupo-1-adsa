@@ -60,7 +60,8 @@ public class EquipamentoDAO {
            Log log = new Log();
            if (selectStatement != null) {
 
-               System.out.println("deu certo");
+               System.out.println("deu certo, maquina cadastrada");
+
                fkLeitura = selectStatement.getIdEquipamento();
            } else {
                System.out.println("deu errado");

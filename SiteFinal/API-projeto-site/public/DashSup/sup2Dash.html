@@ -62,14 +62,25 @@
                 <div class="containerSup">
                     <div class="g1">
                         <div>
+                            <h1>Média de Memória:</h1>
+                            <p>Ultimo Registro: <span class="lastMemory">17/11/2021</span></p>
+                            <p>Memória Ram: <span class="ff"></span></p>
+                        </div>
+                        <div>
                             <canvas id="myChart" width="550"></canvas>
                         </div>
                     </div>
                     <div class="g2">
+                        <div>
+                            <h1>Espaço de Memória Livre:</h1>
+
+                            <br>
+                            <br>
+                        </div>
                         <span class="">
                             <span class="spancont">
-                                <div class="ativo">Livre</div>
-                                <div class="inativo">Em uso</div>
+                                <div class="ativo">Livre: 85%</div>
+                                <div class="inativo">Em uso: 15%</div>
                             </span></span>
                         </span>
                         <div class="dn">
@@ -78,10 +89,25 @@
                     </div>
                     <div class="g3">
                         <div>
+                            <h1>Frequência Hora</h1>
+                            <p>Ultima Registro: <span class="lastFrequenc"></span></p>
+                            <p>
+                            <p>Frequencia:<span> MGZ</span></p>
+                            <p>Carga Horária: <span class="lastFrequenc" style=" display: inline-block; width: 30px;  background-color: #8d4af25e;
+                                padding: 0px; border-radius: 4px; text-align: center;">8</span> -
+                                <span style="    background-color: #8d4af25e;
+                                padding: 0px; border-radius: 4px;width: 30px;display: inline-block; text-align: center;">15</span>
+                            </p>
+                            </p>
+                        </div>
+                        <div>
                             <canvas id="myChart3"></canvas>
                         </div>
                     </div>
                     <div class="g4">
+                        <div>
+                            <h1>Sistema:</h1>
+                        </div>
                         <ul>
                             <li>Informação de <b>Sistema</b>: <span id="so">1029</span></li>
                             <li>Informação de <b>NºSérie</b>: <span id="ns">1029</span></li>
@@ -153,6 +179,7 @@
         const hdfunc = document.querySelector('#hd');
         const emailfunc = document.querySelector('#email');
         const cpufunc = document.querySelector('#cpu');
+        const ff = document.querySelector(".ff");
 
         sistemaSo.innerText = data[0].SO;
         sistemaNs.innerText = data[0].numeroSerie;
@@ -161,6 +188,7 @@
         hdfunc.innerText = data[0].HD;
         emailfunc.innerText = data[0].email;
         cpufunc.innerText = data[0].CPU;
+        ff.innerText = calculadora.maximo(data);
 
     }
     function calcDataEquipe(data) {
@@ -210,136 +238,157 @@
             let diaSemana = dadosd.split(',')[0];
             let horasFrequencia = +dadosF.slice(0, 2);
             let dadosFrequencia = {
-                dados: d.cpuUso,
+                dados: d.cpuFrequencia,
                 horasFrequencia
             }
-            /* const dataAtual = moment().format("DD/MM/YYYY");
+            const dataAtual = moment().format("DD/MM/YYYY");
             const dataRegistro = moment(d.dataHora).format("DD/MM/YYYY");
-            console.log(dataAtual, dataRegistro); */
             tempoTrabalhado.push(dadosFrequencia);
 
-            /*  let data1 = moment(d.dataHora);
-             let data2 = moment(moment().day(1));
-             let data3 = moment(moment().day(5));
-             console.log(data1.format('DD/MM/YYYY'), "-", data3.format('DD/MM/YYYY'))
-             console.log(data1.diff(data3, 'days'))
-              if (data2.diff(data1, 'days') >= 0 && data1.diff(data3, 'days') > -4 && data1.diff(data3, 'days') <= 0) {
-                  console.log('entrou')
-              } else {
-                  console.log("data ja passou")
-              } */
+            let data1 = moment(d.dataHora);
+            console.log(d.dataHora);
 
-            switch (diaSemana) {
-                case 'Monday':
-                    segunda.push(d);
-                    break;
-                case 'Tuesday':
-                    terca.push(d)
-                    break;
-                case 'Wednesday':
-                    quarta.push(d);
-                    break;
+            let data2 = moment(moment().day(1));
+            let data3 = moment(moment().day(5));
 
-                case 'Thursday':
-                    quinta.push(d);
-                    break;
-                case 'Friday':
-                    sexta.push(d);
-                    break;
-                default:
-                    console.log(`Sorry, essa data não é permitida. ${diaSemana}`);
+            if (data1.diff(data2, 'days') >= 0 && data1.diff(data3, 'days') >= -4 && data1.diff(data3, 'days') <= 0) {
+                console.log('entrou');
+                switch (diaSemana) {
+                    case 'Monday':
+                        segunda.push(d);
+                        break;
+                    case 'Tuesday':
+                        terca.push(d)
+                        break;
+                    case 'Wednesday':
+                        quarta.push(d);
+                        break;
 
-            }
+                    case 'Thursday':
+                        quinta.push(d);
+                        break;
+                    case 'Friday':
+                        sexta.push(d);
+                        break;
+                    default:
+                        console.log(`Sorry, essa data não é permitida. ${diaSemana}`);
+
+                }
 
 
-            /* --------------------------------------------- */
+                /* --------------------------------------------- */
 
-            switch (dadosFrequencia.horasFrequencia) {
-                case 00:
-                    t0.push(dadosFrequencia);
-                    break;
-                case 01:
-                    t1.push(dadosFrequencia);
-                    break;
-                case 02:
-                    t2.push(dadosFrequencia);
-                    break;
+                switch (dadosFrequencia.horasFrequencia) {
+                    case 00:
+                        t0.push(dadosFrequencia);
+                        break;
+                    case 01:
+                        t1.push(dadosFrequencia);
+                        break;
+                    case 02:
+                        t2.push(dadosFrequencia);
+                        break;
 
-                case 03:
-                    t3.push(dadosFrequencia);
-                    break;
-                case 04:
-                    t4.push(dadosFrequencia);
-                    break;
-                case 05:
-                    t5.push(dadosFrequencia);
-                    break;
-                case 06:
-                    t6.push(dadosFrequencia);
-                    break;
+                    case 03:
+                        t3.push(dadosFrequencia);
+                        break;
+                    case 04:
+                        t4.push(dadosFrequencia);
+                        break;
+                    case 05:
+                        t5.push(dadosFrequencia);
+                        break;
+                    case 06:
+                        t6.push(dadosFrequencia);
+                        break;
 
-                case 07:
-                    t7.push(dadosFrequencia);
-                    break;
-                case 08:
-                    t8.push(dadosFrequencia);
-                    break;
-                case 09:
-                    t9.push(dadosFrequencia);
-                    break;
-                case 10:
-                    t10.push(dadosFrequencia);
-                    break;
+                    case 07:
+                        t7.push(dadosFrequencia);
+                        break;
+                    case 08:
+                        t8.push(dadosFrequencia);
+                        break;
+                    case 09:
+                        t9.push(dadosFrequencia);
+                        break;
+                    case 10:
+                        t10.push(dadosFrequencia);
+                        break;
 
-                case 11:
-                    t11.push(dadosFrequencia);
-                    break;
-                case 12:
-                    t12.push(dadosFrequencia);
-                    break;
+                    case 11:
+                        t11.push(dadosFrequencia);
+                        break;
+                    case 12:
+                        t12.push(dadosFrequencia);
+                        break;
 
-                case 13:
-                    t13.push(dadosFrequencia);
-                    break;
-                case 14:
-                    t14.push(dadosFrequencia);
-                    break;
-                case 15:
-                    t15.push(dadosFrequencia);
-                    break;
+                    case 13:
+                        t13.push(dadosFrequencia);
+                        break;
+                    case 14:
+                        t14.push(dadosFrequencia);
+                        break;
+                    case 15:
+                        t15.push(dadosFrequencia);
+                        break;
 
-                case 16:
-                    t16.push(dadosFrequencia);
-                    break;
-                case 17:
-                    t17.push(dadosFrequencia);
-                    break;
-                case 18:
-                    t18.push(dadosFrequencia);
-                    break;
-                case 19:
-                    t19.push(dadosFrequencia);
-                    break;
-                case 20:
-                    t20.push(dadosFrequencia);
-                    break;
+                    case 16:
+                        t16.push(dadosFrequencia);
+                        break;
+                    case 17:
+                        t17.push(dadosFrequencia);
+                        break;
+                    case 18:
+                        t18.push(dadosFrequencia);
+                        break;
+                    case 19:
+                        t19.push(dadosFrequencia);
+                        break;
+                    case 20:
+                        t20.push(dadosFrequencia);
+                        break;
 
-                case 21:
-                    t21.push(dadosFrequencia);
-                    break;
-                case 22:
-                    t22.push(dadosFrequencia);
-                    break;
-                case 23:
-                    t23.push(dadosFrequencia);
-                    break;
-                default:
-                    console.log(`data ${tempoTrabalhado.horasFrequencia}`);
+                    case 21:
+                        t21.push(dadosFrequencia);
+                        break;
+                    case 22:
+                        t22.push(dadosFrequencia);
+                        break;
+                    case 23:
+                        t23.push(dadosFrequencia);
+                        break;
+                    default:
+                        console.log(`data ${tempoTrabalhado.horasFrequencia}`);
 
+                }
+
+
+            } else {
+                console.log("data ja passou")
             }
 
 
         });
+
+    }
+    function traduzData(data) {
+        let retorno;
+        let dias = ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta'];
+        let d = ["Monday ", "Tuesday", "Wednesday", "Thursday", "Friday"]
+        d.forEach((day, index) => {
+            if (day == data) {
+                retorno = dias[index];
+            }
+        });
+        return retorno;
+    }
+    function pegaDataMemoria(data) {
+        let day = moment(data[data.length - 1].dataHora).format("dddd");
+        let txt = document.querySelector(".lastMemory");
+        let frq = document.querySelector(".lastFrequenc");
+        txt.innerText = moment(data[data.length - 1].dataHora).format("L");
+        txt.innerText += " " + traduzData(day);
+        frq.innerText = txt.innerText;
 
     }
     function obterPublicacoesPorUsuario(idUsuario) {
@@ -349,6 +398,7 @@
                     resposta.json().then(function (resposta) {
 
                         calcData(resposta);
+                        pegaDataMemoria(resposta);
                         carregaInfo(resposta);
                         // alert(JSON.stringify(resposta))
                     });
@@ -361,7 +411,7 @@
             });
     }
     const idGest = +sessionStorage.idFunc;
-    obterPublicacoesPorUsuario(2);
+    obterPublicacoesPorUsuario(idGest);
     /* Pegando Informações Equipe */
 
     function obterPublicacoesEquipe(idUsuario) {
@@ -420,12 +470,13 @@
             return max;
         },
         frequencia(data) {
+
             if (data.length == 0) return { geralDia: 0 }
             let calculo = 0;
             let geralDia = 0;
             let registros = Array.from(data);
             registros.forEach((r) => {
-                calculo += r.dados * 1000000;
+                calculo += r.dados;
             });
             geralDia = +(calculo / registros.length).toFixed(0);
 
@@ -477,21 +528,22 @@
             myChartp.data.datasets[0].data[4] = +sex.media;
             myChartp.data.datasets[0].data[5] = ma;
 
-            myChartp.data.datasets[1].data[0] = +segf.media + 12;
-            myChartp.data.datasets[1].data[1] = +terf.media + 10;
-            myChartp.data.datasets[1].data[2] = +quaf.media + 9;
-            myChartp.data.datasets[1].data[3] = +quif.media + 11;
-            myChartp.data.datasets[1].data[4] = +sexf.media + 8;
+            myChartp.data.datasets[1].data[0] = +segf.media;
+            myChartp.data.datasets[1].data[1] = +terf.media;
+            myChartp.data.datasets[1].data[2] = +quaf.media;
+            myChartp.data.datasets[1].data[3] = +quif.media;
+            myChartp.data.datasets[1].data[4] = +sexf.media;
             myChartp.data.datasets[1].data[5] = maf;
             myChartp.update();
         }
         updateChart();
+        console.log(calculadora.frequencia(t19).geralDia)
         function updateChart2() {
             myChartx.data.datasets[0].data[0] = calculadora.frequencia(t8).geralDia;
             myChartx.data.datasets[0].data[1] = calculadora.frequencia(t9).geralDia;
             myChartx.data.datasets[0].data[2] = calculadora.frequencia(t10).geralDia;
             myChartx.data.datasets[0].data[3] = calculadora.frequencia(t11).geralDia;
-            myChartx.data.datasets[0].data[4] = calculadora.frequencia(t12).geralDia;
+            myChartx.data.datasets[0].data[4] = calculadora.frequencia(t19).geralDia;
             myChartx.data.datasets[0].data[5] = calculadora.frequencia(t16).geralDia;
             myChartx.data.datasets[0].data[6] = calculadora.frequencia(t17).geralDia;
             myChartx.data.datasets[0].data[7] = calculadora.frequencia(t15).geralDia;
@@ -542,7 +594,7 @@
         data: {
             labels: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex'],
             datasets: [{
-                label: 'Funcionario',
+                label: 'FuncionarioMedia',
                 data: [],
                 backgroundColor: [
                     'rgba(155, 89, 182, 1)'
@@ -553,7 +605,7 @@
                 borderWidth: 1
             },
             {
-                label: 'Equipe',
+                label: 'EquipeMedia',
                 data: [],
                 backgroundColor: [
                     'rgba(255,255,0,0.7)'

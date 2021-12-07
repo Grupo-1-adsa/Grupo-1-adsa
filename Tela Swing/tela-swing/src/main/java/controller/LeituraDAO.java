@@ -2,6 +2,7 @@ package controller;
 
 import com.github.britooo.looca.api.core.Looca;
 import com.github.britooo.looca.api.group.discos.Disco;
+import com.github.britooo.looca.api.group.discos.Volume;
 import model.Leitura;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -22,22 +23,22 @@ public class LeituraDAO {
 
             JdbcTemplate conn = new JdbcTemplate(configAzure.getDataSource());
             Integer ramUso = Math.toIntExact(looca.getMemoria().getEmUso() /  1000000000);
-            Double cpuUso = looca.getProcessador().getUso()/100000;
+            Double cpuUso = looca.getProcessador().getUso();
             Integer cpuFrequencia = Math.toIntExact(looca.getProcessador().getFrequencia()/1000000);
             Long tempAtividade = looca.getSistema().getTempoDeAtividade();
 
             Integer usoHd = 0;
-            List<Disco> discInfo = looca.getGrupoDeDiscos().getDiscos();
+            List<Volume> discInfo = looca.getGrupoDeDiscos().getVolumes();
 
-            for (Disco disco : discInfo) {
-                //usoHd = Math.toIntExact(disco. / 1000000000);
+            for (Volume disco : discInfo) {
+                usoHd = Math.toIntExact(disco.getDisponivel() / 1000000000);
             }
 
 
-            String sqlServer = "insert into [dbo].[Leitura](dataHora,RAM,fkEquipamento,cpuFrequencia,tempoAtividade,cpuUso) values (getDate(),?,?,?,?,?);";
+            String sqlServer = "insert into [dbo].[Leitura](dataHora,RAM,fkEquipamento,cpuFrequencia,tempoAtividade,cpuUso,usoHd) values (getDate(),?,?,?,?,?,?);";
 
 
-            conn.update(sqlServer, ramUso, fkEquipamento, cpuFrequencia, tempAtividade, cpuUso);
+            conn.update(sqlServer, ramUso, fkEquipamento, cpuFrequencia, tempAtividade, cpuUso, usoHd);
 
         }
 

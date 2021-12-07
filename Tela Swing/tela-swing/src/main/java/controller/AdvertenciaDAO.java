@@ -6,7 +6,7 @@ public class AdvertenciaDAO {
     ConnectionAzure config = new ConnectionAzure();
     JdbcTemplate con = new JdbcTemplate(config.getDataSource());
 
-    public void enviarLeitura(Integer fkFuncionario, String Advertencia) {
+    public void enviarAdvertencia(Integer fkFuncionario, String Advertencia) {
         String sql = "insert into [dbo].[Advertencia] (Advertencia,dataAdv,fkFuncionario) values (?,getDate(),?);";
 
         if (Advertencia == "grave") {

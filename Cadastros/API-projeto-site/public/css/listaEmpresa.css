@@ -32,51 +32,54 @@ a {
   height: 80px;
   width: 80%;
   margin: auto;
+  display: flex;
+  flex-flow: row;
+  align-self: center;
+  justify-content: space-between;
+  padding: 0 !important;
 }
-
+.header .container div{
+  display: flex;
+  align-items: center;
+}
 .header h1 {
   margin: 0;
   padding: 0;
-  float: left;
-  margin-top: 30px;
-  margin-left: 2px;
-  float: left;
-  width: 80%;
+  display: flex;
+  align-items: center;
 }
 
 .header img {
   margin: 0;
   padding: 0;
-  float: left;
-  margin-top: 30px;
   height: 40px;
-  float: left;
+
 }
 
 
 .header a {
   margin: 0;
   padding: 0;
-  margin-top: 30px;
-  margin-left: 2px;
   width: 20px;
+  display: flex;
+    align-items: center;
 }
 
-.header span {
-  padding-left: 25%;
+.header  span {  
   color: var(--primary-azul);
   font-size: 2.5rem;
   text-align: center;
+  display: flex;
+  align-items: center;
 }
 
 .containerList {
   margin-top: 3vh;
-  margin-left: 40vh;
   display: flex;
   justify-content: center;
+  align-self: center;
   min-width: 146vh;
   min-height: 52vh;
-  position: absolute;
   z-index: 9;
 }
 
