@@ -18,7 +18,7 @@ import java.util.TimerTask;
 public class Slack {
 
     private static final HttpClient client = HttpClient.newHttpClient();
-    private static final String URL = "https://hooks.slack.com/services/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";
+    private static final String URL = "";
 
     public static void sendMessage(JSONObject content) throws IOException, InterruptedException {
         Log log = new Log();
@@ -37,6 +37,22 @@ public class Slack {
             System.out.println("Não enviou a mensagem do Slack");
             log.slackLog();
         }
+    }
+
+    public void loginMensagem(String nomeFunc) throws IOException, InterruptedException {
+        Log log = new Log();
+        JSONObject json = new JSONObject();
+
+        json.put("text", "O @" + nomeFunc + " acabou de se conectar no Procrastinator :smiley:");
+        try {
+            sendMessage(json);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+
     }
 
     public void enviaMensagem(String nomeFunc) throws IOException, InterruptedException {
@@ -63,7 +79,7 @@ public class Slack {
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-                }else if (memoria.getEmUso() / memoria.getTotal() <= 0.4 && processador.getUso() <= 30.0){
+                } else if (memoria.getEmUso() / memoria.getTotal() <= 0.4 && processador.getUso() <= 30.0) {
                     try {
                         json.put("text", "O @" + nomeFunc + " está inativo é melhor verificar :angry:");
                         contador++;
@@ -72,7 +88,7 @@ public class Slack {
                         e.printStackTrace();
                     } catch (InterruptedException e) {
                         e.printStackTrace();
-                    } 
+                    }
                 }
 
             }
