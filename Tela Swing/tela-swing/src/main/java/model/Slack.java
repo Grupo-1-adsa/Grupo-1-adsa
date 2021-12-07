@@ -3,6 +3,7 @@ package model;
 import com.github.britooo.looca.api.group.memoria.Memoria;
 import com.github.britooo.looca.api.group.processador.Processador;
 import com.nimbusds.jose.shaded.json.JSONObject;
+import controller.AdvertenciaDAO;
 import org.springframework.dao.EmptyResultDataAccessException;
 import logging.Log;
 
@@ -55,8 +56,9 @@ public class Slack {
 
     }
 
-    public void enviaMensagem(String nomeFunc) throws IOException, InterruptedException {
+    public void enviaMensagem(String nomeFunc, Integer fkFuncionario) throws IOException, InterruptedException {
         Log log = new Log();
+        AdvertenciaDAO advertenciaDAO = new AdvertenciaDAO();
         Processador processador = new Processador();
 
         Memoria memoria = new Memoria();
@@ -70,9 +72,9 @@ public class Slack {
                 Integer contador = 0;
 
                 if (memoria.getEmUso() / memoria.getTotal() <= 0.6 && processador.getUso() <= 50.0) {
-                    json.put("text", "O @" + nomeFunc + " pode estar inativo é melhor verificar :male-detective:");
-                    contador++;
                     try {
+                        json.put("text", "O @" + nomeFunc + " pode estar inativo é melhor verificar :male-detective:");
+                        advertenciaDAO.enviarAdvertencia(fkFuncionario,"medio");
                         sendMessage(json);
                     } catch (IOException e) {
                         e.printStackTrace();
@@ -82,7 +84,7 @@ public class Slack {
                 } else if (memoria.getEmUso() / memoria.getTotal() <= 0.4 && processador.getUso() <= 30.0) {
                     try {
                         json.put("text", "O @" + nomeFunc + " está inativo é melhor verificar :angry:");
-                        contador++;
+                        advertenciaDAO.enviarAdvertencia(fkFuncionario,"grave");
                         sendMessage(json);
                     } catch (IOException e) {
                         e.printStackTrace();

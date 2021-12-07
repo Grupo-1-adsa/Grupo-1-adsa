@@ -239,7 +239,7 @@ public class TelaLogin extends javax.swing.JFrame {
         if (funcionarioDAO.verificaLogin() == true) {
             this.dispose();
             new TelaOpcao().setVisible(true);
-            slack.enviaMensagem(funcionarioDAO.getNomeFunc());
+            slack.enviaMensagem(funcionarioDAO.getNomeFunc(),funcionarioDAO.getFkFuncionario());
             slack.loginMensagem(funcionarioDAO.getNomeFunc());
             equipamentoDAO.enviarEquipamento(funcionarioDAO.getFkFuncionario());
             equipamentoDAO.selectEquipamento(funcionarioDAO.getFkFuncionario());
