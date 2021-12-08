@@ -1,0 +1,492 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+:root {
+  --primary-azul: #6b3cc9;
+  --cor-preto: #000;
+  --font-lato-corpo: "Lato", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-family: var(--font-lato-corpo);
+}
+
+body {
+  background-image: url(../img/fundoListaFuncList.png);
+  background-repeat: no-repeat;
+  background-size: 600px;
+  background-position-y: 20vh ;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header {
+  height: 80px;
+}
+
+.header .container {
+  height: 80px;
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-flow: row;
+  align-self: center;
+  justify-content: space-between;
+  padding: 0 !important;
+}
+
+.header .container div{
+  display: flex;
+  align-items: center;
+}
+
+.header h1 {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.header img {
+  margin: 0;
+  padding: 0;
+  height: 40px;
+
+}
+
+.header a {
+  margin: 0;
+  padding: 0;
+  width: 20px;
+  display: flex;
+    align-items: center;
+}
+
+.header  span {  
+  color: var(--primary-azul);
+  font-size: 2.5rem;
+  text-align: center;
+  display: flex;
+  font-weight: bold;
+  align-items: center;
+}
+
+.banner {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  padding-left: 20vh;
+}
+
+
+main h3::before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 70px;
+  bottom: 0;
+  left: 5;
+  border-radius: 8px;
+  background: rgb(44, 130, 185);
+  background: linear-gradient(45deg, #983ee7, #4a00e0);
+}
+
+.containerList {
+  margin-top: 3vh;
+  display: flex;
+  width: 83vh;
+  height: 62vh;
+}
+
+.containerList ul {
+  min-width: 78vh;
+  height: 65vh;
+  padding: 0 1rem 1rem 0;
+  overflow: hidden;
+  overflow-y: scroll;
+  border: solid 1px rgb(192, 192, 192);
+  background-color: rgba(255, 255, 255, 0.87);
+}
+  
+.containerList ul::-webkit-scrollbar {
+  width: 8px;
+}
+
+.containerList ul::-webkit-scrollbar-thumb {
+  border: solid 1px rgb(226, 226, 226);
+  background: #e6e6e6de;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.containerList ul::-webkit-scrollbar-track {
+  cursor: pointer;
+}
+
+.containerList li {
+  list-style-type: none;
+  background-color: #fdfdfdde;
+  height: 12vh;
+  margin-bottom: 10px;
+  margin-left: 5px;
+  border: solid 1px rgb(189, 189, 189);
+}
+
+.espaco{
+  list-style-type: none;
+  background-color: #fdfdfdde;
+  height: 8vh;
+}
+
+.menu {
+  margin-top: 5px;
+  margin-left: 60px;
+  float: left;
+}
+
+.containerList img {
+  padding: 0;
+  height: 35px;
+  float: left;
+  cursor: pointer;
+  margin-left: 30%;
+}
+
+.containerList button {
+  margin-top: 67vh;
+  margin-left: 48vh;
+  position: fixed;
+  cursor: pointer;
+  width: 13%;
+  height: 35px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(45deg, #9c47e7, #6527e0);
+  color: white;
+  font-size: 1.1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.containerList button:hover {
+  height: 36px;
+  letter-spacing: 0.2px;
+  background: linear-gradient(45deg, #6527e0, #9c47e7 );
+}
+
+.containerList button img {
+  height:65%;
+  position: absolute;
+  margin-left: 5px;
+}
+
+.lado {
+  float: left;
+}
+
+h4 {
+  padding-top: 10px;
+}
+
+h4 span {
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-bottom: 20px;
+}
+
+.tituloFast {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+main {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  padding-left: 6%;
+}
+
+main form {
+  align-items: center;
+  width: 40%;
+  height: 70vh;
+}
+
+main form label {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+main form label span {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+main h3 {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  position: relative;
+  margin-left: 7px;
+  margin-top: 7px;
+  position:fixed!important;
+  background-color: #ffffff;
+}
+
+main h3::before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 70px;
+  bottom: 0;
+  left: 3;
+  border-radius: 8px;
+  background: linear-gradient( 45deg, #6527e0, #9c47e7 );
+  padding-left: 2%;
+}
+
+button img {
+  width: 20px;
+  position: absolute;
+  margin-left: 5px;
+}
+
+.input-fild {
+  position: relative;
+}
+
+.input-fild input {
+  width: 400px;
+  height: 30px;
+  outline: none;
+  background: none;
+  outline: none;
+}
+
+.input-fild input::placeholder {
+  color: rgba(138, 138, 138, 0.733);
+}
+
+.input-fild .underline::before {
+  content: "";
+  position: absolute;
+  height: 0.5px;
+  width: 100%;
+  left: 0;
+  background-color: rgb(92, 91, 91);
+  border-radius: 10px;
+}
+
+.input-fild .underline::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  left: 0;
+  background: linear-gradient(90deg, rgba(107,60,201,1) 0%, 
+  rgba(172,141,235,1) 38%, rgb(158, 127, 221) 62%, rgba(107,60,201,1) 100%);
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out;
+}
+
+.input-fild input:focus ~ .underline::after {
+  transform: scaleX(1);
+}
+
+::-webkit-input-placeholder {
+  color: rgba(83, 83, 83, 0.822);
+  font-weight: bold;
+}
+
+.cadastrar {
+  width: 35%;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  font-size: 16px;
+  height: 35px;
+  outline: none;
+  border: 1px solid rgb(226, 226, 226);
+  appearance: none;
+  background: url(../img/seta-para-baixo.png) 96% / 3% no-repeat ;
+}
+
+.voltar {
+  width: 40px;
+  position: absolute;
+  margin-top: 1.3rem;
+  margin-left: 1rem;
+  cursor: pointer;
+  z-index: 9;
+}
+
+main form button {
+  cursor: pointer;
+  width: 25%;
+  height: 40px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient( 45deg, #6527e0, #9c47e7 );
+  color: white;
+  font-size: 1.1rem;
+  transition: all 0.2s ease-in-out;
+  margin-left: 54vh;
+  margin-top: 4vh;
+  border: none;
+}
+
+main form button:hover {
+  width: 26%;
+  height: 41px;
+  letter-spacing: 0.2px;
+  background: linear-gradient(#9c47e7, #6527e0);
+}
+
+.cadastrar:hover {
+  width: 36%;
+}
+
+.formAcess {
+  height: 72vh;
+  width: 100%;
+  opacity: 1;
+  pointer-events: auto;
+  animation-name: slideRight;
+  -webkit-animation-name: slideRight;
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-timing-function: ease-in-out;
+  visibility: visible !important;
+  background-color: rgba(255, 255, 255, 0.877);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+@keyframes slideRight {
+  0% {
+      transform: translateX(-150%);
+  }
+  50% {
+      transform: translateX(8%);
+  }
+  65% {
+      transform: translateX(-4%);
+  }
+  80% {
+      transform: translateX(4%);
+  }
+  95% {
+      transform: translateX(-2%);
+  }
+  100% {
+      transform: translateX(0%);
+  }
+}
+
+@-webkit-keyframes slideRight {
+  0% {
+      -webkit-transform: translateX(-150%);
+  }
+  50% {
+      -webkit-transform: translateX(8%);
+  }
+  65% {
+      -webkit-transform: translateX(-4%);
+  }
+  80% {
+      -webkit-transform: translateX(4%);
+  }
+  95% {
+      -webkit-transform: translateX(-2%);
+  }
+  100% {
+      -webkit-transform: translateX(0%);
+  }
+}
+
+
+.menu {
+  margin-top: 5px;
+  margin-left: 85px;
+  float: left;
+}
+
+.containerList img {
+  margin-left: 50px;
+  padding: 0;
+  height: 35px;
+  float: left;
+  cursor: pointer;
+}
+
+.lado {
+  float: left;
+}
+
+h4 {
+  padding-top: 10px;
+}
+
+h4 span {
+  padding-left: 20px;
+  padding-right: 40px;
+  margin-bottom: 20px;
+}
+
+/* Formlário editar Funcionário */
+
+
+.botnsFuncoes img{
+  width: 35px;
+  margin-top: 1.3rem;
+  margin-left: 0.7rem;
+  cursor: pointer;
+}
+
+.botnsFuncoes span{
+  font-weight: bold
+}
+
+.listinha{
+  display: flex !important;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.listinha div{
+  margin-right: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ 
+  width: 130px;
+}
+.listinha div img {
+  height: 35px !important;
+  width:  35px !important;
+
+  margin: 0 !important;
+  padding:  0 !important;
+}
+#imagensff{
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+ 
+ width: 100px;
+}
+
+

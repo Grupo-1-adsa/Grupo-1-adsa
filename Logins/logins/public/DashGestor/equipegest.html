@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="dash.css">
+  <title>Dash Gestor</title>
+</head>
+
+<body>
+  <section class="containerDash">
+
+    <div class="containerMenu">
+
+      <nav class="containerNav">
+        <button class="close">X</button>
+        <div><img src="./img/logoBranco.svg" alt="#"></div>
+        <h2>Dashboard</h2>
+        <ul class="lista_menu_geral">
+          <li><a href="./gestorDash.html">Home</a></li>
+          <li><a onclick="abrirModal()">Cadastrar funcionário</a></li>
+          <li><a href="./gestorDash.html">Sair</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <section class="containerInfo">
+      <div class="cabecalho">
+        <a class="mphone" href="#">
+          <div></div>
+        </a>
+        <div style="opacity: 0;" class="pesquisa">
+          <img src="./img/lupa2.png" alt="#">
+          <input type="text" placeholder="Pesquisar...">
+        </div>
+        <div class="gestorPerfil">
+          <img src="./img/perfilGestor.png" alt="#">
+          <div>
+            <h4 id="nomezinho"></h4>
+            <p>Gestor</p>
+            <div class="box_perfil">
+              <p> <a href="#">Configurações</a> </p>
+              <p><a href="#">Sairr</a></p>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="gdb">
+        <div class="hello">
+          <h3>
+            <p> Equipamentos Equipe:
+            </p>
+          </h3>
+          <button id="criarq">Adicionar Equipamento</button>
+        </div>
+        <br>
+      </div>
+    </section>
+  </section>
+
+  <div class="updateEqp" id="modalCriar">
+    <a href="">X</a>
+    <h1>Cadastrar máquina</h1>
+    <span class="maqid">Maquina Editada: ID</span>
+    <span class="maqid2">Maquina Editada: ID</span>
+    <span class="maqres">Responsavel Atual: Res</span>
+    <form id="formulario_up">
+      <select name="fkFuncionario" id="fkFuncionario2"></select>
+      <input type="text" name="idFuncionario" class="funcid">
+      <input id="tt" type="button" value="Atualizar" onclick="updateTabela()">
+    </form>
+  </div>
+
+  <div class="createEqp" id="modalCriar">
+    <a id="closeq" href="" class="fecharCreate">X</a>
+    <form id="formulario_login">
+      <h3>Adicionar equipamento</h3>
+      <input type="text" placeholder="NumeroSerie" name="numeroSerie" value="38F6_0156_3053_9014.">
+      <input type="text" placeholder="CPU" name="CPU" value="Intel(R) Core(TM) i7-10610U CPU @ 1.80GHz">
+      <input type="text" placeholder="RAM" name="RAM" value="16">
+      <input type="text" placeholder="HD" name="HD" value="256">
+      <select name="fkFuncionario" id="fkFuncionario">
+        <option value="">Funcionarios</option>
+
+      </select>
+      <input type="text" name="SO" placeholder="Sistema Operacional">
+      <input style="display: none;" id="data" type="datetime" name="data">
+      <input style="display: none;" type="text" name="statusEquip" value="Pendente">
+      <input id="adad" type="button" value="Registrar" onclick="registrarMaquina(event)">
+    </form>
+  </div>
+
+  <section id="abrirModalCadastro" class="fundoIns" style="display: none;">
+    <div class="modalCadastro ativo">
+      <a href="#fecharCom" class="fecharIns" onclick="fecharInstrucao()">x</a>
+      <h1>Cadastrar funcionário:</h1>
+
+      <form id="form_cadastro_func" method="post" onsubmit="return cadastrar()" class="formCadastro">
+        <div id="dadosEmpresa" class="formAcess">
+          <h3>Dados do funcionário:</h3>
+          <div class="espaco"></div>
+          <label class="input-fild">
+            <span>Name:</span>
+            <input type="text" id="nomeFuncionario" name="nomeFuncionario" class="input-padrao" placeholder="Nome e sobrenome" required minlength="4" autofocus="autofocus">
+            <div class="underline"></div>
+          </label>
+          <label class="input-fild">
+            <span>Telefone:</span>
+            <input type="text" id="telefone" name="telefone" class="input-padrao" placeholder="telefone" required minlength="4" autofocus="autofocus">
+            <div class="underline"></div>
+          </label>
+          <label class="input-fild">
+            <span>Email:</span>
+            <input type="text" id="email" name="email" placeholder="Digite o e-mail">
+            <div class="underline"></div>
+          </label>
+          <label class="input-fild">
+            <span>Login:</span>
+            <input type="text" id="loginFuncionario" name="loginFuncionario" placeholder="Digite o login">
+            <div class="underline"></div>
+          </label>
+
+          <label class="input-fild">
+            <span>Senha:</span>
+            <input type="text" id="senhaFuncionario" name="senhaFuncionario" placeholder="senhaResponsavel">
+            <div class="underline"></div>
+          </label>
+          <button type="submit" id="btn_entrar" value="Cadastrar" class="cadastrar">
+            Cadastrar
+            <img src="../img/salvar.png" alt="">
+          </button>
+      </form>
+
+
+  </section>
+
+</body>
+<script src="../DashSup/tempo.js"></script>
+<script>
+  function registrarMaquina(event) {
+    event.preventDefault();
+    var formulario = new URLSearchParams(new FormData(formulario_login));
+    fetch("/gestor/cadastrarequipamento", {
+      method: "POST",
+      body: formulario,
+    }).then(function (response) {
+      if (response.ok) {
+        alert("[Sucesso:] Item Cadastrado!")
+        /* window.location.href = "./listaEmpresas.html"; */
+      } else {
+        alert("[ERRO:] Item Não cadastrado!")
+        console.log("Erro de cadastro!");
+      }
+    });
+    return false;
+  }
+
+  function pegaHora() {
+    const datainput = document.querySelector("#data");
+    datainput.value = moment().format();
+  }
+  pegaHora()
+
+  /* --------------- */
+  let armazenadorEquipe = [];
+  let controler = 0;
+  function pegarDadosEquipamentox(event) {
+    event.preventDefault();
+    deleteEquipamento(armazenadorEquipamento[event.target.alt].maquina);
+  }
+  function deleteEquipamento(idUsuario) {
+    fetch(`/gestor/deletemaquina/${idUsuario}`, {
+      method: "DELETE"
+    })
+      .then(resposta => {
+        if (resposta.ok) {
+          resposta.json().then(function (resposta) {
+
+            alert("deletado!");
+            location.reload();
+            // alert(JSON.stringify(resposta))
+          });
+        } else {
+
+          console.error('Nenhum dado encontrado ou erro na API');
+        }
+      })
+      .catch(function (error) {
+        console.error(`Erro na obtenção das publicações do usuário: ${error.message}`);
+      });
+  }
+  function pegarDados(event) {
+    const maqres = document.querySelector(".maqres");
+    const maqid = document.querySelector(".maqid");
+    const maqid2 = document.querySelector(".maqid2");
+    const funcid = document.querySelector(".funcid");
+    if (controler === 0) {
+      let index = event.target.alt;
+      console.log(index)
+      console.log(armazenadorEquipe[index]);
+      maqid.innerText = "[ID] : " + armazenadorEquipe[index].idFuncionario;
+      maqid2.innerText = "[MAQUINA] : " + armazenadorEquipamento[index].maquina;
+      maqres.innerText = "[Responsavel] : " + armazenadorEquipe[index].nomeFuncionario;
+      funcid.value = armazenadorEquipamento[index].maquina;
+      controler++;
+    }
+
+  }
+
+  function criarBalao(dados) {
+    const data = dados;
+    const container = document.querySelector(".gdb");
+    let contador = -1;
+    data.forEach((dado) => {
+      armazenadorEquipe.push(dado);
+      contador++;
+      container.innerHTML += `
+      <div class="dashinfoControle">
+          <h3>
+            <p> <span> ${dado.nomeFuncionario}:  </span> Maquina:<span>${dado.idEquipamento}</span>SO: <span>${dado.SO}</span> RAM: <span>${dado.RAM}</span> HD: <span>${dado.HD}</span> <img id="editarq" src="../cadastro/img/iconEditarPreto.png" alt="${contador}"></span> <img id="lixinho" src="../cadastro/img/excluir.png" alt="${contador}">
+             
+            </p>
+          </h3>
+        </div>`;
+    });
+  }
+  let armazenadorEquipamento = [];
+  function armazenarEquipamentos(dados) {
+    dados.forEach((dado) => {
+      let d = { maquina: dado.idEquipamento, nome: dado.nomeFuncionario, id: dado.idFuncionario };
+      armazenadorEquipamento.push(d);
+    });
+    console.log(armazenadorEquipamento)
+  };
+  function disponivel(dados) {
+    const seletor = document.querySelector("#fkFuncionario");
+    const seletor2 = document.querySelector("#fkFuncionario2");
+
+    dados.forEach((dado, index) => {
+
+
+      seletor.innerHTML += `
+    <option value="${dado.idFuncionario}">${dado.nomeFuncionario}</option>
+    `;
+      console.log("nome:", dado.nomeFuncionario, "id: ", dado.idFuncionario)
+      seletor2.innerHTML += `
+    <option value="${dado.idFuncionario}">${dado.nomeFuncionario}</option>
+    `;
+
+
+
+
+    });
+  }
+  /* UP EQUIPAMENTO */
+  function updateTabela() {
+    var formulario = new URLSearchParams(new FormData(formulario_up));
+    console.log(formulario.toString());
+
+    fetch("/gestor/updateeq", {
+      method: "PUT",
+      body: formulario,
+    }).then((resposta) => {
+      if (resposta.ok) {
+        resposta.json().then((json) => {
+          console.log(json);
+        });
+      } else {
+        alert("[UPDATE] : Dados Atualizados !");
+
+        resposta.text().then((texto) => { });
+      }
+    });
+    return false;
+  }
+
+  function obterPublicacoesPorUsuario(idUsuario) {
+    fetch(`/gestor/equipamentos/${idUsuario}`)
+      .then(resposta => {
+        if (resposta.ok) {
+          resposta.json().then(function (resposta) {
+            criarBalao(resposta)
+            armazenarEquipamentos(resposta)
+            // alert(JSON.stringify(resposta))
+          });
+        } else {
+          console.error('Nenhum dado encontrado ou erro na API');
+        }
+      })
+      .catch(function (error) {
+        console.error(`Erro na obtenção das publicações do usuário: ${error.message}`);
+      });
+  }
+
+  function obterUsuarioDisponivel(idUsuario) {
+    fetch(`/gestor/disponivel/${idUsuario}`)
+      .then(resposta => {
+        if (resposta.ok) {
+          resposta.json().then(function (resposta) {
+            console.log('carinhas Disponiveis: ', resposta);
+            disponivel(resposta);
+            // alert(JSON.stringify(resposta))
+          });
+        } else {
+          console.error('Nenhum dado encontrado ou erro na API');
+        }
+      })
+      .catch(function (error) {
+        console.error(`Erro na obtenção das publicações do usuário: ${error.message}`);
+      });
+  }
+
+  const idGest = +sessionStorage.id;
+  obterPublicacoesPorUsuario(idGest);
+  obterUsuarioDisponivel(idGest);
+</script>
+<script>
+  function attNome() {
+    let nome = document.querySelector("#nomezinho");
+    nome.innerText = sessionStorage.getItem("nome")
+  }
+  attNome();
+  setInterval(() => {
+    function addEvent() {
+      const editarq = document.querySelectorAll("#editarq");
+      const lixinho = document.querySelectorAll("#lixinho");
+      const modal = document.querySelectorAll("#modalCriar");
+      const criarq = document.querySelector("#criarq");
+      const updateEqp = document.querySelector(".updateEqp");
+      const createEqp = document.querySelector(".createEqp");
+      const closeq = document.querySelector("#closeq");
+      editarq.forEach((edit) => {
+        edit.addEventListener("click", (event) => {
+          updateEqp.classList.add("ativo");
+          pegarDados(event)
+        })
+      });
+      lixinho.forEach((lixo) => {
+        lixo.addEventListener("click", pegarDadosEquipamentox);
+      })
+      closeq.addEventListener("click", () => {
+        modal.classList.add("close")
+      })
+      criarq.addEventListener("click", () => {
+        createEqp.classList.add("ativo");
+      })
+    }
+    addEvent()
+  }, 100);
+
+
+  abrirModalCadastro.classList.add("abrir")
+
+  function fecharInstrucao() {
+    abrirModalCadastro.style.display = 'none'
+  }
+
+  function abrirModal() {
+    abrirModalCadastro.style.display = 'block'
+  }
+
+  function cadastrar() {
+    var idUsuario = sessionStorage.id;
+    var formulario = new URLSearchParams(new FormData(form_cadastro_func));
+    fetch(`/gestor/cadastrarfuncionario/${idUsuario}`, {
+      method: "POST",
+      body: formulario
+    }).then(function (response) {
+      if (response.ok) {
+        alert("[Sucesso:] Cadastrado Realizado !")
+        /* window.location.href = "./listaEmpresas.html"; */
+      } else {
+        alert("[ERROR:] OPS! Esse Login Já existe no nosso banco de dados :p")
+        console.log('Erro de cadastro!');
+      }
+    });
+    return false;
+
+  }
+</script>
+
+</html>

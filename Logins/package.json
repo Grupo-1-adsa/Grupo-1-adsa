@@ -1,0 +1,9 @@
+{
+  "name": "institucional-fasttech",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node ./logins/bin/www",
+    "postinstall": "cd logins && npm install"
+  }
+}

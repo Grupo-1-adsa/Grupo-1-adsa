@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="imagex/png" href="../img/procastinatorPreto.png">
+    <title>Cadastrar funcionários</title>
+    <link rel="stylesheet" href="../css/funcionario.css">
+    <script src="https://kit.fontawesome.com/48b24e7021.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="container">
+            <div>
+                <img src="../img/procastinatorPreto.png" alt="" />
+                <h1 class="titulo">Pro</h1>
+            </div>
+            <span class="highlight">Cadastrar Funcionários </span>
+            <a href="listaFuncionarios.html"> <img src="../img/voltarRoxo.png" alt=""></a>
+        </div>
+
+    </div>
+
+
+    <main>
+        <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
+
+            <div id="dadosEmpresa" class="formAcess">
+                <h3>Dados funcionários:</h3>
+                <div class="espaco"></div>
+                <select id="tipo" class="select" name="tipo">
+                    <option value="">Escolha funcionário</option>
+                    <option value="gestor">Gestor</option>
+                    <option value="suporte">Suporte</option>
+                </select>
+                <label class="input-fild">
+                    <span>Name:</span>
+                    <input type="text" id="nomeResponsavel" name="nomeResponsavel" class="input-padrao" placeholder="Nome e sobrenome" required minlength="4" autofocus="autofocus">
+                    <div class="underline"></div>
+                </label>
+                <label class="input-fild">
+                    <span>Telefone:</span>
+                    <input type="text" id="telefone" name="telefone" class="input-padrao" placeholder="telefone" required minlength="4" autofocus="autofocus">
+                    <div class="underline"></div>
+                </label>
+                <label class="input-fild">
+                    <span>CPF:</span>
+                    <input type="text" id="CPF" name="CPF" placeholder="Digite o CPF">
+                    <div class="underline"></div>
+                </label>
+                <label class="input-fild">
+                    <span>loginResponsavel:</span>
+                    <input type="text" id="loginResponsavel" name="loginResponsavel" placeholder="Digite o login">
+                    <div class="underline"></div>
+                </label>
+
+                <label class="input-fild">
+                    <span>SenhaResponsavel:</span>
+                    <input type="text" id="senhaResponsavel" name="senhaResponsavel" placeholder="senhaResponsavel">
+                    <div class="underline"></div>
+                </label>
+
+
+        </form>
+
+        <button type="submit" id="btn_entrar" value="Cadastrar" class="cadastrar">
+            Cadastrar
+            <img src="../img/salvar.png" alt="">
+        </button>
+    </main>
+
+</body>
+
+</html>
+<script>
+    function cadastrar() {
+        var idUsuario = sessionStorage.idEmpresa;
+        var formulario = new URLSearchParams(new FormData(form_cadastro));
+        fetch(`/gestor/cadastrarresponsavel/${idUsuario}`, {
+            method: "POST",
+            body: formulario
+        }).then(function (response) {
+            if (response.ok) {
+                alert("[Sucesso:] Cadastrado Realizado !")
+                /* window.location.href = "./listaEmpresas.html"; */
+            } else {
+                alert("[ERROR:] OPS! Esse Login Já existe no nosso banco de dados :p")
+                console.log('Erro de cadastro!');
+            }
+        });
+        return false;
+
+    }
+</script>

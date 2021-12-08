@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="imagex/png" href="../img/procastinatorPreto.png">
+    <title>Funcionarios Cadastrados</title>
+    <link rel="stylesheet" href="../css/funcionario.css">
+    <script src="https://kit.fontawesome.com/48b24e7021.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!--header inicio-->
+    <div class="header">
+        <div class="container">
+            <div>
+                <img src="../img/procastinatorPreto.png" alt="" />
+                <h1 class="titulo">Pro</h1>
+            </div>
+            <span class="highlight">Funcionarios Cadastrados</span>
+            <a href="../../index.html"><img src="../../img/logout.png" alt=""></a>
+        </div>
+    </div>
+
+    <main class="banner">
+
+
+        <div class="containerList">
+            <ul class="lista listaGestor">
+                <h3>Gestores cadastrados</h3>
+                <div class="espaco"></div>
+                <!--  <li>
+                    <h4 class="lado"><span>Nome: </span> <span>Sobrenome: </span> </h4>
+                    <span class="menu">
+                        <a href="editar.html"><img src="../img/iconEditarPreto.png" alt=""></a>
+                    </span>
+                    <h4><span>Gabriela</span> <span>Rodrigues</span></h4>
+                </li>
+              -->
+            </ul>
+        </div>
+
+        <div class="containerList">
+
+            <ul class="lista listaSup">
+                <h3>Suporte cadastrados</h3>
+                <div class="espaco"></div>
+                <!--  <li>
+                    <h4 class="lado"><span>Nome: </span> <span>Sobrenome: </span> </h4>
+                    <span class="menu">
+                        <a href="editar.html"><img src="../img/iconEditarPreto.png" alt=""></a>
+                    </span>
+                    <h4><span>Gabriela</span> <span>Rodrigues</span></h4>
+                </li>
+              -->
+            </ul>
+            <button onclick="location.href = './cadastroFuncionarios.html';">Criar novo
+                <img src="../img/iconMais.png" alt="">
+            </button>
+        </div>
+
+    </main>
+
+</body>
+
+
+</html>
+
+<script>
+    let armazenadorGestor = [];
+    let armazenadorSup = [];
+
+    function selecionaLog(event) {
+        let indexGestor = +(event.target.alt);
+        event.preventDefault();
+        console.log("Pega dados", armazenadorGestor[indexGestor]);
+        salvarDadosGestor(armazenadorGestor[indexGestor]);
+        window.location.href = "./editarFunc.html"
+    }
+
+    function selecionaLogSup(event) {
+        event.preventDefault();
+        let indexGestor = +(event.target.alt);
+        console.log("Pega dados", armazenadorSup[indexGestor]);
+        salvarDadosSuporte(armazenadorSup[indexGestor]);
+        window.location.href = "./editarFunc.html"
+    }
+
+    function pegaGestor(dados) {
+        let dadosGestor = dados;
+        dadosGestor.forEach((gest) => {
+            armazenadorGestor.push(gest);
+        })
+    }
+    function pegaSuporte(dados) {
+        let dadosSuporte = dados;
+        dadosSuporte.forEach((gest) => {
+            armazenadorSup.push(gest);
+        })
+    }
+
+    function construirBalao(dadosBalao) {
+        let contador = -1;
+        let container = document.querySelector(".listaGestor");
+        dadosBalao.forEach((d) => {
+            contador++;
+            console.log(d.nomeResponsavel, d.telefone);
+            container.innerHTML += ` <li class="listinha">
+                <div>
+                    <p>Nome</p>
+                    <p>${d.nomeResponsavel}</p>
+                </div>
+                <div>
+                    <p>Telefone</p>
+                    <p>${(d.telefone).trim()}</p>
+                </div>
+                <div id="imagensff">
+                <img src="../img/iconEditarPreto.png" alt="${contador}" onclick="selecionaLog(event)">
+                 <img src="../img/excluir.png" alt="${contador}" onclick="excluir(event)">
+                </div>
+            </li>`
+        })
+    }
+
+    function salvarDadosGestor(dados) {
+        console.log(dados, "bananinha");
+        sessionStorage.setItem('nomeFuncionario', dados.nomeResponsavel);
+        sessionStorage.setItem('CPF', dados.CPF);
+        sessionStorage.setItem('telefone', dados.telefone);
+        sessionStorage.setItem('loginResponsavel', dados.loginResponsavel);
+        sessionStorage.setItem('senhaResponsavel', dados.senhaResponsavel);
+        sessionStorage.setItem('idResponsavel', dados.idResponsavel);
+
+    }
+
+    function salvarDadosSuporte(dados) {
+        console.log(dados, "bananinha");
+        sessionStorage.setItem('nomeFuncionario', dados.nomeResponsavel);
+        sessionStorage.setItem('CPF', dados.CPF);
+        sessionStorage.setItem('telefone', dados.telefone);
+        sessionStorage.setItem('loginResponsavel', dados.loginResponsavel);
+        sessionStorage.setItem('senhaResponsavel', dados.senhaResponsavel);
+        sessionStorage.setItem('idResponsavel', dados.idResponsavel);
+
+    }
+
+    function construirBalaoSup(dadosBalao) {
+        let container = document.querySelector(".listaSup");
+        let contador = -1;
+        dadosBalao.forEach((d) => {
+            contador++;
+            console.log(d.nomeResponsavel, d.telefone);
+            container.innerHTML += `<li class="listinha">
+                <div>
+                    <p>Nome</p>
+                    <p>${d.nomeResponsavel}</p>
+                </div>
+                <div>
+                    <p>Telefone</p>
+                    <p>${(d.telefone).trim()}</p>
+                </div>
+                <div id="imagensff">
+                <img src="../img/iconEditarPreto.png" alt="${contador}" onclick="selecionaLogSup(event)">
+                 <img src="../img/excluir.png" alt="${contador}" onclick="excluir2(event)"">
+                </div>
+            </li>`
+        })
+    }
+    function excluir(event) {
+        event.preventDefault();
+        let indexGestor = +(event.target.alt);
+        let itemExcluido = armazenadorGestor[indexGestor].idResponsavel;
+        console.log("Excluir: ", itemExcluido);
+        deletarUsuario(itemExcluido);
+    }
+    function excluir2(event) {
+        event.preventDefault();
+        let indexSuporte = +(event.target.alt);
+        let itemExcluido = armazenadorSup[indexSuporte].idResponsavel;
+        console.log("Excluir: ", itemExcluido);
+        deletarUsuario(itemExcluido);
+    }
+    function deletarUsuario(idUsuario) {
+        fetch(`/gestor/deletegest/${idUsuario}`, {
+            method: "DELETE"
+        })
+            .then(resposta => {
+                if (resposta.ok) {
+                    resposta.json().then(function (resposta) {
+
+                        alert("deletado!");
+                        location.reload();
+                        // alert(JSON.stringify(resposta))
+                    });
+                } else {
+
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção das publicações do usuário: ${error.message}`);
+            });
+    }
+    function obterListaGestor(idUsuario) {
+
+        fetch(`/gestor/${idUsuario}`)
+            .then(resposta => {
+                if (resposta.ok) {
+                    resposta.json().then(function (resposta) {
+                        pegaGestor(resposta);
+                        construirBalao(resposta);
+                        console.log("res", resposta)
+                        // alert(JSON.stringify(resposta))
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção das publicações do usuário: ${error.message}`);
+            });
+    }
+    obterListaGestor(1);
+
+    function obterListaSup(idUsuario) {
+        fetch(`/gestor/sup/${idUsuario}`)
+            .then(resposta => {
+                if (resposta.ok) {
+                    resposta.json().then(function (resposta) {
+                        construirBalaoSup(resposta);
+                        pegaSuporte(resposta);
+                        console.log("res", resposta)
+                        // alert(JSON.stringify(resposta))
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção das publicações do usuário: ${error.message}`);
+            });
+    }
+    obterListaSup(1)
+</script>

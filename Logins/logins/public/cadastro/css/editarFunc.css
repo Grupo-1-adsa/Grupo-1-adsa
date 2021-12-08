@@ -1,0 +1,331 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+:root {
+    --primary-azul: #6b3cc9;
+    --cor-preto: #000;
+    --font-lato-corpo: "Lato", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: var(--font-lato-corpo);
+}
+
+body {
+    background-image: url(../img/fundoEditarFunc.png);
+    background-repeat: no-repeat;
+    background-size: 450px;
+    background-position-x: 135vh !important;
+    background-position-y: 10vh !important;
+
+    background-position: right;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header {
+    height: 70px;
+}
+
+.header .container {
+    height: 80px;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-flow: row;
+    align-self: center;
+    justify-content: space-between;
+    padding: 0 !important;
+}
+
+.header .container div {
+    display: flex;
+    align-items: center;
+}
+
+.header h1 {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.header img {
+    margin: 0;
+    padding: 0;
+    height: 40px;
+
+}
+
+.header a {
+    margin: 0;
+    padding: 0;
+    width: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.header span {
+    color: var(--primary-azul);
+    font-size: 2.5rem;
+    text-align: center;
+    display: flex;
+    font-weight: bold;
+    align-items: center;
+}
+
+main form button {
+    cursor: pointer;
+    width: 25%;
+    height: 40px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(45deg, #6527e0, #9c47e7);
+    color: white;
+    font-size: 1.1rem;
+    transition: all 0.2s ease-in-out;
+    margin-left: 54vh;
+    margin-top: 4vh;
+    border: none;
+}
+
+main form button:hover {
+    width: 26%;
+    height: 41px;
+    letter-spacing: 0.2px;
+    background: linear-gradient(#9c47e7, #6527e0);
+}
+
+main {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    padding-left: 6%;
+}
+
+main form {
+    align-items: center;
+    width: 40%;
+    height: 70vh;
+}
+
+main form label {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+main form label span {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+main h3 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    position: relative;
+}
+
+main h3::before {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 70px;
+    bottom: 0;
+    left: 3;
+    border-radius: 8px;
+    background: linear-gradient(45deg, #6527e0, #9c47e7);
+}
+
+.formAcess {
+    height: 84vh;
+    width: 100%;
+    opacity: 1;
+    pointer-events: auto;
+    animation-name: slideRight;
+    -webkit-animation-name: slideRight;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-timing-function: ease-in-out;
+    visibility: visible !important;
+    background-color: rgba(255, 255, 255, 0.877);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(-150%);
+    }
+
+    50% {
+        transform: translateX(8%);
+    }
+
+    65% {
+        transform: translateX(-4%);
+    }
+
+    80% {
+        transform: translateX(4%);
+    }
+
+    95% {
+        transform: translateX(-2%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@-webkit-keyframes slideRight {
+    0% {
+        -webkit-transform: translateX(-150%);
+    }
+
+    50% {
+        -webkit-transform: translateX(8%);
+    }
+
+    65% {
+        -webkit-transform: translateX(-4%);
+    }
+
+    80% {
+        -webkit-transform: translateX(4%);
+    }
+
+    95% {
+        -webkit-transform: translateX(-2%);
+    }
+
+    100% {
+        -webkit-transform: translateX(0%);
+    }
+}
+
+.input-fild {
+    position: relative;
+}
+
+.input-fild input {
+    width: 400px;
+    height: 30px;
+    outline: none;
+    background: none;
+    outline: none;
+}
+
+.input-fild input::placeholder {
+    color: rgba(138, 138, 138, 0.733);
+}
+
+.input-fild .underline::before {
+    content: "";
+    position: absolute;
+    height: 0.5px;
+    width: 100%;
+    left: 0;
+    background-color: rgb(92, 91, 91);
+    border-radius: 10px;
+}
+
+.input-fild .underline::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    left: 0;
+    background: linear-gradient(90deg, rgba(107, 60, 201, 1) 0%,
+            rgba(172, 141, 235, 1) 38%, rgb(158, 127, 221) 62%, rgba(107, 60, 201, 1) 100%);
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+.input-fild input:focus~.underline::after {
+    transform: scaleX(1);
+}
+
+::-webkit-input-placeholder {
+    color: rgba(83, 83, 83, 0.822);
+    font-weight: bold;
+}
+
+.cadastrar {
+    width: 35%;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 100%;
+    margin-bottom: 0.5rem;
+    font-size: 16px;
+    height: 35px;
+    outline: none;
+    border: 1px solid rgb(226, 226, 226);
+    appearance: none;
+    background: url(../img/seta-para-baixo.png) 96% / 3% no-repeat;
+}
+
+.cadastrar:hover {
+    width: 36%;
+}
+
+.menu {
+    margin-top: 5px;
+    margin-left: 85px;
+    float: left;
+}
+
+.containerList img {
+    margin-left: 50px;
+    padding: 0;
+    height: 35px;
+    float: left;
+    cursor: pointer;
+}
+
+.lado {
+    float: left;
+}
+
+h4 {
+    padding-top: 10px;
+}
+
+h4 span {
+    padding-left: 20px;
+    padding-right: 40px;
+    margin-bottom: 20px;
+}
+
+
+
+.botnsFuncoes{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .botnsFuncoes img{
+    width: 35px;
+    margin-top: 1.3rem;
+    margin-left: 1rem;
+    cursor: pointer;
+  }
+  
+  .botnsFuncoes span{
+    font-weight: bold;
+    padding-top: 6.5%;
+    padding-left: 0.6%;
+  }

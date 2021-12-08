@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+* {
+    /*resetando */
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.cartinha {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+:root {
+    --cor-primario-azul: #5879FA;
+    --cor-secundaria-cinza: #E9EBF0;
+    --cor-terciaria-roxo: #7644D4;
+}
+
+body {
+    background: linear-gradient(45deg, #4776E6, #E9EBF0) !important;
+    background: url(./DashGestor/img/fundoLogin.jpg);
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    z-index: 5;
+}
+
+.header-login {
+    color: white;
+    text-shadow: #161616 0.1em 0.1em 0.3em;
+    font-size: 1.33em;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-self: flex-start;
+    width: 100%;
+}
+
+.container-login {
+    width: 80%;
+    margin: auto;
+}
+
+.header-login .container-login {
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: space-between;
+    align-items: center;
+    height: 5em;
+}
+
+.header-login .container-login .box-login {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.box-login img {
+    width: 40px;
+    position: relative;
+    top: -3px;
+    left: -3px;
+    filter: drop-shadow(0px 3px 3px rgba(39, 39, 39, 0.4));
+    filter: drop-shadow(0px 3px 3px rgb(70, 70, 70));
+}
+
+.teste {
+    font-size: 3rem;
+    margin: 1rem;
+}
+
+a {
+    color: var(--cor-terciaria-roxo);
+    text-decoration: none;
+    margin-top: 35px;
+}
+
+
+main.form-login {
+    background: white;
+    min-width: 320px;
+    min-height: 60vh;
+    padding: 2rem;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+main h2 {
+    font-weight: 600;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+main h2::before {
+    content: '';
+    position: absolute;
+    height: 4px;
+    width: 25px;
+    bottom: 3px;
+    left: 0;
+    border-radius: 8px;
+    background: linear-gradient(45deg, #8e2de2, #4a00e0);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-field {
+    position: relative;
+}
+
+form .input-field:first-child {
+    margin-bottom: 1.5rem;
+}
+
+.input-field .underline::before {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    bottom: -5px;
+    left: 0;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.input-field .underline::after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    bottom: -5px;
+    left: 0;
+    background: linear-gradient(45deg, #8e2de2, #4a00e0);
+    transform: scaleX(0);
+    transition: all .3s ease-in-out;
+    transform-origin: left;
+}
+
+.input-field input:focus~.underline::after {
+    transform: scaleX(1);
+}
+
+.input-field input {
+    outline: none;
+    font-size: 0.9rem;
+    color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    margin-top: 30px;
+}
+
+.input-field input::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+form input[type="submit"] {
+    margin-top: 2rem;
+    padding: 0.4rem;
+    width: 100%;
+    background: linear-gradient(to left, #5879FA, #8e54e9);
+    cursor: pointer;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 300;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+    letter-spacing: 0.5px;
+    background: linear-gradient(to right, #4776E6, #014f86);
+}
+
+@media screen and (max-width:900px) {
+    .container-login {
+        width: 95%;
+    }
+
+    .voltar {
+        font-size: 16px;
+    }
+}
+
+/* Rounded sliders */
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 100%;
+    width: 100%;
+    font-size: 16px;
+    height: 34px;
+    outline: none;
+    border: 1px solid rgb(226, 226, 226);
+    appearance: none;
+    background: url(../img/seta-para-baixo.png) 96% / 5% no-repeat;
+}

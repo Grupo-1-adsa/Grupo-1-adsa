@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" type="imagex/png" href="../../img/iconEmpresa.png">
+  <title>Empresas cadastradas</title>
+  <link rel="stylesheet" href="../css/empresa.css" />
+  <script src="https://kit.fontawesome.com/48b24e7021.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!--header inicio-->
+
+  <div class="header">
+    <div class="container">
+      <div>
+        <img src="../img/iconPreto.png" class="iconFast" alt="" />
+        <h1 class="titulo">FastTec</h1>
+      </div>
+      <span> Empresas cadastradas</span>
+      <a href="../../index.html"><img src="../img/sairAzul.png" class="sair" alt=""></a>
+    </div>
+  </div>
+
+  <main>
+    <div class="containerList">
+      <ul class="lista">
+
+        <!--  <li>
+          <h4 class="lado">
+            <span>Id: </span> <span>Nome: </span> <span>CNPJ: </span>
+          </h4>
+          <span class="menu">
+            <a href="editar.html"><img src="../img/iconEditar.png" alt="" /></a>
+          </span>
+          <h4>
+            <span>10</span> <span>SOS a</span> <span>07.165.496/0001-00</span>
+          </h4>
+        </li>  -->
+      </ul>
+
+      <button onclick="location.href = './cadastro.html';">
+        Criar novo <img src="../img/iconMais.png" alt="" />
+      </button>
+    </div>
+  </main>
+</body>
+
+</html>
+
+<script>
+  const data = [];
+
+  function armazenador(dados) {
+    data.push(dados);
+  }
+
+  function linkarDelete(event) {
+    event.preventDefault();
+    let indexDesejado = +(event.target.id.replace("deletar", ""));
+    let idResultado;
+    let nomeEmpresa;
+    idResultado = data[0][indexDesejado].idEmpresa;
+    nomeEmpresa = data[0][indexDesejado].nomeEmpresa;
+    deletarUsuario(idResultado);
+  }
+
+  function linkarEmpresa(event) {
+    event.preventDefault();
+
+    const dado = data[0][+event.target.alt];
+    sessionStorage.setItem('idEmpresa', dado.idEmpresa);
+    sessionStorage.setItem('CNPJ', dado.CNPJ);
+    sessionStorage.setItem('bairro', dado.bairro);
+    sessionStorage.setItem('cep', dado.cep);
+    sessionStorage.setItem('cidade', dado.cidade);
+    sessionStorage.setItem('complemento', dado.complemento);
+    sessionStorage.setItem('email', dado.email);
+    sessionStorage.setItem('idEmpresa', dado.idEmpresa);
+    sessionStorage.setItem('loginEmpresa', dado.loginEmpresa);
+    sessionStorage.setItem('logradouro', dado.logradouro);
+    sessionStorage.setItem('nomeEmpresa', dado.nomeEmpresa);
+    sessionStorage.setItem('numero', dado.numero);
+    sessionStorage.setItem('senhaEmpresa', dado.senhaEmpresa);
+    sessionStorage.setItem('telefone', dado.telefone);
+
+    window.location.href = 'editar.html'
+
+  };
+
+  function criarBalao(dados) {
+    setTimeout(() => {
+      let contador = -1;
+      const container = document.querySelector(".lista");
+      dados.forEach((d) => {
+        contador++;
+        container.innerHTML += ` <li class = "divbalao">
+          <div>
+            <p>ID:</p>
+            <p>${d.idEmpresa}</p>
+          </div>
+          <div>
+            <p>Nome:</p>
+            <p>${d.nomeEmpresa}</p>
+          </div>
+          <div>
+            <p>Cnpj:</p>
+            <p>${d.CNPJ}</p>
+          </div>
+          <a class="cruddelete"  onclick="linkarEmpresa(event)" href="./editar.html">
+            <img src="../img/iconEditar.png" alt="${contador}" />
+            <a onclick="linkarDelete(event)" class= "btnExcluir" id="deletar${contador}" href="#">oi</a>
+          </a>
+         
+        </li>`;
+
+      })
+    }, 100);
+
+  }
+
+  function obterEmpresas(idUsuario) {
+    fetch(`/gestor/empresa/${idUsuario}`)
+      .then(resposta => {
+        if (resposta.ok) {
+          resposta.json().then(function (resposta) {
+            console.log("res", resposta);
+            criarBalao(resposta);
+            armazenador(resposta);
+            // alert(JSON.stringify(resposta))
+          });
+        } else {
+          console.error('Nenhum dado encontrado ou erro na API');
+        }
+      })
+      .catch(function (error) {
+        console.error(`Erro na obtenção das publicações do usuário: ${error.message}`);
+      });
+  }
+  obterEmpresas();
+
+  function deletarUsuario(idUsuario) {
+    fetch(`/gestor/delete/${idUsuario}`, {
+        method: "DELETE"
+      })
+      .then(resposta => {
+        if (resposta.ok) {
+          resposta.json().then(function (resposta) {
+
+            alert("deletado!");
+            location.reload();
+            // alert(JSON.stringify(resposta))
+          });
+        } else {
+
+          console.error('Nenhum dado encontrado ou erro na API');
+        }
+      })
+      .catch(function (error) {
+        console.error(`Erro na obtenção das publicações do usuário: ${error.message}`);
+      });
+  }
+</script>

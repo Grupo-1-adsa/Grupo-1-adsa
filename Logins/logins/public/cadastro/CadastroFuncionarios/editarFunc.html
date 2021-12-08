@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" type="imagex/png" href="../img/procastinatorPreto.png">
+  <title>Editar Funcionario</title>
+  <link rel="stylesheet" href="../css/editarFunc.css" />
+</head>
+
+<body>
+  <div class="header">
+    <div class="container">
+      <div>
+        <img src="../img/procastinatorPreto.png" alt="" />
+        <h1 class="titulo">FastTec</h1>
+      </div>
+      <span class="highlight"> Editar funcionário cadastrado</span>
+      <a href="listaFuncionarios.html"> <img src="../img/voltarRoxo.png" alt=""></a>
+    </div>
+  </div>
+
+  <main>
+    <form class="main-container" id="formulario_func" method="post">
+
+      <div id="dadosEmpresa" class="formAcess">
+        <h3>Dados funcionários:</h3>
+        <div class="espaco"></div>
+        <label class="input-fild">
+          <span>Name:</span>
+          <input type="text" id="nomeResponsavel" name="nomeResponsavel" class="input-padrao" placeholder="Nome e sobrenome" required minlength="4" autofocus="autofocus">
+          <div class="underline"></div>
+        </label>
+        <label class="input-fild">
+          <span>Telefone:</span>
+          <input type="text" id="telefone" name="telefone" class="input-padrao" placeholder="Nome e sobrenome" required minlength="4" autofocus="autofocus">
+          <div class="underline"></div>
+        </label>
+        <label class="input-fild">
+          <span>CPF:</span>
+          <input type="text" id="CPF" name="CPF" class="input-padrao" placeholder="Nome e sobrenome" required minlength="4" autofocus="autofocus">
+          <div class="underline"></div>
+        </label>
+        <label class="input-fild">
+          <span>Login:</span>
+          <input type="text" id="loginResponsavel" name="loginResponsavel" placeholder="Digite login">
+          <div class="underline"></div>
+        </label>
+        <label class="input-fild">
+          <span>Senha:</span>
+          <input type="text" id="senhaResponsavel" name="senhaResponsavel" placeholder="Digite o logradouro">
+          <div class="underline"></div>
+        </label>
+    </form>
+
+    <div class="botnsFuncoes">
+
+      <a href="cadastro.html">
+        <img src="../img/iconMaisEscuro.png" alt="" />
+      </a>
+      <span>Novo</span>
+
+      <a>
+        <img src="../img/salvarEscuro.png" alt="" onclick="updateTabela()" />
+      </a>
+      <span>Salvar</span>
+
+      <a href="listaEmpresas.html">
+        <img src="../img/cancelar.png" alt="" />
+      </a>
+      <span>Cancelar</span>
+    </div>
+  </main>
+
+</body>
+
+</html>
+
+<script>
+
+  function preencher() {
+    let nome = document.getElementById('nomeResponsavel');
+    let CPF = document.getElementById('CPF');
+    let loginResponsavel = document.getElementById('loginResponsavel');
+    let senhaResponsavel = document.getElementById('senhaResponsavel');
+    let telefone = document.getElementById('telefone');
+
+    var telefone1 = sessionStorage.getItem('telefone');
+    var CPF1 = sessionStorage.getItem('CPF');
+    var nome1 = sessionStorage.getItem('nomeFuncionario');
+    var loginResponsavel1 = sessionStorage.getItem('loginResponsavel');
+    var senhaResponsavel1 = sessionStorage.getItem('senhaResponsavel');
+    var telefone1 = sessionStorage.getItem('telefone');
+
+    nome.value = nome1;
+    telefone.value = telefone1;
+    loginResponsavel.value = loginResponsavel1;
+    senhaResponsavel.value = senhaResponsavel1;
+    CPF.value = CPF1;
+
+  }
+
+  preencher()
+
+  function updateTabela() {
+    let idUsuario = +(sessionStorage.getItem('idResponsavel'));
+    var formulario = new URLSearchParams(new FormData(formulario_func));
+    console.log(formulario.toString());
+    console.log(formulario);
+    fetch(`/gestor/updateresponsavel/${idUsuario}`, {
+      method: "PUT",
+      body: formulario,
+    }).then((resposta) => {
+      if (resposta.ok) {
+        resposta.json().then((json) => {
+          console.log(json);
+        });
+      } else {
+        alert("[UPDATE] : Dados Atualizados !");
+
+        resposta.text().then((texto) => { });
+      }
+    });
+    return false;
+  }
+</script>

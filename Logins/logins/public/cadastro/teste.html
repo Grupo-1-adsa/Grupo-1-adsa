@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="imagex/png" href="../../img/iconEmpresa.png" />
+    <title>Cadastrar Cliente</title>
+    <link rel="stylesheet" href="modal.css" />
+</head>
+
+<body>
+    <div class="header">
+        <a href="listaEmpresas.html"><img src="../img/voltarAzul.png" alt="" class="voltar" onclick="voltarLista()"
+                id="voltarLista" /></a>
+        <img src="../img/voltarAzul.png" alt="" class="voltar" onclick="voltar()" id="voltar" style="display: none" />
+
+        <div class="container">
+            <h1>Cadastrar de empresas</h1>
+            <div class="box-fast">
+                <img src="../img/iconPreto.png" alt="" />
+                <span class="tituloFast">FastTech</span>
+            </div>
+        </div>
+    </div>
+
+    <main class="estiloForm">
+        <div id="abrirModalInstrucao">
+            <div class="modal slideDown">
+                <a href="#fecharCom" class="fecharIns" onclick="fecharInstrucao()">x</a>
+                <h1>Empresa cadastrada com sucesso!</h1>
+                <img src="./img/check.gif" alt="">
+                <a href="./listaEmpresas.html">Vizualizar</a>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
+
+<script>
+    function fecharInstrucao() {
+        abrirModalInstrucao.style.display = 'none'
+    }
+</script>
