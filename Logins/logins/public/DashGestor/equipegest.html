@@ -21,7 +21,7 @@
         <ul class="lista_menu_geral">
           <li><a href="./gestorDash.html">Home</a></li>
           <li><a onclick="abrirModal()">Cadastrar funcionário</a></li>
-          <li><a href="./gestorDash.html">Sair</a></li>
+          <li><a href="../index.html">Sair</a></li>
         </ul>
       </nav>
     </div>
@@ -105,12 +105,14 @@
           <div class="espaco"></div>
           <label class="input-fild">
             <span>Name:</span>
-            <input type="text" id="nomeFuncionario" name="nomeFuncionario" class="input-padrao" placeholder="Nome e sobrenome" required minlength="4" autofocus="autofocus">
+            <input type="text" id="nomeFuncionario" name="nomeFuncionario" class="input-padrao"
+              placeholder="Nome e sobrenome" required minlength="4" autofocus="autofocus">
             <div class="underline"></div>
           </label>
           <label class="input-fild">
             <span>Telefone:</span>
-            <input type="text" id="telefone" name="telefone" class="input-padrao" placeholder="telefone" required minlength="4" autofocus="autofocus">
+            <input type="text" id="telefone" name="telefone" class="input-padrao" placeholder="telefone" required
+              minlength="4" autofocus="autofocus">
             <div class="underline"></div>
           </label>
           <label class="input-fild">
@@ -185,7 +187,7 @@
             // alert(JSON.stringify(resposta))
           });
         } else {
-
+          alert("Essa maquina contem dados,vc apenas podera excluir maquinas ainda nao usadas :)")
           console.error('Nenhum dado encontrado ou erro na API');
         }
       })

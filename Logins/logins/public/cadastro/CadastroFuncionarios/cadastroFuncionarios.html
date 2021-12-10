@@ -16,7 +16,7 @@
         <div class="container">
             <div>
                 <img src="../img/procastinatorPreto.png" alt="" />
-                <h1 class="titulo">Pro</h1>
+                <h1 class="titulo" id="nomeEmpresa"></h1>
             </div>
             <span class="highlight">Cadastrar Funcionários </span>
             <a href="listaFuncionarios.html"> <img src="../img/voltarRoxo.png" alt=""></a>
@@ -30,7 +30,6 @@
 
             <div id="dadosEmpresa" class="formAcess">
                 <h3>Dados funcionários:</h3>
-                <div class="espaco"></div>
                 <select id="tipo" class="select" name="tipo">
                     <option value="">Escolha funcionário</option>
                     <option value="gestor">Gestor</option>
@@ -38,12 +37,14 @@
                 </select>
                 <label class="input-fild">
                     <span>Name:</span>
-                    <input type="text" id="nomeResponsavel" name="nomeResponsavel" class="input-padrao" placeholder="Nome e sobrenome" required minlength="4" autofocus="autofocus">
+                    <input type="text" id="nomeResponsavel" name="nomeResponsavel" class="input-padrao"
+                        placeholder="Nome e sobrenome" required minlength="4" autofocus="autofocus">
                     <div class="underline"></div>
                 </label>
                 <label class="input-fild">
                     <span>Telefone:</span>
-                    <input type="text" id="telefone" name="telefone" class="input-padrao" placeholder="telefone" required minlength="4" autofocus="autofocus">
+                    <input type="text" id="telefone" name="telefone" class="input-padrao" placeholder="Digite telefone"
+                        required minlength="4" autofocus="autofocus">
                     <div class="underline"></div>
                 </label>
                 <label class="input-fild">
@@ -52,14 +53,14 @@
                     <div class="underline"></div>
                 </label>
                 <label class="input-fild">
-                    <span>loginResponsavel:</span>
+                    <span>Login:</span>
                     <input type="text" id="loginResponsavel" name="loginResponsavel" placeholder="Digite o login">
                     <div class="underline"></div>
                 </label>
 
                 <label class="input-fild">
-                    <span>SenhaResponsavel:</span>
-                    <input type="text" id="senhaResponsavel" name="senhaResponsavel" placeholder="senhaResponsavel">
+                    <span>Senha:</span>
+                    <input type="text" id="senhaResponsavel" name="senhaResponsavel" placeholder="Digite a senha">
                     <div class="underline"></div>
                 </label>
 
@@ -76,6 +77,9 @@
 
 </html>
 <script>
+
+    document.getElementById('nomeEmpresa').innerHTML = sessionStorage.nomeEmpresa;
+
     function cadastrar() {
         var idUsuario = sessionStorage.idEmpresa;
         var formulario = new URLSearchParams(new FormData(form_cadastro));

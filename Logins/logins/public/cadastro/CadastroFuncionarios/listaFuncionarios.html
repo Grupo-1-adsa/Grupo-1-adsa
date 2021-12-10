@@ -17,20 +17,26 @@
         <div class="container">
             <div>
                 <img src="../img/procastinatorPreto.png" alt="" />
-                <h1 class="titulo">Pro</h1>
+                <h1 class="titulo" id="nomeEmpresa"></h1>
             </div>
             <span class="highlight">Funcionarios Cadastrados</span>
-            <a href="../../index.html"><img src="../../img/logout.png" alt=""></a>
+            <a href="../../index.html"><img src="../img/sairRoxo.png" alt=""></a>
         </div>
     </div>
 
     <main class="banner">
 
-
         <div class="containerList">
             <ul class="lista listaGestor">
-                <h3>Gestores cadastrados</h3>
-                <div class="espaco"></div>
+                <div class="info">
+                    <h3>Gestores cadastrados </h3>
+                    <div class="pesquisa">
+                        <input class="ipt" type="text" placeholder="Pesquisar...">
+                        <img src="../img/lupa.png" alt="">
+                    </div>
+                </div>
+                
+                <div class="espaco"> </div>
                 <!--  <li>
                     <h4 class="lado"><span>Nome: </span> <span>Sobrenome: </span> </h4>
                     <span class="menu">
@@ -45,8 +51,15 @@
         <div class="containerList">
 
             <ul class="lista listaSup">
-                <h3>Suporte cadastrados</h3>
-                <div class="espaco"></div>
+                <div class="info">
+                    <h3>Suporte cadastrados</h3>
+                    <div class="pesquisa">
+                        <input class="ipt" type="text" placeholder="Pesquisar...">
+                        <img src="../img/lupa.png" alt="">
+                    </div>
+                </div>
+                
+                <div class="espaco"> </div>
                 <!--  <li>
                     <h4 class="lado"><span>Nome: </span> <span>Sobrenome: </span> </h4>
                     <span class="menu">
@@ -69,6 +82,9 @@
 </html>
 
 <script>
+
+    document.getElementById('nomeEmpresa').innerHTML = sessionStorage.nomeEmpresa;
+
     let armazenadorGestor = [];
     let armazenadorSup = [];
 
@@ -106,6 +122,7 @@
         let container = document.querySelector(".listaGestor");
         dadosBalao.forEach((d) => {
             contador++;
+
             console.log(d.nomeResponsavel, d.telefone);
             container.innerHTML += ` <li class="listinha">
                 <div>
@@ -124,6 +141,7 @@
         })
     }
 
+
     function salvarDadosGestor(dados) {
         console.log(dados, "bananinha");
         sessionStorage.setItem('nomeFuncionario', dados.nomeResponsavel);
@@ -132,7 +150,6 @@
         sessionStorage.setItem('loginResponsavel', dados.loginResponsavel);
         sessionStorage.setItem('senhaResponsavel', dados.senhaResponsavel);
         sessionStorage.setItem('idResponsavel', dados.idResponsavel);
-
     }
 
     function salvarDadosSuporte(dados) {

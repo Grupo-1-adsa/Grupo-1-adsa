@@ -50,14 +50,11 @@ a {
   align-items: center;
 }
 
-.iconFast {
+.header img {
   margin: 0;
   padding: 0;
   height: 40px;
-}
 
-.sair{
-  height: 30px;
 }
 
 .header a {
@@ -134,7 +131,7 @@ main{
 }
 
 .containerList img {
-  margin-left: 50px;
+  margin-left: 120px;
   padding: 0;
   height: 35px;
   float: left;
@@ -190,6 +187,7 @@ h4 span {
   min-height: 82vh;
   background-color: #fffffff6;
   border-radius: 5px;
+  margin-top: 20px;
 }
 
 .container {
@@ -366,11 +364,11 @@ form input[type="submit"]:hover {
   align-items: center;
 }
 .btnExcluir{
-  background-image: url("../img/excluir.png");
+  background-image: url("../img/excluirCinza.png");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 36px;
+  height: 42px;
   width: 36px;
   text-indent: -9999px;
-  margin-left: 2px;
+  margin-left: 3px;
 }

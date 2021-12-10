@@ -32,8 +32,8 @@
         <option value="">Escolha um usuário</option>
         <option value="fastTech">FastTech</option>
         <option value="empresa">Empresa</option>
-        <option value="gestor">Gestor</option>
         <option value="suporte">Suporte</option>
+        <option value="gestor">Gestor</option>
       </select>
 
       <div class="input-field">
@@ -70,6 +70,8 @@
           sessionStorage.id = json.idResponsavel;
           sessionStorage.nome = json.nomeResponsavel;
           sessionStorage.idEmpresa = json.idEmpresa;
+          sessionStorage.nomeEmpresa = json.nomeEmpresa;
+
           if (tipo.value == "gestor") {
             window.location.href = "./DashGestor/gestorDash.html";
           } else if (tipo.value == "suporte") {
