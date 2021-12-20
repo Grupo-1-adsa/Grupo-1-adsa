@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
 :root {
   --primary-azul: #2c82b9;
   --cor-preto: #000;
@@ -21,15 +22,18 @@ body {
   min-width: 100vw;
 }
 
-main {
-  width: 60vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+/*Header*/
+
+.voltar {
+  width: 40px;
+  position: absolute;
+  margin-top: 1.3rem;
+  margin-left: 1rem;
+  cursor: pointer;
+  z-index: 9;
 }
 
-.container {
+.containerCadastro {
   width: 100% !important;
   height: 90px;
   position: absolute;
@@ -40,26 +44,36 @@ main {
   padding-right: 240px;
 }
 
-.container h1 {
+.containerCadastro h1 {
   color: var(--primary-azul);
   font-size: 2.8rem;
   text-align: center;
 }
 
-.container img {
+.containerCadastro img {
   height: 32px;
 }
 
-.box-fast{
+.box-fast {
   display: flex;
   justify-content: center;
 }
 
-.tituloFast {
+.box-fast span {
   font-size: 1.6rem;
   font-weight: bold;
 }
 
+/* Corpo Main */
+main {
+  width: 60vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Formulário cadastro */
 main form {
   display: flex;
   flex-direction: column;
@@ -78,14 +92,14 @@ main form label span {
   font-weight: bold;
 }
 
-main h3 {
+main form h3 {
   font-weight: 600;
   margin-bottom: 1rem;
   margin-top: 1rem;
   position: relative;
 }
 
-main h3::before {
+main form h3::before {
   content: "";
   position: absolute;
   height: 2px;
@@ -94,24 +108,16 @@ main h3::before {
   left: 3;
   border-radius: 8px;
   background: rgb(44, 130, 185);
-  background: linear-gradient(
-    90deg,
-    rgba(44, 130, 185, 1) 0%,
-    rgba(123, 187, 228, 1) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(44, 130, 185, 1) 0%,
+      rgba(123, 187, 228, 1) 100%);
 }
 
-button img {
-  width: 20px;
-  position: absolute;
-  margin-left: 5px;
-}
-
-.input-fild {
+main form .input-fild {
   position: relative;
 }
 
-.input-fild input {
+main form .input-fild input {
   width: 400px;
   height: 25px;
   outline: none;
@@ -119,11 +125,11 @@ button img {
   outline: none;
 }
 
-.input-fild input::placeholder {
+main form .input-fild input::placeholder {
   color: rgba(138, 138, 138, 0.733);
 }
 
-.input-fild .underline::before {
+main form .input-fild .underline::before {
   content: "";
   position: absolute;
   height: 0.5px;
@@ -133,24 +139,22 @@ button img {
   border-radius: 10px;
 }
 
-.input-fild .underline::after {
+main form .input-fild .underline::after {
   content: "";
   position: absolute;
   height: 2px;
   width: 100%;
   left: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(44, 130, 185, 1) 0%,
-    rgb(103, 162, 202) 40%,
-    rgb(97, 149, 184) 60%,
-    rgba(44, 130, 185, 1) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(44, 130, 185, 1) 0%,
+      rgb(103, 162, 202) 40%,
+      rgb(97, 149, 184) 60%,
+      rgba(44, 130, 185, 1) 100%);
   transform: scaleX(0);
   transition: all 0.3s ease-in-out;
 }
 
-.input-fild input:focus ~ .underline::after {
+main form .input-fild input:focus~.underline::after {
   transform: scaleX(1);
 }
 
@@ -159,20 +163,7 @@ button img {
   font-weight: bold;
 }
 
-.cadastrar {
-  width: 35%;
-}
-
-.voltar {
-  width: 40px;
-  position: absolute;
-  margin-top: 1.3rem;
-  margin-left: 1rem;
-  cursor: pointer;
-  z-index: 9;
-}
-
-main form button {
+main button {
   cursor: pointer;
   width: 35%;
   height: 40px;
@@ -187,14 +178,17 @@ main form button {
   border: none;
 }
 
+main button img {
+  width: 20px;
+  position: absolute;
+  margin-left: 5px;
+}
+
 main form button:hover {
-  width:36%;
+  width: 36%;
   height: 41px;
   letter-spacing: 0.2px;
   background: linear-gradient(#5e89ee, #023b64);
-}
-.cadastrar:hover {
-  width: 36%;
 }
 
 .formAcess {
@@ -212,45 +206,57 @@ main form button:hover {
 
 @keyframes slideRight {
   0% {
-      transform: translateX(-150%);
+    transform: translateX(-150%);
   }
+
   50% {
-      transform: translateX(8%);
+    transform: translateX(8%);
   }
+
   65% {
-      transform: translateX(-4%);
+    transform: translateX(-4%);
   }
+
   80% {
-      transform: translateX(4%);
+    transform: translateX(4%);
   }
+
   95% {
-      transform: translateX(-2%);
+    transform: translateX(-2%);
   }
+
   100% {
-      transform: translateX(0%);
+    transform: translateX(0%);
   }
 }
 
 @-webkit-keyframes slideRight {
   0% {
-      -webkit-transform: translateX(-150%);
+    -webkit-transform: translateX(-150%);
   }
+
   50% {
-      -webkit-transform: translateX(8%);
+    -webkit-transform: translateX(8%);
   }
+
   65% {
-      -webkit-transform: translateX(-4%);
+    -webkit-transform: translateX(-4%);
   }
+
   80% {
-      -webkit-transform: translateX(4%);
+    -webkit-transform: translateX(4%);
   }
+
   95% {
-      -webkit-transform: translateX(-2%);
+    -webkit-transform: translateX(-2%);
   }
+
   100% {
-      -webkit-transform: translateX(0%);
+    -webkit-transform: translateX(0%);
   }
 }
+
+/* Section fundo img */
 
 section.images {
   width: 50vw;
@@ -279,6 +285,7 @@ section.images .circle {
   section.images img {
     width: 110%;
   }
+
   section.images .circle {
     clip-path: circle(35% at right 80%);
   }
@@ -289,6 +296,7 @@ section.images .circle {
     display: none;
     visibility: hidden;
   }
+
   main {
     width: 100vw;
   }
@@ -298,61 +306,74 @@ section.images .circle {
   main h1 {
     font-size: 2rem;
   }
+
   main .alternative span {
     font-size: 0.8rem;
   }
+
   main form label span,
   main form input[type="submit"] {
     font-size: 1rem;
   }
 }
 
-#modal{
+/* Modal para vizualizar cadastrado */
+#modal {
   border-radius: 10px;
   display: none;
-
 }
 
-#modal.ativo{
+#modal.ativo {
   display: block !important;
 }
 
 .modal {
-	position: absolute;
-	top: 3%;
-	left: 30%;
-	width: 480px;
-	height: 150px;
-	z-index: 1000;
-	background: rgb(220, 220, 221);
-	background: linear-gradient(146deg, rgba(220, 220, 221, 1) 0%,
-			rgba(232, 232, 232, 1) 53%, rgba(238, 238, 238, 1) 100%);
-	border-radius: 10px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
+  position: absolute;
+  top: 3%;
+  left: 30%;
+  width: 480px;
+  height: 150px;
+  z-index: 1000;
+  background: rgb(220, 220, 221);
+  background: linear-gradient(146deg, rgba(220, 220, 221, 1) 0%,
+      rgba(232, 232, 232, 1) 53%, rgba(238, 238, 238, 1) 100%);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  animation-name: slideDown;
+  -webkit-animation-name: slideDown;
+
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+
+  animation-timing-function: ease;
+  -webkit-animation-timing-function: ease;
+
+  visibility: visible !important;
 }
 
 .modal img {
-	height: 60px;
-	padding: 10px;
+  height: 60px;
+  padding: 10px;
 }
 
 .fecharIns {
-	position: absolute;
-	width: 40px;
-	height: 40px;
-	right: -30px;
-	top: -20px;
-	text-align: center;
-	line-height: 40px;
-	margin-top: 5px;
-	background: #2c82b9;
-	border-radius: 50%;
-	font-size: 16px;
-	color: #ffffff;
-	text-decoration: none;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  right: -30px;
+  top: -20px;
+  text-align: center;
+  line-height: 40px;
+  margin-top: 5px;
+  background: #2c82b9;
+  border-radius: 50%;
+  font-size: 16px;
+  color: #ffffff;
+  text-decoration: none;
 }
 
 .modal h1 {
@@ -365,70 +386,58 @@ section.images .circle {
   justify-content: center;
 }
 
-.modal a{
+.modal a {
   text-decoration: none;
-}
-.slideDown {
-	animation-name: slideDown;
-	-webkit-animation-name: slideDown;
-
-	animation-duration: 1s;
-	-webkit-animation-duration: 1s;
-
-	animation-timing-function: ease;
-	-webkit-animation-timing-function: ease;
-
-	visibility: visible !important;
 }
 
 @keyframes slideDown {
-	0% {
-		transform: translateY(-100%);
-	}
+  0% {
+    transform: translateY(-100%);
+  }
 
-	50% {
-		transform: translateY(8%);
-	}
+  50% {
+    transform: translateY(8%);
+  }
 
-	65% {
-		transform: translateY(-4%);
-	}
+  65% {
+    transform: translateY(-4%);
+  }
 
-	80% {
-		transform: translateY(4%);
-	}
+  80% {
+    transform: translateY(4%);
+  }
 
-	95% {
-		transform: translateY(-2%);
-	}
+  95% {
+    transform: translateY(-2%);
+  }
 
-	100% {
-		transform: translateY(0%);
-	}
+  100% {
+    transform: translateY(0%);
+  }
 }
 
 @-webkit-keyframes slideDown {
-	0% {
-		-webkit-transform: translateY(-100%);
-	}
+  0% {
+    -webkit-transform: translateY(-100%);
+  }
 
-	50% {
-		-webkit-transform: translateY(8%);
-	}
+  50% {
+    -webkit-transform: translateY(8%);
+  }
 
-	65% {
-		-webkit-transform: translateY(-4%);
-	}
+  65% {
+    -webkit-transform: translateY(-4%);
+  }
 
-	80% {
-		-webkit-transform: translateY(4%);
-	}
+  80% {
+    -webkit-transform: translateY(4%);
+  }
 
-	95% {
-		-webkit-transform: translateY(-2%);
-	}
+  95% {
+    -webkit-transform: translateY(-2%);
+  }
 
-	100% {
-		-webkit-transform: translateY(0%);
-	}
+  100% {
+    -webkit-transform: translateY(0%);
+  }
 }

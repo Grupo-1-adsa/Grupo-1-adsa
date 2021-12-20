@@ -24,6 +24,8 @@ a {
   text-decoration: none;
 }
 
+/*Header*/
+
 .header {
   height: 60px;
 }
@@ -39,10 +41,11 @@ a {
   padding: 0 !important;
 }
 
-.header .container div{
+.header .container div {
   display: flex;
   align-items: center;
 }
+
 .header h1 {
   margin: 0;
   padding: 0;
@@ -54,7 +57,6 @@ a {
   margin: 0;
   padding: 0;
   height: 40px;
-
 }
 
 .header a {
@@ -62,10 +64,10 @@ a {
   padding: 0;
   width: 20px;
   display: flex;
-    align-items: center;
+  align-items: center;
 }
 
-.header  span {  
+.header span {
   color: var(--primary-azul);
   font-size: 2.5rem;
   text-align: center;
@@ -74,20 +76,71 @@ a {
   font-weight: bold;
 }
 
-main{
+/* Parte Header de cadastro */
+
+.voltar {
+  width: 40px;
+  position: absolute;
+  margin-top: 1.3rem;
+  margin-left: 1rem;
+  cursor: pointer;
+  z-index: 9;
+}
+
+.containerCadastro {
+  width: 100% !important;
+  height: 90px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 134px;
+  padding-right: 240px;
+}
+
+.containerCadastro h1 {
+  color: var(--primary-azul);
+  font-size: 2.8rem;
+  text-align: center;
+}
+
+.containerCadastro img {
+  height: 32px;
+}
+
+.box-fast {
+  display: flex;
+  justify-content: center;
+}
+
+.box-fast span {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.mainList {
   width: 100%;
   justify-content: center;
   display: flex;
   padding-left: 25vh;
   margin-top: 60px
+}
 
+.form-container {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  min-width: 150vh;
+  min-height: 82vh;
+  background-color: #fffffff6;
+  border-radius: 5px;
+  margin-top: 20px;
 }
 
 .containerList {
- width: 84.5vh;
+  width: 84.5vh;
   height: 65vh;
 }
-
 
 .containerList ul {
   min-width: 90vh;
@@ -120,7 +173,7 @@ main{
   margin-bottom: 10px;
 }
 
-.editarExcluir{
+.editarExcluir {
   display: flex;
 }
 
@@ -169,25 +222,13 @@ h4 span {
 .containerList button:hover {
   height: 36px;
   letter-spacing: 0.2px;
-  background: linear-gradient(45deg, #014f86, #5c86e7 );
+  background: linear-gradient(45deg, #014f86, #5c86e7);
 }
 
 .containerList button img {
-  height:5%;
+  height: 5%;
   position: absolute;
   margin-left: 5px;
-}
-
-
-.main-container {
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  min-width: 150vh;
-  min-height: 82vh;
-  background-color: #fffffff6;
-  border-radius: 5px;
-  margin-top: 20px;
 }
 
 .container {
@@ -196,7 +237,7 @@ h4 span {
   padding: 1rem;
 }
 
-.box-Form{
+.box-Form {
   width: 100%;
   justify-content: center;
   display: flex;
@@ -225,8 +266,8 @@ h4 span {
   border-radius: 8px;
   background: rgb(44, 130, 185);
   background: linear-gradient(90deg,
-          rgba(44, 130, 185, 1) 0%,
-          rgba(123, 187, 228, 1) 100%);
+      rgba(44, 130, 185, 1) 0%,
+      rgba(123, 187, 228, 1) 100%);
 }
 
 .forms-container {
@@ -279,10 +320,10 @@ form label {
   width: 100%;
   left: 0;
   background: linear-gradient(90deg,
-          rgba(44, 130, 185, 1) 0%,
-          rgb(103, 162, 202) 40%,
-          rgb(97, 149, 184) 60%,
-          rgba(44, 130, 185, 1) 100%);
+      rgba(44, 130, 185, 1) 0%,
+      rgb(103, 162, 202) 40%,
+      rgb(97, 149, 184) 60%,
+      rgba(44, 130, 185, 1) 100%);
   transform: scaleX(0);
   transition: all 0.3s ease-in-out;
 }
@@ -318,52 +359,57 @@ form input[type="submit"]:hover {
 } */
 
 
-.botnsFuncoes{
+.botnsFuncoes {
   width: 100%;
   display: flex;
   justify-content: center;
 }
 
-.botnsFuncoes img{
+.botnsFuncoes img {
   width: 35px;
   margin-top: 1.3rem;
   margin-left: 1rem;
   cursor: pointer;
 }
 
-.botnsFuncoes span{
+.botnsFuncoes span {
   font-weight: bold;
   padding-top: 6%;
   padding-left: 0.6%;
 }
 
-.divbalao{
+.divbalao {
   display: flex;
   /* justify-content: center; */
   align-items: center;
   padding: 0px 15px;
 }
-.divbalao div:nth-child(1){
+
+.divbalao div:nth-child(1) {
   width: 30px;
 }
-.divbalao p{
-  
+
+.divbalao p {
+
   width: 120px;
 }
+
 .divbalao div {
-   margin: 0px 10px;
-   width: 120px;
-   display: flex;
-   flex-direction: column;
-  
+  margin: 0px 10px;
+  width: 120px;
+  display: flex;
+  flex-direction: column;
+
 }
-.cruddelete{
+
+.cruddelete {
   display: flex;
   flex-direction: row !important;
   justify-content: center;
   align-items: center;
 }
-.btnExcluir{
+
+.btnExcluir {
   background-image: url("../img/excluirCinza.png");
   background-repeat: no-repeat;
   background-size: cover;
